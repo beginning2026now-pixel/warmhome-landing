@@ -400,13 +400,23 @@
             <span class="js-error hidden text-sm text-red-600 mt-1" data-for="phone">Введіть коректний український номер</span>
           </label>
 
-          <label class="block mt-4">
-            <span class="text-sm font-semibold text-slate-700">Місто та № відділення Нової Пошти</span>
-            <input type="text" name="np"
-                   class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-3.5 text-base focus:outline-none focus:ring-2 focus:ring-fire-500 focus:border-fire-500"
-                   placeholder="Київ, відділення №25">
-            <span class="text-xs text-slate-400 mt-1 block">Можна уточнити менеджеру по телефону</span>
-          </label>
+          <!-- Доставка Новою Поштою: місто і відділення з довідника НП (API) -->
+          <div class="mt-4">
+            <span class="text-sm font-semibold text-slate-700">Доставка Новою Поштою</span>
+            <div class="relative mt-1">
+              <input type="text" name="npCity" autocomplete="off" autocapitalize="words" spellcheck="false"
+                     class="w-full rounded-xl border border-slate-300 px-4 py-3.5 text-base focus:outline-none focus:ring-2 focus:ring-fire-500 focus:border-fire-500 disabled:bg-slate-100 disabled:text-slate-400 pr-10" placeholder="Почніть вводити місто" role="combobox" aria-expanded="false">
+              <span class="np-spin hidden absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 rounded-full border-2 border-slate-200 border-t-fire-600 animate-spin"></span>
+              <ul class="np-list hidden absolute z-30 left-0 right-0 mt-1 max-h-64 overflow-y-auto overscroll-contain bg-white border border-slate-200 rounded-xl shadow-xl text-sm" data-for="npCity" role="listbox"></ul>
+            </div>
+            <div class="relative mt-2">
+              <input type="text" name="npWarehouse" autocomplete="off" spellcheck="false" disabled
+                     class="w-full rounded-xl border border-slate-300 px-4 py-3.5 text-base focus:outline-none focus:ring-2 focus:ring-fire-500 focus:border-fire-500 disabled:bg-slate-100 disabled:text-slate-400 pr-10" placeholder="Спершу оберіть місто" role="combobox" aria-expanded="false">
+              <span class="np-spin hidden absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 rounded-full border-2 border-slate-200 border-t-fire-600 animate-spin"></span>
+              <ul class="np-list hidden absolute z-30 left-0 right-0 mt-1 max-h-64 overflow-y-auto overscroll-contain bg-white border border-slate-200 rounded-xl shadow-xl text-sm" data-for="npWarehouse" role="listbox"></ul>
+            </div>
+            <span class="text-xs text-slate-400 mt-1 block">Необовʼязково — можна уточнити менеджеру по телефону</span>
+          </div>
 
           <button type="submit" id="submitBtn"
                   class="cta-pulse mt-6 w-full flex items-center justify-center gap-2 bg-buy-600 hover:bg-buy-700 disabled:opacity-70 disabled:cursor-not-allowed text-white font-bold text-base sm:text-lg leading-tight text-center px-4 py-4 rounded-xl transition">
@@ -528,6 +538,11 @@
   // Реальні відгуки покупців. Поки масив порожній, блок «Відгуки» прихований.
   // Формат: { name: 'Олена', city: 'Київ', rating: 5, date: '12.10.2026', text: '...', photo: '' }
   const REVIEWS = [];
+
+  // API-ключ Нової Пошти: особистий кабінет НП → Налаштування → Безпека → «Створити ключ».
+  // Ключ видно в коді сторінки, тому використовуйте окремий ключ лише для довідника адрес.
+  // Якщо API недоступне, поля працюють як звичайні текстові.
+  const NP_API_KEY = '';           // ← вставте ключ сюди
 
   const VALID_OPERATOR_CODES = ['050','066','095','099','067','068','096','097','098','063','073','093'];
 
@@ -747,7 +762,7 @@
   /* ==========================================================
      МАСКА ТА ВАЛІДАЦІЯ ТЕЛЕФОНУ
      ========================================================== */
-  const phoneInput = $('input[name="phone"]');
+  const phoneInput = $('#orderForm [name="phone"]');
   function phoneDigits(v) {
     let d = v.replace(/\D/g, '');
     if (d.startsWith('380')) d = d.slice(2);
@@ -773,7 +788,7 @@
   phoneInput.addEventListener('blur', () => { if (phoneDigits(phoneInput.value).length <= 1) phoneInput.value = ''; });
 
   function setError(field, show) {
-    const input = $(`[name="${field}"]`), err = $(`.js-error[data-for="${field}"]`);
+    const input = $(`#orderForm [name="${field}"]`), err = $(`#orderForm .js-error[data-for="${field}"]`);
     err.classList.toggle('hidden', !show);
     input.classList.toggle('border-red-500', show);
     input.classList.toggle('border-slate-300', !show);
@@ -827,7 +842,7 @@
   const form = $('#orderForm'), submitBtn = $('#submitBtn');
   let isSubmitting = false;
 
-  $('input[name="name"]').addEventListener('input', e => { if (e.target.value.trim().length >= 2) setError('name', false); });
+  $('#orderForm [name="name"]').addEventListener('input', e => { if (e.target.value.trim().length >= 2) setError('name', false); });
   phoneInput.addEventListener('input', () => { if (isValidPhone(phoneInput.value)) setError('phone', false); });
 
   form.addEventListener('submit', async (e) => {
@@ -837,7 +852,7 @@
 
     const name = form.name.value.trim();
     const phone = form.phone.value.trim();
-    const np = form.np.value.trim();
+    const np = [form.npCity.value.trim(), form.npWarehouse.value.trim()].filter(Boolean).join(', ');
 
     const nameOk = name.length >= 2;
     const phoneOk = isValidPhone(phone);
@@ -863,6 +878,7 @@
       if (window.ttq && typeof ttq.track === 'function') ttq.track('SubmitForm', { value: PRODUCT.price, currency: 'UAH' });
 
       form.reset();
+      npReset();
       openModal('successModal');
     } catch (err) {
       console.error(err);
@@ -976,6 +992,87 @@
       }
     });
   });
+
+  /* ==========================================================
+     НОВА ПОШТА: пошук міста і відділення
+     ========================================================== */
+  async function npApi(modelName, calledMethod, methodProperties) {
+    const res = await fetch('https://api.novaposhta.ua/v2.0/json/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ apiKey: NP_API_KEY, modelName, calledMethod, methodProperties }),
+    });
+    const json = await res.json();
+    if (!json.success) throw new Error((json.errors || []).join('; ') || 'Nova Poshta API error');
+    return json.data;
+  }
+
+  const npCity = form.npCity, npWh = form.npWarehouse;
+  let npCityRef = '', npApiOk = true;
+
+  function npAutocomplete(input, search, onPick) {
+    const list = $(`.np-list[data-for="${input.name}"]`), spin = $('.np-spin', input.parentElement);
+    let timer, seq = 0, items = [];
+    const close = () => { list.classList.add('hidden'); input.setAttribute('aria-expanded', 'false'); };
+    const open = (html) => { list.innerHTML = html; list.classList.remove('hidden'); input.setAttribute('aria-expanded', 'true'); };
+    async function run() {
+      const q = input.value.trim(), my = ++seq;
+      spin.classList.remove('hidden');
+      try {
+        items = await search(q);
+        if (my !== seq) return;
+        open(items.length
+          ? items.map((it, i) => `<li role="option" data-i="${i}" class="px-4 py-3 cursor-pointer hover:bg-orange-50 border-b border-slate-100 last:border-0">${it.html}</li>`).join('')
+          : '<li class="px-4 py-3 text-slate-400">Нічого не знайдено</li>');
+      } catch (err) {
+        console.warn('[NP]', err);
+        npApiOk = false; close();
+        npWh.disabled = false; npWh.placeholder = 'Номер відділення або адреса';
+      } finally { if (my === seq) spin.classList.add('hidden'); }
+    }
+    input.addEventListener('input', () => {
+      if (!npApiOk) return;
+      clearTimeout(timer);
+      if (input === npCity) { npCityRef = ''; npWh.value = ''; npWh.disabled = true; npWh.placeholder = 'Спершу оберіть місто'; }
+      if (input === npCity && input.value.trim().length < 2) { close(); return; }
+      timer = setTimeout(run, 300);
+    });
+    input.addEventListener('focus', () => { if (npApiOk && input === npWh && npCityRef) run(); });
+    // pointerdown, щоб вибір спрацював до втрати фокусу на телефоні
+    list.addEventListener('pointerdown', e => {
+      const li = e.target.closest('li[data-i]'); if (!li) return;
+      e.preventDefault(); onPick(items[Number(li.dataset.i)]); close();
+    });
+    input.addEventListener('blur', () => setTimeout(close, 150));
+    input.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  }
+
+  npAutocomplete(npCity, async (q) => {
+    const data = await npApi('Address', 'searchSettlements', { CityName: q, Limit: '20', Page: '1' });
+    const addrs = (data[0] && data[0].Addresses) || [];
+    return addrs.filter(a => Number(a.Warehouses) > 0).map(a => ({
+      ref: a.DeliveryCity, value: a.Present,
+      html: `<div class="font-semibold text-graphite">${esc(a.MainDescription)}</div><div class="text-xs text-slate-500">${esc(a.Present)}</div>`,
+    }));
+  }, (it) => {
+    npCity.value = it.value; npCityRef = it.ref;
+    npWh.disabled = false; npWh.value = ''; npWh.placeholder = 'Номер або адреса відділення / поштомату';
+    npWh.focus();
+  });
+
+  npAutocomplete(npWh, async (q) => {
+    const props = { CityRef: npCityRef, Limit: '50', Page: '1', Language: 'UA' };
+    if (q) props.FindByString = q;
+    const data = await npApi('AddressGeneral', 'getWarehouses', props);
+    return data.map(w => ({
+      value: w.Description,
+      html: `<div class="flex items-start gap-2"><span class="shrink-0 mt-0.5 text-[10px] font-bold uppercase px-1.5 py-0.5 rounded ${/Postomat/i.test(w.CategoryOfWarehouse) ? 'bg-slate-100 text-slate-600' : 'bg-red-50 text-red-600'}">${/Postomat/i.test(w.CategoryOfWarehouse) ? 'Поштомат' : 'Відділення'}</span><span class="text-graphite">${esc(w.Description)}</span></div>`,
+    }));
+  }, (it) => { npWh.value = it.value; });
+
+  function npReset() {
+    npCityRef = ''; npWh.disabled = npApiOk; npWh.placeholder = npApiOk ? 'Спершу оберіть місто' : 'Номер відділення або адреса';
+  }
 
   /* Іконки */
   window.addEventListener('DOMContentLoaded', () => window.lucide && lucide.createIcons());
