@@ -56,10 +56,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Стилі: зібраний Tailwind CSS (assets/tw.css). Після зміни класів у HTML перезберіть його (див. README.md). -->
-  <link rel="stylesheet" href="assets/tw.css?v=c485d41e">
+  <link rel="stylesheet" href="assets/tw.css?v=bd40db3b">
 
   <!-- Іконки Lucide -->
-  <script src="assets/icons.js?v=b90c1552" defer></script>
+  <script src="assets/icons.js?v=3b61c53b" defer></script>
 
   <style>
     html, body { overflow-x: clip; max-width: 100%; }
@@ -508,6 +508,12 @@
     </div>
     <p class="max-w-6xl mx-auto px-4 mt-4 text-xs">© 2026 WarmHome UA. Усі права захищені.</p>
   </footer>
+
+  <!-- Кнопка «Вгору» (зʼявляється після прокрутки) -->
+  <button type="button" id="toTop" aria-label="Повернутися на початок сторінки" title="Вгору"
+          class="fixed right-4 bottom-24 md:right-6 md:bottom-6 z-40 w-12 h-12 rounded-full bg-fire-600 hover:bg-fire-700 text-white shadow-lg shadow-fire-600/30 grid place-items-center opacity-0 translate-y-4 pointer-events-none transition duration-300">
+    <i data-lucide="arrow-up" class="w-6 h-6"></i>
+  </button>
 
   <!-- Sticky Mobile Bar -->
   <div id="stickyBar" class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-slate-200 shadow-[0_-4px_20px_rgba(0,0,0,.08)] px-4 py-3 flex items-center justify-between gap-3 transition-transform duration-300" style="padding-bottom: max(.75rem, env(safe-area-inset-bottom));">
@@ -1134,6 +1140,17 @@
   }
   if (document.documentElement.classList.contains('dark')) setTheme(true);
   $$('.js-theme-toggle').forEach(b => b.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark'))));
+
+  /* Кнопка «Вгору» */
+  const toTop = $('#toTop');
+  const toggleToTop = () => {
+    const show = window.scrollY > 600;
+    toTop.classList.toggle('opacity-0', !show); toTop.classList.toggle('translate-y-4', !show); toTop.classList.toggle('pointer-events-none', !show);
+  };
+  window.addEventListener('scroll', toggleToTop, { passive: true }); toggleToTop();
+  toTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  });
 
   /* Іконки */
   window.addEventListener('DOMContentLoaded', () => window.lucide && lucide.createIcons());
