@@ -27,6 +27,7 @@
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1115491024548018');
     fbq('track', 'PageView');
+    fbq('track', 'ViewContent', { content_ids: ['24433188'], content_type: 'product', content_name: 'Керамічний обігрівач з ефектом каміна 900 Вт', value: 1599, currency: 'UAH' });
   </script>
   <noscript><img height="1" width="1" style="display:none" alt=""
     src="https://www.facebook.com/tr?id=1115491024548018&ev=PageView&noscript=1"/></noscript>
@@ -943,10 +944,11 @@
     $('.js-form-error').classList.add('hidden');
 
     try {
-      await submitOrder({ name, phone, np, noCall, city: form.npCity.value.trim(), warehouse: form.npWarehouse.value.trim(), utm: getUTM() });
+      const leadEventId = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8);
+      await submitOrder({ leadEventId, name, phone, np, noCall, city: form.npCity.value.trim(), warehouse: form.npWarehouse.value.trim(), utm: getUTM() });
 
       // Події пікселів
-      if (typeof fbq === 'function') fbq('track', 'Lead', { value: PRODUCT.price, currency: 'UAH', content_ids: [PRODUCT.sku] });
+      if (typeof fbq === 'function') fbq('track', 'Lead', { value: PRODUCT.price, currency: 'UAH', content_ids: [PRODUCT.sku], content_type: 'product' }, { eventID: leadEventId });
       if (window.ttq && typeof ttq.track === 'function') ttq.track('SubmitForm', { value: PRODUCT.price, currency: 'UAH' });
 
       $('#successText').textContent = noCall
@@ -1168,6 +1170,14 @@
   }
   if (document.documentElement.classList.contains('dark')) setTheme(true);
   $$('.js-theme-toggle').forEach(b => b.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark'))));
+
+  /* Meta Pixel: початок оформлення = InitiateCheckout (один раз за візит) */
+  let checkoutTracked = false;
+  $('#orderForm').addEventListener('focusin', () => {
+    if (checkoutTracked || typeof fbq !== 'function') return;
+    checkoutTracked = true;
+    fbq('track', 'InitiateCheckout', { content_ids: [PRODUCT.sku], content_type: 'product', value: PRODUCT.price, currency: 'UAH', num_items: 1 });
+  });
 
   /* Meta Pixel: дзвінок або месенджер = подія Contact */
   document.addEventListener('click', e => {
