@@ -6,6 +6,10 @@
   <title>Керамічний обігрівач з ефектом каміна 900 Вт — WarmHome UA</title>
   <meta name="description" content="Електричний керамічний обігрівач з ефектом каміна 900 Вт. 3 режими, захист від перегріву. Знижка -27%: 1599 грн замість 2190 грн. Доставка Новою Поштою, оплата при отриманні.">
   <meta name="theme-color" content="#EA580C">
+  <!-- Тема: світла за замовчуванням; вибір відвідувача запамʼятовується -->
+  <script>
+    try { if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark'); } catch (e) {}
+  </script>
 
   <!-- Open Graph (превʼю при поширенні посилання) — замініть og:image на реальне фото товару -->
   <meta property="og:title" content="Обігрівач з ефектом каміна 900 Вт — 1599 грн">
@@ -87,6 +91,44 @@
     /* Spinner */
     @keyframes spin { to { transform: rotate(360deg) } }
     .spinner { width:20px; height:20px; border:3px solid rgba(255,255,255,.4); border-top-color:#fff; border-radius:50%; animation: spin .8s linear infinite; }
+    /* ===== Темна тема (html.dark) ===== */
+    .theme-sun { display: none; }
+    html.dark { color-scheme: dark; }
+    html.dark .theme-sun { display: block; }
+    html.dark .theme-moon { display: none; }
+    html.dark body { background: #0B1220; color: #E2E8F0; }
+    html.dark .bg-white { background-color: #131D2E; }
+    html.dark .bg-white\/95 { background-color: rgba(11, 18, 32, .95); }
+    html.dark .bg-cream, html.dark #specsTable > tr:nth-child(odd) { background-color: #0F1828; }
+    html.dark .from-orange-50 { --tw-gradient-from: #1A1410 var(--tw-gradient-from-position); --tw-gradient-to: rgba(26, 20, 16, 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+    html.dark .to-white { --tw-gradient-to: #0B1220 var(--tw-gradient-to-position); }
+    html.dark .bg-orange-100 { background-color: rgba(234, 88, 12, .18); }
+    html.dark .hover\:bg-orange-50:hover { background-color: rgba(234, 88, 12, .12); }
+    html.dark .bg-slate-100, html.dark .disabled\:bg-slate-100:disabled { background-color: #1B2638; }
+    html.dark .bg-slate-300 { background-color: #475569; }
+    html.dark .bg-red-50 { background-color: rgba(239, 68, 68, .15); }
+    html.dark .bg-buy-600\/10 { background-color: rgba(34, 197, 94, .15); }
+    html.dark .text-graphite, html.dark .text-slate-800 { color: #F1F5F9; }
+    html.dark .text-slate-700 { color: #D5DEE9; }
+    html.dark .text-slate-600 { color: #B4C0CF; }
+    html.dark .text-slate-500 { color: #94A3B8; }
+    html.dark .text-slate-200 { color: #26344A; }
+    html.dark .text-buy-700 { color: #4ADE80; }
+    html.dark .text-red-600 { color: #F87171; }
+    html.dark .border-slate-100 { border-color: #1E2A3D; }
+    html.dark .border-slate-200 { border-color: #263449; }
+    html.dark .border-slate-300 { border-color: #334155; }
+    html.dark .border-orange-100 { border-color: rgba(234, 88, 12, .3); }
+    html.dark .shadow-orange-200 { --tw-shadow-color: rgba(234, 88, 12, .25); }
+    html.dark input, html.dark textarea { color: #F1F5F9; background-color: #0F1828 !important; }
+    html.dark input:disabled { background-color: #1B2638 !important; }
+    html.dark input::placeholder, html.dark textarea::placeholder { color: #64748B; }
+    html.dark .fb-tab.bg-graphite { background-color: #EA580C; }
+    html.dark .bg-graphite.js-close-modal, html.dark #questionForm .fb-submit { background-color: #EA580C; }
+    /* фото товару на білому фоні лишаються на білих картках */
+    html.dark img.bg-white { background-color: #FFFFFF; }
+    html.dark #slider figure { background-color: #FFFFFF; }
+    html.dark #slider figcaption { background-color: #131D2E; }
     @media (prefers-reduced-motion: reduce) { .cta-pulse, .fire-glow::before, .stock-bar { animation: none; } }
   </style>
 </head>
@@ -115,6 +157,9 @@
       </nav>
       <div class="flex items-center gap-2">
         <a href="tel:+380990227684" class="hidden lg:inline-flex items-center gap-2 mr-3 font-semibold text-graphite hover:text-fire-600"><i data-lucide="phone" class="w-4 h-4 text-fire-600"></i>+38 (099) 022-76-84</a>
+<button type="button" class="js-theme-toggle p-2 rounded-lg text-graphite hover:text-fire-600" aria-label="Перемкнути темну тему" title="Темна / світла тема">
+          <i data-lucide="moon" class="theme-moon w-5 h-5"></i><i data-lucide="sun" class="theme-sun w-5 h-5"></i>
+        </button>
         <a href="#orderForm" class="hidden min-[360px]:inline-flex items-center min-h-[40px] bg-buy-600 hover:bg-buy-700 text-white text-sm font-bold px-3 sm:px-4 rounded-lg transition">Замовити</a>
         <button id="menuBtn" class="md:hidden p-2 -mr-2 text-graphite" aria-label="Меню" aria-expanded="false">
           <i data-lucide="menu" class="w-6 h-6"></i>
@@ -1076,6 +1121,17 @@
   function npReset() {
     npCityRef = ''; npWh.disabled = npApiOk; npWh.placeholder = npApiOk ? 'Спершу оберіть місто' : 'Номер відділення або адреса';
   }
+
+  /* ==========================================================
+     ТЕМНА ТЕМА
+     ========================================================== */
+  function setTheme(dark) {
+    document.documentElement.classList.toggle('dark', dark);
+    try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+    const m = document.querySelector('meta[name="theme-color"]'); if (m) m.content = dark ? '#0B1220' : '#EA580C';
+  }
+  if (document.documentElement.classList.contains('dark')) setTheme(true);
+  $$('.js-theme-toggle').forEach(b => b.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark'))));
 
   /* Іконки */
   window.addEventListener('DOMContentLoaded', () => window.lucide && lucide.createIcons());
