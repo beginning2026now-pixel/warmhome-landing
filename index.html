@@ -6,9 +6,10 @@
   <title>Керамічний обігрівач з ефектом каміна 900 Вт — WarmHome UA</title>
   <meta name="description" content="Електричний керамічний обігрівач з ефектом каміна 900 Вт. 3 режими, захист від перегріву. Знижка -27%: 1599 грн замість 2190 грн. Доставка Новою Поштою, оплата при отриманні.">
   <meta name="theme-color" content="#EA580C">
-  <!-- Тема: світла за замовчуванням; вибір відвідувача запамʼятовується -->
+  <!-- Тема: темна за замовчуванням; вибір відвідувача запамʼятовується -->
   <script>
-    try { if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark'); } catch (e) {}
+    (function () { var t = null; try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light') document.documentElement.classList.add('dark'); })();
   </script>
 
   <!-- Open Graph (превʼю при поширенні посилання) — замініть og:image на реальне фото товару -->
@@ -94,7 +95,8 @@
     /* ===== Темна тема (html.dark) ===== */
     .theme-sun { display: none; }
     html.dark { color-scheme: dark; }
-    html.dark .theme-sun { display: block; }
+    html.dark .theme-sun { display: block; color: #FACC15; }
+    html.dark .js-theme-toggle:hover .theme-sun { color: #FDE047; }
     html.dark .theme-moon { display: none; }
     html.dark body { background: #0B1220; color: #E2E8F0; }
     html.dark .bg-white { background-color: #131D2E; }
