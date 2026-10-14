@@ -206,7 +206,7 @@
     </section>
 
     <!-- ===================== БЛОК 5: СЦЕНАРІЇ ===================== -->
-    <section class="bg-graphite text-white py-14 md:py-20 relative overflow-hidden">
+    <section class="bg-graphite text-white py-14 md:py-20 relative overflow-clip">
       <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-fire-600/20 blur-3xl pointer-events-none"></div>
       <div class="relative max-w-6xl mx-auto px-4">
         <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-center">Де він ідеально підійде?</h2>
@@ -351,7 +351,7 @@
     </section>
 
     <!-- ===================== БЛОК 10: ФОРМА ЗАМОВЛЕННЯ ===================== -->
-    <section id="order" class="bg-graphite py-14 md:py-20 scroll-mt-16 relative overflow-hidden">
+    <section id="order" class="bg-graphite py-14 md:py-20 scroll-mt-16 relative overflow-clip">
       <div class="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-fire-600/25 blur-3xl pointer-events-none"></div>
       <div class="relative max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
 
@@ -735,6 +735,8 @@
 
   // Ховаємо sticky bar, коли форма замовлення на екрані
   // і коли користувач заповнює будь-яке поле (на телефоні панель перекривала б поле над клавіатурою)
+  // Блок замовлення не повинен прокручувати власний вміст (інакше при фокусі на полі «з'їжджає» картинка)
+  $$('#order').forEach(sec => sec.addEventListener('scroll', () => { sec.scrollTop = 0; sec.scrollLeft = 0; }));
   const stickyBar = $('#stickyBar');
   let orderVisible = false, typing = false;
   const updateSticky = () => { stickyBar.style.transform = (orderVisible || typing) ? 'translateY(110%)' : 'translateY(0)'; };
