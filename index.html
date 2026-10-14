@@ -522,13 +522,10 @@
      НАЛАШТУВАННЯ
      ========================================================== */
 
-  // Токен бота від @BotFather (вигляд: 123456789:AA...).
-  // УВАГА: токен у браузерному коді бачить будь-хто, хто відкриє сторінку.
-  // Використовуйте окремого бота лише для заявок. Надійніший варіант — проксі на сервері (PHP/Cloudflare Worker).
-  const TELEGRAM_BOT_TOKEN = '';   // ← вставте токен сюди
-  // ID чату / групи, куди падатимуть заявки (дізнатися: напишіть боту, потім відкрийте
-  // https://api.telegram.org/bot<TOKEN>/getUpdates). Для групи ID починається з "-".
-  const TELEGRAM_CHAT_ID = '';     // ← вставте chat_id сюди
+  // Адреса веб-застосунку Google Apps Script (посередник): він пише заявку в Google-таблицю
+  // і пересилає її в Telegram. Токен бота зберігається лише в скрипті Google, на сайті його немає.
+  // Вигляд: https://script.google.com/macros/s/XXXX/exec
+  const LEADS_URL = '';            // ← вставте адресу сюди
 
   const PRODUCT = { name: 'Електричний керамічний обігрівач з ефектом каміна (900 Вт)', sku: '24433188', price: 1599, oldPrice: 2190 };
 
@@ -819,23 +816,28 @@
       data.utm ? `\n📊 <b>UTM:</b>\n${esc(data.utm)}` : '',
     ].join('\n');
 
-    return sendTelegram(text);
+    return sendLead(text, {
+      type: 'Замовлення', name: data.name, phone: data.phone,
+      city: data.city || '', warehouse: data.warehouse || '', utm: data.utm || '',
+      product: PRODUCT.name, price: PRODUCT.price,
+    });
   }
 
-  // Спільна відправка повідомлення в Telegram (заявки, відгуки, запитання)
-  async function sendTelegram(text) {
-    if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
-      console.warn('[sendTelegram] TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID не задані — повідомлення не відправлено (демо-режим).\n', text);
+  // Спільна відправка (замовлення, відгуки, запитання) через Google Apps Script:
+  // рядок у Google-таблицю + повідомлення в Telegram
+  async function sendLead(text, fields) {
+    if (!LEADS_URL) {
+      console.warn('[sendLead] LEADS_URL не задано — заявка не відправлена (демо-режим).\n', text, fields);
       return { ok: true, demo: true };
     }
-
-    const res = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+    // text/plain — щоб браузер не робив попередній CORS-запит, який Apps Script не підтримує
+    const res = await fetch(LEADS_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text, parse_mode: 'HTML', disable_web_page_preview: true }),
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({ text, fields, page: location.href }),
     });
     const json = await res.json().catch(() => ({}));
-    if (!res.ok || !json.ok) throw new Error(json.description || 'Telegram API error');
+    if (!res.ok || !json.ok) throw new Error(json.error || 'Lead endpoint error');
     return json;
   }
 
@@ -871,7 +873,7 @@
     $('.js-form-error').classList.add('hidden');
 
     try {
-      await submitOrder({ name, phone, np, utm: getUTM() });
+      await submitOrder({ name, phone, np, city: form.npCity.value.trim(), warehouse: form.npWarehouse.value.trim(), utm: getUTM() });
 
       // Події пікселів
       if (typeof fbq === 'function') fbq('track', 'Lead', { value: PRODUCT.price, currency: 'UAH', content_ids: [PRODUCT.sku] });
@@ -977,7 +979,9 @@
       btn.insertAdjacentHTML('afterbegin', '<span class="spinner"></span>');
       $('.fb-form-error').classList.add('hidden');
       try {
-        await sendTelegram(text);
+        await sendLead(text, type === 'review'
+          ? { type: 'Відгук', name: v('name'), city: v('city'), phone: v('contact'), rating: v('rating'), message: v('text') }
+          : { type: 'Запитання', name: v('name'), phone: v('phone'), message: v('text') });
         f.reset();
         if (type === 'review') { ratingInput.value = 0; paintStars(0); }
         $('#feedbackModalText').textContent = type === 'review'
