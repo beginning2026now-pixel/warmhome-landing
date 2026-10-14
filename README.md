@@ -11,3 +11,5 @@
 ```
 npx tailwindcss@3 -c tailwind.config.js -i assets/tw.src.css -o assets/tw.css --minify
 ```
+
+Після перезбірки оновіть `?v=...` у посиланнях на `assets/tw.css` та `assets/icons.js` в `index.html`, щоб браузери не брали стару версію з кешу.
