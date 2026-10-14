@@ -56,7 +56,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Стилі: зібраний Tailwind CSS (assets/tw.css). Після зміни класів у HTML перезберіть його (див. README.md). -->
-  <link rel="stylesheet" href="assets/tw.css?v=bd40db3b">
+  <link rel="stylesheet" href="assets/tw.css?v=f2c04827">
 
   <!-- Іконки Lucide -->
   <script src="assets/icons.js?v=3b61c53b" defer></script>
@@ -463,7 +463,13 @@
               <ul class="np-list hidden absolute z-30 left-0 right-0 mt-1 max-h-64 overflow-y-auto overscroll-contain bg-white border border-slate-200 rounded-xl shadow-xl text-sm" data-for="npWarehouse" role="listbox"></ul>
             </div>
             <span class="text-xs text-slate-400 mt-1 block">Необовʼязково — можна уточнити менеджеру по телефону</span>
+            <span class="js-error hidden text-sm text-red-600 mt-1" data-for="npCity">Щоб ми відправили без дзвінка, оберіть місто та відділення</span>
           </div>
+
+          <label class="mt-4 flex items-start gap-3 cursor-pointer select-none">
+            <input type="checkbox" name="noCall" class="mt-0.5 w-5 h-5 shrink-0 rounded accent-fire-600 cursor-pointer">
+            <span class="text-sm text-slate-700"><span class="font-semibold">Можна мені не телефонувати</span><span class="block text-xs text-slate-400 mt-0.5">Дані вірні — відправляйте без дзвінка-підтвердження</span></span>
+          </label>
 
           <button type="submit" id="submitBtn"
                   class="cta-pulse mt-6 w-full flex items-center justify-center gap-2 bg-buy-600 hover:bg-buy-700 disabled:opacity-70 disabled:cursor-not-allowed text-white font-bold text-base sm:text-lg leading-tight text-center px-4 py-4 rounded-xl transition">
@@ -529,7 +535,7 @@
     <div class="bg-white rounded-3xl max-w-sm w-full p-8 text-center shadow-2xl">
       <div class="w-16 h-16 mx-auto rounded-full bg-buy-600/10 text-buy-600 grid place-items-center"><i data-lucide="check" class="w-9 h-9"></i></div>
       <h3 class="mt-4 font-display font-extrabold text-2xl text-graphite">Дякуємо!</h3>
-      <p class="mt-2 text-slate-600">Ваше замовлення прийнято. Наш менеджер звʼяжеться з вами протягом 10 хвилин.</p>
+      <p id="successText" class="mt-2 text-slate-600">Ваше замовлення прийнято. Наш менеджер звʼяжеться з вами протягом 10 хвилин.</p>
       <button type="button" class="js-close-modal mt-6 w-full bg-graphite text-white font-bold py-3 rounded-xl">Добре</button>
     </div>
   </div>
@@ -803,7 +809,10 @@
   $$('#order').forEach(sec => sec.addEventListener('scroll', () => { sec.scrollTop = 0; sec.scrollLeft = 0; }));
   const stickyBar = $('#stickyBar');
   let orderVisible = false, typing = false;
-  const updateSticky = () => { stickyBar.style.transform = (orderVisible || typing) ? 'translateY(110%)' : 'translateY(0)'; };
+  const updateSticky = () => {
+    stickyBar.style.transform = (orderVisible || typing) ? 'translateY(110%)' : 'translateY(0)';
+    if (window.toggleToTop) window.toggleToTop();
+  };
   new IntersectionObserver(([en]) => { orderVisible = en.isIntersecting; updateSticky(); }, { threshold: 0.15 }).observe($('#order'));
   document.addEventListener('focusin', e => { if (e.target.matches('input, textarea')) { typing = true; updateSticky(); } });
   document.addEventListener('focusout', () => { typing = false; setTimeout(updateSticky, 150); });
@@ -863,6 +872,7 @@
       `👤 <b>Імʼя:</b> ${esc(data.name)}`,
       `📞 <b>Телефон:</b> ${esc(data.phone)}`,
       `🚚 <b>НП:</b> ${esc(data.np || 'уточнити по телефону')}`,
+      data.noCall ? '\n📵 <b>НЕ ТЕЛЕФОНУВАТИ</b> — клієнт підтвердив дані, відправляти без дзвінка' : '☎️ Потрібен дзвінок-підтвердження',
       '',
       `🕒 ${new Date().toLocaleString('uk-UA', { timeZone: 'Europe/Kyiv' })}`,
       data.utm ? `\n📊 <b>UTM:</b>\n${esc(data.utm)}` : '',
@@ -870,6 +880,7 @@
 
     return sendLead(text, {
       type: 'Замовлення', name: data.name, phone: data.phone,
+      message: data.noCall ? 'Не телефонувати — відправити без дзвінка' : '',
       city: data.city || '', warehouse: data.warehouse || '', utm: data.utm || '',
       product: PRODUCT.name, price: PRODUCT.price,
     });
@@ -914,6 +925,10 @@
     setError('phone', !phoneOk);
     if (!nameOk) { form.name.focus(); return; }
     if (!phoneOk) { form.phone.focus(); return; }
+    const noCall = form.noCall.checked;
+    const npOk = !noCall || (form.npCity.value.trim() && form.npWarehouse.value.trim());
+    $('#orderForm .js-error[data-for="npCity"]').classList.toggle('hidden', !!npOk);
+    if (!npOk) { (form.npCity.value.trim() ? form.npWarehouse : form.npCity).focus(); return; }
 
     isSubmitting = true;
     submitBtn.disabled = true;
@@ -925,12 +940,15 @@
     $('.js-form-error').classList.add('hidden');
 
     try {
-      await submitOrder({ name, phone, np, city: form.npCity.value.trim(), warehouse: form.npWarehouse.value.trim(), utm: getUTM() });
+      await submitOrder({ name, phone, np, noCall, city: form.npCity.value.trim(), warehouse: form.npWarehouse.value.trim(), utm: getUTM() });
 
       // Події пікселів
       if (typeof fbq === 'function') fbq('track', 'Lead', { value: PRODUCT.price, currency: 'UAH', content_ids: [PRODUCT.sku] });
       if (window.ttq && typeof ttq.track === 'function') ttq.track('SubmitForm', { value: PRODUCT.price, currency: 'UAH' });
 
+      $('#successText').textContent = noCall
+        ? 'Ваше замовлення прийнято. Ми відправимо його без дзвінка — номер ТТН надійде вам у SMS від Нової Пошти.'
+        : 'Ваше замовлення прийнято. Наш менеджер звʼяжеться з вами протягом 10 хвилин.';
       form.reset();
       npReset();
       openModal('successModal');
@@ -1126,6 +1144,8 @@
     }));
   }, (it) => { npWh.value = it.value; });
 
+  form.noCall.addEventListener('change', () => { if (!form.noCall.checked) $('#orderForm .js-error[data-for="npCity"]').classList.add('hidden'); });
+
   function npReset() {
     npCityRef = ''; npWh.disabled = npApiOk; npWh.placeholder = npApiOk ? 'Спершу оберіть місто' : 'Номер відділення або адреса';
   }
@@ -1143,8 +1163,10 @@
 
   /* Кнопка «Вгору» */
   const toTop = $('#toTop');
-  const toggleToTop = () => {
-    const show = window.scrollY > 600;
+  // на телефоні ховаємо, коли видно форму замовлення або відкрита клавіатура (щоб не перекривати кнопки)
+  const toggleToTop = window.toggleToTop = () => {
+    const mobileBusy = window.innerWidth < 768 && (orderVisible || typing);
+    const show = window.scrollY > 600 && !mobileBusy;
     toTop.classList.toggle('opacity-0', !show); toTop.classList.toggle('translate-y-4', !show); toTop.classList.toggle('pointer-events-none', !show);
   };
   window.addEventListener('scroll', toggleToTop, { passive: true }); toggleToTop();
