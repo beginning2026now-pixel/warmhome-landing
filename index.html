@@ -18,23 +18,19 @@
   <meta property="og:image" content="https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184-1000x1000.webp">
   <meta property="og:type" content="product">
 
-  <!-- ========== META PIXEL (Facebook) ==========
-       1. Розкоментуйте блок нижче.
-       2. Замініть YOUR_META_PIXEL_ID на ID вашого пікселя.
-  -->
-  <!--
+  <!-- Meta Pixel Code (ID 1115491024548018) -->
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
     n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_META_PIXEL_ID');
+    fbq('init', '1115491024548018');
     fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
-  -->
+  <noscript><img height="1" width="1" style="display:none" alt=""
+    src="https://www.facebook.com/tr?id=1115491024548018&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel Code -->
 
   <!-- ========== TIKTOK PIXEL ==========
        1. Розкоментуйте блок нижче.
@@ -1172,6 +1168,12 @@
   }
   if (document.documentElement.classList.contains('dark')) setTheme(true);
   $$('.js-theme-toggle').forEach(b => b.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark'))));
+
+  /* Meta Pixel: дзвінок або месенджер = подія Contact */
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="tel:"], a[href*="t.me/"], a[href^="viber:"]');
+    if (a && typeof fbq === 'function') fbq('track', 'Contact');
+  });
 
   /* Кнопка «Вгору» */
   const toTop = $('#toTop');
