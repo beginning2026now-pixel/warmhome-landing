@@ -926,7 +926,7 @@
     if (!phoneOk) { form.phone.focus(); return; }
     const noCall = form.noCall.checked;
     const cityOk = form.npCity.value.trim().length >= 2 && (!npApiOk || !!npCityRef);
-    const whOk = form.npWarehouse.value.trim().length >= 1;
+    const whOk = form.npWarehouse.value.trim().length >= 1 && (!npApiOk || npWhPicked);
     $('#orderForm .js-error[data-for="npCity"]').classList.toggle('hidden', cityOk && whOk);
     for (const [el, ok] of [[form.npCity, cityOk], [form.npWarehouse, whOk]]) { el.classList.toggle('border-red-500', !ok); el.classList.toggle('border-slate-300', ok); }
     if (!cityOk) { form.npCity.focus(); return; }
@@ -1084,7 +1084,7 @@
   }
 
   const npCity = form.npCity, npWh = form.npWarehouse;
-  let npCityRef = '', npApiOk = true;
+  let npCityRef = '', npWhPicked = false, npApiOk = true;
 
   function npAutocomplete(input, search, onPick) {
     const list = $(`.np-list[data-for="${input.name}"]`), spin = $('.np-spin', input.parentElement);
@@ -1109,7 +1109,7 @@
     input.addEventListener('input', () => {
       if (!npApiOk) return;
       clearTimeout(timer);
-      if (input === npCity) { npCityRef = ''; npWh.value = ''; npWh.disabled = true; npWh.placeholder = 'Спершу оберіть місто'; }
+      if (input === npCity) { npCityRef = ''; npWhPicked = false; npWh.value = ''; npWh.disabled = true; npWh.placeholder = 'Спершу оберіть місто'; }
       if (input === npCity && input.value.trim().length < 2) { close(); return; }
       timer = setTimeout(run, 300);
     });
@@ -1131,7 +1131,7 @@
       html: `<div class="font-semibold text-graphite">${esc(a.MainDescription)}</div><div class="text-xs text-slate-500">${esc(a.Present)}</div>`,
     }));
   }, (it) => {
-    npCity.value = it.value; npCityRef = it.ref;
+    npCity.value = it.value; npCityRef = it.ref; npWhPicked = false;
     npWh.disabled = false; npWh.value = ''; npWh.placeholder = 'Номер або адреса відділення / поштомату';
     npWh.focus();
   });
@@ -1145,15 +1145,16 @@
       html: `<div class="flex items-start gap-2"><span class="shrink-0 mt-0.5 text-[10px] font-bold uppercase px-1.5 py-0.5 rounded ${/Postomat/i.test(w.CategoryOfWarehouse) ? 'bg-slate-100 text-slate-600' : 'bg-red-50 text-red-600'}">${/Postomat/i.test(w.CategoryOfWarehouse) ? 'Поштомат' : 'Відділення'}</span><span class="text-graphite">${esc(w.Description)}</span></div>`,
     }));
   }, (it) => {
-    npWh.value = it.value; npWh.classList.remove('border-red-500'); npWh.classList.add('border-slate-300');
+    npWh.value = it.value; npWhPicked = true; npWh.classList.remove('border-red-500'); npWh.classList.add('border-slate-300');
     $('#orderForm .js-error[data-for="npCity"]').classList.add('hidden');
   });
 
   // прибираємо підсвітку помилки, щойно поле заповнене
+  form.npWarehouse.addEventListener('input', () => { npWhPicked = false; });
   [form.npCity, form.npWarehouse].forEach(el => el.addEventListener('input', () => { el.classList.remove('border-red-500'); el.classList.add('border-slate-300'); }));
 
   function npReset() {
-    npCityRef = ''; npWh.disabled = npApiOk; npWh.placeholder = npApiOk ? 'Спершу оберіть місто' : 'Номер відділення або адреса';
+    npCityRef = ''; npWhPicked = false; npWh.disabled = npApiOk; npWh.placeholder = npApiOk ? 'Спершу оберіть місто' : 'Номер відділення або адреса';
   }
 
   /* ==========================================================
