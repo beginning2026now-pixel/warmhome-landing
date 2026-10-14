@@ -952,6 +952,8 @@
 
       // Події пікселів
       if (typeof fbq === 'function') fbq('track', 'Lead', { value: PRODUCT.price, currency: 'UAH', content_ids: [PRODUCT.sku], content_type: 'product' }, { eventID: leadEventId });
+      // Оформлене замовлення з оплатою при отриманні = покупка (для кампаній з ціллю «Продажі»)
+      if (typeof fbq === 'function') fbq('track', 'Purchase', { value: PRODUCT.price, currency: 'UAH', content_ids: [PRODUCT.sku], content_type: 'product', num_items: 1 }, { eventID: leadEventId.replace('lead_', 'purchase_') });
       if (window.ttq && typeof ttq.track === 'function') ttq.track('SubmitForm', { value: PRODUCT.price, currency: 'UAH' });
 
       $('#successText').textContent = noCall
