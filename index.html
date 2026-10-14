@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Керамічний обігрівач з ефектом каміна 900 Вт — WarmHome UA</title>
+  <meta name="description" content="Електричний керамічний обігрівач з ефектом каміна 900 Вт. 3 режими, захист від перегріву. Знижка -27%: 1599 грн замість 2190 грн. Доставка Новою Поштою, оплата при отриманні.">
+  <meta name="theme-color" content="#EA580C">
+
+  <!-- Open Graph (превʼю при поширенні посилання) — замініть og:image на реальне фото товару -->
+  <meta property="og:title" content="Обігрівач з ефектом каміна 900 Вт — 1599 грн">
+  <meta property="og:description" content="Затишок каміна та миттєве тепло. Оплата при отриманні.">
+  <meta property="og:image" content="https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184-1000x1000.webp">
+  <meta property="og:type" content="product">
+
+  <!-- ========== META PIXEL (Facebook) ==========
+       1. Розкоментуйте блок нижче.
+       2. Замініть YOUR_META_PIXEL_ID на ID вашого пікселя.
+  -->
+  <!--
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_META_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+  -->
+
+  <!-- ========== TIKTOK PIXEL ==========
+       1. Розкоментуйте блок нижче.
+       2. Замініть YOUR_TIKTOK_PIXEL_ID на ID вашого пікселя.
+  -->
+  <!--
+  <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+      ttq.load('YOUR_TIKTOK_PIXEL_ID');
+      ttq.page();
+    }(window, document, 'ttq');
+  </script>
+  -->
+
+  <!-- Шрифти -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS (CDN). Для продакшену краще зібрати CSS через Tailwind CLI — сторінка стане ще швидшою. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Montserrat', 'Inter', 'sans-serif'],
+          },
+          colors: {
+            fire: { 500: '#F97316', 600: '#EA580C', 700: '#C2410C' },
+            buy: { 500: '#22C55E', 600: '#16A34A', 700: '#15803D' },
+            graphite: '#1E293B',
+            cream: '#F8FAFC',
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Іконки Lucide -->
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js" defer></script>
+
+  <style>
+    body { -webkit-tap-highlight-color: transparent; }
+    /* Пульсація головної кнопки */
+    @keyframes cta-pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(22,163,74,.55); transform: scale(1); }
+      50%  { transform: scale(1.025); }
+      70%  { box-shadow: 0 0 0 16px rgba(22,163,74,0); }
+      100% { box-shadow: 0 0 0 0 rgba(22,163,74,0); transform: scale(1); }
+    }
+    .cta-pulse { animation: cta-pulse 2.2s infinite; }
+    /* Тепле світіння «каміна» */
+    @keyframes flicker { 0%,100% { opacity:.55 } 40% { opacity:.85 } 60% { opacity:.65 } 80% { opacity:.9 } }
+    .fire-glow::before {
+      content:""; position:absolute; inset:10% 10% 35% 10%;
+      background: radial-gradient(ellipse at center, rgba(249,115,22,.55), rgba(234,88,12,0) 70%);
+      filter: blur(30px); animation: flicker 3s infinite; z-index:0; pointer-events:none;
+    }
+    /* Слайдер */
+    .slider { scroll-snap-type: x mandatory; scrollbar-width: none; }
+    .slider::-webkit-scrollbar { display: none; }
+    .slider > * { scroll-snap-align: center; }
+    /* Акордеон */
+    .faq-body { display:grid; grid-template-rows:0fr; transition: grid-template-rows .3s ease; }
+    .faq-item.open .faq-body { grid-template-rows:1fr; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    /* Прогрес-бар залишку */
+    @keyframes stripes { from { background-position: 0 0 } to { background-position: 28px 0 } }
+    .stock-bar { background-image: linear-gradient(45deg, rgba(255,255,255,.25) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.25) 50%, rgba(255,255,255,.25) 75%, transparent 75%); background-size: 28px 28px; animation: stripes 1s linear infinite; }
+    /* Spinner */
+    @keyframes spin { to { transform: rotate(360deg) } }
+    .spinner { width:20px; height:20px; border:3px solid rgba(255,255,255,.4); border-top-color:#fff; border-radius:50%; animation: spin .8s linear infinite; }
+    @media (prefers-reduced-motion: reduce) { .cta-pulse, .fire-glow::before, .stock-bar { animation: none; } }
+  </style>
+</head>
+
+<body class="bg-white text-slate-800 font-sans antialiased pb-20 md:pb-0">
+
+  <!-- ===================== БЛОК 1: TOP BAR + HEADER ===================== -->
+  <div class="bg-fire-600 text-white text-center text-xs sm:text-sm font-semibold py-2 px-3">
+    🔥 Сезонний розпродаж! Знижка -27% + Відправка Новою Поштою сьогодні (оплата при отриманні)
+  </div>
+
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-4 h-14 md:h-16 flex items-center justify-between gap-4">
+      <a href="#top" class="flex items-center gap-2 font-display font-extrabold text-lg text-graphite">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-fire-500 to-fire-700 grid place-items-center text-white">
+          <i data-lucide="flame" class="w-5 h-5"></i>
+        </span>
+        WarmHome <span class="text-fire-600">UA</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+        <a href="#benefits" class="hover:text-fire-600 transition">Переваги</a>
+        <a href="#specs" class="hover:text-fire-600 transition">Характеристики</a>
+        <a href="#reviews" class="hover:text-fire-600 transition js-reviews-link">Відгуки</a>
+        <a href="#delivery" class="hover:text-fire-600 transition">Доставка</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="#order" class="bg-buy-600 hover:bg-buy-700 text-white text-sm font-bold px-4 py-2 rounded-lg transition">Замовити</a>
+        <button id="menuBtn" class="md:hidden p-2 text-graphite" aria-label="Меню" aria-expanded="false">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Мобільне меню -->
+    <nav id="mobileMenu" class="hidden md:hidden border-t border-slate-100 bg-white">
+      <div class="px-4 py-3 flex flex-col text-base font-medium text-slate-700">
+        <a href="#benefits" class="py-2">Переваги</a>
+        <a href="#specs" class="py-2">Характеристики</a>
+        <a href="#reviews" class="py-2 js-reviews-link">Відгуки</a>
+        <a href="#delivery" class="py-2">Доставка</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ===================== БЛОК 2: HERO ===================== -->
+    <section class="bg-gradient-to-b from-orange-50 to-white">
+      <div class="max-w-6xl mx-auto px-4 pt-6 pb-12 md:py-16 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+
+        <div class="relative fire-glow order-1 md:order-2">
+          <div class="absolute top-3 left-3 z-10 flex flex-col gap-2">
+            <span class="bg-fire-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">🔥 Хіт сезону</span>
+            <span class="bg-buy-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">⚡ Економія електроенергії</span>
+          </div>
+          <span class="absolute top-3 right-3 z-10 bg-graphite text-white font-display font-extrabold text-lg px-3 py-1 rounded-xl">-27%</span>
+          <!-- ФОТО ТОВАРУ (головне): фото постачальника. Для продакшену завантажте на свій хостинг. -->
+          <img src="https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184-1000x1000.webp"
+               alt="Білий керамічний обігрівач з ефектом каміна 900 Вт" width="1000" height="1000"
+               fetchpriority="high"
+               class="relative z-[1] w-full max-w-md mx-auto rounded-3xl shadow-xl aspect-square object-contain bg-white">
+        </div>
+
+        <div class="order-2 md:order-1">
+          <h1 class="font-display font-extrabold text-[1.75rem] leading-tight sm:text-4xl lg:text-5xl text-graphite">
+            Затишок каміна та миттєве тепло у вашому домі <span class="text-fire-600">за 2 хвилини!</span>
+          </h1>
+          <p class="mt-4 text-base sm:text-lg text-slate-600">
+            Керамічний обігрівач 900 Вт з реалістичною 3D-імітацією полумʼя, 3 режимами роботи та захистом від перегріву.
+          </p>
+
+          <ul class="mt-6 space-y-3">
+            <li class="flex gap-3 items-start"><span class="shrink-0 w-9 h-9 rounded-xl bg-orange-100 text-fire-600 grid place-items-center"><i data-lucide="wind" class="w-5 h-5"></i></span><span class="pt-1.5">Керамічний елемент — не спалює кисень і не сушить повітря.</span></li>
+            <li class="flex gap-3 items-start"><span class="shrink-0 w-9 h-9 rounded-xl bg-orange-100 text-fire-600 grid place-items-center"><i data-lucide="flame" class="w-5 h-5"></i></span><span class="pt-1.5">Реалістичний ефект живого полумʼя без диму та кіптяви.</span></li>
+            <li class="flex gap-3 items-start"><span class="shrink-0 w-9 h-9 rounded-xl bg-orange-100 text-fire-600 grid place-items-center"><i data-lucide="zap" class="w-5 h-5"></i></span><span class="pt-1.5">Економічні 900 Вт — тепло без величезних рахунків за світло.</span></li>
+          </ul>
+
+          <div class="mt-6 p-4 sm:p-5 rounded-2xl bg-white border border-orange-100 shadow-sm">
+            <div class="flex items-end gap-3 flex-wrap">
+              <span class="text-slate-400 line-through text-lg">2190 грн</span>
+              <span class="font-display font-extrabold text-4xl text-fire-600">1599 грн</span>
+              <span class="text-xs font-bold bg-buy-600/10 text-buy-700 px-2 py-1 rounded-md">Економія 591 грн</span>
+            </div>
+            <div class="mt-4">
+              <p class="text-sm text-slate-500 mb-2">До кінця акції залишилось:</p>
+              <div class="js-timer flex gap-2"></div>
+            </div>
+            <a href="#order" class="cta-pulse mt-5 flex items-center justify-center gap-2 w-full bg-buy-600 hover:bg-buy-700 text-white font-bold text-lg py-4 rounded-xl transition">
+              <i data-lucide="shopping-cart" class="w-5 h-5"></i> Замовити зі знижкою
+            </a>
+            <p class="mt-3 text-center text-sm text-slate-500">Без передоплати • Оплата у відділенні Нової Пошти</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== БЛОК 3: ПЕРЕВАГИ ===================== -->
+    <section id="benefits" class="bg-cream py-14 md:py-20 scroll-mt-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-center text-graphite">Чому саме цей обігрівач?</h2>
+        <p class="text-center text-slate-500 mt-3 max-w-2xl mx-auto">Тепло, безпека та атмосфера справжнього каміна — в одному компактному пристрої.</p>
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6" id="benefitsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===================== БЛОК 4: ГАЛЕРЕЯ ===================== -->
+    <section class="py-14 md:py-20">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-center text-graphite">Детальний огляд конструкції</h2>
+        <div class="relative mt-10">
+          <div id="slider" class="slider flex gap-4 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0"></div>
+          <button id="prevSlide" class="hidden md:grid absolute left-2 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white shadow-lg place-items-center hover:bg-orange-50" aria-label="Попереднє фото"><i data-lucide="chevron-left" class="w-6 h-6"></i></button>
+          <button id="nextSlide" class="hidden md:grid absolute right-2 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white shadow-lg place-items-center hover:bg-orange-50" aria-label="Наступне фото"><i data-lucide="chevron-right" class="w-6 h-6"></i></button>
+          <div id="dots" class="flex justify-center gap-2 mt-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== БЛОК 5: СЦЕНАРІЇ ===================== -->
+    <section class="bg-graphite text-white py-14 md:py-20 relative overflow-hidden">
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-fire-600/20 blur-3xl pointer-events-none"></div>
+      <div class="relative max-w-6xl mx-auto px-4">
+        <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-center">Де він ідеально підійде?</h2>
+        <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6" id="useCases"></div>
+      </div>
+    </section>
+
+    <!-- ===================== БЛОК 6: ХАРАКТЕРИСТИКИ ===================== -->
+    <section id="specs" class="py-14 md:py-20 scroll-mt-16">
+      <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-5 gap-8">
+        <div class="md:col-span-3">
+          <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-graphite">Технічні характеристики</h2>
+          <div class="mt-6 rounded-2xl overflow-hidden border border-slate-200">
+            <table class="w-full text-sm sm:text-base">
+              <tbody id="specsTable" class="[&>tr:nth-child(odd)]:bg-cream"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="md:col-span-2">
+          <h3 class="font-display font-bold text-xl text-graphite md:mt-[3.25rem]">Комплектація</h3>
+          <ul class="mt-4 space-y-3">
+            <li class="flex items-center gap-3 p-4 rounded-xl bg-cream border border-slate-100"><i data-lucide="heater" class="w-6 h-6 text-fire-600"></i> Електричний обігрівач</li>
+            <li class="flex items-center gap-3 p-4 rounded-xl bg-cream border border-slate-100"><i data-lucide="package" class="w-6 h-6 text-fire-600"></i> Фірмова упаковка</li>
+            <li class="flex items-center gap-3 p-4 rounded-xl bg-cream border border-slate-100"><i data-lucide="book-open" class="w-6 h-6 text-fire-600"></i> Інструкція</li>
+          </ul>
+          <a href="#order" class="mt-6 flex items-center justify-center gap-2 w-full bg-buy-600 hover:bg-buy-700 text-white font-bold py-4 rounded-xl transition">Замовити за 1599 грн</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== БЛОК 7: ВІДГУКИ =====================
+         Блок показується автоматично, коли в масиві REVIEWS (у скрипті нижче) є хоча б один реальний відгук.
+         Середня оцінка і кількість рахуються з цих відгуків. -->
+    <section id="reviews" class="hidden bg-cream py-14 md:py-20 scroll-mt-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-center text-graphite">Відгуки покупців</h2>
+        <div class="mt-4 flex items-center justify-center gap-3">
+          <span id="ratingValue" class="font-display font-extrabold text-4xl text-graphite"></span>
+          <div>
+            <div id="ratingStars" class="flex text-amber-400"></div>
+            <p id="ratingCount" class="text-sm text-slate-500"></p>
+          </div>
+        </div>
+        <div id="reviewsGrid" class="mt-10 grid md:grid-cols-3 gap-4 md:gap-6"></div>
+      </div>
+    </section>
+
+    <!-- ===================== БЛОК 7.1: ВІДГУК / ЗАПИТАННЯ =====================
+         Відгуки та запитання надходять у Telegram (той самий бот, що й заявки).
+         Щоб відгук зʼявився на сайті, додайте його в масив REVIEWS у скрипті. -->
+    <section id="feedback" class="py-14 md:py-20 scroll-mt-16">
+      <div class="max-w-2xl mx-auto px-4">
+        <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-center text-graphite">Ваша думка важлива</h2>
+        <p id="feedbackLead" class="text-center text-slate-500 mt-3">Купили обігрівач? Поділіться враженнями. Маєте запитання — ми відповімо.</p>
+
+        <div class="mt-8 bg-cream rounded-3xl border border-slate-100 p-5 sm:p-8">
+          <div class="grid grid-cols-2 gap-2 p-1 bg-white rounded-xl border border-slate-200" role="tablist">
+            <button type="button" class="fb-tab rounded-lg py-2.5 text-sm sm:text-base font-semibold transition bg-graphite text-white" data-tab="review" role="tab" aria-selected="true">
+              <span class="inline-flex items-center gap-2"><i data-lucide="star" class="w-4 h-4"></i>Залишити відгук</span>
+            </button>
+            <button type="button" class="fb-tab rounded-lg py-2.5 text-sm sm:text-base font-semibold transition text-slate-600" data-tab="question" role="tab" aria-selected="false">
+              <span class="inline-flex items-center gap-2"><i data-lucide="message-circle-question" class="w-4 h-4"></i>Поставити запитання</span>
+            </button>
+          </div>
+
+          <!-- Форма відгуку -->
+          <form id="reviewForm" class="fb-form mt-6" data-type="review" novalidate>
+            <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
+            <p class="text-sm font-semibold text-slate-700">Ваша оцінка <span class="text-fire-600">*</span></p>
+            <div id="starPicker" class="mt-2 flex gap-1" role="radiogroup" aria-label="Оцінка"></div>
+            <input type="hidden" name="rating" value="0">
+            <span class="fb-error hidden text-sm text-red-600 mt-1 block" data-for="rating">Оберіть оцінку від 1 до 5</span>
+
+            <div class="mt-4 grid sm:grid-cols-2 gap-4">
+              <label class="block">
+                <span class="text-sm font-semibold text-slate-700">Імʼя <span class="text-fire-600">*</span></span>
+                <input type="text" name="name" autocomplete="given-name" class="fb-input mt-1 w-full rounded-xl border border-slate-300 px-4 py-3 text-base bg-white focus:outline-none focus:ring-2 focus:ring-fire-500" placeholder="Ваше імʼя">
+                <span class="fb-error hidden text-sm text-red-600 mt-1" data-for="name">Вкажіть імʼя</span>
+              </label>
+              <label class="block">
+                <span class="text-sm font-semibold text-slate-700">Місто</span>
+                <input type="text" name="city" class="fb-input mt-1 w-full rounded-xl border border-slate-300 px-4 py-3 text-base bg-white focus:outline-none focus:ring-2 focus:ring-fire-500" placeholder="Наприклад, Черкаси">
+              </label>
+            </div>
+            <label class="block mt-4">
+              <span class="text-sm font-semibold text-slate-700">Відгук <span class="text-fire-600">*</span></span>
+              <textarea name="text" rows="4" maxlength="1000" class="fb-input mt-1 w-full rounded-xl border border-slate-300 px-4 py-3 text-base bg-white focus:outline-none focus:ring-2 focus:ring-fire-500" placeholder="Як гріє, як виглядає ефект каміна, як пройшла доставка..."></textarea>
+              <span class="fb-error hidden text-sm text-red-600 mt-1" data-for="text">Напишіть хоча б кілька слів (від 10 символів)</span>
+            </label>
+            <label class="block mt-4">
+              <span class="text-sm font-semibold text-slate-700">Телефон або номер замовлення</span>
+              <input type="text" name="contact" class="fb-input mt-1 w-full rounded-xl border border-slate-300 px-4 py-3 text-base bg-white focus:outline-none focus:ring-2 focus:ring-fire-500" placeholder="Не публікується, лише для підтвердження покупки">
+            </label>
+            <button type="submit" class="fb-submit mt-6 w-full flex items-center justify-center gap-2 bg-fire-600 hover:bg-fire-700 disabled:opacity-70 text-white font-bold text-lg py-3.5 rounded-xl transition"><span class="fb-btn-text">Надіслати відгук</span></button>
+            <p class="text-xs text-slate-400 text-center mt-3">Відгук зʼявиться на сайті після перевірки модератором.</p>
+          </form>
+
+          <!-- Форма запитання -->
+          <form id="questionForm" class="fb-form mt-6 hidden" data-type="question" novalidate>
+            <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <label class="block">
+                <span class="text-sm font-semibold text-slate-700">Імʼя <span class="text-fire-600">*</span></span>
+                <input type="text" name="name" autocomplete="given-name" class="fb-input mt-1 w-full rounded-xl border border-slate-300 px-4 py-3 text-base bg-white focus:outline-none focus:ring-2 focus:ring-fire-500" placeholder="Ваше імʼя">
+                <span class="fb-error hidden text-sm text-red-600 mt-1" data-for="name">Вкажіть імʼя</span>
+              </label>
+              <label class="block">
+                <span class="text-sm font-semibold text-slate-700">Телефон <span class="text-fire-600">*</span></span>
+                <input type="tel" name="phone" inputmode="tel" autocomplete="tel" class="fb-input js-phone-mask mt-1 w-full rounded-xl border border-slate-300 px-4 py-3 text-base bg-white focus:outline-none focus:ring-2 focus:ring-fire-500" placeholder="+38 (0__) ___-__-__">
+                <span class="fb-error hidden text-sm text-red-600 mt-1" data-for="phone">Введіть коректний номер</span>
+              </label>
+            </div>
+            <label class="block mt-4">
+              <span class="text-sm font-semibold text-slate-700">Ваше запитання <span class="text-fire-600">*</span></span>
+              <textarea name="text" rows="4" maxlength="1000" class="fb-input mt-1 w-full rounded-xl border border-slate-300 px-4 py-3 text-base bg-white focus:outline-none focus:ring-2 focus:ring-fire-500" placeholder="Наприклад: на яку площу кімнати вистачить?"></textarea>
+              <span class="fb-error hidden text-sm text-red-600 mt-1" data-for="text">Напишіть запитання (від 5 символів)</span>
+            </label>
+            <button type="submit" class="fb-submit mt-6 w-full flex items-center justify-center gap-2 bg-graphite hover:bg-slate-700 disabled:opacity-70 text-white font-bold text-lg py-3.5 rounded-xl transition"><span class="fb-btn-text">Надіслати запитання</span></button>
+            <p class="text-xs text-slate-400 text-center mt-3">Менеджер відповість телефоном або в месенджері.</p>
+          </form>
+
+          <p class="fb-form-error hidden text-sm text-red-600 text-center mt-3">Не вдалося надіслати. Спробуйте ще раз.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== БЛОК 8: ДОСТАВКА ===================== -->
+    <section id="delivery" class="py-14 md:py-20 scroll-mt-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-center text-graphite">Доставка та оплата по Україні</h2>
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6" id="steps"></div>
+      </div>
+    </section>
+
+    <!-- ===================== БЛОК 9: FAQ ===================== -->
+    <section class="bg-cream py-14 md:py-20">
+      <div class="max-w-3xl mx-auto px-4">
+        <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-center text-graphite">Часті запитання</h2>
+        <div id="faq" class="mt-10 space-y-3"></div>
+      </div>
+    </section>
+
+    <!-- ===================== БЛОК 10: ФОРМА ЗАМОВЛЕННЯ ===================== -->
+    <section id="order" class="bg-graphite py-14 md:py-20 scroll-mt-16 relative overflow-hidden">
+      <div class="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-fire-600/25 blur-3xl pointer-events-none"></div>
+      <div class="relative max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+
+        <div class="text-white">
+          <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl">Встигніть замовити за акційною ціною</h2>
+          <div class="mt-6 flex gap-4 items-center">
+            <!-- ФОТО ТОВАРУ (мініатюра у формі): замініть src -->
+            <img src="https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184-1000x1000.webp" alt="Обігрівач з ефектом каміна" width="120" height="120" loading="lazy" class="w-28 h-28 rounded-2xl object-contain bg-white shrink-0">
+            <div>
+              <p class="text-slate-400 line-through">2190 грн</p>
+              <p class="font-display font-extrabold text-4xl text-fire-500">1599 грн</p>
+              <p class="text-sm text-buy-500 font-semibold">Ви економите 591 грн</p>
+            </div>
+          </div>
+          <div class="mt-6">
+            <p class="text-sm text-slate-400 mb-2">До кінця акції:</p>
+            <div class="js-timer js-timer-dark flex gap-2"></div>
+          </div>
+          <div class="mt-6">
+            <p class="text-sm font-semibold">В наявності залишилось <span class="js-stock text-fire-500"></span> шт.</p>
+            <div class="mt-2 h-3 rounded-full bg-white/10 overflow-hidden">
+              <div id="stockBar" class="stock-bar h-full rounded-full bg-gradient-to-r from-fire-500 to-fire-700" style="width:20%"></div>
+            </div>
+          </div>
+        </div>
+
+        <form id="orderForm" class="bg-white rounded-3xl p-5 sm:p-8 shadow-2xl" novalidate>
+          <h3 class="font-display font-bold text-xl text-graphite text-center">Оформлення замовлення</h3>
+          <p class="text-center text-sm text-slate-500 mt-1">Без передоплати. Оплата при отриманні.</p>
+
+          <!-- Honeypot від ботів (приховане поле, людина його не бачить) -->
+          <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
+
+          <label class="block mt-6">
+            <span class="text-sm font-semibold text-slate-700">Ваше Імʼя та Прізвище <span class="text-fire-600">*</span></span>
+            <input type="text" name="name" autocomplete="name" required
+                   class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-3.5 text-base focus:outline-none focus:ring-2 focus:ring-fire-500 focus:border-fire-500"
+                   placeholder="Олена Коваленко">
+            <span class="js-error hidden text-sm text-red-600 mt-1" data-for="name">Вкажіть імʼя та прізвище</span>
+          </label>
+
+          <label class="block mt-4">
+            <span class="text-sm font-semibold text-slate-700">Номер телефону <span class="text-fire-600">*</span></span>
+            <input type="tel" name="phone" inputmode="tel" autocomplete="tel" required
+                   class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-3.5 text-base focus:outline-none focus:ring-2 focus:ring-fire-500 focus:border-fire-500"
+                   placeholder="+38 (0__) ___-__-__">
+            <span class="js-error hidden text-sm text-red-600 mt-1" data-for="phone">Введіть коректний український номер</span>
+          </label>
+
+          <label class="block mt-4">
+            <span class="text-sm font-semibold text-slate-700">Місто та № відділення Нової Пошти</span>
+            <input type="text" name="np"
+                   class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-3.5 text-base focus:outline-none focus:ring-2 focus:ring-fire-500 focus:border-fire-500"
+                   placeholder="Київ, відділення №25">
+            <span class="text-xs text-slate-400 mt-1 block">Можна уточнити менеджеру по телефону</span>
+          </label>
+
+          <button type="submit" id="submitBtn"
+                  class="cta-pulse mt-6 w-full flex items-center justify-center gap-2 bg-buy-600 hover:bg-buy-700 disabled:opacity-70 disabled:cursor-not-allowed text-white font-bold text-lg py-4 rounded-xl transition">
+            <span class="js-btn-text">Оформити замовлення за 1599 грн</span>
+          </button>
+          <p class="js-form-error hidden text-sm text-red-600 text-center mt-3">Не вдалося надіслати заявку. Спробуйте ще раз або зателефонуйте нам.</p>
+
+          <div class="mt-5 grid grid-cols-3 gap-2 text-center text-xs text-slate-500">
+            <div class="flex flex-col items-center gap-1"><i data-lucide="shield-check" class="w-5 h-5 text-buy-600"></i>Гарантія 14 днів</div>
+            <div class="flex flex-col items-center gap-1"><i data-lucide="truck" class="w-5 h-5 text-buy-600"></i>Нова Пошта 1–3 дні</div>
+            <div class="flex flex-col items-center gap-1"><i data-lucide="wallet" class="w-5 h-5 text-buy-600"></i>Оплата при отриманні</div>
+          </div>
+          <p class="mt-4 text-[11px] text-slate-400 text-center">Натискаючи кнопку, ви погоджуєтесь з <button type="button" class="underline js-open-modal" data-modal="privacyModal">політикою конфіденційності</button>.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== БЛОК 11: ФУТЕР ===================== -->
+  <footer class="bg-slate-950 text-slate-400 py-10 text-sm">
+    <div class="max-w-6xl mx-auto px-4 grid sm:grid-cols-3 gap-6">
+      <div>
+        <p class="font-display font-extrabold text-white text-lg">WarmHome <span class="text-fire-500">UA</span></p>
+        <p class="mt-2">Тепло та затишок для вашого дому.</p>
+      </div>
+      <div>
+        <p class="font-semibold text-white">Графік роботи</p>
+        <!-- Вкажіть свій реальний графік і телефон -->
+        <p class="mt-2">Пн–Нд: 09:00 – 21:00</p>
+        <p>Заявки на сайті — цілодобово</p>
+      </div>
+      <div class="flex flex-col gap-2 items-start">
+        <button type="button" class="hover:text-white js-open-modal" data-modal="privacyModal">Політика конфіденційності</button>
+        <button type="button" class="hover:text-white text-left js-open-modal" data-modal="returnModal">Умови повернення та обміну (14 днів згідно із ЗУ «Про захист прав споживачів»)</button>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 mt-8 pt-6 border-t border-white/10 text-xs text-slate-500 space-y-1">
+      <p>*Колір або відтінок виробу на фотографії може відрізнятися від реального</p>
+      <p>**Характеристики та комплектація товару можуть змінюватися виробником без повідомлення</p>
+      <p>***Магазин не несе відповідальності за зміни, внесені виробником</p>
+    </div>
+    <p class="max-w-6xl mx-auto px-4 mt-4 text-xs">© 2026 WarmHome UA. Усі права захищені.</p>
+  </footer>
+
+  <!-- Sticky Mobile Bar -->
+  <div id="stickyBar" class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-slate-200 shadow-[0_-4px_20px_rgba(0,0,0,.08)] px-4 py-3 flex items-center justify-between gap-3 transition-transform duration-300" style="padding-bottom: max(.75rem, env(safe-area-inset-bottom));">
+    <div class="leading-tight">
+      <p class="text-xs text-slate-400 line-through">2190 грн</p>
+      <p class="font-display font-extrabold text-2xl text-fire-600">1599 грн</p>
+    </div>
+    <a href="#order" class="flex-1 max-w-[220px] text-center bg-buy-600 hover:bg-buy-700 text-white font-bold py-3.5 rounded-xl">Купити в 1 клік</a>
+  </div>
+
+  <!-- ===================== МОДАЛЬНІ ВІКНА ===================== -->
+  <div id="successModal" class="modal fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/60" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-3xl max-w-sm w-full p-8 text-center shadow-2xl">
+      <div class="w-16 h-16 mx-auto rounded-full bg-buy-600/10 text-buy-600 grid place-items-center"><i data-lucide="check" class="w-9 h-9"></i></div>
+      <h3 class="mt-4 font-display font-extrabold text-2xl text-graphite">Дякуємо!</h3>
+      <p class="mt-2 text-slate-600">Ваше замовлення прийнято. Наш менеджер звʼяжеться з вами протягом 10 хвилин.</p>
+      <button type="button" class="js-close-modal mt-6 w-full bg-graphite text-white font-bold py-3 rounded-xl">Добре</button>
+    </div>
+  </div>
+
+  <div id="feedbackModal" class="modal fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/60" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-3xl max-w-sm w-full p-8 text-center shadow-2xl">
+      <div class="w-16 h-16 mx-auto rounded-full bg-orange-100 text-fire-600 grid place-items-center"><i data-lucide="heart" class="w-8 h-8"></i></div>
+      <h3 class="mt-4 font-display font-extrabold text-2xl text-graphite">Дякуємо!</h3>
+      <p id="feedbackModalText" class="mt-2 text-slate-600"></p>
+      <button type="button" class="js-close-modal mt-6 w-full bg-graphite text-white font-bold py-3 rounded-xl">Добре</button>
+    </div>
+  </div>
+
+  <div id="privacyModal" class="modal fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/60" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl max-h-[85vh] overflow-y-auto">
+      <h3 class="font-display font-bold text-xl text-graphite">Політика конфіденційності</h3>
+      <!-- Замініть текст на повну політику вашого магазину -->
+      <div class="mt-4 space-y-3 text-sm text-slate-600">
+        <p>Ми збираємо лише імʼя, номер телефону та дані для доставки, які ви залишаєте у формі замовлення.</p>
+        <p>Ці дані використовуються виключно для обробки та доставки вашого замовлення і не передаються третім особам, окрім служби доставки.</p>
+        <p>Ви можете попросити видалити ваші дані, звернувшись до нашого менеджера.</p>
+      </div>
+      <button type="button" class="js-close-modal mt-6 w-full bg-graphite text-white font-bold py-3 rounded-xl">Закрити</button>
+    </div>
+  </div>
+
+  <div id="returnModal" class="modal fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/60" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl max-h-[85vh] overflow-y-auto">
+      <h3 class="font-display font-bold text-xl text-graphite">Умови повернення та обміну</h3>
+      <!-- Замініть текст на ваші умови -->
+      <div class="mt-4 space-y-3 text-sm text-slate-600">
+        <p>Відповідно до Закону України «Про захист прав споживачів» ви можете повернути або обміняти товар належної якості протягом 14 днів з моменту отримання.</p>
+        <p>Товар має зберегти товарний вигляд, комплектацію та фірмову упаковку.</p>
+        <p>Для оформлення повернення звʼяжіться з менеджером — ми підкажемо всі кроки.</p>
+      </div>
+      <button type="button" class="js-close-modal mt-6 w-full bg-graphite text-white font-bold py-3 rounded-xl">Закрити</button>
+    </div>
+  </div>
+
+  <script>
+  /* ==========================================================
+     НАЛАШТУВАННЯ
+     ========================================================== */
+
+  // Токен бота від @BotFather (вигляд: 123456789:AA...).
+  // УВАГА: токен у браузерному коді бачить будь-хто, хто відкриє сторінку.
+  // Використовуйте окремого бота лише для заявок. Надійніший варіант — проксі на сервері (PHP/Cloudflare Worker).
+  const TELEGRAM_BOT_TOKEN = '';   // ← вставте токен сюди
+  // ID чату / групи, куди падатимуть заявки (дізнатися: напишіть боту, потім відкрийте
+  // https://api.telegram.org/bot<TOKEN>/getUpdates). Для групи ID починається з "-".
+  const TELEGRAM_CHAT_ID = '';     // ← вставте chat_id сюди
+
+  const PRODUCT = { name: 'Електричний керамічний обігрівач з ефектом каміна (900 Вт)', sku: '24433188', price: 1599, oldPrice: 2190 };
+
+  // Залишок на складі — вкажіть реальну кількість.
+  const STOCK_LEFT = 7;
+
+  // Реальні відгуки покупців. Поки масив порожній, блок «Відгуки» прихований.
+  // Формат: { name: 'Олена', city: 'Київ', rating: 5, date: '12.10.2026', text: '...', photo: '' }
+  const REVIEWS = [];
+
+  const VALID_OPERATOR_CODES = ['050','066','095','099','067','068','096','097','098','063','073','093'];
+
+  /* ==========================================================
+     ДАНІ ДЛЯ БЛОКІВ
+     ========================================================== */
+  const BENEFITS = [
+    ['flame-kindling', 'Керамічний нагрів', 'Нагріває приміщення в рази швидше за звичайні спіральні дуйки.'],
+    ['sparkles', 'Атмосфера справжнього каміна', 'Верхня панель імітує палаюче вугілля та вогонь, створюючи релакс і затишок у спальні, вітальні чи офісі.'],
+    ['sliders-horizontal', '3 режими роботи та терморегулятор', 'Легко налаштовуйте комфортну температуру механічними перемикачами.'],
+    ['shield-check', '100% Безпека', 'Автоматичний захист від перегріву вимкне прилад у разі критичної температури.'],
+    ['move', 'Компактність та мобільність', 'Розмір 32×40,2 см і кабель 1,5 м дозволяють зручно поставити його біля робочого столу, ліжка або взяти на дачу.'],
+    ['zap', 'Оптимальна потужність 900 Вт', 'Не вибиває пробки та дозволяє суттєво економити електроенергію.'],
+  ];
+
+  // Галерея: фото з картки постачальника (dropt.in.ua).
+  // Порядок і підписи перевірте — змініть, якщо підпис не відповідає фото.
+  // Для продакшену краще завантажити фото на свій хостинг і вказати тут локальні шляхи (наприклад 'img/1.webp').
+  const GALLERY = [
+    ['https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_2-1000x1000.webp', 'Зона імітації полумʼя'],
+    ['https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3-1000x1000.webp', 'Захисна передня решітка подачі тепла'],
+    ['https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_4-1000x1000.webp', 'Надійні механічні перемикачі на корпусі'],
+    ['https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_5-1000x1000.webp', 'Стійка підставка для підлогового або настільного розміщення'],
+    ['https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184-1000x1000.webp', 'Компактний білий корпус 32 × 40,2 см'],
+  ];
+
+  // Сценарії використання (іконки). Якщо зʼявляться власні фото в інтерʼєрі — додайте їх сюди.
+  const USE_CASES = [
+    ['home', 'Квартира', 'У міжсезоння та взимку'],
+    ['briefcase', 'Кабінет або офіс', 'Тепло біля робочого місця'],
+    ['trees', 'Дача', 'Чи заміський будинок'],
+    ['bed', 'Дитяча або спальня', 'Затишне світло перед сном'],
+  ];
+
+  const SPECS = [
+    ['Артикул', '24433188'],
+    ['Тип', 'Електричний тепловентилятор з ефектом каміна'],
+    ['Нагрівальний елемент', 'Керамічний'],
+    ['Потужність', '900 Вт'],
+    ['Кількість режимів', '3'],
+    ['Керування', 'Механічне + регулювання температури'],
+    ['Напруга', '220 В'],
+    ['Захист від перегріву', 'Так, вбудований'],
+    ['Корпус', 'Вогнестійкий'],
+    ['Довжина кабелю', '1,5 м'],
+    ['Розмір', '32 × 40,2 см'],
+    ['Колір', 'Білий'],
+  ];
+
+  const STEPS = [
+    ['clipboard-list', 'Заявка', 'Залишаєте імʼя та телефон на сайті.'],
+    ['phone-call', 'Підтвердження', 'Менеджер телефонує протягом 10 хвилин для уточнення деталей.'],
+    ['truck', 'Швидка відправка', 'Доставка Новою Поштою за 1–3 дні по всій Україні.'],
+    ['wallet', 'Оплата при отриманні', 'Оглядаєте товар у відділенні та сплачуєте післяплатою або за реквізитами. Гарантія повернення/обміну — 14 днів.'],
+  ];
+
+  const FAQ = [
+    ['Чи сильно сушить повітря?', 'Ні, завдяки керамічному нагрівальному елементу повітря не пересушується, як від звичайних спіральних обігрівачів.'],
+    ['Чи потрібна передоплата?', 'Ні, відправляємо післяплатою Новою Поштою. Ви оглядаєте товар у відділенні і лише потім оплачуєте.'],
+    ['Скільки електроенергії споживає?', 'Максимальна потужність — 900 Вт. Це у 2 рази економніше за звичайні обігрівачі на 2000 Вт.'],
+    ['Чи безпечний ефект полумʼя?', 'Так, це візуальна LED-імітація — справжнього вогню немає. Корпус вогнестійкий і захищений від перегріву.'],
+    ['Які правила безпечної експлуатації?', 'Ставте прилад на рівну поверхню, не накривайте його речами, не ставте впритул до меблів і подалі від води.'],
+  ];
+
+  /* ==========================================================
+     РЕНДЕР БЛОКІВ
+     ========================================================== */
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const esc = (s) => String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+
+  $('#benefitsGrid').innerHTML = BENEFITS.map(([icon, title, text]) => `
+    <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition border border-slate-100">
+      <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-fire-500 to-fire-700 text-white grid place-items-center shadow-md shadow-orange-200">
+        <i data-lucide="${icon}" class="w-6 h-6"></i>
+      </div>
+      <h3 class="mt-4 font-display font-bold text-lg text-graphite">${title}</h3>
+      <p class="mt-2 text-slate-600">${text}</p>
+    </div>`).join('');
+
+  $('#slider').innerHTML = GALLERY.map(([src, caption], i) => `
+    <figure class="shrink-0 w-[85%] sm:w-[60%] md:w-[calc(50%-.5rem)] lg:w-[calc(33.333%-.67rem)] rounded-2xl overflow-hidden bg-cream border border-slate-100">
+      <img src="${src}" alt="${caption}" width="1000" height="1000" loading="lazy" class="w-full aspect-square object-contain bg-white">
+      <figcaption class="p-4 font-semibold text-graphite flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-fire-600 text-white text-xs grid place-items-center">${i + 1}</span>${caption}</figcaption>
+    </figure>`).join('');
+
+  $('#useCases').innerHTML = USE_CASES.map(([icon, title, sub]) => `
+    <div class="rounded-2xl bg-white/5 border border-white/10 p-4 sm:p-6 text-center">
+      <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-gradient-to-br from-fire-500 to-fire-700 grid place-items-center shadow-lg shadow-fire-600/30">
+        <i data-lucide="${icon}" class="w-7 h-7 sm:w-8 sm:h-8 text-white"></i>
+      </div>
+      <div class="mt-4 font-display font-bold text-sm sm:text-base">${title}</div>
+      <p class="text-xs sm:text-sm text-slate-400 mt-1">${sub}</p>
+    </div>`).join('');
+
+  $('#specsTable').innerHTML = SPECS.map(([k, v]) => `
+    <tr><td class="px-4 py-3 text-slate-500 w-[45%]">${k}</td><td class="px-4 py-3 font-semibold text-graphite">${v}</td></tr>`).join('');
+
+  $('#steps').innerHTML = STEPS.map(([icon, title, text], i) => `
+    <div class="relative bg-cream rounded-2xl p-6 border border-slate-100">
+      <span class="absolute top-4 right-5 font-display font-extrabold text-4xl text-slate-200">${i + 1}</span>
+      <div class="w-12 h-12 rounded-xl bg-buy-600 text-white grid place-items-center"><i data-lucide="${icon}" class="w-6 h-6"></i></div>
+      <h3 class="mt-4 font-display font-bold text-lg text-graphite">${title}</h3>
+      <p class="mt-2 text-slate-600 text-sm">${text}</p>
+    </div>`).join('');
+
+  $('#faq').innerHTML = FAQ.map(([q, a]) => `
+    <div class="faq-item bg-white rounded-2xl border border-slate-200">
+      <button type="button" class="faq-btn w-full flex items-center justify-between gap-4 text-left p-5 font-semibold text-graphite" aria-expanded="false">
+        ${q}<i data-lucide="plus" class="faq-icon w-5 h-5 shrink-0 text-fire-600 transition-transform"></i>
+      </button>
+      <div class="faq-body"><div class="overflow-hidden"><p class="px-5 pb-5 text-slate-600">${a}</p></div></div>
+    </div>`).join('');
+
+  // Відгуки (лише реальні з масиву REVIEWS)
+  (function renderReviews() {
+    if (!REVIEWS.length) {
+      $$('.js-reviews-link').forEach(a => a.setAttribute('href', '#feedback'));
+      $('#feedbackLead').textContent = 'Поки що відгуків немає — станьте першим! Купили обігрівач? Поділіться враженнями. Маєте запитання — ми відповімо.';
+      return;
+    }
+    const star = (filled) => `<i data-lucide="star" class="w-5 h-5 ${filled ? 'fill-amber-400' : 'text-slate-300'}"></i>`;
+    const avg = REVIEWS.reduce((s, r) => s + Number(r.rating || 0), 0) / REVIEWS.length;
+    $('#ratingValue').textContent = avg.toFixed(1);
+    $('#ratingStars').innerHTML = [1,2,3,4,5].map(n => star(n <= Math.round(avg))).join('');
+    $('#ratingCount').textContent = `з 5 на основі ${REVIEWS.length} відгуків`;
+    $('#reviewsGrid').innerHTML = REVIEWS.map(r => `
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+        <div class="flex items-center gap-3">
+          ${r.photo ? `<img src="${esc(r.photo)}" alt="" class="w-12 h-12 rounded-full object-cover">` : `<div class="w-12 h-12 rounded-full bg-orange-100 text-fire-600 font-bold grid place-items-center">${esc(r.name).charAt(0)}</div>`}
+          <div><p class="font-semibold text-graphite">${esc(r.name)}${r.city ? `, ${esc(r.city)}` : ''}</p><p class="text-xs text-slate-400">${esc(r.date || '')}</p></div>
+        </div>
+        <div class="flex mt-3 text-amber-400">${[1,2,3,4,5].map(n => star(n <= r.rating)).join('')}</div>
+        <p class="mt-3 text-slate-600">${esc(r.text)}</p>
+      </div>`).join('');
+    $('#reviews').classList.remove('hidden');
+  })();
+
+  /* ==========================================================
+     ТАЙМЕР (до кінця поточної доби за київським часом браузера)
+     ========================================================== */
+  function renderTimers() {
+    const now = new Date();
+    const end = new Date(now); end.setHours(23, 59, 59, 999);
+    let diff = Math.max(0, end - now);
+    const h = Math.floor(diff / 3.6e6); diff -= h * 3.6e6;
+    const m = Math.floor(diff / 6e4);   diff -= m * 6e4;
+    const s = Math.floor(diff / 1e3);
+    const parts = [[h, 'год'], [m, 'хв'], [s, 'сек']];
+    $$('.js-timer').forEach(el => {
+      const dark = el.classList.contains('js-timer-dark');
+      el.innerHTML = parts.map(([v, l]) => `
+        <div class="${dark ? 'bg-white/10 text-white' : 'bg-graphite text-white'} rounded-xl w-16 py-2 text-center">
+          <div class="font-display font-extrabold text-2xl tabular-nums">${String(v).padStart(2, '0')}</div>
+          <div class="text-[10px] uppercase tracking-wide opacity-70">${l}</div>
+        </div>`).join('');
+    });
+  }
+  renderTimers(); setInterval(renderTimers, 1000);
+
+  // Залишок
+  $$('.js-stock').forEach(el => el.textContent = STOCK_LEFT);
+  $('#stockBar').style.width = Math.min(100, Math.max(8, STOCK_LEFT / 50 * 100)) + '%';
+
+  /* ==========================================================
+     МЕНЮ, СЛАЙДЕР, FAQ, МОДАЛКИ, STICKY BAR
+     ========================================================== */
+  const menuBtn = $('#menuBtn'), mobileMenu = $('#mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('hidden') === false;
+    menuBtn.setAttribute('aria-expanded', open);
+  });
+  $$('#mobileMenu a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+  const slider = $('#slider'), dots = $('#dots');
+  dots.innerHTML = GALLERY.map((_, i) => `<button type="button" class="w-2.5 h-2.5 rounded-full bg-slate-300 transition-all" aria-label="Фото ${i + 1}" data-i="${i}"></button>`).join('');
+  const slideW = () => slider.children[0].getBoundingClientRect().width + 16;
+  function updateDots() {
+    const i = Math.round(slider.scrollLeft / slideW());
+    $$('button', dots).forEach((d, j) => { d.className = `h-2.5 rounded-full transition-all ${i === j ? 'w-6 bg-fire-600' : 'w-2.5 bg-slate-300'}`; });
+  }
+  slider.addEventListener('scroll', () => requestAnimationFrame(updateDots), { passive: true });
+  dots.addEventListener('click', e => { const b = e.target.closest('button'); if (b) slider.scrollTo({ left: b.dataset.i * slideW(), behavior: 'smooth' }); });
+  $('#prevSlide').addEventListener('click', () => slider.scrollBy({ left: -slideW(), behavior: 'smooth' }));
+  $('#nextSlide').addEventListener('click', () => slider.scrollBy({ left: slideW(), behavior: 'smooth' }));
+  updateDots();
+
+  $('#faq').addEventListener('click', e => {
+    const btn = e.target.closest('.faq-btn'); if (!btn) return;
+    const item = btn.parentElement;
+    const open = !item.classList.contains('open');
+    $$('.faq-item').forEach(i => { i.classList.remove('open'); $('.faq-btn', i).setAttribute('aria-expanded', 'false'); });
+    if (open) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+  });
+
+  function openModal(id) { const m = document.getElementById(id); m.classList.remove('hidden'); m.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+  function closeModal(m) { m.classList.add('hidden'); m.classList.remove('flex'); document.body.style.overflow = ''; }
+  $$('.js-open-modal').forEach(b => b.addEventListener('click', () => openModal(b.dataset.modal)));
+  $$('.modal').forEach(m => m.addEventListener('click', e => { if (e.target === m || e.target.closest('.js-close-modal')) closeModal(m); }));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') $$('.modal.flex').forEach(closeModal); });
+
+  // Ховаємо sticky bar, коли форма замовлення на екрані
+  const stickyBar = $('#stickyBar');
+  new IntersectionObserver(([en]) => {
+    stickyBar.style.transform = en.isIntersecting ? 'translateY(110%)' : 'translateY(0)';
+  }, { threshold: 0.15 }).observe($('#order'));
+
+  /* ==========================================================
+     МАСКА ТА ВАЛІДАЦІЯ ТЕЛЕФОНУ
+     ========================================================== */
+  const phoneInput = $('input[name="phone"]');
+  function phoneDigits(v) {
+    let d = v.replace(/\D/g, '');
+    if (d.startsWith('380')) d = d.slice(2);
+    else if (d.startsWith('38')) d = d.slice(2);
+    if (d && d[0] !== '0') d = '0' + d;
+    return d.slice(0, 10); // 0XXXXXXXXX
+  }
+  function formatPhone(v) {
+    const d = phoneDigits(v);
+    if (!d) return '';
+    let out = '+38 (' + d.slice(0, 3);
+    if (d.length > 3) out += ') ' + d.slice(3, 6);
+    if (d.length > 6) out += '-' + d.slice(6, 8);
+    if (d.length > 8) out += '-' + d.slice(8, 10);
+    return out;
+  }
+  function isValidPhone(v) {
+    const d = phoneDigits(v);
+    return d.length === 10 && VALID_OPERATOR_CODES.includes(d.slice(0, 3));
+  }
+  phoneInput.addEventListener('input', () => { phoneInput.value = formatPhone(phoneInput.value); });
+  phoneInput.addEventListener('focus', () => { if (!phoneInput.value) phoneInput.value = '+38 (0'; });
+  phoneInput.addEventListener('blur', () => { if (phoneDigits(phoneInput.value).length <= 1) phoneInput.value = ''; });
+
+  function setError(field, show) {
+    const input = $(`[name="${field}"]`), err = $(`.js-error[data-for="${field}"]`);
+    err.classList.toggle('hidden', !show);
+    input.classList.toggle('border-red-500', show);
+    input.classList.toggle('border-slate-300', !show);
+  }
+
+  /* ==========================================================
+     ВІДПРАВКА ЗАЯВКИ В TELEGRAM
+     ========================================================== */
+  function getUTM() {
+    const p = new URLSearchParams(location.search);
+    return ['utm_source','utm_medium','utm_campaign','utm_content','utm_term']
+      .filter(k => p.get(k)).map(k => `${k}: ${p.get(k)}`).join('\n');
+  }
+
+  async function submitOrder(data) {
+    const text = [
+      '🔥 <b>Нове замовлення!</b>',
+      '',
+      `📦 <b>Товар:</b> ${esc(PRODUCT.name)}`,
+      `🔢 <b>Артикул:</b> ${PRODUCT.sku}`,
+      `💰 <b>Ціна:</b> ${PRODUCT.price} грн`,
+      '',
+      `👤 <b>Імʼя:</b> ${esc(data.name)}`,
+      `📞 <b>Телефон:</b> ${esc(data.phone)}`,
+      `🚚 <b>НП:</b> ${esc(data.np || 'уточнити по телефону')}`,
+      '',
+      `🕒 ${new Date().toLocaleString('uk-UA', { timeZone: 'Europe/Kyiv' })}`,
+      data.utm ? `\n📊 <b>UTM:</b>\n${esc(data.utm)}` : '',
+    ].join('\n');
+
+    return sendTelegram(text);
+  }
+
+  // Спільна відправка повідомлення в Telegram (заявки, відгуки, запитання)
+  async function sendTelegram(text) {
+    if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
+      console.warn('[sendTelegram] TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID не задані — повідомлення не відправлено (демо-режим).\n', text);
+      return { ok: true, demo: true };
+    }
+
+    const res = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text, parse_mode: 'HTML', disable_web_page_preview: true }),
+    });
+    const json = await res.json().catch(() => ({}));
+    if (!res.ok || !json.ok) throw new Error(json.description || 'Telegram API error');
+    return json;
+  }
+
+  const form = $('#orderForm'), submitBtn = $('#submitBtn');
+  let isSubmitting = false;
+
+  $('input[name="name"]').addEventListener('input', e => { if (e.target.value.trim().length >= 2) setError('name', false); });
+  phoneInput.addEventListener('input', () => { if (isValidPhone(phoneInput.value)) setError('phone', false); });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (isSubmitting) return;                       // захист від подвійного кліку
+    if (form.website.value) return;                 // бот заповнив honeypot
+
+    const name = form.name.value.trim();
+    const phone = form.phone.value.trim();
+    const np = form.np.value.trim();
+
+    const nameOk = name.length >= 2;
+    const phoneOk = isValidPhone(phone);
+    setError('name', !nameOk);
+    setError('phone', !phoneOk);
+    if (!nameOk) { form.name.focus(); return; }
+    if (!phoneOk) { form.phone.focus(); return; }
+
+    isSubmitting = true;
+    submitBtn.disabled = true;
+    submitBtn.classList.remove('cta-pulse');
+    const btnText = $('.js-btn-text', submitBtn);
+    const original = btnText.textContent;
+    btnText.textContent = 'Відправляємо...';
+    submitBtn.insertAdjacentHTML('afterbegin', '<span class="spinner"></span>');
+    $('.js-form-error').classList.add('hidden');
+
+    try {
+      await submitOrder({ name, phone, np, utm: getUTM() });
+
+      // Події пікселів
+      if (typeof fbq === 'function') fbq('track', 'Lead', { value: PRODUCT.price, currency: 'UAH', content_ids: [PRODUCT.sku] });
+      if (window.ttq && typeof ttq.track === 'function') ttq.track('SubmitForm', { value: PRODUCT.price, currency: 'UAH' });
+
+      form.reset();
+      openModal('successModal');
+    } catch (err) {
+      console.error(err);
+      $('.js-form-error').classList.remove('hidden');
+    } finally {
+      // Невелика затримка, щоб повторний клік не створив дубль заявки
+      setTimeout(() => {
+        isSubmitting = false;
+        submitBtn.disabled = false;
+        submitBtn.classList.add('cta-pulse');
+        $('.spinner', submitBtn)?.remove();
+        btnText.textContent = original;
+      }, 1500);
+    }
+  });
+
+  /* ==========================================================
+     ВІДГУК / ЗАПИТАННЯ
+     ========================================================== */
+  // Вкладки
+  $$('.fb-tab').forEach(tab => tab.addEventListener('click', () => {
+    $$('.fb-tab').forEach(t => {
+      const on = t === tab;
+      t.classList.toggle('bg-graphite', on); t.classList.toggle('text-white', on); t.classList.toggle('text-slate-600', !on);
+      t.setAttribute('aria-selected', on);
+    });
+    $('#reviewForm').classList.toggle('hidden', tab.dataset.tab !== 'review');
+    $('#questionForm').classList.toggle('hidden', tab.dataset.tab !== 'question');
+    $('.fb-form-error').classList.add('hidden');
+  }));
+
+  // Вибір зірок
+  const starPicker = $('#starPicker'), ratingInput = $('#reviewForm [name="rating"]');
+  starPicker.innerHTML = [1,2,3,4,5].map(n => `
+    <button type="button" class="star-btn p-1 text-slate-300 hover:scale-110 transition" data-v="${n}" role="radio" aria-checked="false" aria-label="${n} з 5">
+      <i data-lucide="star" class="w-8 h-8"></i>
+    </button>`).join('');
+  function paintStars(v) {
+    $$('.star-btn', starPicker).forEach(b => {
+      const on = Number(b.dataset.v) <= v;
+      b.classList.toggle('text-amber-400', on); b.classList.toggle('text-slate-300', !on);
+      const svg = $('svg', b); if (svg) svg.style.fill = on ? 'currentColor' : 'none';
+      b.setAttribute('aria-checked', Number(b.dataset.v) === v);
+    });
+  }
+  starPicker.addEventListener('click', e => {
+    const b = e.target.closest('.star-btn'); if (!b) return;
+    ratingInput.value = b.dataset.v; paintStars(Number(b.dataset.v));
+    $('.fb-error[data-for="rating"]').classList.add('hidden');
+  });
+  starPicker.addEventListener('mouseover', e => { const b = e.target.closest('.star-btn'); if (b) paintStars(Number(b.dataset.v)); });
+  starPicker.addEventListener('mouseleave', () => paintStars(Number(ratingInput.value)));
+
+  // Маска телефону для форми запитання
+  $$('.js-phone-mask').forEach(inp => {
+    inp.addEventListener('input', () => { inp.value = formatPhone(inp.value); });
+    inp.addEventListener('focus', () => { if (!inp.value) inp.value = '+38 (0'; });
+    inp.addEventListener('blur', () => { if (phoneDigits(inp.value).length <= 1) inp.value = ''; });
+  });
+
+  function fbError(form, field, show) {
+    const err = $(`.fb-error[data-for="${field}"]`, form); if (err) err.classList.toggle('hidden', !show);
+    const inp = $(`[name="${field}"]`, form);
+    if (inp && inp.type !== 'hidden') { inp.classList.toggle('border-red-500', show); inp.classList.toggle('border-slate-300', !show); }
+  }
+
+  $$('.fb-form').forEach(f => {
+    let busy = false;
+    f.addEventListener('submit', async e => {
+      e.preventDefault();
+      if (busy || f.website.value) return;
+      const type = f.dataset.type;
+      const v = name => (f[name] ? f[name].value.trim() : '');
+      const checks = type === 'review'
+        ? { rating: Number(v('rating')) >= 1, name: v('name').length >= 2, text: v('text').length >= 10 }
+        : { name: v('name').length >= 2, phone: isValidPhone(v('phone')), text: v('text').length >= 5 };
+      Object.entries(checks).forEach(([k, ok]) => fbError(f, k, !ok));
+      if (Object.values(checks).includes(false)) return;
+
+      const text = type === 'review'
+        ? ['⭐ <b>Новий відгук</b> (на модерацію)', '',
+           `Оцінка: ${'★'.repeat(Number(v('rating')))}${'☆'.repeat(5 - Number(v('rating')))} (${v('rating')}/5)`,
+           `👤 ${esc(v('name'))}${v('city') ? ', ' + esc(v('city')) : ''}`,
+           v('contact') ? `📞 ${esc(v('contact'))}` : '', '',
+           `💬 ${esc(v('text'))}`, '',
+           `Щоб опублікувати — додайте в REVIEWS:`,
+           `<code>${esc(JSON.stringify({ name: v('name'), city: v('city'), rating: Number(v('rating')), date: new Date().toLocaleDateString('uk-UA'), text: v('text') }))}</code>`
+          ].filter(x => x !== '').join('\n')
+        : ['❓ <b>Нове запитання</b>', '',
+           `👤 ${esc(v('name'))}`, `📞 ${esc(v('phone'))}`, '',
+           `💬 ${esc(v('text'))}`].join('\n');
+
+      busy = true;
+      const btn = $('.fb-submit', f), btnText = $('.fb-btn-text', btn), orig = btnText.textContent;
+      btn.disabled = true; btnText.textContent = 'Надсилаємо...';
+      btn.insertAdjacentHTML('afterbegin', '<span class="spinner"></span>');
+      $('.fb-form-error').classList.add('hidden');
+      try {
+        await sendTelegram(text);
+        f.reset();
+        if (type === 'review') { ratingInput.value = 0; paintStars(0); }
+        $('#feedbackModalText').textContent = type === 'review'
+          ? 'Ваш відгук отримано. Він зʼявиться на сайті після перевірки.'
+          : 'Ваше запитання отримано. Менеджер звʼяжеться з вами найближчим часом.';
+        openModal('feedbackModal');
+      } catch (err) {
+        console.error(err);
+        $('.fb-form-error').classList.remove('hidden');
+      } finally {
+        setTimeout(() => { busy = false; btn.disabled = false; $('.spinner', btn)?.remove(); btnText.textContent = orig; }, 1500);
+      }
+    });
+  });
+
+  /* Іконки */
+  window.addEventListener('DOMContentLoaded', () => window.lucide && lucide.createIcons());
+  </script>
+</body>
+</html>
