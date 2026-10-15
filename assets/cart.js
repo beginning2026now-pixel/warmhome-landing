@@ -67,9 +67,12 @@
         <div class="flex-1 overflow-y-auto overscroll-contain px-5 py-4">
           <button type="button" id="cartBack" class="inline-flex items-center gap-1 text-sm font-semibold text-slate-500 hover:text-fire-600"><i data-lucide="chevron-left" class="w-4 h-4"></i>До кошика</button>
           <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
-          <label class="block mt-4"><span class="text-sm font-semibold text-slate-700">Ваше Імʼя та Прізвище <span class="text-fire-600">*</span></span>
-            <input type="text" name="name" autocomplete="name" class="${INP} mt-1" placeholder="Олена Коваленко">
-            <span class="c-err hidden text-sm text-red-600" data-for="name">Вкажіть імʼя та прізвище</span></label>
+          <label class="block mt-4"><span class="text-sm font-semibold text-slate-700">Імʼя <span class="text-fire-600">*</span></span>
+            <input type="text" name="firstName" autocomplete="given-name" class="${INP} mt-1" placeholder="Олена">
+            <span class="c-err hidden text-sm text-red-600" data-for="firstName">Вкажіть імʼя</span></label>
+          <label class="block mt-4"><span class="text-sm font-semibold text-slate-700">Прізвище <span class="text-fire-600">*</span></span>
+            <input type="text" name="lastName" autocomplete="family-name" class="${INP} mt-1" placeholder="Коваленко">
+            <span class="c-err hidden text-sm text-red-600" data-for="lastName">Вкажіть прізвище</span></label>
           <label class="block mt-4"><span class="text-sm font-semibold text-slate-700">Номер телефону <span class="text-fire-600">*</span></span>
             <input type="tel" name="phone" inputmode="tel" autocomplete="tel" class="${INP} mt-1" placeholder="+38 (0__) ___-__-__">
             <span class="c-err hidden text-sm text-red-600" data-for="phone">Введіть коректний український номер</span></label>
@@ -234,10 +237,10 @@
   let busy = false;
   form.addEventListener('submit', async e => {
     e.preventDefault(); if (busy || form.website.value) return;
-    const name = form.name.value.trim(), phone = form.phone.value.trim(), city = form.city.value.trim(), wh = form.warehouse.value.trim(), noCall = form.noCall.checked;
-    const ok = { name: name.length >= 2, phone: phoneOk(phone), np: city.length >= 2 && wh.length >= 1 && (!npOk || (cityRef && whPicked)) };
+    const firstName = form.firstName.value.trim(), lastName = form.lastName.value.trim(), name = `${firstName} ${lastName}`, phone = form.phone.value.trim(), city = form.city.value.trim(), wh = form.warehouse.value.trim(), noCall = form.noCall.checked;
+    const ok = { firstName: firstName.length >= 2, lastName: lastName.length >= 2, phone: phoneOk(phone), np: city.length >= 2 && wh.length >= 1 && (!npOk || (cityRef && whPicked)) };
     Object.entries(ok).forEach(([k, v]) => err(k, !v));
-    if (!ok.name) return form.name.focus(); if (!ok.phone) return form.phone.focus(); if (!ok.np) return (cityRef ? form.warehouse : form.city).focus();
+    if (!ok.firstName) return form.firstName.focus(); if (!ok.lastName) return form.lastName.focus(); if (!ok.phone) return form.phone.focus(); if (!ok.np) return (cityRef ? form.warehouse : form.city).focus();
     const ls = lines(); if (!ls.length) return show('items');
     const sum = total();
     const list = ls.map(i => `• ${i.p.name} (арт. ${i.p.sku || i.slug}) × ${i.qty} = ${i.qty * i.p.price} грн`).join('\n');
