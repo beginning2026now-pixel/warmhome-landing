@@ -61,7 +61,7 @@
   <script src="/assets/products.js?v=e6210772"></script>
   <script src="/assets/shop.js?v=3c81b83a"></script>
   <script src="/assets/icons.js?v=a2ba886e" defer></script>
-  <script src="/assets/cart.js?v=596eab63" defer></script>
+  <script src="/assets/cart.js?v=28c86d42" defer></script>
 
   <link rel="stylesheet" href="/assets/site.css?v=25132223">
 </head>
@@ -239,7 +239,7 @@
   // Превʼю у першому екрані: фото перших товарів
   $('#heroPreview').innerHTML = (window.PRODUCTS || []).slice(0, 4).map((p, i) => `
     <a href="${p.url}" class="block rounded-3xl overflow-hidden bg-white shadow-xl aspect-square ${i % 2 ? 'translate-y-6' : ''}">
-      <img src="${p.image}" alt="${p.name.replace(/"/g, '&quot;')}" class="w-full h-full object-cover" loading="eager">
+      <img src="${p.image}" alt="${p.name.replace(/"/g, '&quot;')}" class="w-full h-full object-cover scale-[1.06]" loading="eager">
     </a>`).join('');
 
   // Доставка
