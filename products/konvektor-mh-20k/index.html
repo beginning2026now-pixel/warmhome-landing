@@ -10,6 +10,17 @@
   <script>
     (function () { var t = null; try { t = localStorage.getItem('theme'); } catch (e) {}
       if (t !== 'light') document.documentElement.classList.add('dark'); })();
+    // Головні фото товарів: у світлій темі показуються версії на світлому тлі (файли *-light.webp)
+    (function () {
+      var R = /(\/assets\/img\/[a-z0-9-]+-main(?:-600)?)(-light)?\.webp/, H = document.documentElement;
+      function fix(img) { var s = img.getAttribute('src'), m = s && s.match(R); if (!m) return;
+        var l = !H.classList.contains('dark'); if (l !== !!m[2]) img.setAttribute('src', s.replace(R, m[1] + (l ? '-light' : '') + '.webp')); }
+      function fixIn(n) { if (n.tagName === 'IMG') return fix(n); var a = n.getElementsByTagName ? n.getElementsByTagName('img') : []; for (var i = 0; i < a.length; i++) fix(a[i]); }
+      new MutationObserver(function (ms) { for (var i = 0; i < ms.length; i++) { var m = ms[i];
+          if (m.type === 'attributes') { if (m.target === H) fixIn(H); else if (m.target.tagName === 'IMG') fix(m.target); continue; }
+          for (var j = 0; j < m.addedNodes.length; j++) if (m.addedNodes[j].nodeType === 1) fixIn(m.addedNodes[j]); }
+      }).observe(H, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'src'] });
+    })();
   </script>
 
   <!-- Open Graph (превʼю при поширенні посилання) — замініть og:image на реальне фото товару -->

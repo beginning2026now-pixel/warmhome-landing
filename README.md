@@ -28,3 +28,4 @@ npx tailwindcss@3 -c tailwind.config.js -i assets/tw.src.css -o assets/tw.css --
 1. Скопіювати `products/obigrivach-ptc-ph16/` у `products/<новий-slug>/` і замінити тексти, фото, ціну, `PRODUCT`, `data-current` та `data-add-to-cart`.
 2. Додати блок товару в `assets/products.js`.
 3. Перезібрати стилі й оновити `?v=` у посиланнях на файли.
+4. Головне фото: `assets/img/<назва>-main.webp` (1024 px) і `<назва>-main-600.webp`. Для світлої теми поруч кладуться версії на світлому тлі: `<назва>-main-light.webp` і `<назва>-main-600-light.webp` — сайт підставляє їх сам, коли відвідувач вмикає світлу тему.
