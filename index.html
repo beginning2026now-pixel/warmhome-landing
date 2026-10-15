@@ -219,10 +219,6 @@
               <span class="font-display font-extrabold text-4xl text-fire-600">1599 грн</span>
               <span class="text-xs font-bold bg-buy-600/10 text-buy-700 px-2 py-1 rounded-md">Економія 591 грн</span>
             </div>
-            <div class="mt-4">
-              <p class="text-sm text-slate-500 mb-2">До кінця акції залишилось:</p>
-              <div class="js-timer flex gap-2"></div>
-            </div>
             <a href="#orderForm" class="cta-pulse mt-5 flex items-center justify-center gap-2 w-full bg-buy-600 hover:bg-buy-700 text-white font-bold text-base sm:text-lg leading-tight text-center px-4 py-4 rounded-xl transition">
               <i data-lucide="shopping-cart" class="w-5 h-5"></i> Замовити зі знижкою
             </a>
@@ -414,10 +410,6 @@
               <p class="font-display font-extrabold text-4xl text-fire-500">1599 грн</p>
               <p class="text-sm text-buy-500 font-semibold">Ви економите 591 грн</p>
             </div>
-          </div>
-          <div class="mt-6">
-            <p class="text-sm text-slate-400 mb-2">До кінця акції:</p>
-            <div class="js-timer js-timer-dark flex gap-2"></div>
           </div>
         </div>
 
@@ -739,27 +731,6 @@
     $('#reviews').classList.remove('hidden');
   })();
 
-  /* ==========================================================
-     ТАЙМЕР (до кінця поточної доби за київським часом браузера)
-     ========================================================== */
-  function renderTimers() {
-    const now = new Date();
-    const end = new Date(now); end.setHours(23, 59, 59, 999);
-    let diff = Math.max(0, end - now);
-    const h = Math.floor(diff / 3.6e6); diff -= h * 3.6e6;
-    const m = Math.floor(diff / 6e4);   diff -= m * 6e4;
-    const s = Math.floor(diff / 1e3);
-    const parts = [[h, 'год'], [m, 'хв'], [s, 'сек']];
-    $$('.js-timer').forEach(el => {
-      const dark = el.classList.contains('js-timer-dark');
-      el.innerHTML = parts.map(([v, l]) => `
-        <div class="${dark ? 'bg-white/10 text-white' : 'bg-graphite text-white'} rounded-xl w-16 py-2 text-center">
-          <div class="font-display font-extrabold text-2xl tabular-nums">${String(v).padStart(2, '0')}</div>
-          <div class="text-[10px] uppercase tracking-wide opacity-70">${l}</div>
-        </div>`).join('');
-    });
-  }
-  renderTimers(); setInterval(renderTimers, 1000);
 
   // Залишок
 
