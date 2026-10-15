@@ -30,7 +30,7 @@ window.PRODUCTS = [
     sku: '59191',
     name: 'Підлоговий обігрівач PTC-PH16 2000 Вт з пультом',
     short: 'До 20 м², термостат, таймер 12 год, пульт ДК',
-    price: 2436,          // 1935.75 (дроп) + 500 націнка, округлено
+    price: 2500,
     oldPrice: null,
     badge: '2000 Вт',
     image: 'https://dropt.in.ua/image/cache/catalog/pidlohovyy-obihrivach-ptc-ph16-2000-vt-keramichnyy-teplovent-19251-1000x1000.webp',
