@@ -33,7 +33,7 @@ window.PRODUCTS = [
     price: 2500,
     oldPrice: null,
     badge: '2000 Вт',
-    image: 'https://dropt.in.ua/image/cache/catalog/pidlohovyy-obihrivach-ptc-ph16-2000-vt-keramichnyy-teplovent-19251-1000x1000.webp',
+    image: '/assets/img/ph16-main-600.webp',
     url: '/products/obigrivach-ptc-ph16/',
   },
 ];
