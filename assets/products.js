@@ -69,4 +69,15 @@ window.PRODUCTS = [
     image: '/assets/img/mh20k-main-600.webp',
     url: '/products/konvektor-mh-20k/',
   },
+  {
+    slug: 'mini-obigrivach-zodiak-dragon',
+    sku: '59120',
+    name: 'Міні-обігрівач Zodiak Dragon 800 Вт',
+    short: 'Компактний 16×9×12 см, 2 режими, захист від перегріву',
+    price: 800,
+    oldPrice: null,
+    badge: 'Міні · 800 Вт',
+    image: '/assets/img/zodiak-dragon-main-600.webp',
+    url: '/products/mini-obigrivach-zodiak-dragon/',
+  },
 ];
