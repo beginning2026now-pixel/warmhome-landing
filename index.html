@@ -31,7 +31,7 @@
       var R = /(\/assets\/img\/[a-z0-9-]+-main(?:-600)?)(-light)?\.webp/, H = document.documentElement;
       // Фото з сайту постачальника → своя світла версія
       var X = { 'https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3-1000x1000.webp': '/assets/img/kamin-900-light.webp' };
-      function fix(img) { var s = img.getAttribute('src'); if (!s) return; var l = !H.classList.contains('dark');
+      function fix(img) { var s = img.getAttribute('src'); if (!s || img.hasAttribute('data-keep-dark')) return; var l = !H.classList.contains('dark');
         for (var k in X) { if (l && s === k) return img.setAttribute('src', X[k]); if (!l && s === X[k]) return img.setAttribute('src', k); }
         var m = s.match(R); if (m && l !== !!m[2]) img.setAttribute('src', s.replace(R, m[1] + (l ? '-light' : '') + '.webp')); }
       function fixIn(n) { if (n.tagName === 'IMG') return fix(n); var a = n.getElementsByTagName ? n.getElementsByTagName('img') : []; for (var i = 0; i < a.length; i++) fix(a[i]); }
@@ -69,15 +69,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Стилі: зібраний Tailwind CSS (assets/tw.css). Після зміни класів у HTML перезберіть його (див. README.md). -->
-  <link rel="stylesheet" href="/assets/tw.css?v=7ff98e4f">
+  <link rel="stylesheet" href="/assets/tw.css?v=cca7d744">
 
   <!-- Іконки Lucide -->
   <script src="/assets/products.js?v=509dd995"></script>
-  <script src="/assets/shop.js?v=586ca0a0"></script>
+  <script src="/assets/shop.js?v=77a1feee"></script>
   <script src="/assets/icons.js?v=32134b82" defer></script>
   <script src="/assets/cart.js?v=777d4ee8" defer></script>
 
-  <link rel="stylesheet" href="/assets/site.css?v=d2f2d3f3">
+  <link rel="stylesheet" href="/assets/site.css?v=928cd27f">
 </head>
 
 <body class="bg-white text-slate-800 font-sans antialiased">
@@ -259,8 +259,8 @@
     const list = (window.PRODUCTS || []).filter(p => p.image && p.inStock !== false);
     if (!box || !list.length) return;
     const escA = (t) => String(t).replace(/"/g, '&quot;');
-    const img = (p, extra = '') => `<img src="${p.image}" alt="${escA(p.name)}" class="absolute inset-0 w-full h-full object-cover scale-[1.06] transition-opacity duration-700 ${extra}" loading="eager">`;
-    box.innerHTML = `<a href="${list[0].url}" title="${escA(list[0].name)}" class="relative block rounded-3xl overflow-hidden bg-white shadow-2xl aspect-square">${img(list[0])}</a>`;
+    const img = (p, extra = '') => `<img src="${p.image}" alt="${escA(p.name)}" class="img-fade absolute inset-0 w-full h-full object-cover scale-[1.06] transition-opacity duration-700 ${extra}" loading="eager">`;
+    box.innerHTML = `<a href="${list[0].url}" title="${escA(list[0].name)}" class="relative block rounded-3xl overflow-hidden aspect-square">${img(list[0])}</a>`;
     if (list.length < 2) return;
     const preload = (k) => { const q = list[k % list.length]; if (q) { const im = new Image(); im.src = document.documentElement.classList.contains('dark') ? q.image : q.image.replace(/(\/assets\/img\/[a-z0-9-]+-main(?:-600)?)\.webp$/, '$1-light.webp'); } };
     preload(1);
