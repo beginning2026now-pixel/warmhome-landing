@@ -66,6 +66,7 @@ html.dark .fb-tab.bg-graphite { background-color: #EA580C; }
 html.dark .bg-graphite.js-close-modal, html.dark #questionForm .fb-submit { background-color: #EA580C; }
 /* фото товару на білому фоні лишаються на білих картках */
 html.dark img.bg-white { background-color: #FFFFFF; }
-html.dark #slider figure { background-color: #FFFFFF; }
+html.dark #slider figure { background-color: #131D2E; }
+html.dark #slider figure > div { background-color: #FFFFFF; }
 html.dark #slider figcaption { background-color: #131D2E; }
 @media (prefers-reduced-motion: reduce) { .cta-pulse, .fire-glow::before, .stock-bar { animation: none; } }
