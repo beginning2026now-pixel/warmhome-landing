@@ -47,4 +47,15 @@ window.PRODUCTS = [
     image: '/assets/img/domotec-main-600.webp',
     url: '/products/teploventilyator-domotec-ms-5963/',
   },
+  {
+    slug: 'elektrokamin-flame-heater',
+    sku: '59149',
+    name: 'Електрокамін Flame Heater з ефектом полумʼя і пультом',
+    short: 'Ефект полумʼя, 500–800 Вт, термостат, таймер 12 год',
+    price: 3200,
+    oldPrice: null,
+    badge: '🔥 Ефект полумʼя',
+    image: '/assets/img/flame-heater-main-600.webp',
+    url: '/products/elektrokamin-flame-heater/',
+  },
 ];
