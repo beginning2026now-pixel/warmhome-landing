@@ -56,11 +56,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Стилі: зібраний Tailwind CSS (assets/tw.css). Після зміни класів у HTML перезберіть його (див. README.md). -->
-  <link rel="stylesheet" href="/assets/tw.css?v=8e5768a3">
+  <link rel="stylesheet" href="/assets/tw.css?v=119b54b4">
 
   <!-- Іконки Lucide -->
   <script src="/assets/products.js?v=e6210772"></script>
-  <script src="/assets/shop.js?v=374ef9ad"></script>
+  <script src="/assets/shop.js?v=3c81b83a"></script>
   <script src="/assets/icons.js?v=a2ba886e" defer></script>
   <script src="/assets/cart.js?v=596eab63" defer></script>
 
@@ -128,10 +128,13 @@
           </div>
           <span class="absolute top-3 right-3 z-10 bg-graphite text-white font-display font-extrabold text-lg px-3 py-1 rounded-xl">-27%</span>
           <!-- ФОТО ТОВАРУ (головне): фото постачальника. Для продакшену завантажте на свій хостинг. -->
-          <img src="https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3-1000x1000.webp"
-               alt="Білий керамічний обігрівач з ефектом каміна 900 Вт на тлі тліючого вугілля" width="1000" height="1000"
-               fetchpriority="high"
-               class="relative z-[1] w-full max-w-md mx-auto rounded-3xl shadow-xl aspect-square object-cover">
+          <!-- Фото трохи збільшене всередині рамки, щоб обрізати сіру смужку по краю фото постачальника -->
+          <div class="relative z-[1] w-full max-w-md mx-auto rounded-3xl shadow-xl aspect-square overflow-hidden bg-black">
+            <img src="https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3-1000x1000.webp"
+                 alt="Білий керамічний обігрівач з ефектом каміна 900 Вт на тлі тліючого вугілля" width="1000" height="1000"
+                 fetchpriority="high"
+                 class="w-full h-full object-cover scale-[1.06]">
+          </div>
         </div>
 
         <div class="order-2 md:order-1">
