@@ -6,6 +6,22 @@
   <title>WarmHome UA — обігрівачі для дому з доставкою по Україні</title>
   <meta name="description" content="WarmHome UA: обігрівачі та товари для тепла і затишку вдома. Доставка Новою Поштою 1–3 дні, оплата при отриманні, обмін та повернення 14 днів.">
   <meta name="theme-color" content="#EA580C">
+  <!-- Перехід з реклами одразу на рекламований товар (зберігаємо всі UTM і fbclid).
+       AD_CAMPAIGNS: назва кампанії з utm_campaign → товар.
+       AD_DEFAULT: товар для кліків з Facebook/Instagram без відомої кампанії. -->
+  <script>
+    (function () {
+      var AD_CAMPAIGNS = { heater_test: 'obigrivach-kamin-900' };
+      var AD_DEFAULT = 'obigrivach-kamin-900';
+      try {
+        var q = new URLSearchParams(location.search);
+        var slug = q.get('product') || AD_CAMPAIGNS[q.get('utm_campaign')];
+        var src = (q.get('utm_source') || '').toLowerCase();
+        if (!slug && (q.get('fbclid') || /^(facebook|fb|instagram|ig|meta)$/.test(src))) slug = AD_DEFAULT;
+        if (slug && /^[a-z0-9-]+$/.test(slug)) location.replace('/products/' + slug + '/' + location.search + location.hash);
+      } catch (e) {}
+    })();
+  </script>
   <!-- Тема: темна за замовчуванням; вибір відвідувача запамʼятовується -->
   <script>
     (function () { var t = null; try { t = localStorage.getItem('theme'); } catch (e) {}
