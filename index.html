@@ -55,7 +55,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Стилі: зібраний Tailwind CSS (assets/tw.css). Після зміни класів у HTML перезберіть його (див. README.md). -->
-  <link rel="stylesheet" href="/assets/tw.css?v=bed5dd65">
+  <link rel="stylesheet" href="/assets/tw.css?v=12f208fc">
 
   <!-- Іконки Lucide -->
   <script src="/assets/products.js?v=3ec1e5bd"></script>
@@ -124,7 +124,7 @@
           <a href="#catalog" class="cta-pulse mt-7 inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 min-h-[56px] bg-buy-600 hover:bg-buy-700 text-white font-bold text-lg rounded-xl transition"><i data-lucide="layout-grid" class="w-5 h-5"></i> Дивитися товари</a>
         </div>
         <div class="relative fire-glow hidden md:block">
-          <div id="heroPreview" class="relative z-[1] grid grid-cols-2 gap-4 max-w-md mx-auto"></div>
+          <div id="heroPreview" class="relative z-[1] max-w-lg mx-auto"></div>
         </div>
       </div>
     </section>
@@ -237,33 +237,23 @@
   if (n) $('#catalogCount').textContent = n + ' ' + word(n);
 
   // Превʼю у першому екрані: фото перших товарів
-  // Фото товарів у першому блоці: 4 плитки, фото по черзі змінюються на інші товари каталогу.
+  // Велике фото в першому блоці: товари каталогу змінюються по черзі.
   // Нові товари з products.js потрапляють сюди автоматично.
   (function heroCarousel() {
     const box = $('#heroPreview');
     const list = (window.PRODUCTS || []).filter(p => p.image);
     if (!box || !list.length) return;
-    const SLOTS = Math.min(4, list.length);
     const escA = (t) => String(t).replace(/"/g, '&quot;');
     const img = (p, extra = '') => `<img src="${p.image}" alt="${escA(p.name)}" class="absolute inset-0 w-full h-full object-cover scale-[1.06] transition-opacity duration-700 ${extra}" loading="eager">`;
-    const shown = list.slice(0, SLOTS);
-    box.innerHTML = shown.map((p, i) => `
-      <a href="${p.url}" title="${escA(p.name)}" class="relative block rounded-3xl overflow-hidden bg-white shadow-xl aspect-square ${i % 2 ? 'translate-y-6' : ''}">${img(p)}</a>`).join('');
-    if (list.length <= SLOTS) return;           // нема чим міняти — показуємо як є
-
-    list.slice(SLOTS).forEach(p => { const i = new Image(); i.src = p.image; });  // попереднє завантаження
-    const tiles = [...box.children];
-    let next = SLOTS, slot = 0;
+    box.innerHTML = `<a href="${list[0].url}" title="${escA(list[0].name)}" class="relative block rounded-3xl overflow-hidden bg-white shadow-2xl aspect-square">${img(list[0])}</a>`;
+    if (list.length < 2) return;
+    list.slice(1).forEach(p => { const i = new Image(); i.src = p.image; });  // попереднє завантаження
+    const a = box.firstElementChild;
+    let cur = 0;
     setInterval(() => {
       if (document.hidden) return;
-      // наступний товар, якого зараз немає на жодній плитці
-      let p = null;
-      for (let k = 0; k < list.length; k++) {
-        const c = list[(next + k) % list.length];
-        if (!shown.includes(c)) { p = c; next = (next + k + 1) % list.length; break; }
-      }
-      if (!p) return;
-      const a = tiles[slot];
+      cur = (cur + 1) % list.length;
+      const p = list[cur];
       a.insertAdjacentHTML('beforeend', img(p, 'opacity-0'));
       const fresh = a.lastElementChild;
       const swap = () => {
@@ -272,8 +262,6 @@
       };
       fresh.complete ? swap() : (fresh.onload = swap, fresh.onerror = () => fresh.remove());
       a.href = p.url; a.title = p.name;
-      shown[slot] = p;
-      slot = (slot + 1) % SLOTS;
     }, 2500);
   })();
 
