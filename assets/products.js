@@ -58,4 +58,15 @@ window.PRODUCTS = [
     image: '/assets/img/flame-heater-main-600.webp',
     url: '/products/elektrokamin-flame-heater/',
   },
+  {
+    slug: 'konvektor-mh-20k',
+    sku: '59148',
+    name: 'Конвектор MH-20K 2000 Вт з термостатом',
+    short: 'До 20 м², 2 режими 1200/2000 Вт, без вентилятора, на колесах',
+    price: 2700,
+    oldPrice: null,
+    badge: 'Без вентилятора',
+    image: '/assets/img/mh20k-main-600.webp',
+    url: '/products/konvektor-mh-20k/',
+  },
 ];
