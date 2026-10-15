@@ -30,7 +30,7 @@
     (function () {
       var R = /(\/assets\/img\/[a-z0-9-]+-main(?:-600)?)(-light)?\.webp/, H = document.documentElement;
       // Фото з сайту постачальника → своя світла версія
-      var X = { 'https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3-1000x1000.webp': '/assets/img/kamin-900-light.webp' };
+      var X = window.__lightMap = { 'https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3-1000x1000.webp': '/assets/img/kamin-900-light.webp' };
       function fix(img) { var s = img.getAttribute('src'); if (!s || img.hasAttribute('data-keep-dark')) return; var l = !H.classList.contains('dark');
         for (var k in X) { if (l && s === k) return img.setAttribute('src', X[k]); if (!l && s === X[k]) return img.setAttribute('src', k); }
         var m = s.match(R); if (m && l !== !!m[2]) img.setAttribute('src', s.replace(R, m[1] + (l ? '-light' : '') + '.webp')); }
@@ -251,34 +251,47 @@
   const avail = (window.PRODUCTS || []).filter(p => p.inStock !== false).length;
   if (n) $('#catalogCount').textContent = n + ' ' + word(n) + (avail < n ? ', у наявності ' + avail : '');
 
-  // Превʼю у першому екрані: фото перших товарів
-  // Велике фото в першому блоці: товари каталогу змінюються по черзі.
+  // Велике фото в першому блоці: товари в наявності змінюються по черзі (плавна зміна без миготіння).
   // Нові товари з products.js потрапляють сюди автоматично.
   (function heroCarousel() {
     const box = $('#heroPreview');
     const list = (window.PRODUCTS || []).filter(p => p.image && p.inStock !== false);
     if (!box || !list.length) return;
+    const H = document.documentElement;
+    // велике фото (1024 px) і версія під поточну тему
+    const srcOf = (p) => {
+      const big = p.image.replace(/-main-600\.webp$/, '-main.webp');
+      if (H.classList.contains('dark')) return big;
+      return (window.__lightMap || {})[big] || big.replace(/(\/assets\/img\/[a-z0-9-]+-main)\.webp$/, '$1-light.webp');
+    };
     const escA = (t) => String(t).replace(/"/g, '&quot;');
-    const img = (p, extra = '') => `<img src="${p.image}" alt="${escA(p.name)}" class="img-fade absolute inset-0 w-full h-full object-cover scale-[1.06] transition-opacity duration-700 ${extra}" loading="eager">`;
-    box.innerHTML = `<a href="${list[0].url}" title="${escA(list[0].name)}" class="relative block rounded-3xl overflow-hidden aspect-square">${img(list[0])}</a>`;
+    const cls = 'img-fade absolute inset-0 w-full h-full object-cover scale-[1.06] transition-opacity duration-700 ease-in-out';
+    box.innerHTML = `<a href="${list[0].url}" title="${escA(list[0].name)}" class="relative block rounded-3xl overflow-hidden aspect-square">`
+      + `<img src="${srcOf(list[0])}" alt="${escA(list[0].name)}" class="${cls}" style="z-index:2" loading="eager" fetchpriority="high">`
+      + `<img alt="" aria-hidden="true" class="${cls} opacity-0" style="z-index:1" loading="eager"></a>`;
     if (list.length < 2) return;
-    const preload = (k) => { const q = list[k % list.length]; if (q) { const im = new Image(); im.src = document.documentElement.classList.contains('dark') ? q.image : q.image.replace(/(\/assets\/img\/[a-z0-9-]+-main(?:-600)?)\.webp$/, '$1-light.webp'); } };
-    preload(1);
-    const a = box.firstElementChild;
-    let cur = 0;
-    setInterval(() => {
-      if (document.hidden) return;
-      cur = (cur + 1) % list.length;
-      const p = list[cur]; preload(cur + 1);
-      a.insertAdjacentHTML('beforeend', img(p, 'opacity-0'));
-      const fresh = a.lastElementChild;
-      const swap = () => {
-        requestAnimationFrame(() => fresh.classList.remove('opacity-0'));
-        setTimeout(() => { while (a.children.length > 1) a.firstElementChild.remove(); }, 800);
-      };
-      fresh.complete ? swap() : (fresh.onload = swap, fresh.onerror = () => fresh.remove());
+    const a = box.firstElementChild, layers = [...a.querySelectorAll('img')];
+    let front = 0, cur = 0, busy = false;
+    const load = (src) => new Promise(res => { const im = new Image(); im.onload = im.onerror = () => res(); im.src = src; });
+    load(srcOf(list[1]));
+    async function next() {
+      if (busy || document.hidden) return;
+      busy = true;
+      const n = (cur + 1) % list.length, p = list[n];
+      const top = layers[1 - front], under = layers[front];
+      const src = srcOf(p);
+      await load(src);                                  // спершу повністю завантажуємо фото
+      top.classList.add('opacity-0'); top.style.zIndex = 2; under.style.zIndex = 1;
+      top.src = src; top.alt = p.name; top.removeAttribute('aria-hidden');
+      under.setAttribute('aria-hidden', 'true');
+      try { await top.decode(); } catch (e) {}
+      void top.offsetWidth;                             // фіксуємо прозорий стан перед анімацією
+      top.classList.remove('opacity-0');                // нове фото плавно зʼявляється поверх старого
       a.href = p.url; a.title = p.name;
-    }, 2500);
+      front = 1 - front; cur = n;
+      setTimeout(() => { under.classList.add('opacity-0'); busy = false; load(srcOf(list[(n + 1) % list.length])); }, 750);
+    }
+    setInterval(next, 2500);
   })();
 
   // Доставка
