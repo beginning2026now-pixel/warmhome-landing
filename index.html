@@ -69,7 +69,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Стилі: зібраний Tailwind CSS (assets/tw.css). Після зміни класів у HTML перезберіть його (див. README.md). -->
-  <link rel="stylesheet" href="/assets/tw.css?v=cca7d744">
+  <link rel="stylesheet" href="/assets/tw.css?v=5299d5a0">
 
   <!-- Іконки Lucide -->
   <script src="/assets/products.js?v=509dd995"></script>
@@ -265,7 +265,7 @@
       return (window.__lightMap || {})[big] || big.replace(/(\/assets\/img\/[a-z0-9-]+-main)\.webp$/, '$1-light.webp');
     };
     const escA = (t) => String(t).replace(/"/g, '&quot;');
-    const cls = 'img-fade absolute inset-0 w-full h-full object-cover scale-[1.06] transition-opacity duration-700 ease-in-out';
+    const cls = 'img-fade absolute inset-0 w-full h-full object-cover scale-[1.06] transition-opacity duration-[450ms] ease-in-out';
     box.innerHTML = `<a href="${list[0].url}" title="${escA(list[0].name)}" class="relative block rounded-3xl overflow-hidden aspect-square">`
       + `<img src="${srcOf(list[0])}" alt="${escA(list[0].name)}" class="${cls}" style="z-index:2" loading="eager" fetchpriority="high">`
       + `<img alt="" aria-hidden="true" class="${cls} opacity-0" style="z-index:1" loading="eager"></a>`;
@@ -285,11 +285,14 @@
       top.src = src; top.alt = p.name; top.removeAttribute('aria-hidden');
       under.setAttribute('aria-hidden', 'true');
       try { await top.decode(); } catch (e) {}
-      void top.offsetWidth;                             // фіксуємо прозорий стан перед анімацією
-      top.classList.remove('opacity-0');                // нове фото плавно зʼявляється поверх старого
+      // Спершу попереднє фото повністю зникає, потім зʼявляється нове — без накладання контурів
+      under.classList.add('opacity-0');
+      await new Promise(r => setTimeout(r, 450));
+      void top.offsetWidth;
+      top.classList.remove('opacity-0');
       a.href = p.url; a.title = p.name;
       front = 1 - front; cur = n;
-      setTimeout(() => { under.classList.add('opacity-0'); busy = false; load(srcOf(list[(n + 1) % list.length])); }, 750);
+      setTimeout(() => { busy = false; load(srcOf(list[(n + 1) % list.length])); }, 500);
     }
     setInterval(next, 2500);
   })();
