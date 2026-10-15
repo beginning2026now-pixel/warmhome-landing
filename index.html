@@ -56,7 +56,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Стилі: зібраний Tailwind CSS (assets/tw.css). Після зміни класів у HTML перезберіть його (див. README.md). -->
-  <link rel="stylesheet" href="assets/tw.css?v=73f0d3c3">
+  <link rel="stylesheet" href="assets/tw.css?v=ac9980fe">
 
   <!-- Іконки Lucide -->
   <script src="assets/icons.js?v=3a850485" defer></script>
@@ -482,8 +482,17 @@
   </main>
 
   <!-- ===================== БЛОК 11: ФУТЕР ===================== -->
-  <footer class="bg-slate-950 text-slate-400 pt-10 pb-28 md:pb-10 text-sm">
-    <div class="max-w-6xl mx-auto px-4 grid sm:grid-cols-3 gap-6">
+  <footer class="relative overflow-clip bg-slate-950 text-slate-400 pt-10 pb-28 md:pb-10 text-sm">
+    <!-- Логотип як напівпрозорий фон -->
+    <div class="pointer-events-none select-none absolute inset-0 flex items-center justify-center opacity-[0.06]" aria-hidden="true">
+      <div class="flex items-center gap-[3vw] font-display font-extrabold text-white whitespace-nowrap text-[9.5vw] md:text-[9vw] leading-none">
+        <span class="w-[11vw] h-[11vw] md:w-[10vw] md:h-[10vw] rounded-[2.5vw] md:rounded-[2vw] bg-gradient-to-br from-fire-500 to-fire-700 grid place-items-center shrink-0">
+          <i data-lucide="flame" class="w-[7vw] h-[7vw] md:w-[6.5vw] md:h-[6.5vw]"></i>
+        </span>
+        <span>WarmHome <span class="text-fire-500">UA</span></span>
+      </div>
+    </div>
+    <div class="relative max-w-6xl mx-auto px-4 grid sm:grid-cols-3 gap-6">
       <div>
         <p class="font-display font-extrabold text-white text-lg">WarmHome <span class="text-fire-500">UA</span></p>
         <p class="mt-2">Тепло та затишок для вашого дому.</p>
@@ -500,12 +509,12 @@
         <button type="button" class="hover:text-white text-left js-open-modal" data-modal="returnModal">Умови повернення та обміну (14 днів згідно із ЗУ «Про захист прав споживачів»)</button>
       </div>
     </div>
-    <div class="max-w-6xl mx-auto px-4 mt-8 pt-6 border-t border-white/10 text-xs text-slate-500 space-y-1">
+    <div class="relative max-w-6xl mx-auto px-4 mt-8 pt-6 border-t border-white/10 text-xs text-slate-500 space-y-1">
       <p>*Колір або відтінок виробу на фотографії може відрізнятися від реального</p>
       <p>**Характеристики та комплектація товару можуть змінюватися виробником без повідомлення</p>
       <p>***Магазин не несе відповідальності за зміни, внесені виробником</p>
     </div>
-    <p class="max-w-6xl mx-auto px-4 mt-4 text-xs">© 2026 WarmHome UA. Усі права захищені.</p>
+    <p class="relative max-w-6xl mx-auto px-4 mt-4 text-xs">© 2026 WarmHome UA. Усі права захищені.</p>
   </footer>
 
   <!-- Кнопка «Вгору» (зʼявляється після прокрутки) -->
