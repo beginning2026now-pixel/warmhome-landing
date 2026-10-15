@@ -56,7 +56,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Стилі: зібраний Tailwind CSS (assets/tw.css). Після зміни класів у HTML перезберіть його (див. README.md). -->
-  <link rel="stylesheet" href="/assets/tw.css?v=119b54b4">
+  <link rel="stylesheet" href="/assets/tw.css?v=1e22a950">
 
   <!-- Іконки Lucide -->
   <script src="/assets/products.js?v=c96a7e42"></script>
@@ -337,19 +337,28 @@
     <!-- ===================== БЛОК 10: ФОРМА ЗАМОВЛЕННЯ ===================== -->
     <section id="order" class="bg-graphite py-14 md:py-20 scroll-mt-16 relative overflow-clip">
       <div class="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-fire-600/25 blur-3xl pointer-events-none"></div>
-      <div class="relative max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+      <div class="relative max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 lg:gap-14 items-center">
 
         <div class="text-white">
-          <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl">Встигніть замовити за акційною ціною</h2>
-          <div class="mt-6 flex gap-4 items-center">
-            <!-- ФОТО ТОВАРУ (мініатюра у формі): замініть src -->
-            <div class="w-28 h-28 rounded-2xl overflow-hidden bg-white shrink-0"><img src="https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184-1000x1000.webp" alt="Обігрівач з ефектом каміна" width="120" height="120" loading="lazy" class="w-full h-full object-contain bg-white scale-[1.06]"></div>
-            <div>
-              <p class="text-slate-400 line-through">2190 грн</p>
-              <p class="font-display font-extrabold text-4xl text-fire-500">1599 грн</p>
-              <p class="text-sm text-buy-500 font-semibold">Ви економите 591 грн</p>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">Встигніть замовити за акційною ціною</h2>
+          <div class="mt-6 md:mt-8 flex gap-5 items-center md:block">
+            <!-- ФОТО ТОВАРУ біля форми -->
+            <div class="relative fire-glow shrink-0">
+              <div class="relative z-[1] w-32 h-32 sm:w-40 sm:h-40 md:w-full md:h-auto md:max-w-md md:aspect-square rounded-2xl md:rounded-3xl overflow-hidden bg-black shadow-2xl ring-1 ring-white/10">
+                <img src="https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3-1000x1000.webp" alt="Обігрівач з ефектом каміна 900 Вт" width="1000" height="1000" loading="lazy" class="w-full h-full object-cover scale-[1.06]">
+              </div>
+            </div>
+            <div class="md:mt-7 flex items-end gap-x-3 gap-y-1 flex-wrap">
+              <span class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-fire-500 leading-none whitespace-nowrap">1599 грн</span>
+              <span class="text-xl text-slate-400 line-through">2190 грн</span>
+              <span class="w-full text-base text-buy-500 font-semibold">Ви економите 591 грн</span>
             </div>
           </div>
+          <ul class="mt-7 space-y-3 text-slate-300 hidden md:block">
+            <li class="flex items-center gap-3"><span class="w-9 h-9 rounded-xl bg-white/10 text-fire-500 grid place-items-center"><i data-lucide="wallet" class="w-5 h-5"></i></span>Оплата при отриманні — без передоплати</li>
+            <li class="flex items-center gap-3"><span class="w-9 h-9 rounded-xl bg-white/10 text-fire-500 grid place-items-center"><i data-lucide="truck" class="w-5 h-5"></i></span>Нова Пошта 1–3 дні по всій Україні</li>
+            <li class="flex items-center gap-3"><span class="w-9 h-9 rounded-xl bg-white/10 text-fire-500 grid place-items-center"><i data-lucide="shield-check" class="w-5 h-5"></i></span>Обмін та повернення 14 днів</li>
+          </ul>
         </div>
 
         <form id="orderForm" class="bg-white rounded-3xl p-4 sm:p-8 shadow-2xl w-full min-w-0 scroll-mt-20" novalidate>
