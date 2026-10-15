@@ -158,7 +158,7 @@
   }
 
   function add(slug, qty = 1) {
-    const p = bySlug(slug); if (!p) return;
+    const p = bySlug(slug); if (!p || p.inStock === false) return;
     const it = items.find(i => i.slug === slug);
     if (it) it.qty += qty; else items.push({ slug, qty });
     save(); render();

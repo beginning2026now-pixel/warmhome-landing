@@ -69,13 +69,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Стилі: зібраний Tailwind CSS (assets/tw.css). Після зміни класів у HTML перезберіть його (див. README.md). -->
-  <link rel="stylesheet" href="/assets/tw.css?v=12f208fc">
+  <link rel="stylesheet" href="/assets/tw.css?v=ea41c642">
 
   <!-- Іконки Lucide -->
-  <script src="/assets/products.js?v=e09556fb"></script>
-  <script src="/assets/shop.js?v=3c81b83a"></script>
-  <script src="/assets/icons.js?v=a2ba886e" defer></script>
-  <script src="/assets/cart.js?v=9622efab" defer></script>
+  <script src="/assets/products.js?v=c18ffb63"></script>
+  <script src="/assets/shop.js?v=85bb1468"></script>
+  <script src="/assets/icons.js?v=32134b82" defer></script>
+  <script src="/assets/cart.js?v=7990f510" defer></script>
 
   <link rel="stylesheet" href="/assets/site.css?v=d2f2d3f3">
 </head>
@@ -248,26 +248,28 @@
   const n = window.renderProducts ? renderProducts($('#catalogGrid')) : 0;
   if (!n) $('#catalogEmpty').classList.remove('hidden');
   const word = (k) => (k % 10 === 1 && k % 100 !== 11) ? 'товар' : (k % 10 >= 2 && k % 10 <= 4 && (k % 100 < 10 || k % 100 >= 20)) ? 'товари' : 'товарів';
-  if (n) $('#catalogCount').textContent = n + ' ' + word(n);
+  const avail = (window.PRODUCTS || []).filter(p => p.inStock !== false).length;
+  if (n) $('#catalogCount').textContent = n + ' ' + word(n) + (avail < n ? ', у наявності ' + avail : '');
 
   // Превʼю у першому екрані: фото перших товарів
   // Велике фото в першому блоці: товари каталогу змінюються по черзі.
   // Нові товари з products.js потрапляють сюди автоматично.
   (function heroCarousel() {
     const box = $('#heroPreview');
-    const list = (window.PRODUCTS || []).filter(p => p.image);
+    const list = (window.PRODUCTS || []).filter(p => p.image && p.inStock !== false);
     if (!box || !list.length) return;
     const escA = (t) => String(t).replace(/"/g, '&quot;');
     const img = (p, extra = '') => `<img src="${p.image}" alt="${escA(p.name)}" class="absolute inset-0 w-full h-full object-cover scale-[1.06] transition-opacity duration-700 ${extra}" loading="eager">`;
     box.innerHTML = `<a href="${list[0].url}" title="${escA(list[0].name)}" class="relative block rounded-3xl overflow-hidden bg-white shadow-2xl aspect-square">${img(list[0])}</a>`;
     if (list.length < 2) return;
-    list.slice(1).forEach(p => { const i = new Image(); i.src = p.image; });  // попереднє завантаження
+    const preload = (k) => { const q = list[k % list.length]; if (q) { const im = new Image(); im.src = document.documentElement.classList.contains('dark') ? q.image : q.image.replace(/(\/assets\/img\/[a-z0-9-]+-main(?:-600)?)\.webp$/, '$1-light.webp'); } };
+    preload(1);
     const a = box.firstElementChild;
     let cur = 0;
     setInterval(() => {
       if (document.hidden) return;
       cur = (cur + 1) % list.length;
-      const p = list[cur];
+      const p = list[cur]; preload(cur + 1);
       a.insertAdjacentHTML('beforeend', img(p, 'opacity-0'));
       const fresh = a.lastElementChild;
       const swap = () => {
