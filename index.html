@@ -1186,9 +1186,9 @@
 
   /* Кнопка «Вгору» */
   const toTop = $('#toTop');
-  // на телефоні ховаємо, коли видно форму замовлення або відкрита клавіатура (щоб не перекривати кнопки)
+  // на телефоні ховаємо лише поки відкрита клавіатура (щоб не перекривати поле вводу)
   const toggleToTop = window.toggleToTop = () => {
-    const mobileBusy = window.innerWidth < 768 && (orderVisible || typing);
+    const mobileBusy = window.innerWidth < 768 && typing;
     const show = window.scrollY > 600 && !mobileBusy;
     toTop.classList.toggle('opacity-0', !show); toTop.classList.toggle('translate-y-4', !show); toTop.classList.toggle('pointer-events-none', !show);
   };
