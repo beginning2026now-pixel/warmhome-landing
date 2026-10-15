@@ -41,7 +41,7 @@ window.PRODUCTS = [
     sku: '59173',
     name: 'Настінний тепловентилятор DOMOTEC MS-5963 2000 Вт із сушаркою',
     short: 'Сушарка для рушників, пульт ДК, термостат, таймер 8 год',
-    price: 1346,
+    price: 1400,
     oldPrice: null,
     badge: 'На стіну',
     image: '/assets/img/domotec-main-600.webp',
