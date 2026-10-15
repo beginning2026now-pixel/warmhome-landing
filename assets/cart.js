@@ -187,12 +187,12 @@
   $('#cartBack').addEventListener('click', () => show('items'));
 
   /* ---------- Телефон ---------- */
-  const digits = (v) => { let d = v.replace(/\D/g, ''); if (d.startsWith('38')) d = d.slice(2); if (d && d[0] !== '0') d = '0' + d; return d.slice(0, 10); };
+  const digits = (v) => { let d = (v.startsWith('+38 (') ? v.slice(5) : v).replace(/\D/g, ''); if (d.length >= 12) d = d.slice(-10); if (d.startsWith('38')) d = d.slice(2); else if (d.startsWith('038')) d = '0' + d.slice(3); if (d.startsWith('00')) d = d.slice(1); if (d && d[0] !== '0') d = '0' + d; return d.slice(0, 10); };
   const fmtPhone = (v) => { const d = digits(v); if (!d) return ''; let o = '+38 (' + d.slice(0, 3); if (d.length > 3) o += ') ' + d.slice(3, 6); if (d.length > 6) o += '-' + d.slice(6, 8); if (d.length > 8) o += '-' + d.slice(8, 10); return o; };
   const phoneOk = (v) => { const d = digits(v); return d.length === 10 && CODES.includes(d.slice(0, 3)); };
   const ph = form.phone;
-  ph.addEventListener('input', () => { ph.value = fmtPhone(ph.value); });
-  ph.addEventListener('focus', () => { if (!ph.value) ph.value = '+38 (0'; });
+  ph.addEventListener('input', () => { ph.value = fmtPhone(ph.value); ph.setSelectionRange(ph.value.length, ph.value.length); });
+  ph.addEventListener('focus', () => { if (!ph.value) ph.value = '+38 (0'; const L = ph.value.length; setTimeout(() => { try { ph.setSelectionRange(L, L); } catch (e) {} }, 0); });
   ph.addEventListener('blur', () => { if (digits(ph.value).length <= 1) ph.value = ''; });
 
   /* ---------- Нова Пошта ---------- */

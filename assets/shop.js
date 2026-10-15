@@ -15,11 +15,11 @@
           <img src="${esc(p.image)}" alt="${esc(p.name)}" width="600" height="600" loading="lazy" class="w-full h-full object-cover grayscale opacity-50">
           <span class="absolute top-3 left-3 bg-slate-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">Немає в наявності</span>
         </div>
-        <div class="flex flex-col flex-1 p-4 sm:p-5">
-          <p class="font-display font-bold text-base sm:text-lg text-slate-400 leading-snug">${esc(p.name)}</p>
+        <div class="flex flex-col flex-1 p-3 sm:p-5">
+          <p class="font-display font-bold text-[15px] sm:text-lg text-slate-400 leading-snug hyphens-auto [overflow-wrap:anywhere]">${esc(p.name)}</p>
           ${p.short ? `<p class="mt-1.5 text-sm text-slate-400">${esc(p.short)}</p>` : ''}
           <div class="mt-auto pt-4">
-            <span class="font-display font-extrabold text-2xl text-slate-400">${fmt(p.price)} грн</span>
+            <span class="font-display font-extrabold text-xl min-[400px]:text-2xl text-slate-400 whitespace-nowrap">${fmt(p.price)} грн</span>
           </div>
           <div class="mt-4 flex items-center justify-center min-h-[44px] rounded-xl bg-slate-100 text-slate-400 font-bold text-sm sm:text-base">Немає в наявності</div>
         </div>
@@ -36,11 +36,11 @@
             ${p.ending ? `<span class="bg-amber-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">⏳ Закінчується</span>` : ''}
           </span>
         </a>
-        <div class="flex flex-col flex-1 p-4 sm:p-5">
-          <a href="${esc(p.url)}" class="font-display font-bold text-base sm:text-lg text-graphite leading-snug hover:text-fire-600">${esc(p.name)}</a>
+        <div class="flex flex-col flex-1 p-3 sm:p-5">
+          <a href="${esc(p.url)}" class="font-display font-bold text-[15px] sm:text-lg text-graphite leading-snug hover:text-fire-600 hyphens-auto [overflow-wrap:anywhere]">${esc(p.name)}</a>
           ${p.short ? `<p class="mt-1.5 text-sm text-slate-500">${esc(p.short)}</p>` : ''}
           <div class="mt-auto pt-4 flex items-end gap-2 flex-wrap">
-            <span class="font-display font-extrabold text-2xl text-fire-600">${fmt(p.price)} грн</span>
+            <span class="font-display font-extrabold text-xl min-[400px]:text-2xl text-fire-600 whitespace-nowrap">${fmt(p.price)} грн</span>
             ${discount ? `<span class="text-sm text-slate-400 line-through mb-1">${fmt(p.oldPrice)} грн</span>` : ''}
           </div>
           <div class="mt-4 flex gap-2">
