@@ -80,4 +80,15 @@ window.PRODUCTS = [
     image: '/assets/img/zodiak-dragon-main-600.webp',
     url: '/products/mini-obigrivach-zodiak-dragon/',
   },
+  {
+    slug: 'obigrivach-tower-heat',
+    sku: '59050',
+    name: 'Керамічний обігрівач Tower Heat 2000 Вт',
+    short: 'До 20 м², 3 режими, таймер, захист від перегріву і перекидання',
+    price: 1500,
+    oldPrice: null,
+    badge: 'Колона · 2000 Вт',
+    image: '/assets/img/tower-heat-main-600.webp',
+    url: '/products/obigrivach-tower-heat/',
+  },
 ];
