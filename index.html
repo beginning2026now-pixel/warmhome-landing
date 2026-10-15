@@ -1190,9 +1190,18 @@
   const toggleToTop = window.toggleToTop = () => {
     const mobileBusy = window.innerWidth < 768 && typing;
     const show = window.scrollY > 600 && !mobileBusy;
+    // на телефоні ставимо кнопку над нижньою панеллю, з урахуванням її реальної висоти (на iPhone вона вища)
+    if (window.innerWidth < 768) {
+      const barShown = !(orderVisible || typing);
+      toTop.style.bottom = barShown ? (stickyBar.offsetHeight + 12) + 'px' : 'calc(16px + env(safe-area-inset-bottom))';
+    } else {
+      toTop.style.bottom = '';
+    }
     toTop.classList.toggle('opacity-0', !show); toTop.classList.toggle('translate-y-4', !show); toTop.classList.toggle('pointer-events-none', !show);
   };
-  window.addEventListener('scroll', toggleToTop, { passive: true }); toggleToTop();
+  window.addEventListener('scroll', toggleToTop, { passive: true });
+  window.addEventListener('resize', toggleToTop);
+  toggleToTop();
   toTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   });
