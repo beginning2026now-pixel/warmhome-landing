@@ -419,9 +419,6 @@
             <p class="text-sm text-slate-400 mb-2">До кінця акції:</p>
             <div class="js-timer js-timer-dark flex gap-2"></div>
           </div>
-          <div class="mt-6">
-            <p class="text-sm font-semibold">В наявності залишилось <span class="js-stock text-fire-500"></span> шт.</p>
-          </div>
         </div>
 
         <form id="orderForm" class="bg-white rounded-3xl p-4 sm:p-8 shadow-2xl w-full min-w-0 scroll-mt-20" novalidate>
@@ -591,8 +588,6 @@
 
   const PRODUCT = { name: 'Електричний керамічний обігрівач з ефектом каміна (900 Вт)', sku: '24433188', price: 1599, oldPrice: 2190 };
 
-  // Залишок на складі — вкажіть реальну кількість.
-  const STOCK_LEFT = 7;
 
   // Реальні відгуки покупців. Поки масив порожній, блок «Відгуки» прихований.
   // Формат: { name: 'Олена', city: 'Київ', rating: 5, date: '12.10.2026', text: '...', photo: '' }
@@ -767,7 +762,6 @@
   renderTimers(); setInterval(renderTimers, 1000);
 
   // Залишок
-  $$('.js-stock').forEach(el => el.textContent = STOCK_LEFT);
 
   /* ==========================================================
      МЕНЮ, СЛАЙДЕР, FAQ, МОДАЛКИ, STICKY BAR
