@@ -78,7 +78,7 @@
   <script src="/assets/icons.js?v=32134b82" defer></script>
   <script src="/assets/cart.js?v=777d4ee8" defer></script>
 
-  <link rel="stylesheet" href="/assets/site.css?v=928cd27f">
+  <link rel="stylesheet" href="/assets/site.css?v=1387bec6">
 </head>
 
 <body class="bg-white text-slate-800 font-sans antialiased">
@@ -657,7 +657,7 @@
 
   $('#slider').innerHTML = GALLERY.map(([src, caption], i) => `
     <figure class="shrink-0 w-[85%] sm:w-[60%] md:w-[calc(50%-.5rem)] lg:w-[calc(33.333%-.67rem)] rounded-2xl overflow-hidden bg-cream border border-slate-100">
-      <div class="aspect-square overflow-hidden bg-white"><img src="${src}" alt="${caption}" width="1000" height="1000" loading="lazy" class="w-full h-full object-contain scale-[1.06]"></div>
+      <div class="aspect-square overflow-hidden bg-white"><img src="${src}" alt="${caption}" width="1000" height="1000" loading="lazy" class="img-fade w-full h-full object-contain scale-[1.06]"></div>
       <figcaption class="p-4 font-semibold text-graphite flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-fire-600 text-white text-xs grid place-items-center">${i + 1}</span>${caption}</figcaption>
     </figure>`).join('');
 

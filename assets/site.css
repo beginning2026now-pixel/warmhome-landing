@@ -67,14 +67,14 @@ html.dark .bg-graphite.js-close-modal, html.dark #questionForm .fb-submit { back
 /* фото товару на білому фоні лишаються на білих картках */
 html.dark img.bg-white { background-color: #FFFFFF; }
 html.dark #slider figure { background-color: #131D2E; }
-html.dark #slider figure > div { background-color: #FFFFFF; }
+html.dark #slider figure > div { background-color: #131D2E; }
 html.dark #slider figcaption { background-color: #131D2E; }
 @media (prefers-reduced-motion: reduce) { .cta-pulse, .fire-glow::before, .stock-bar { animation: none; } }
 
 /* Мʼякі краї фото: фото плавно розчиняється у фон картки або сторінки */
 .img-fade {
-  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 15%, #000 85%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 15%, #000 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 18%, #000 82%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 18%, #000 82%, transparent 100%);
   -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(to right, transparent 0, #000 15%, #000 85%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 15%, #000 85%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 18%, #000 82%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 18%, #000 82%, transparent 100%);
   mask-composite: intersect;
 }
