@@ -17,9 +17,10 @@ def text(s): return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', s)
 
 def photo(p):
     """Головне фото товару у JPG 1024×1024 (Meta не завжди приймає WebP)."""
-    src = 'assets/img/%s-main.webp' % p['slug']
-    if not os.path.exists(src):                       # обігрівач з ефектом каміна: локально є лише світла версія
-        src = 'assets/img/kamin-900-light.webp'
+    img = p['image'].split('?')[0]                    # /assets/img/<name>-main-600.webp → велика версія <name>-main.webp
+    src = img.lstrip('/').replace('-main-600.webp', '-main.webp')
+    if not img.startswith('/assets/') or not os.path.exists(src):
+        src = 'assets/img/kamin-900-light.webp'       # обігрівач з ефектом каміна: локально є лише світла версія
     out = 'assets/feed/%s.jpg' % p['slug']
     Image.open(src).convert('RGB').resize((1024, 1024), Image.LANCZOS).save(out, 'JPEG', quality=86, optimize=True)
     return '%s/%s?v=%d' % (SITE, out, int(os.path.getmtime(src)))
