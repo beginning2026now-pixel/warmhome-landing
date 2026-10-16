@@ -1,0 +1,56 @@
+# -*- coding: utf-8 -*-
+"""Каталог товарів для Meta (Facebook та Instagram): feed/facebook.csv + JPG-фото в assets/feed/.
+Запуск з кореня репозиторію після будь-якої зміни товарів або цін:  python3 tools/make_feed.py
+Meta забирає файл за адресою https://warmhome.in.ua/feed/facebook.csv за розкладом."""
+import csv, html, json, os, re, subprocess
+from PIL import Image
+
+SITE = 'https://warmhome.in.ua'
+HEATERS = 'Home & Garden > Household Appliances > Climate Control Appliances > Space Heaters'
+SCARF = 'Apparel & Accessories > Clothing Accessories > Scarves & Shawls'
+
+P = json.loads(subprocess.run(['node', '-e', "global.window={};require('./assets/products.js');console.log(JSON.stringify(window.PRODUCTS))"],
+                              capture_output=True, text=True, check=True).stdout)
+os.makedirs('feed', exist_ok=True); os.makedirs('assets/feed', exist_ok=True)
+
+def text(s): return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', s))).strip()
+
+def photo(p):
+    """Головне фото товару у JPG 1024×1024 (Meta не завжди приймає WebP)."""
+    src = 'assets/img/%s-main.webp' % p['slug']
+    if not os.path.exists(src):                       # обігрівач з ефектом каміна: локально є лише світла версія
+        src = 'assets/img/kamin-900-light.webp'
+    out = 'assets/feed/%s.jpg' % p['slug']
+    Image.open(src).convert('RGB').resize((1024, 1024), Image.LANCZOS).save(out, 'JPEG', quality=86, optimize=True)
+    return '%s/%s?v=%d' % (SITE, out, int(os.path.getmtime(src)))
+
+rows = []
+for p in P:
+    if p.get('inStock') is False or not p.get('url'):
+        continue                                      # без сторінки товару Meta не прийме позицію
+    page = open('.' + p['url'] + 'index.html', encoding='utf-8').read()
+    lead = re.search(r'<p class="mt-4 text-base sm:text-lg text-slate-600">(.*?)</p>', page, re.S)
+    ul = re.search(r'<ul class="mt-6 space-y-3">(.*?)</ul>', page, re.S)
+    bullets = [text(li) for li in re.findall(r'<li[^>]*>(.*?)</li>', ul.group(1), re.S)] if ul else []
+    desc = ' '.join([text(lead.group(1)) if lead else p['short']] + bullets)
+    desc += ' Доставка Новою Поштою 1–3 дні, оплата при отриманні, обмін та повернення 14 днів.'
+    old = p.get('oldPrice')
+    rows.append({
+        'id': p['sku'],                               # той самий артикул, що й у подіях пікселя (content_ids)
+        'title': p['name'][:150],
+        'description': desc[:5000],
+        'availability': 'in stock',
+        'condition': 'new',
+        'price': '%d UAH' % (old if old and old > p['price'] else p['price']),
+        'sale_price': '%d UAH' % p['price'] if old and old > p['price'] else '',
+        'link': SITE + p['url'],
+        'image_link': photo(p),
+        'brand': 'WarmHome UA',
+        'google_product_category': SCARF if 'scarf' in (p.get('cat') or []) else HEATERS,
+        'product_type': ', '.join(p.get('cat') or []),
+        'custom_label_0': 'Закінчується' if p.get('ending') else '',
+    })
+
+with open('feed/facebook.csv', 'w', encoding='utf-8', newline='') as f:
+    w = csv.DictWriter(f, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
+print('товарів у каталозі:', len(rows))
