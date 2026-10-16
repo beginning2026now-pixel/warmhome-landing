@@ -30,10 +30,10 @@
       <div class="group flex flex-col bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-0.5 transition">
         <a href="${esc(p.url)}" class="relative block aspect-square bg-white overflow-hidden">
           <img src="${esc(p.image)}" alt="${esc(p.name)}" width="600" height="600" loading="lazy" class="img-fade w-full h-full object-cover group-hover:scale-[1.03] transition duration-300">
-          ${discount ? `<span class="absolute top-3 right-3 bg-fire-600 text-white text-sm font-display font-extrabold px-2.5 py-1 rounded-lg shadow">-${discount}%</span>` : ''}
-          <span class="absolute top-3 left-3 flex flex-col items-start gap-1.5">
-            ${p.badge ? `<span class="bg-graphite/90 text-white text-xs font-bold px-2.5 py-1 rounded-full">${esc(p.badge)}</span>` : ''}
-            ${p.ending ? `<span class="bg-amber-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">⏳ Закінчується</span>` : ''}
+          ${discount ? `<span class="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 bg-fire-600 text-white text-[13px] sm:text-sm font-display font-extrabold px-2.5 py-1 rounded-lg shadow">-${discount}%</span>` : ''}
+          <span class="absolute top-2 left-2 right-2 sm:top-3 sm:left-3 sm:right-3 flex flex-col items-start gap-1 sm:gap-1.5">
+            ${p.badge ? `<span class="max-w-full truncate bg-graphite/90 text-white text-[11px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full">${esc(p.badge)}</span>` : ''}
+            ${p.ending ? `<span class="max-w-full truncate bg-amber-500 text-white text-[11px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full">⏳ Закінчується</span>` : ''}
           </span>
         </a>
         <div class="flex flex-col flex-1 p-3 sm:p-5">
