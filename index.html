@@ -72,7 +72,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Стилі: зібраний Tailwind CSS (assets/tw.css). Після зміни класів у HTML перезберіть його (див. README.md). -->
-  <link rel="stylesheet" href="/assets/tw.css?v=cf166580">
+  <link rel="stylesheet" href="/assets/tw.css?v=57c7c8ba">
 
   <!-- Іконки Lucide -->
   <script src="/assets/products.js?v=617539a6"></script>
@@ -293,11 +293,9 @@
     };
     const escA = (t) => String(t).replace(/"/g, '&quot;');
     const cls = 'img-fade absolute inset-0 w-full h-full object-cover transition-opacity duration-[450ms] ease-in-out';
-    const btn = (dir, side, icon, label) => `<button type="button" data-dir="${dir}" class="hero-nav absolute ${side} top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white/90 shadow-lg grid place-items-center text-graphite hover:text-fire-600 transition" aria-label="${label}"><i data-lucide="${icon}" class="w-6 h-6"></i></button>`;
     box.innerHTML = `<a href="${list[0].url}" title="${escA(list[0].name)}" class="relative block rounded-3xl overflow-hidden aspect-square select-none" draggable="false">`
       + `<img src="${srcOf(list[0])}" alt="${escA(list[0].name)}" class="${cls}" style="z-index:2" loading="eager" fetchpriority="high" draggable="false">`
-      + `<img alt="" aria-hidden="true" class="${cls} opacity-0" style="z-index:1" loading="eager" draggable="false"></a>`
-      + (list.length > 1 ? btn(-1, 'left-1 lg:-left-5 xl:-left-10', 'chevron-left', 'Попередній товар') + btn(1, 'right-1 lg:-right-5 xl:-right-10', 'chevron-right', 'Наступний товар') : '');
+      + `<img alt="" aria-hidden="true" class="${cls} opacity-0" style="z-index:1" loading="eager" draggable="false"></a>`;
     if (list.length < 2) return;
     const a = box.querySelector('a'), layers = [...a.querySelectorAll('img')];
     let front = 0, cur = 0, busy = false, pending = 0, timer = null;
@@ -330,7 +328,6 @@
     function schedule() { clearTimeout(timer); timer = setTimeout(() => document.hidden ? schedule() : go(1), AUTO); }
 
     // стрілки
-    box.querySelectorAll('.hero-nav').forEach(b => b.addEventListener('click', e => { e.preventDefault(); go(+b.dataset.dir); }));
     box.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); } if (e.key === 'ArrowRight') { e.preventDefault(); go(1); } });
     // свайп пальцем або мишею
     let x0 = null, y0 = 0, swiped = false;
