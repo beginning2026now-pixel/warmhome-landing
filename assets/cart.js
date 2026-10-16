@@ -42,8 +42,10 @@
   /* ---------- Розмітка панелі ---------- */
   const INP = 'w-full rounded-xl border border-slate-300 px-4 py-3 text-base bg-white focus:outline-none focus:ring-2 focus:ring-fire-500 disabled:bg-slate-100';
   document.body.insertAdjacentHTML('beforeend', `
-    <div id="cartOverlay" class="fixed inset-0 z-[60] bg-black/60 hidden"></div>
-    <aside id="cartDrawer" class="fixed top-0 right-0 z-[61] h-full w-full max-w-md bg-white text-slate-800 shadow-2xl translate-x-full transition-transform duration-300 flex flex-col" aria-hidden="true" aria-label="Кошик">
+    <div id="cartOverlay" class="fixed inset-0 z-[60] bg-black/60 hidden" style="bottom:-50vh"></div>
+    <aside id="cartDrawer" class="fixed inset-y-0 right-0 z-[61] w-full max-w-md bg-white text-slate-800 shadow-2xl translate-x-full transition-transform duration-300 flex flex-col" aria-hidden="true" aria-label="Кошик">
+      <!-- фон кошика продовжується під нижньою панеллю Safari на iPhone, щоб під кнопкою не просвічувала сторінка -->
+      <div aria-hidden="true" class="absolute inset-x-0 top-full h-[50vh] bg-inherit pointer-events-none"></div>
       <div class="flex items-center justify-between px-5 h-16 border-b border-slate-200 shrink-0">
         <h2 class="font-display font-extrabold text-xl text-graphite flex items-center gap-2"><i data-lucide="shopping-cart" class="w-5 h-5 text-fire-600"></i><span id="cartTitle">Кошик</span></h2>
         <button type="button" id="cartClose" class="grid place-items-center w-10 h-10 rounded-lg hover:bg-slate-100 text-graphite" aria-label="Закрити кошик"><i data-lucide="x" class="w-6 h-6"></i></button>
