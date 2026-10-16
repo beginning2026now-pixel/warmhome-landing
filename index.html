@@ -72,7 +72,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Стилі: зібраний Tailwind CSS (assets/tw.css). Після зміни класів у HTML перезберіть його (див. README.md). -->
-  <link rel="stylesheet" href="/assets/tw.css?v=721f812b">
+  <link rel="stylesheet" href="/assets/tw.css?v=cf166580">
 
   <!-- Іконки Lucide -->
   <script src="/assets/products.js?v=617539a6"></script>
@@ -127,7 +127,7 @@
   <main id="top">
     <!-- HERO -->
     <section class="bg-gradient-to-b from-orange-50 to-white">
-      <div class="max-w-6xl mx-auto px-4 pt-8 pb-10 md:py-16 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div class="max-w-6xl mx-auto px-4 pt-8 pb-10 md:py-14 grid md:grid-cols-2 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] gap-8 md:gap-10 items-center">
         <div>
           <h1 class="font-display font-extrabold text-[1.9rem] leading-tight sm:text-4xl lg:text-5xl text-graphite">
             Тепло і <span class="text-fire-600">затишок</span> для вашого дому
@@ -141,7 +141,7 @@
           <a href="#catalog" class="cta-pulse mt-7 inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 min-h-[56px] bg-buy-600 hover:bg-buy-700 text-white font-bold text-lg rounded-xl transition"><i data-lucide="layout-grid" class="w-5 h-5"></i> Дивитися товари</a>
         </div>
         <div class="relative fire-glow hidden md:block">
-          <div id="heroPreview" class="relative z-[1] max-w-lg mx-auto"></div>
+          <div id="heroPreview" class="relative z-[1] w-full max-w-[640px] mx-auto"></div>
         </div>
       </div>
     </section>
@@ -297,7 +297,7 @@
     box.innerHTML = `<a href="${list[0].url}" title="${escA(list[0].name)}" class="relative block rounded-3xl overflow-hidden aspect-square select-none" draggable="false">`
       + `<img src="${srcOf(list[0])}" alt="${escA(list[0].name)}" class="${cls}" style="z-index:2" loading="eager" fetchpriority="high" draggable="false">`
       + `<img alt="" aria-hidden="true" class="${cls} opacity-0" style="z-index:1" loading="eager" draggable="false"></a>`
-      + (list.length > 1 ? btn(-1, 'left-1 xl:-left-3', 'chevron-left', 'Попередній товар') + btn(1, 'right-1 xl:-right-3', 'chevron-right', 'Наступний товар') : '');
+      + (list.length > 1 ? btn(-1, 'left-1 lg:-left-5 xl:-left-10', 'chevron-left', 'Попередній товар') + btn(1, 'right-1 lg:-right-5 xl:-right-10', 'chevron-right', 'Наступний товар') : '');
     if (list.length < 2) return;
     const a = box.querySelector('a'), layers = [...a.querySelectorAll('img')];
     let front = 0, cur = 0, busy = false, pending = 0, timer = null;
