@@ -72,9 +72,9 @@
   <link rel="stylesheet" href="/assets/tw.css?v=3341fe94">
 
   <!-- Іконки Lucide -->
-  <script src="/assets/products.js?v=091754f0"></script>
+  <script src="/assets/products.js?v=c99a013a"></script>
   <script src="/assets/shop.js?v=04203856"></script>
-  <script src="/assets/icons.js?v=32134b82" defer></script>
+  <script src="/assets/icons.js?v=9cc7ef68" defer></script>
   <script src="/assets/cart.js?v=777d4ee8" defer></script>
 
   <link rel="stylesheet" href="/assets/site.css?v=25deebd9">
@@ -150,7 +150,7 @@
           <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-graphite">Каталог товарів</h2>
           <p id="catalogCount" class="text-slate-500 text-sm"></p>
         </div>
-        <!-- Категорії: фільтр каталогу. Посилання на категорію: warmhome.in.ua/#cat=floor (wall, socket, car, ending) -->
+        <!-- Категорії: фільтр каталогу. Посилання на категорію: warmhome.in.ua/#cat=floor (wall, socket, mini, humid, car, scarf, ending) -->
         <div id="catFilter" class="mt-6 -mx-4 px-4 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none]" role="tablist" aria-label="Категорії товарів"></div>
         <div id="catalogGrid" class="mt-8 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6"></div>
         <p id="catalogEmpty" class="hidden mt-10 text-center text-slate-500">Товари скоро зʼявляться.</p>
@@ -247,7 +247,7 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
   // Каталог
-  const CATS = [['', 'Усі', 'layout-grid'], ['floor', 'Підлогові', 'heater'], ['wall', 'Настінні', 'home'], ['socket', 'У розетку', 'plug'], ['car', 'Автомобільні', 'car'], ['ending', 'Закінчується', 'timer']];
+  const CATS = [['', 'Усі', 'layout-grid'], ['floor', 'Підлогові', 'heater'], ['wall', 'Настінні', 'home'], ['socket', 'У розетку', 'plug'], ['mini', 'Міні', 'minimize-2'], ['humid', 'Зі зволоженням', 'droplets'], ['car', 'Автомобільні', 'car'], ['scarf', 'Шарфи', 'shirt'], ['ending', 'Закінчується', 'timer']];
   const word = (k) => (k % 10 === 1 && k % 100 !== 11) ? 'товар' : (k % 10 >= 2 && k % 10 <= 4 && (k % 100 < 10 || k % 100 >= 20)) ? 'товари' : 'товарів';
   const ALL = window.PRODUCTS || [];
   const inCat = (c) => ALL.filter(p => !c || (c === 'ending' ? p.ending && p.inStock !== false : (p.cat || []).includes(c)));

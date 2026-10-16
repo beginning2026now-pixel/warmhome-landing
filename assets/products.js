@@ -14,7 +14,7 @@
    url      — адреса сторінки товару
    inStock  — false: товару немає в наявності (сіра картка без сторінки і кошика)
    ending   — true: плашка «Закінчується»
-   cat      — категорії: floor (підлогові), wall (настінні), socket (у розетку), car (автомобільні)
+   cat      — категорії: floor (підлогові), wall (настінні), socket (у розетку), car (автомобільні), mini (міні), humid (зі зволоженням), scarf (шарфи)
    ========================================================== */
 window.PRODUCTS = [
   {
@@ -27,6 +27,7 @@ window.PRODUCTS = [
     badge: '🔥 Хіт сезону',
     image: 'https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3-1000x1000.webp',
     url: '/products/obigrivach-kamin-900/',
+    cat: ['mini'],
   },
   {
     slug: 'obigrivach-ptc-ph16',
@@ -86,6 +87,7 @@ window.PRODUCTS = [
     badge: 'Міні · 800 Вт',
     image: '/assets/img/zodiak-dragon-main-600.webp?v=5a765a1a',
     url: '/products/mini-obigrivach-zodiak-dragon/',
+    cat: ['mini'],
   },
   {
     slug: 'obigrivach-tower-heat',
@@ -110,6 +112,7 @@ window.PRODUCTS = [
     badge: 'USB-підігрів',
     image: '/assets/img/sharf-z-pidigrivom-chornyi-main-600.webp?v=5a765a1a',
     url: '/products/sharf-z-pidigrivom-chornyi/',
+    cat: ['scarf'],
   },
   {
     slug: 'sharf-z-pidigrivom-fioletovyi',
@@ -121,6 +124,7 @@ window.PRODUCTS = [
     badge: 'USB-підігрів',
     image: '/assets/img/sharf-z-pidigrivom-fioletovyi-main-600.webp?v=5a765a1a',
     url: '/products/sharf-z-pidigrivom-fioletovyi/',
+    cat: ['scarf'],
   },
   {
     slug: 'nastilnyi-mini-obigrivach',
@@ -132,6 +136,7 @@ window.PRODUCTS = [
     badge: 'Для столу',
     image: '/assets/img/nastilnyi-mini-obigrivach-main-600.webp?v=5a765a1a',
     url: '/products/nastilnyi-mini-obigrivach/',
+    cat: ['mini'],
   },
   {
     slug: 'obigrivach-air-heater-1200',
@@ -143,6 +148,7 @@ window.PRODUCTS = [
     badge: '800/1200 Вт',
     image: '/assets/img/obigrivach-air-heater-1200-main-600.webp?v=5a765a1a',
     url: '/products/obigrivach-air-heater-1200/',
+    cat: ['mini'],
   },
   {
     slug: 'klimatychnyi-kompleks-ms-1668',
@@ -154,7 +160,7 @@ window.PRODUCTS = [
     badge: '3 в 1',
     image: '/assets/img/klimatychnyi-kompleks-ms-1668-main-600.webp?v=5a765a1a',
     url: '/products/klimatychnyi-kompleks-ms-1668/',
-    cat: ['floor'],
+    cat: ['floor', 'humid'],
   },
   {
     slug: 'teploventylyator-hq30-300bs',
@@ -180,7 +186,7 @@ window.PRODUCTS = [
     image: '/assets/img/teploventylyator-hqn218-zvolozhuvach-main-600.webp?v=5a765a1a',
     url: '/products/teploventylyator-hqn218-zvolozhuvach/',
     ending: true,
-    cat: ['floor'],
+    cat: ['floor', 'humid'],
   },
   {
     slug: 'nastinnyi-obigrivach-and-170',
@@ -217,6 +223,7 @@ window.PRODUCTS = [
     badge: '1200 Вт',
     image: '/assets/img/obigrivach-air-heater-a906-main-600.webp?v=5a765a1a',
     url: '/products/obigrivach-air-heater-a906/',
+    cat: ['mini'],
   },
   {
     slug: 'obigrivach-v-rozetku-600',
@@ -228,7 +235,7 @@ window.PRODUCTS = [
     badge: 'У розетку',
     image: '/assets/img/obigrivach-v-rozetku-600-main-600.webp?v=5a765a1a',
     url: '/products/obigrivach-v-rozetku-600/',
-    cat: ['socket'],
+    cat: ['socket', 'mini'],
   },
   {
     slug: 'konvektor-crownberg-cb-2000',
@@ -288,7 +295,7 @@ window.PRODUCTS = [
     badge: 'У розетку',
     image: '/assets/img/handy-heater-400-main-600.webp?v=5a765a1a',
     url: '/products/handy-heater-400/',
-    cat: ['socket'],
+    cat: ['socket', 'mini'],
   },
   {
     slug: 'kvartsovyi-obigrivach-domotec-ms-5952',
@@ -313,7 +320,7 @@ window.PRODUCTS = [
     image: '/assets/img/wonder-heater-klw-019a1-main-600.webp?v=5a765a1a',
     url: '/products/wonder-heater-klw-019a1/',
     ending: true,
-    cat: ['socket'],
+    cat: ['socket', 'mini'],
   },
   {
     slug: 'kvartsovyi-obigrivach-crownberg-cb-7745',
@@ -337,7 +344,7 @@ window.PRODUCTS = [
     badge: 'У розетку',
     image: '/assets/img/handy-heater-12622-main-600.webp?v=5a765a1a',
     url: '/products/handy-heater-12622/',
-    cat: ['socket'],
+    cat: ['socket', 'mini'],
   },
   {
     slug: 'obigrivach-ptc-1108r',
