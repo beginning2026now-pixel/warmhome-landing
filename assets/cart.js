@@ -210,7 +210,7 @@
       const my = ++seq;
       try {
         res = await search(input.value.trim()); if (my !== seq) return;
-        list.innerHTML = res.length ? res.map((r, i) => `<li data-i="${i}" class="px-4 py-3 cursor-pointer hover:bg-orange-50 border-b border-slate-100 last:border-0">${r.html}</li>`).join('') : '<li class="px-4 py-3 text-slate-400">Нічого не знайдено</li>';
+        list.innerHTML = res.length ? res.map((r, i) => `<li data-i="${i}" class="px-4 py-3 cursor-pointer hover:bg-orange-50 border-b border-slate-100 last:border-0">${r.html}</li>`).join('') : '<li class="px-4 py-3 text-slate-500">Нічого не знайдено</li>';
         list.classList.remove('hidden');
       } catch (e) { npOk = false; hide(); form.warehouse.disabled = false; form.warehouse.placeholder = 'Номер відділення або адреса'; }
     }

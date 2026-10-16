@@ -33,7 +33,7 @@
           ${discount ? `<span class="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 bg-fire-600 text-white text-[13px] sm:text-sm font-display font-extrabold px-2.5 py-1 rounded-lg shadow">-${discount}%</span>` : ''}
           <span class="absolute top-2 left-2 right-2 sm:top-3 sm:left-3 sm:right-3 flex flex-col items-start gap-1 sm:gap-1.5">
             ${p.badge ? `<span class="max-w-full truncate bg-graphite/90 text-white text-[11px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full">${esc(p.badge)}</span>` : ''}
-            ${p.ending ? `<span class="max-w-full truncate bg-amber-500 text-white text-[11px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full">⏳ Закінчується</span>` : ''}
+            ${p.ending ? `<span class="max-w-full truncate bg-amber-400 text-slate-900 text-[11px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full">⏳ Закінчується</span>` : ''}
           </span>
         </a>
         <div class="flex flex-col flex-1 p-3 sm:p-5">
@@ -41,7 +41,7 @@
           ${p.short ? `<p class="mt-1.5 text-sm text-slate-500">${esc(p.short)}</p>` : ''}
           <div class="mt-auto pt-4 flex items-end gap-2 flex-wrap">
             <span class="font-display font-extrabold text-xl min-[400px]:text-2xl text-fire-600 whitespace-nowrap">${fmt(p.price)} грн</span>
-            ${discount ? `<span class="text-sm text-slate-400 line-through mb-1">${fmt(p.oldPrice)} грн</span>` : ''}
+            ${discount ? `<span class="text-sm text-slate-500 line-through mb-1">${fmt(p.oldPrice)} грн</span>` : ''}
           </div>
           <div class="mt-4 flex gap-2">
             <a href="${esc(p.url)}" class="flex-1 flex items-center justify-center min-h-[44px] rounded-xl bg-buy-600 hover:bg-buy-700 text-white font-bold transition text-sm sm:text-base">Детальніше</a>
