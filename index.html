@@ -69,15 +69,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Стилі: зібраний Tailwind CSS (assets/tw.css). Після зміни класів у HTML перезберіть його (див. README.md). -->
-  <link rel="stylesheet" href="/assets/tw.css?v=b2d683ab">
+  <link rel="stylesheet" href="/assets/tw.css?v=d710ca01">
 
   <!-- Іконки Lucide -->
   <script src="/assets/products.js?v=0edf31a7"></script>
-  <script src="/assets/shop.js?v=77a1feee"></script>
+  <script src="/assets/shop.js?v=8fa2fa41"></script>
   <script src="/assets/icons.js?v=32134b82" defer></script>
   <script src="/assets/cart.js?v=777d4ee8" defer></script>
 
-  <link rel="stylesheet" href="/assets/site.css?v=2c0bc905">
+  <link rel="stylesheet" href="/assets/site.css?v=25deebd9">
 </head>
 
 <body class="bg-white text-slate-800 font-sans antialiased">
@@ -266,7 +266,7 @@
       return (window.__lightMap || {})[big] || big.replace(/(\/assets\/img\/[a-z0-9-]+-main)\.webp/, '$1-light.webp');
     };
     const escA = (t) => String(t).replace(/"/g, '&quot;');
-    const cls = 'img-fade absolute inset-0 w-full h-full object-cover scale-[1.06] transition-opacity duration-[450ms] ease-in-out';
+    const cls = 'img-fade absolute inset-0 w-full h-full object-cover transition-opacity duration-[450ms] ease-in-out';
     const btn = (dir, side, icon, label) => `<button type="button" data-dir="${dir}" class="hero-nav absolute ${side} top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white/90 shadow-lg grid place-items-center text-graphite hover:text-fire-600 transition" aria-label="${label}"><i data-lucide="${icon}" class="w-6 h-6"></i></button>`;
     box.innerHTML = `<a href="${list[0].url}" title="${escA(list[0].name)}" class="relative block rounded-3xl overflow-hidden aspect-square select-none" draggable="false">`
       + `<img src="${srcOf(list[0])}" alt="${escA(list[0].name)}" class="${cls}" style="z-index:2" loading="eager" fetchpriority="high" draggable="false">`

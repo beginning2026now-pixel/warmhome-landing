@@ -70,15 +70,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Стилі: зібраний Tailwind CSS (assets/tw.css). Після зміни класів у HTML перезберіть його (див. README.md). -->
-  <link rel="stylesheet" href="/assets/tw.css?v=b2d683ab">
+  <link rel="stylesheet" href="/assets/tw.css?v=d710ca01">
 
   <!-- Іконки Lucide -->
   <script src="/assets/products.js?v=0edf31a7"></script>
-  <script src="/assets/shop.js?v=77a1feee"></script>
+  <script src="/assets/shop.js?v=8fa2fa41"></script>
   <script src="/assets/icons.js?v=32134b82" defer></script>
   <script src="/assets/cart.js?v=777d4ee8" defer></script>
 
-  <link rel="stylesheet" href="/assets/site.css?v=2c0bc905">
+  <link rel="stylesheet" href="/assets/site.css?v=25deebd9">
 </head>
 
 <body class="bg-white text-slate-800 font-sans antialiased">
@@ -655,7 +655,7 @@
 
   $('#slider').innerHTML = GALLERY.map(([src, caption], i) => `
     <figure class="shrink-0 w-[85%] sm:w-[60%] md:w-[calc(50%-.5rem)] lg:w-[calc(33.333%-.67rem)] rounded-2xl overflow-hidden bg-cream border border-slate-100">
-      <div class="aspect-square overflow-hidden bg-white"><img src="${src}" alt="${caption}" width="1000" height="1000" loading="lazy" class="img-fade w-full h-full object-contain scale-[1.06]"></div>
+      <div class="aspect-square overflow-hidden bg-white"><img src="${src}" alt="${caption}" width="1000" height="1000" loading="lazy" class="img-fade w-full h-full object-contain"></div>
       <figcaption class="p-4 font-semibold text-graphite flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-fire-600 text-white text-xs grid place-items-center">${i + 1}</span>${caption}</figcaption>
     </figure>`).join('');
 

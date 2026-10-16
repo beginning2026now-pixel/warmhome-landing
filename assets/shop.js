@@ -29,7 +29,7 @@
     return `
       <div class="group flex flex-col bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-0.5 transition">
         <a href="${esc(p.url)}" class="relative block aspect-square bg-white overflow-hidden">
-          <img src="${esc(p.image)}" alt="${esc(p.name)}" width="600" height="600" loading="lazy" class="img-fade w-full h-full object-cover scale-[1.06] group-hover:scale-110 transition duration-300">
+          <img src="${esc(p.image)}" alt="${esc(p.name)}" width="600" height="600" loading="lazy" class="img-fade w-full h-full object-cover group-hover:scale-[1.03] transition duration-300">
           ${discount ? `<span class="absolute top-3 right-3 bg-fire-600 text-white text-sm font-display font-extrabold px-2.5 py-1 rounded-lg shadow">-${discount}%</span>` : ''}
           <span class="absolute top-3 left-3 flex flex-col items-start gap-1.5">
             ${p.badge ? `<span class="bg-graphite/90 text-white text-xs font-bold px-2.5 py-1 rounded-full">${esc(p.badge)}</span>` : ''}
