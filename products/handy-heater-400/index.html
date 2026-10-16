@@ -657,11 +657,13 @@
       </div>
     </div>`).join('');
 
-  $('#slider').innerHTML = GALLERY.map(([src, caption], i) => `
+  // Галерея по колу: три копії фото, після прокрутки непомітно перескакуємо в середню копію
+  const GN = GALLERY.length, LOOP = GN > 1;
+  $('#slider').innerHTML = (LOOP ? GALLERY.concat(GALLERY, GALLERY) : GALLERY).map(([src, caption], k) => { const i = k % GN; return `
     <figure class="shrink-0 w-[85%] sm:w-[60%] md:w-[calc(50%-.5rem)] lg:w-[calc(33.333%-.67rem)] rounded-2xl overflow-hidden bg-cream border border-slate-100">
       <div class="aspect-square overflow-hidden bg-white"><img src="${src}" alt="${caption}" width="1000" height="1000" loading="lazy" class="img-fade w-full h-full object-contain"></div>
       <figcaption class="p-4 font-semibold text-graphite flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-fire-600 text-white text-xs grid place-items-center">${i + 1}</span>${caption}</figcaption>
-    </figure>`).join('');
+    </figure>`; }).join('');
 
   $('#useCases').innerHTML = USE_CASES.map(([icon, title, sub]) => `
     <div class="rounded-2xl bg-white/5 border border-white/10 p-4 sm:p-6 text-center">
@@ -733,15 +735,35 @@
   const slider = $('#slider'), dots = $('#dots');
   const DOT = "relative h-2.5 rounded-full transition-all before:content-[''] before:absolute before:-inset-3";
   dots.innerHTML = GALLERY.map((_, i) => `<button type="button" class="${DOT} w-2.5 bg-slate-300" aria-label="Фото ${i + 1}" data-i="${i}"></button>`).join('');
-  const slideW = () => slider.children[0].getBoundingClientRect().width + 16;
+  const slideW = () => slider.children.length > 1 ? slider.children[1].offsetLeft - slider.children[0].offsetLeft : slider.clientWidth;
+  const setW = () => LOOP ? slider.children[GN].offsetLeft - slider.children[0].offsetLeft : 0;
+  const cur = () => Math.round(slider.scrollLeft / slideW());
+  const jump = left => { slider.style.scrollSnapType = 'none'; slider.scrollTo({ left, behavior: 'instant' }); void slider.offsetWidth; slider.style.scrollSnapType = ''; };
   function updateDots() {
-    const i = Math.round(slider.scrollLeft / slideW());
+    const i = ((cur() % GN) + GN) % GN;
     $$('button', dots).forEach((d, j) => { d.className = `${DOT} ${i === j ? 'w-6 bg-fire-600' : 'w-2.5 bg-slate-300'}`; });
   }
-  slider.addEventListener('scroll', () => requestAnimationFrame(updateDots), { passive: true });
-  dots.addEventListener('click', e => { const b = e.target.closest('button'); if (b) slider.scrollTo({ left: b.dataset.i * slideW(), behavior: 'smooth' }); });
-  $('#prevSlide').addEventListener('click', () => slider.scrollBy({ left: -slideW(), behavior: 'smooth' }));
-  $('#nextSlide').addEventListener('click', () => slider.scrollBy({ left: slideW(), behavior: 'smooth' }));
+  // коли прокрутка зупинилась у першій або останній копії — переносимо в середню на ту саму позицію
+  function recenter() {
+    if (!LOOP) return;
+    const k = cur();
+    if (k < GN) jump(slider.scrollLeft + setW());
+    else if (k >= 2 * GN) jump(slider.scrollLeft - setW());
+  }
+  let settle = 0;
+  slider.addEventListener('scroll', () => {
+    requestAnimationFrame(updateDots);
+    clearTimeout(settle); settle = setTimeout(recenter, 160);
+  }, { passive: true });
+  const go = k => slider.scrollTo({ left: k * slideW(), behavior: 'smooth' });
+  dots.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; const c = cur(), i = +b.dataset.i; go(c - (((c % GN) + GN) % GN) + i); });
+  $('#prevSlide').addEventListener('click', () => go(cur() - 1));
+  $('#nextSlide').addEventListener('click', () => go(cur() + 1));
+  if (LOOP) {
+    jump(setW());
+    let lastW = slider.clientWidth;
+    window.addEventListener('resize', () => { if (slider.clientWidth === lastW) return; lastW = slider.clientWidth; const i = ((cur() % GN) + GN) % GN; jump((GN + i) * slideW()); });
+  }
   updateDots();
 
   $('#faq').addEventListener('click', e => {
