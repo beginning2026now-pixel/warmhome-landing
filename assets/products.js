@@ -352,10 +352,11 @@ window.PRODUCTS = [
     name: 'Електрична сушарка для взуття 1625-1',
     short: '12 Вт, прогрів 360°, 50–60 °C, для будь-якого взуття',
     price: 440,
-    oldPrice: null,
+    oldPrice: 580,
     badge: 'Для взуття',
     image: '/assets/img/susharka-dlya-vzuttya-1625-main-600.webp?v=d1de0217',
     url: '/products/susharka-dlya-vzuttya-1625/',
+    ending: true,
     cat: ['shoes'],
   },
   {

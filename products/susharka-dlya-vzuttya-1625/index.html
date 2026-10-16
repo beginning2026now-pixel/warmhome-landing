@@ -10,7 +10,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <!-- Фото постачальника: якщо його копія 1000×1000 зникла з сервера dropt, беремо оригінал -->
   <script>function wfix(i){if(i.dataset.o||i.src.indexOf('/image/cache/catalog/')<0)return;i.dataset.o=1;i.src=i.src.replace('/image/cache/catalog/','/image/catalog/').replace(/-\d+x\d+(\.\w+)$/,'$1')}</script>
-  <meta name="description" content="Електрична сушарка для взуття 1625-1: 12 Вт, рівномірний прогрів на 360°, 50–60 °C — сухе й тепле взуття без неприємного запаху. 440 грн. Доставка Новою Поштою, оплата при отриманні.">
+  <meta name="description" content="Електрична сушарка для взуття 1625-1: 12 Вт, рівномірний прогрів на 360°, 50–60 °C — сухе й тепле взуття без неприємного запаху. Акційна ціна 440 грн замість 580 грн. Доставка Новою Поштою, оплата при отриманні.">
   <meta name="theme-color" content="#EA580C">
   <!-- Тема: темна за замовчуванням; вибір відвідувача запамʼятовується -->
   <script>
@@ -79,7 +79,7 @@
   <link rel="stylesheet" href="/assets/tw.css?v=1d6a6f9b">
 
   <!-- Іконки Lucide -->
-  <script src="/assets/products.js?v=3a736008"></script>
+  <script src="/assets/products.js?v=a4ebcceb"></script>
   <script src="/assets/shop.js?v=54a5e113"></script>
   <script src="/assets/icons.js?v=c5f5fba7" defer></script>
   <script src="/assets/cart.js?v=5657d6d3" defer></script>
@@ -92,7 +92,7 @@
   <!-- ===================== БЛОК 1: TOP BAR + HEADER ===================== -->
   <div class="bg-fire-600 text-white text-center text-xs sm:text-sm font-semibold py-2 px-3">
     <span class="sm:hidden">🚚 Відправка сьогодні • Оплата при отриманні</span>
-    <span class="hidden sm:inline">👟 Сухе й тепле взуття щоранку — відправка Новою Поштою сьогодні (оплата при отриманні)</span>
+    <span class="hidden sm:inline">👟 Сухе й тепле взуття щоранку • Знижка -24% — відправка Новою Поштою сьогодні (оплата при отриманні)</span>
   </div>
 
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-100">
@@ -142,8 +142,9 @@
         <div class="relative fire-glow order-1 md:order-2">
           <div class="absolute top-3 left-3 z-10 flex flex-col items-start gap-2">
             <span class="bg-fire-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">👟 Для взуття</span>
-            <span class="bg-buy-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">⚡ Лише 12 Вт</span>
+            <span class="bg-amber-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow">⏳ Закінчується</span>
           </div>
+          <span class="absolute bottom-3 right-3 xl:-right-9 z-10 bg-graphite text-white font-display font-extrabold text-lg px-3 py-1 rounded-xl">-24%</span>
           <!-- ФОТО ТОВАРУ (головне): фото постачальника. Для продакшену завантажте на свій хостинг. -->
           <div class="relative z-[1] w-full max-w-xl md:max-w-none xl:w-[calc(100%+3rem)] xl:-mr-12 mx-auto rounded-3xl aspect-square overflow-hidden">
             <img src="/assets/img/susharka-dlya-vzuttya-1625-main.webp?v=d1de0217"
@@ -169,10 +170,12 @@
 
           <div class="mt-6 p-4 sm:p-5 rounded-2xl bg-white border border-orange-100 shadow-sm">
             <div class="flex items-end gap-3 flex-wrap">
+              <span class="text-slate-500 line-through text-lg">580 грн</span>
               <span class="font-display font-extrabold text-4xl text-fire-600">440 грн</span>
+              <span class="text-xs font-bold bg-buy-600/10 text-buy-700 px-2 py-1 rounded-md">Економія 140 грн</span>
             </div>
             <a href="#orderForm" class="cta-pulse mt-5 flex items-center justify-center gap-2 w-full bg-buy-600 hover:bg-buy-700 text-white font-bold text-base sm:text-lg leading-tight text-center px-4 py-4 rounded-xl transition">
-              <i data-lucide="zap" class="w-5 h-5"></i> Замовити зараз
+              <i data-lucide="zap" class="w-5 h-5"></i> Замовити зі знижкою
             </a>
             <button type="button" data-add-to-cart="susharka-dlya-vzuttya-1625" class="mt-3 flex items-center justify-center gap-2 w-full min-h-[52px] rounded-xl border-2 border-slate-200 text-graphite font-bold hover:border-fire-500 hover:text-fire-600 transition"><i data-lucide="shopping-cart" class="w-5 h-5"></i> Додати в кошик</button>
             <p class="mt-3 text-center text-sm text-slate-500">Без передоплати • Оплата у відділенні Нової Пошти</p>
@@ -363,7 +366,8 @@
             </div>
             <div class="md:mt-7 flex items-end gap-x-3 gap-y-1 flex-wrap">
               <span class="font-display font-extrabold text-3xl min-[360px]:text-4xl sm:text-5xl lg:text-6xl text-fire-500 leading-none whitespace-nowrap">440 грн</span>
-              <span class="w-full text-base text-buy-500 font-semibold">Без передоплати</span>
+              <span class="text-xl text-slate-400 line-through">580 грн</span>
+              <span class="w-full text-base text-buy-500 font-semibold">Ви економите 140 грн</span>
             </div>
           </div>
           <ul class="mt-7 space-y-3 text-slate-300 hidden md:block">
@@ -502,6 +506,7 @@
   <!-- Sticky Mobile Bar -->
   <div id="stickyBar" class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-slate-200 shadow-[0_-4px_20px_rgba(0,0,0,.08)] px-4 py-3 flex items-center justify-between gap-3 transition-transform duration-300" style="padding-bottom: max(.75rem, env(safe-area-inset-bottom));">
     <div class="leading-tight">
+      <p class="text-xs text-slate-500 line-through">580 грн</p>
       <p class="font-display font-extrabold text-2xl text-fire-600">440 грн</p>
     </div>
     <div class="flex-1 max-w-[260px] flex gap-2">
@@ -565,7 +570,7 @@
   // Вигляд: https://script.google.com/macros/s/XXXX/exec
   const LEADS_URL = 'https://script.google.com/macros/s/AKfycbxV8jAtsjSV5_v5c-Ut88A3b4ymgJSWugq5SjGMv-I1SX_I65oECgysxCKZsab6ERq4/exec';
 
-  const PRODUCT = { name: 'Електрична сушарка для взуття 1625-1', sku: '56558', price: 440, oldPrice: null };
+  const PRODUCT = { name: 'Електрична сушарка для взуття 1625-1', sku: '56558', price: 440, oldPrice: 580 };
 
 
   // Реальні відгуки покупців. Поки масив порожній, блок «Відгуки» прихований.
