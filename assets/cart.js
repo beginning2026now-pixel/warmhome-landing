@@ -270,3 +270,44 @@
   updateBadges();
   if (window.lucide) lucide.createIcons(); else window.addEventListener('DOMContentLoaded', () => window.lucide && lucide.createIcons());
 })();
+
+/* Меню в шапці: розділ, який зараз на екрані, підсвічується помаранчевим і береться в рамку */
+(function () {
+  var links = [].slice.call(document.querySelectorAll('a.nav-link[href^="#"]'));
+  if (!links.length) return;
+  var ON = ['border-fire-500', 'text-fire-600'], OFF = ['border-transparent', 'text-graphite'];
+  var lock = 0;
+  function set(href) {
+    links.forEach(function (a) {
+      var on = a.getAttribute('href') === href;
+      ON.forEach(function (c) { a.classList.toggle(c, on); });
+      OFF.forEach(function (c) { a.classList.toggle(c, !on); });
+      if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+    });
+  }
+  function spy() {
+    if (Date.now() < lock) return;
+    var line = Math.min(window.innerHeight * 0.35, 260), cur = '', best = -Infinity;
+    var atEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    links.forEach(function (a) {
+      var h = a.getAttribute('href'), s = document.getElementById(h.slice(1));
+      if (!s || !s.offsetHeight) return;
+      var r = s.getBoundingClientRect();
+      var ok = atEnd ? r.top < window.innerHeight && r.bottom > 0 : r.top <= line && r.bottom > line;
+      if (ok && r.top > best) { best = r.top; cur = h; }
+    });
+    set(cur);
+  }
+  var raf = 0, t = 0;
+  function onScroll() {
+    // під час плавної прокрутки після кліку тримаємо вибраний пункт, поки прокрутка не зупиниться
+    if (Date.now() < lock) { lock = Date.now() + 200; clearTimeout(t); t = setTimeout(spy, 250); return; }
+    if (!raf) raf = requestAnimationFrame(function () { raf = 0; spy(); }); }
+  links.forEach(function (a) {
+    a.addEventListener('click', function () { set(a.getAttribute('href')); lock = Date.now() + 600; clearTimeout(t); t = setTimeout(spy, 650); });
+  });
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  window.addEventListener('load', spy);
+  spy();
+})();
