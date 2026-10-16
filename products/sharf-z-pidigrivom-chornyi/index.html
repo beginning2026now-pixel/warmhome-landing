@@ -82,7 +82,7 @@
   <script src="/assets/products.js?v=01f83be6"></script>
   <script src="/assets/shop.js?v=54a5e113"></script>
   <script src="/assets/icons.js?v=f8fad21f" defer></script>
-  <script src="/assets/cart.js?v=5657d6d3" defer></script>
+  <script src="/assets/cart.js?v=8f6e3be4" defer></script>
 
   <link rel="stylesheet" href="/assets/site.css?v=25deebd9">
 </head>
@@ -848,6 +848,7 @@
     const text = [
       '🔥 <b>Нове замовлення!</b>',
       '',
+      ...(window.WHGuard ? WHGuard.html(data.flags || [], esc) : []),
       `📦 <b>Товар:</b> ${esc(PRODUCT.name)}`,
       `🔢 <b>Артикул:</b> ${PRODUCT.sku}`,
       `💰 <b>Ціна:</b> ${PRODUCT.price} грн`,
@@ -863,7 +864,7 @@
 
     return sendLead(text, {
       type: 'Замовлення', name: data.name, phone: data.phone,
-      message: data.noCall ? 'Не телефонувати — відправити без дзвінка' : '',
+      message: [window.WHGuard ? WHGuard.plain(data.flags || []) : '', data.noCall ? 'Не телефонувати — відправити без дзвінка' : ''].filter(Boolean).join('\n'),
       city: data.city || '', warehouse: data.warehouse || '', utm: data.utm || '',
       product: PRODUCT.name, price: PRODUCT.price,
     });
@@ -930,7 +931,9 @@
 
     try {
       const leadEventId = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8);
-      await submitOrder({ leadEventId, name, phone, np, noCall, city: form.npCity.value.trim(), warehouse: form.npWarehouse.value.trim(), utm: getUTM() });
+      const flags = window.WHGuard ? WHGuard.check({ firstName, lastName, phone, warehouse: np, product: PRODUCT.sku }) : [];
+      await submitOrder({ leadEventId, name, phone, np, noCall, city: form.npCity.value.trim(), warehouse: form.npWarehouse.value.trim(), utm: getUTM(), flags });
+      if (window.WHGuard) WHGuard.record({ name, phone, warehouse: np, product: PRODUCT.sku });
 
       // Події пікселів
       if (typeof fbq === 'function') fbq('track', 'Lead', { value: PRODUCT.price, currency: 'UAH', content_ids: [PRODUCT.sku], content_type: 'product' }, { eventID: leadEventId });

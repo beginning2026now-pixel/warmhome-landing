@@ -5,6 +5,51 @@
    - товари беруться з window.PRODUCTS (assets/products.js)
    - оформлення надсилається в Google-таблицю + Telegram (той самий LEADS_URL)
    ========================================================== */
+/* ==========================================================
+   WarmHome UA — ПЕРЕВІРКА ЗАЯВОК НА ТЕСТ / ФЕЙК
+   Замовлення ніколи не блокується: підозрілі отримують у Telegram
+   позначку «⚠️ ПЕРЕВІРТЕ» зі списком причин, щоб не відправляти
+   посилку без дзвінка-підтвердження.
+   ========================================================== */
+window.WHGuard = (function () {
+  const KEY = 'wh_orders_v1', HOUR = 3600e3;
+  let started = 0;                                   // коли відвідувач почав заповнювати форму
+  document.addEventListener('input', function (e) {
+    if (!started && e.target && e.target.closest && e.target.closest('form')) started = Date.now();
+  }, true);
+  const digits = s => String(s || '').replace(/\D/g, '').slice(-10);
+  const norm = s => String(s || '').trim().toLowerCase().replace(/[ʼ'’`]/g, '');
+  const load = () => { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { return []; } };
+  const store = a => { try { localStorage.setItem(KEY, JSON.stringify(a.slice(-10))); } catch (e) {} };
+
+  function check(o) {
+    const r = [], f = norm(o.firstName), l = norm(o.lastName), d = digits(o.phone), tail = d.slice(3), now = Date.now();
+    if (f === 'олена' && l === 'коваленко') r.push('імʼя збігається з прикладом у формі («Олена Коваленко»)');
+    if (f && f === l) r.push('імʼя і прізвище однакові');
+    if (/\d/.test(f + l)) r.push('цифри в імені');
+    if (/^[a-z\s-]+$/i.test(f + l)) r.push('імʼя латиницею');
+    if (/^(\d)\1+$/.test(tail)) r.push('номер з однакових цифр');
+    if (tail.length === 7 && ('0123456789'.includes(tail) || '9876543210'.includes(tail))) r.push('номер — цифри підряд');
+    if (started && now - started < 6000) r.push('форму заповнено за ' + Math.round((now - started) / 1000) + ' с');
+    load().filter(x => now - x.t < HOUR).forEach(x => {
+      const mins = Math.max(1, Math.round((now - x.t) / 60000));
+      if (x.d === d) { if (x.p === o.product) r.push('повтор: цей номер уже замовляв цей товар ' + mins + ' хв тому'); return; }
+      r.push('з цього ж пристрою ' + mins + ' хв тому вже було замовлення: ' + x.n + ', +38 (' + x.d.slice(0, 3) + ') ' + x.d.slice(3, 6) + '-' + x.d.slice(6, 8) + '-' + x.d.slice(8));
+      if (x.d.slice(0, 7) === d.slice(0, 7)) r.push('номер майже такий самий, як у попередньому замовленні');
+      if (x.w && x.w === o.warehouse) r.push('те саме відділення НП, що й у попередньому замовленні');
+    });
+    return [...new Set(r)];
+  }
+  function record(o) {
+    const a = load(); a.push({ t: Date.now(), d: digits(o.phone), n: String(o.name || '').slice(0, 60), w: o.warehouse || '', p: o.product || '' });
+    store(a); started = 0;
+  }
+  // Блок для повідомлення в Telegram (HTML) і для таблиці (звичайний текст)
+  function html(flags, esc) { return flags.length ? ['⚠️ <b>ПЕРЕВІРТЕ — схоже на тест або фейк:</b>', ...flags.map(x => '• ' + esc(x)), ''] : []; }
+  function plain(flags) { return flags.length ? '⚠️ ПЕРЕВІРТЕ: ' + flags.join('; ') : ''; }
+  return { check, record, html, plain };
+})();
+
 (function () {
   const LEADS_URL = 'https://script.google.com/macros/s/AKfycbxV8jAtsjSV5_v5c-Ut88A3b4ymgJSWugq5SjGMv-I1SX_I65oECgysxCKZsab6ERq4/exec';
   const NP_API_KEY = '';
@@ -247,14 +292,16 @@
     const sum = total();
     const list = ls.map(i => `• ${i.p.name} (арт. ${i.p.sku || i.slug}) × ${i.qty} = ${i.qty * i.p.price} грн`).join('\n');
     const utm = window.getStoredUTM();
-    const text = ['🛒 <b>Нове замовлення (кошик)</b>', '', esc(list), '', `💰 <b>Разом:</b> ${sum} грн`, '', `👤 <b>Імʼя:</b> ${esc(name)}`, `📞 <b>Телефон:</b> ${esc(phone)}`, `🚚 <b>НП:</b> ${esc(city)}, ${esc(wh)}`,
+    const flags = WHGuard.check({ firstName, lastName, phone, warehouse: `${city}, ${wh}`, product: ls.map(i => i.slug).join(',') });
+    const text = ['🛒 <b>Нове замовлення (кошик)</b>', '', ...WHGuard.html(flags, esc), esc(list), '', `💰 <b>Разом:</b> ${sum} грн`, '', `👤 <b>Імʼя:</b> ${esc(name)}`, `📞 <b>Телефон:</b> ${esc(phone)}`, `🚚 <b>НП:</b> ${esc(city)}, ${esc(wh)}`,
       noCall ? '\n📵 <b>НЕ ТЕЛЕФОНУВАТИ</b> — клієнт підтвердив дані, відправляти без дзвінка' : '☎️ Потрібен дзвінок-підтвердження',
       '', `🕒 ${new Date().toLocaleString('uk-UA', { timeZone: 'Europe/Kyiv' })}`, utm ? `\n📊 <b>UTM:</b>\n${esc(utm)}` : ''].join('\n');
     busy = true; const btn = $('#cartSubmit'), lbl = $('.c-btn', btn), orig = lbl.innerHTML;
     btn.disabled = true; lbl.textContent = 'Відправляємо...'; $('.c-form-err', form).classList.add('hidden');
     try {
-      const r = await fetch(LEADS_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ text, page: location.href, fields: { type: 'Замовлення (кошик)', name, phone, city, warehouse: wh, message: list + (noCall ? '\nНе телефонувати — відправити без дзвінка' : ''), product: ls.map(i => `${i.p.name} × ${i.qty}`).join('; '), price: sum, utm } }) });
+      const r = await fetch(LEADS_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ text, page: location.href, fields: { type: 'Замовлення (кошик)', name, phone, city, warehouse: wh, message: [WHGuard.plain(flags), list + (noCall ? '\nНе телефонувати — відправити без дзвінка' : '')].filter(Boolean).join('\n'), product: ls.map(i => `${i.p.name} × ${i.qty}`).join('; '), price: sum, utm } }) });
       const j = await r.json().catch(() => ({})); if (!r.ok || !j.ok) throw new Error(j.error || 'send');
+      WHGuard.record({ name, phone, warehouse: `${city}, ${wh}`, product: ls.map(i => i.slug).join(',') });
       const eid = 'cart_' + Date.now();
       if (typeof fbq === 'function') {
         const data = { value: sum, currency: 'UAH', content_ids: ls.map(i => i.p.sku || i.slug), content_type: 'product', num_items: count() };
