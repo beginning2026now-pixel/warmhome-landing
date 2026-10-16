@@ -7,6 +7,8 @@
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Фото постачальника: якщо його копія 1000×1000 зникла з сервера dropt, беремо оригінал -->
+  <script>function wfix(i){if(i.dataset.o||i.src.indexOf('/image/cache/catalog/')<0)return;i.dataset.o=1;i.src=i.src.replace('/image/cache/catalog/','/image/catalog/').replace(/-\d+x\d+(\.\w+)$/,'$1')}</script>
   <meta name="description" content="Портативний обігрівач у розетку Heater For Home 600 Вт: без проводів, цифровий дисплей, термостат 15–32 °C, поворотна вилка, 400 г. 800 грн. Доставка Новою Поштою, оплата при отриманні.">
   <meta name="theme-color" content="#EA580C">
   <!-- Тема: темна за замовчуванням; вибір відвідувача запамʼятовується -->
@@ -17,7 +19,7 @@
     (function () {
       var R = /(\/assets\/img\/[a-z0-9-]+-main(?:-600)?)(-light)?\.webp/, H = document.documentElement;
       // Фото з сайту постачальника → своя світла версія
-      var X = { 'https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3-1000x1000.webp': '/assets/img/kamin-900-light.webp?v=5a765a1a' };
+      var X = { 'https://dropt.in.ua/image/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3.webp': '/assets/img/kamin-900-light.webp?v=5a765a1a' };
       function fix(img) { var s = img.getAttribute('src'); if (!s || img.hasAttribute('data-keep-dark')) return; var l = !H.classList.contains('dark');
         for (var k in X) { if (l && s === k) return img.setAttribute('src', X[k]); if (!l && s === X[k]) return img.setAttribute('src', k); }
         var m = s.match(R); if (m && l !== !!m[2]) img.setAttribute('src', s.replace(R, m[1] + (l ? '-light' : '') + '.webp')); }
@@ -76,7 +78,7 @@
   <link rel="stylesheet" href="/assets/tw.css?v=721f812b">
 
   <!-- Іконки Lucide -->
-  <script src="/assets/products.js?v=c99a013a"></script>
+  <script src="/assets/products.js?v=617539a6"></script>
   <script src="/assets/shop.js?v=81377cdf"></script>
   <script src="/assets/icons.js?v=9cc7ef68" defer></script>
   <script src="/assets/cart.js?v=fcbf9d37" defer></script>
@@ -661,7 +663,7 @@
   const GN = GALLERY.length, LOOP = GN > 1;
   $('#slider').innerHTML = (LOOP ? GALLERY.concat(GALLERY, GALLERY) : GALLERY).map(([src, caption], k) => { const i = k % GN; return `
     <figure class="shrink-0 w-[85%] sm:w-[60%] md:w-[calc(50%-.5rem)] lg:w-[calc(33.333%-.67rem)] rounded-2xl overflow-hidden bg-cream border border-slate-100">
-      <div class="aspect-square overflow-hidden bg-white"><img src="${src}" alt="${caption}" width="1000" height="1000" loading="lazy" class="img-fade w-full h-full object-contain"></div>
+      <div class="aspect-square overflow-hidden bg-white"><img src="${src}" alt="${caption}" width="1000" height="1000" loading="lazy" onerror="wfix(this)" class="img-fade w-full h-full object-contain"></div>
       <figcaption class="p-4 font-semibold text-graphite flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-fire-600 text-white text-xs grid place-items-center">${i + 1}</span>${caption}</figcaption>
     </figure>`; }).join('');
 

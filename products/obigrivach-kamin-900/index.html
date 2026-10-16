@@ -7,6 +7,8 @@
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Фото постачальника: якщо його копія 1000×1000 зникла з сервера dropt, беремо оригінал -->
+  <script>function wfix(i){if(i.dataset.o||i.src.indexOf('/image/cache/catalog/')<0)return;i.dataset.o=1;i.src=i.src.replace('/image/cache/catalog/','/image/catalog/').replace(/-\d+x\d+(\.\w+)$/,'$1')}</script>
   <meta name="description" content="Електричний керамічний обігрівач з ефектом каміна 900 Вт. 3 режими, захист від перегріву. Знижка -27%: 1599 грн замість 2190 грн. Доставка Новою Поштою, оплата при отриманні.">
   <meta name="theme-color" content="#EA580C">
   <!-- Тема: темна за замовчуванням; вибір відвідувача запамʼятовується -->
@@ -17,7 +19,7 @@
     (function () {
       var R = /(\/assets\/img\/[a-z0-9-]+-main(?:-600)?)(-light)?\.webp/, H = document.documentElement;
       // Фото з сайту постачальника → своя світла версія
-      var X = { 'https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3-1000x1000.webp': '/assets/img/kamin-900-light.webp?v=5a765a1a' };
+      var X = { 'https://dropt.in.ua/image/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3.webp': '/assets/img/kamin-900-light.webp?v=5a765a1a' };
       function fix(img) { var s = img.getAttribute('src'); if (!s || img.hasAttribute('data-keep-dark')) return; var l = !H.classList.contains('dark');
         for (var k in X) { if (l && s === k) return img.setAttribute('src', X[k]); if (!l && s === X[k]) return img.setAttribute('src', k); }
         var m = s.match(R); if (m && l !== !!m[2]) img.setAttribute('src', s.replace(R, m[1] + (l ? '-light' : '') + '.webp')); }
@@ -32,7 +34,7 @@
   <!-- Open Graph (превʼю при поширенні посилання) — замініть og:image на реальне фото товару -->
   <meta property="og:title" content="Обігрівач з ефектом каміна 900 Вт — 1599 грн">
   <meta property="og:description" content="Затишок каміна та комфорт у вашому домі. Оплата при отриманні.">
-  <meta property="og:image" content="https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184-1000x1000.webp">
+  <meta property="og:image" content="https://dropt.in.ua/image/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3.webp">
   <meta property="og:type" content="product">
 
   <!-- Meta Pixel Code (ID 1115491024548018 + 972029978660664) -->
@@ -76,7 +78,7 @@
   <link rel="stylesheet" href="/assets/tw.css?v=721f812b">
 
   <!-- Іконки Lucide -->
-  <script src="/assets/products.js?v=c99a013a"></script>
+  <script src="/assets/products.js?v=617539a6"></script>
   <script src="/assets/shop.js?v=81377cdf"></script>
   <script src="/assets/icons.js?v=9cc7ef68" defer></script>
   <script src="/assets/cart.js?v=fcbf9d37" defer></script>
@@ -147,7 +149,7 @@
           <!-- ФОТО ТОВАРУ (головне): фото постачальника. Для продакшену завантажте на свій хостинг. -->
           <!-- Фото трохи збільшене всередині рамки, щоб обрізати сіру смужку по краю фото постачальника -->
           <div class="relative z-[1] w-full max-w-xl md:max-w-none xl:w-[calc(100%+3rem)] xl:-mr-12 mx-auto rounded-3xl aspect-square overflow-hidden">
-            <img src="https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3-1000x1000.webp"
+            <img src="https://dropt.in.ua/image/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3.webp"
                  alt="Білий керамічний обігрівач з ефектом каміна 900 Вт на тлі тліючого вугілля" width="1000" height="1000"
                  fetchpriority="high"
                  class="img-fade w-full h-full object-cover">
@@ -362,7 +364,7 @@
             <!-- ФОТО ТОВАРУ біля форми -->
             <div class="relative fire-glow shrink-0">
               <div class="relative z-[1] w-32 h-32 sm:w-40 sm:h-40 md:w-full md:h-auto md:max-w-md md:aspect-square rounded-2xl md:rounded-3xl overflow-hidden">
-                <img data-keep-dark src="https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3-1000x1000.webp" alt="Обігрівач з ефектом каміна 900 Вт" width="1000" height="1000" loading="lazy" class="img-fade w-full h-full object-cover">
+                <img data-keep-dark src="https://dropt.in.ua/image/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3.webp" alt="Обігрівач з ефектом каміна 900 Вт" width="1000" height="1000" loading="lazy" class="img-fade w-full h-full object-cover">
               </div>
             </div>
             <div class="md:mt-7 flex items-end gap-x-3 gap-y-1 flex-wrap">
@@ -604,10 +606,10 @@
   // Для продакшену краще завантажити фото на свій хостинг і вказати тут локальні шляхи (наприклад 'img/1.webp').
   const GALLERY = [
     ['https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_2-1000x1000.webp', 'Зона імітації полумʼя'],
-    ['https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3-1000x1000.webp', 'Захисна передня решітка подачі тепла'],
+    ['https://dropt.in.ua/image/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3.webp', 'Захисна передня решітка подачі тепла'],
     ['https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_4-1000x1000.webp', 'Надійні механічні перемикачі на корпусі'],
     ['https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_5-1000x1000.webp', 'Стійка підставка для підлогового або настільного розміщення'],
-    ['https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184-1000x1000.webp', 'Компактний білий корпус 32 × 40,2 см'],
+    ['https://dropt.in.ua/image/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3.webp', 'Компактний білий корпус 32 × 40,2 см'],
   ];
 
   // Сценарії використання (іконки). Якщо зʼявляться власні фото в інтерʼєрі — додайте їх сюди.
@@ -670,7 +672,7 @@
   const GN = GALLERY.length, LOOP = GN > 1;
   $('#slider').innerHTML = (LOOP ? GALLERY.concat(GALLERY, GALLERY) : GALLERY).map(([src, caption], k) => { const i = k % GN; return `
     <figure class="shrink-0 w-[85%] sm:w-[60%] md:w-[calc(50%-.5rem)] lg:w-[calc(33.333%-.67rem)] rounded-2xl overflow-hidden bg-cream border border-slate-100">
-      <div class="aspect-square overflow-hidden bg-white"><img src="${src}" alt="${caption}" width="1000" height="1000" loading="lazy" class="img-fade w-full h-full object-contain"></div>
+      <div class="aspect-square overflow-hidden bg-white"><img src="${src}" alt="${caption}" width="1000" height="1000" loading="lazy" onerror="wfix(this)" class="img-fade w-full h-full object-contain"></div>
       <figcaption class="p-4 font-semibold text-graphite flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-fire-600 text-white text-xs grid place-items-center">${i + 1}</span>${caption}</figcaption>
     </figure>`; }).join('');
 

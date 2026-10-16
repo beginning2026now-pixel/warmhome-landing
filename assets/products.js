@@ -25,7 +25,7 @@ window.PRODUCTS = [
     price: 1599,
     oldPrice: 2190,
     badge: '🔥 Хіт сезону',
-    image: 'https://dropt.in.ua/image/cache/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3-1000x1000.webp',
+    image: 'https://dropt.in.ua/image/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3.webp',
     url: '/products/obigrivach-kamin-900/',
     cat: ['mini'],
   },
