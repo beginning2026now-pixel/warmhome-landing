@@ -34,7 +34,7 @@
     (function () {
       var R = /(\/assets\/img\/[a-z0-9-]+-main(?:-600)?)(-light)?\.webp/, H = document.documentElement;
       // Фото з сайту постачальника → своя світла версія
-      var X = window.__lightMap = { 'https://dropt.in.ua/image/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3.webp': '/assets/img/kamin-900-light.webp?v=8290cd4c' };
+      var X = window.__lightMap = { 'https://dropt.in.ua/image/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3.webp': '/assets/img/kamin-900-light.webp?v=777cba20' };
       function fix(img) { var s = img.getAttribute('src'); if (!s || img.hasAttribute('data-keep-dark')) return; var l = !H.classList.contains('dark');
         for (var k in X) { if (l && s === k) return img.setAttribute('src', X[k]); if (!l && s === X[k]) return img.setAttribute('src', k); }
         var m = s.match(R); if (m && l !== !!m[2]) img.setAttribute('src', s.replace(R, m[1] + (l ? '-light' : '') + '.webp')); }
@@ -76,9 +76,9 @@
   <link rel="stylesheet" href="/assets/tw.css?v=1d6a6f9b">
 
   <!-- Іконки Lucide -->
-  <script src="/assets/products.js?v=4129e0ff"></script>
+  <script src="/assets/products.js?v=01f83be6"></script>
   <script src="/assets/shop.js?v=54a5e113"></script>
-  <script src="/assets/icons.js?v=89e2afb6" defer></script>
+  <script src="/assets/icons.js?v=f8fad21f" defer></script>
   <script src="/assets/cart.js?v=5657d6d3" defer></script>
 
   <link rel="stylesheet" href="/assets/site.css?v=25deebd9">
@@ -246,7 +246,7 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
   // Каталог
-  const CATS = [['', 'Усі', 'layout-grid'], ['floor', 'Підлогові', 'heater'], ['wall', 'Настінні', 'home'], ['socket', 'У розетку', 'plug'], ['mini', 'Міні', 'minimize-2'], ['humid', 'Зі зволоженням', 'droplets'], ['car', 'Автомобільні', 'car'], ['scarf', 'Шарфи', 'shirt'], ['shoes', 'Для взуття', 'footprints'], ['water', 'Гаряча вода', 'shower-head'], ['ending', 'Закінчується', 'timer']];
+  const CATS = [['', 'Усі', 'layout-grid'], ['floor', 'Підлогові', 'heater'], ['wall', 'Настінні', 'home'], ['socket', 'У розетку', 'plug'], ['mini', 'Міні', 'minimize-2'], ['humid', 'Зі зволоженням', 'droplets'], ['car', 'Автомобільні', 'car'], ['scarf', 'Шарфи', 'shirt'], ['shoes', 'Для взуття', 'footprints'], ['water', 'Гаряча вода', 'shower-head'], ['kitchen', 'Для кухні', 'coffee'], ['ending', 'Закінчується', 'timer']];
   const word = (k) => (k % 10 === 1 && k % 100 !== 11) ? 'товар' : (k % 10 >= 2 && k % 10 <= 4 && (k % 100 < 10 || k % 100 >= 20)) ? 'товари' : 'товарів';
   const ALL = window.PRODUCTS || [];
   const inCat = (c) => ALL.filter(p => !c || (c === 'ending' ? p.ending && p.inStock !== false : (p.cat || []).includes(c)));

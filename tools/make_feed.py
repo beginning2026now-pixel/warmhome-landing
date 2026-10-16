@@ -10,6 +10,7 @@ HEATERS = 'Home & Garden > Household Appliances > Climate Control Appliances > S
 SCARF = 'Apparel & Accessories > Clothing Accessories > Scarves & Shawls'
 SHOES = 'Home & Garden > Household Supplies > Shoe Care & Tools > Shoe Dryers'
 WATER = 'Home & Garden > Household Appliances > Water Heaters'
+KITCHEN = 'Home & Garden > Kitchen & Dining > Kitchen Appliances > Coffee Makers & Espresso Machines > Stovetop Espresso Pots'
 
 P = json.loads(subprocess.run(['node', '-e', "global.window={};require('./assets/products.js');console.log(JSON.stringify(window.PRODUCTS))"],
                               capture_output=True, text=True, check=True).stdout)
@@ -49,7 +50,7 @@ for p in P:
         'link': SITE + p['url'],
         'image_link': photo(p),
         'brand': 'WarmHome UA',
-        'google_product_category': SCARF if 'scarf' in (p.get('cat') or []) else SHOES if 'shoes' in (p.get('cat') or []) else WATER if 'water' in (p.get('cat') or []) else HEATERS,
+        'google_product_category': SCARF if 'scarf' in (p.get('cat') or []) else SHOES if 'shoes' in (p.get('cat') or []) else WATER if 'water' in (p.get('cat') or []) else KITCHEN if 'kitchen' in (p.get('cat') or []) else HEATERS,
         'product_type': ', '.join(p.get('cat') or []),
         'custom_label_0': 'Закінчується' if p.get('ending') else '',
     })
