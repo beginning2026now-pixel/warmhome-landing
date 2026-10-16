@@ -38,6 +38,7 @@ html.dark .theme-moon { display: none; }
 html.dark body { background: #0B1220; color: #E2E8F0; }
 html.dark .bg-white { background-color: #131D2E; }
 html.dark .bg-white\/95 { background-color: rgba(11, 18, 32, .95); }
+html.dark .bg-white\/90 { background-color: rgba(19, 29, 46, .9); }
 html.dark .bg-cream, html.dark #specsTable > tr:nth-child(odd) { background-color: #0F1828; }
 html.dark .from-orange-50 { --tw-gradient-from: #1A1410 var(--tw-gradient-from-position); --tw-gradient-to: rgba(26, 20, 16, 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
 html.dark .to-white { --tw-gradient-to: #0B1220 var(--tw-gradient-to-position); }
