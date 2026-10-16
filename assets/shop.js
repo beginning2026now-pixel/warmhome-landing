@@ -56,7 +56,7 @@
   // «Дивіться також» (з exclude): лише товари в наявності, у випадковому порядку.
   window.renderProducts = function (container, { exclude = null, limit = 0, cat = '' } = {}) {
     if (!container) return 0;
-    let list = (window.PRODUCTS || []).filter(p => p.slug !== exclude && (!cat || (p.cat || []).includes(cat)));
+    let list = (window.PRODUCTS || []).filter(p => p.slug !== exclude && (!cat || (cat === 'ending' ? p.ending && p.inStock !== false : (p.cat || []).includes(cat))));
     if (exclude) {
       list = list.filter(inStock);
       for (let i = list.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [list[i], list[j]] = [list[j], list[i]]; }
