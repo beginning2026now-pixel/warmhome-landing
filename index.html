@@ -148,7 +148,6 @@
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex items-end justify-between gap-4 flex-wrap">
           <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-graphite">Каталог товарів</h2>
-          <p id="catalogCount" class="text-slate-500 text-sm"></p>
         </div>
         <!-- Категорії: фільтр каталогу. Посилання на категорію: warmhome.in.ua/#cat=floor (wall, socket, mini, humid, car, scarf, ending) -->
         <div id="catFilter" class="mt-6 -mx-4 px-4 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] md:flex-wrap md:overflow-visible md:mx-0 md:px-0" role="tablist" aria-label="Категорії товарів"></div>
@@ -259,8 +258,6 @@
     if (!CATS.some(x => x[0] === c)) c = '';
     const n = window.renderProducts ? renderProducts($('#catalogGrid'), { cat: c }) : 0;
     $('#catalogEmpty').classList.toggle('hidden', !!n);
-    const list = inCat(c), avail = list.filter(p => p.inStock !== false).length;
-    $('#catalogCount').textContent = n ? n + ' ' + word(n) + (avail < n ? ', у наявності ' + avail : '') : '';
     $$('#catFilter [data-cat]').forEach(b => {
       const on = b.dataset.cat === c;
       b.className = `${chip} ${on ? chipOn : chipOff}`; b.setAttribute('aria-selected', on);
