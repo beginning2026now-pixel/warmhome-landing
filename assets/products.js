@@ -14,6 +14,7 @@
    url      — адреса сторінки товару
    inStock  — false: товару немає в наявності (сіра картка без сторінки і кошика)
    ending   — true: плашка «Закінчується»
+   cat      — категорії: floor (підлогові), wall (настінні), socket (у розетку), car (автомобільні)
    ========================================================== */
 window.PRODUCTS = [
   {
@@ -37,6 +38,7 @@ window.PRODUCTS = [
     badge: '2000 Вт',
     image: '/assets/img/ph16-main-600.webp?v=5a765a1a',
     url: '/products/obigrivach-ptc-ph16/',
+    cat: ['floor'],
   },
   {
     slug: 'teploventilyator-domotec-ms-5963',
@@ -48,6 +50,7 @@ window.PRODUCTS = [
     badge: 'На стіну',
     image: '/assets/img/domotec-main-600.webp?v=5a765a1a',
     url: '/products/teploventilyator-domotec-ms-5963/',
+    cat: ['wall'],
   },
   {
     slug: 'elektrokamin-flame-heater',
@@ -59,6 +62,7 @@ window.PRODUCTS = [
     badge: '🔥 Ефект полумʼя',
     image: '/assets/img/flame-heater-main-600.webp?v=5a765a1a',
     url: '/products/elektrokamin-flame-heater/',
+    cat: ['floor'],
   },
   {
     slug: 'konvektor-mh-20k',
@@ -70,6 +74,7 @@ window.PRODUCTS = [
     badge: 'Без вентилятора',
     image: '/assets/img/mh20k-main-600.webp?v=5a765a1a',
     url: '/products/konvektor-mh-20k/',
+    cat: ['floor'],
   },
   {
     slug: 'mini-obigrivach-zodiak-dragon',
@@ -92,6 +97,7 @@ window.PRODUCTS = [
     badge: 'Колона · 2000 Вт',
     image: '/assets/img/tower-heat-main-600.webp?v=5a765a1a',
     url: '/products/obigrivach-tower-heat/',
+    cat: ['floor'],
   },
   // ↓ Товари з розділу «Обігрівачі» dropt.in.ua
   {
@@ -148,6 +154,7 @@ window.PRODUCTS = [
     badge: '3 в 1',
     image: '/assets/img/klimatychnyi-kompleks-ms-1668-main-600.webp?v=5a765a1a',
     url: '/products/klimatychnyi-kompleks-ms-1668/',
+    cat: ['floor'],
   },
   {
     slug: 'teploventylyator-hq30-300bs',
@@ -160,6 +167,7 @@ window.PRODUCTS = [
     image: '/assets/img/teploventylyator-hq30-300bs-main-600.webp?v=5a765a1a',
     url: '/products/teploventylyator-hq30-300bs/',
     ending: true,
+    cat: ['floor'],
   },
   {
     slug: 'teploventylyator-hqn218-zvolozhuvach',
@@ -172,6 +180,7 @@ window.PRODUCTS = [
     image: '/assets/img/teploventylyator-hqn218-zvolozhuvach-main-600.webp?v=5a765a1a',
     url: '/products/teploventylyator-hqn218-zvolozhuvach/',
     ending: true,
+    cat: ['floor'],
   },
   {
     slug: 'nastinnyi-obigrivach-and-170',
@@ -183,6 +192,7 @@ window.PRODUCTS = [
     badge: 'На стіну',
     image: '/assets/img/nastinnyi-obigrivach-and-170-main-600.webp?v=5a765a1a',
     url: '/products/nastinnyi-obigrivach-and-170/',
+    cat: ['wall'],
   },
   {
     slug: 'teploventylyator-raf-1185',
@@ -195,6 +205,7 @@ window.PRODUCTS = [
     image: '/assets/img/teploventylyator-raf-1185-main-600.webp?v=5a765a1a',
     url: '/products/teploventylyator-raf-1185/',
     ending: true,
+    cat: ['floor'],
   },
   {
     slug: 'obigrivach-air-heater-a906',
@@ -217,6 +228,7 @@ window.PRODUCTS = [
     badge: 'У розетку',
     image: '/assets/img/obigrivach-v-rozetku-600-main-600.webp?v=5a765a1a',
     url: '/products/obigrivach-v-rozetku-600/',
+    cat: ['socket'],
   },
   {
     slug: 'konvektor-crownberg-cb-2000',
@@ -228,6 +240,7 @@ window.PRODUCTS = [
     badge: 'Конвектор',
     image: '/assets/img/konvektor-crownberg-cb-2000-main-600.webp?v=5a765a1a',
     url: '/products/konvektor-crownberg-cb-2000/',
+    cat: ['floor', 'wall'],
   },
   {
     slug: 'teploventylyator-crownberg-cb-7746',
@@ -239,6 +252,7 @@ window.PRODUCTS = [
     badge: '2000 Вт',
     image: '/assets/img/teploventylyator-crownberg-cb-7746-main-600.webp?v=5a765a1a',
     url: '/products/teploventylyator-crownberg-cb-7746/',
+    cat: ['floor'],
   },
   {
     slug: 'avto-obigrivach-cf-703',
@@ -250,6 +264,7 @@ window.PRODUCTS = [
     badge: 'Для авто',
     image: '/assets/img/avto-obigrivach-cf-703-main-600.webp?v=5a765a1a',
     url: '/products/avto-obigrivach-cf-703/',
+    cat: ['car'],
   },
   {
     slug: 'avto-obigrivach-cf-702',
@@ -261,6 +276,7 @@ window.PRODUCTS = [
     badge: 'Для авто',
     image: '/assets/img/avto-obigrivach-cf-702-main-600.webp?v=5a765a1a',
     url: '/products/avto-obigrivach-cf-702/',
+    cat: ['car'],
   },
   {
     slug: 'handy-heater-400',
@@ -272,6 +288,7 @@ window.PRODUCTS = [
     badge: 'У розетку',
     image: '/assets/img/handy-heater-400-main-600.webp?v=5a765a1a',
     url: '/products/handy-heater-400/',
+    cat: ['socket'],
   },
   {
     slug: 'kvartsovyi-obigrivach-domotec-ms-5952',
@@ -283,6 +300,7 @@ window.PRODUCTS = [
     badge: 'Кварцовий',
     image: '/assets/img/kvartsovyi-obigrivach-domotec-ms-5952-main-600.webp?v=5a765a1a',
     url: '/products/kvartsovyi-obigrivach-domotec-ms-5952/',
+    cat: ['floor'],
   },
   {
     slug: 'wonder-heater-klw-019a1',
@@ -295,6 +313,7 @@ window.PRODUCTS = [
     image: '/assets/img/wonder-heater-klw-019a1-main-600.webp?v=5a765a1a',
     url: '/products/wonder-heater-klw-019a1/',
     ending: true,
+    cat: ['socket'],
   },
   {
     slug: 'kvartsovyi-obigrivach-crownberg-cb-7745',
@@ -306,6 +325,7 @@ window.PRODUCTS = [
     badge: 'Кварцовий',
     image: '/assets/img/kvartsovyi-obigrivach-crownberg-cb-7745-main-600.webp?v=5a765a1a',
     url: '/products/kvartsovyi-obigrivach-crownberg-cb-7745/',
+    cat: ['floor'],
   },
   {
     slug: 'handy-heater-12622',
@@ -317,6 +337,7 @@ window.PRODUCTS = [
     badge: 'У розетку',
     image: '/assets/img/handy-heater-12622-main-600.webp?v=5a765a1a',
     url: '/products/handy-heater-12622/',
+    cat: ['socket'],
   },
   {
     slug: 'obigrivach-ptc-1108r',
@@ -329,6 +350,7 @@ window.PRODUCTS = [
     image: '/assets/img/obigrivach-ptc-1108r-main-600.webp?v=5a765a1a',
     url: null,
     inStock: false,
+    cat: ['floor'],
   },
   {
     slug: 'obigrivach-tower-heat-zelenyi',
@@ -341,6 +363,7 @@ window.PRODUCTS = [
     image: '/assets/img/obigrivach-tower-heat-zelenyi-main-600.webp?v=5a765a1a',
     url: null,
     inStock: false,
+    cat: ['floor'],
   },
   {
     slug: 'obigrivach-tower-heat-chornyi',
@@ -353,6 +376,7 @@ window.PRODUCTS = [
     image: '/assets/img/obigrivach-tower-heat-chornyi-main-600.webp?v=5a765a1a',
     url: null,
     inStock: false,
+    cat: ['floor'],
   },
   {
     slug: 'dovhyi-elektrokamin',
@@ -365,6 +389,7 @@ window.PRODUCTS = [
     image: '/assets/img/dovhyi-elektrokamin-main-600.webp?v=5a765a1a',
     url: null,
     inStock: false,
+    cat: ['floor'],
   },
   {
     slug: 'nastinnyi-obigrivach-1500',
@@ -377,5 +402,6 @@ window.PRODUCTS = [
     image: '/assets/img/nastinnyi-obigrivach-1500-main-600.webp?v=5a765a1a',
     url: null,
     inStock: false,
+    cat: ['wall'],
   },
 ];

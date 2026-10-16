@@ -69,11 +69,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Стилі: зібраний Tailwind CSS (assets/tw.css). Після зміни класів у HTML перезберіть його (див. README.md). -->
-  <link rel="stylesheet" href="/assets/tw.css?v=d710ca01">
+  <link rel="stylesheet" href="/assets/tw.css?v=3341fe94">
 
   <!-- Іконки Lucide -->
-  <script src="/assets/products.js?v=022e8310"></script>
-  <script src="/assets/shop.js?v=8fa2fa41"></script>
+  <script src="/assets/products.js?v=091754f0"></script>
+  <script src="/assets/shop.js?v=16b8c663"></script>
   <script src="/assets/icons.js?v=32134b82" defer></script>
   <script src="/assets/cart.js?v=777d4ee8" defer></script>
 
@@ -150,6 +150,8 @@
           <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-graphite">Каталог товарів</h2>
           <p id="catalogCount" class="text-slate-500 text-sm"></p>
         </div>
+        <!-- Категорії: фільтр каталогу. Посилання на категорію: warmhome.in.ua/#cat=floor (wall, socket, car) -->
+        <div id="catFilter" class="mt-6 -mx-4 px-4 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none]" role="tablist" aria-label="Категорії товарів"></div>
         <div id="catalogGrid" class="mt-8 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6"></div>
         <p id="catalogEmpty" class="hidden mt-10 text-center text-slate-500">Товари скоро зʼявляться.</p>
       </div>
@@ -245,11 +247,35 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
   // Каталог
-  const n = window.renderProducts ? renderProducts($('#catalogGrid')) : 0;
-  if (!n) $('#catalogEmpty').classList.remove('hidden');
+  const CATS = [['', 'Усі', 'layout-grid'], ['floor', 'Підлогові', 'heater'], ['wall', 'Настінні', 'home'], ['socket', 'У розетку', 'plug'], ['car', 'Автомобільні', 'car']];
   const word = (k) => (k % 10 === 1 && k % 100 !== 11) ? 'товар' : (k % 10 >= 2 && k % 10 <= 4 && (k % 100 < 10 || k % 100 >= 20)) ? 'товари' : 'товарів';
-  const avail = (window.PRODUCTS || []).filter(p => p.inStock !== false).length;
-  if (n) $('#catalogCount').textContent = n + ' ' + word(n) + (avail < n ? ', у наявності ' + avail : '');
+  const ALL = window.PRODUCTS || [];
+  const inCat = (c) => ALL.filter(p => !c || (p.cat || []).includes(c));
+  const chip = 'shrink-0 inline-flex items-center gap-2 px-4 min-h-[44px] rounded-full border text-sm font-semibold transition whitespace-nowrap';
+  const chipOn = 'bg-fire-600 border-fire-600 text-white', chipOff = 'bg-white border-slate-200 text-graphite hover:border-fire-500 hover:text-fire-600';
+  $('#catFilter').innerHTML = CATS.filter(([c]) => inCat(c).length).map(([c, label, icon]) =>
+    `<button type="button" role="tab" data-cat="${c}" class="${chip} ${chipOff}"><i data-lucide="${icon}" class="w-4 h-4"></i>${label}<span class="opacity-70 font-normal">${inCat(c).length}</span></button>`).join('');
+  function showCat(c, scroll) {
+    if (!CATS.some(x => x[0] === c)) c = '';
+    const n = window.renderProducts ? renderProducts($('#catalogGrid'), { cat: c }) : 0;
+    $('#catalogEmpty').classList.toggle('hidden', !!n);
+    const list = inCat(c), avail = list.filter(p => p.inStock !== false).length;
+    $('#catalogCount').textContent = n ? n + ' ' + word(n) + (avail < n ? ', у наявності ' + avail : '') : '';
+    $$('#catFilter [data-cat]').forEach(b => {
+      const on = b.dataset.cat === c;
+      b.className = `${chip} ${on ? chipOn : chipOff}`; b.setAttribute('aria-selected', on);
+    });
+    if (scroll) $('#catalog').scrollIntoView({ behavior: 'smooth' });
+  }
+  const catFromHash = () => (location.hash.match(/^#cat=([a-z]+)/) || [])[1] || '';
+  $('#catFilter').addEventListener('click', e => {
+    const b = e.target.closest('[data-cat]'); if (!b) return;
+    const c = b.dataset.cat;
+    history.replaceState(null, '', c ? '#cat=' + c : '#catalog');
+    showCat(c, false);
+  });
+  window.addEventListener('hashchange', () => { if (location.hash.startsWith('#cat=')) showCat(catFromHash(), true); });
+  showCat(catFromHash(), location.hash.startsWith('#cat='));
 
   // Велике фото в першому блоці: товари в наявності змінюються по черзі кожні 3 секунди.
   // Гортати можна й самому: стрілки по боках, свайп на телефоні, клавіші ← → на кнопках.
