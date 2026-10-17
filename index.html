@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>WarmHome UA — обігрівачі для дому з доставкою по Україні</title>
+  <title>WarmHome UA — тепло і затишок для дому: обігрівачі, гаряча вода, товари для кухні</title>
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="/assets/logo/mark-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="description" content="WarmHome UA: обігрівачі та товари для тепла і затишку вдома. Доставка Новою Поштою 1–3 дні, оплата при отриманні, обмін та повернення 14 днів.">
+  <meta name="description" content="WarmHome UA: обігрівачі, шарфи з підігрівом, сушарки для взуття, проточні водонагрівачі та товари для кухні. Доставка Новою Поштою 1–3 дні, оплата при отриманні, обмін і повернення 14 днів.">
   <meta name="theme-color" content="#EA580C">
   <!-- Перехід з реклами одразу на рекламований товар (зберігаємо всі UTM і fbclid).
        AD_CAMPAIGNS: назва кампанії з utm_campaign → товар.
@@ -46,7 +46,7 @@
     })();
   </script>
   <meta property="og:title" content="WarmHome UA — тепло і затишок для дому">
-  <meta property="og:description" content="Обігрівачі з доставкою Новою Поштою. Оплата при отриманні.">
+  <meta property="og:description" content="Обігрівачі, гаряча вода, товари для кухні й особистого тепла. Доставка Новою Поштою, оплата при отриманні.">
   <meta property="og:image" content="https://dropt.in.ua/image/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3.webp">
   <meta property="og:type" content="website">
 
@@ -73,12 +73,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Стилі: зібраний Tailwind CSS (assets/tw.css). Після зміни класів у HTML перезберіть його (див. README.md). -->
-  <link rel="stylesheet" href="/assets/tw.css?v=1d6a6f9b">
+  <link rel="stylesheet" href="/assets/tw.css?v=5f78b3d8">
 
   <!-- Іконки Lucide -->
-  <script src="/assets/products.js?v=01f83be6"></script>
-  <script src="/assets/shop.js?v=54a5e113"></script>
-  <script src="/assets/icons.js?v=f8fad21f" defer></script>
+  <script src="/assets/products.js?v=b393c87c"></script>
+  <script src="/assets/shop.js?v=7b0796dd"></script>
+  <script src="/assets/icons.js?v=235108c3" defer></script>
   <script src="/assets/cart.js?v=8f6e3be4" defer></script>
 
   <link rel="stylesheet" href="/assets/site.css?v=25deebd9">
@@ -98,7 +98,12 @@
         WarmHome <span class="text-fire-600">UA</span>
       </a>
       <nav class="hidden md:flex items-center gap-1 lg:gap-2 text-sm">
-        <a href="#catalog" class="nav-link inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-transparent font-semibold text-graphite hover:text-fire-600 transition"><i data-lucide="layout-grid" class="w-4 h-4"></i>Каталог</a>
+        <div class="relative group">
+          <a href="#catalog" class="nav-link inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-transparent font-semibold text-graphite hover:text-fire-600 transition" aria-haspopup="true"><i data-lucide="layout-grid" class="w-4 h-4"></i>Каталог<i data-lucide="chevron-down" class="w-4 h-4 opacity-60 transition group-hover:rotate-180"></i></a>
+          <div class="absolute left-0 top-full pt-2 z-50 invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0 transition">
+            <div id="navDepts" class="w-72 rounded-2xl bg-white border border-slate-200 shadow-xl p-2"></div>
+          </div>
+        </div>
         <a href="#delivery" class="nav-link inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-transparent font-semibold text-graphite hover:text-fire-600 transition">Доставка</a>
         <a href="#faq" class="nav-link hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-transparent font-semibold text-graphite hover:text-fire-600 transition">Питання</a>
       </nav>
@@ -116,6 +121,7 @@
     <nav id="mobileMenu" class="hidden md:hidden border-t border-slate-100 bg-white">
       <div class="px-4 py-2 flex flex-col text-base font-medium text-slate-700 [&>a]:py-3">
         <a href="#catalog" class="inline-flex items-center gap-2 font-semibold text-graphite"><i data-lucide="layout-grid" class="w-4 h-4 text-fire-600"></i>Каталог товарів</a>
+        <div id="mobDepts" class="-mt-1 mb-1 pl-6 grid grid-cols-2 gap-x-3 [&>a]:py-2 text-[15px]"></div>
         <a href="#delivery">Доставка та оплата</a>
         <a href="#faq">Часті запитання</a>
         <a href="tel:+380990227684" class="inline-flex items-center gap-2 font-semibold text-fire-600"><i data-lucide="phone" class="w-4 h-4"></i>+38 (099) 022-76-84</a>
@@ -131,7 +137,7 @@
           <h1 class="font-display font-extrabold text-[1.9rem] leading-tight sm:text-4xl lg:text-5xl text-graphite">
             Тепло і <span class="text-fire-600">затишок</span> для вашого дому
           </h1>
-          <p class="mt-4 text-base sm:text-lg text-slate-600">Обігрівачі для квартири, офісу та дачі. Обирайте, оглядайте у відділенні — і платіть лише тоді, коли все влаштовує.</p>
+          <p class="mt-4 text-base sm:text-lg text-slate-600">Обігрівачі, гаряча вода, товари для кухні та особистого тепла. Обирайте, оглядайте у відділенні — і платіть лише тоді, коли все влаштовує.</p>
           <ul class="mt-6 space-y-3">
             <li class="flex gap-3 items-start"><span class="shrink-0 w-9 h-9 rounded-xl bg-orange-100 text-fire-600 grid place-items-center"><i data-lucide="wallet" class="w-5 h-5"></i></span><span class="pt-1.5">Оплата при отриманні — без передоплати.</span></li>
             <li class="flex gap-3 items-start"><span class="shrink-0 w-9 h-9 rounded-xl bg-orange-100 text-fire-600 grid place-items-center"><i data-lucide="truck" class="w-5 h-5"></i></span><span class="pt-1.5">Доставка Новою Поштою за 1–3 дні по всій Україні.</span></li>
@@ -145,15 +151,25 @@
       </div>
     </section>
 
+    <!-- КАТЕГОРІЇ (будуються з window.DEPARTMENTS у products.js) -->
+    <section id="departments" class="pt-2 pb-2 md:pt-6">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-graphite">Що шукаєте?</h2>
+        <div id="deptGrid" class="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"></div>
+      </div>
+    </section>
+
     <!-- КАТАЛОГ -->
     <section id="catalog" class="py-12 md:py-20 scroll-mt-16">
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex items-end justify-between gap-4 flex-wrap">
           <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-graphite">Каталог товарів</h2>
         </div>
-        <!-- Категорії: фільтр каталогу. Посилання на категорію: warmhome.in.ua/#cat=floor (wall, socket, mini, humid, car, scarf, ending) -->
-        <div id="catFilter" class="mt-6 -mx-4 px-4 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] md:flex-wrap md:overflow-visible md:mx-0 md:px-0" role="tablist" aria-label="Категорії товарів"></div>
-        <div id="catalogGrid" class="mt-8 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6"></div>
+        <!-- Фільтр: групи (heaters, personal, water, kitchen, ending) і підкатегорії обраної групи.
+             Посилання: warmhome.in.ua/#cat=heaters або /#cat=floor -->
+        <div id="catFilter" class="mt-6 -mx-4 px-4 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] md:flex-wrap md:overflow-visible md:mx-0 md:px-0" role="tablist" aria-label="Групи товарів"></div>
+        <div id="subFilter" class="hidden mt-3 -mx-4 px-4 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] md:flex-wrap md:overflow-visible md:mx-0 md:px-0" aria-label="Підкатегорії"></div>
+        <div id="catalogGrid" class="mt-8"></div>
         <p id="catalogEmpty" class="hidden mt-10 text-center text-slate-500">Товари скоро зʼявляться.</p>
       </div>
     </section>
@@ -198,6 +214,7 @@
       </div>
       <div class="flex flex-col gap-1 items-start [&>button]:py-1.5 [&>button]:text-left">
         <a href="#catalog" class="py-1.5 font-semibold text-white hover:text-fire-500 inline-flex items-center gap-2"><i data-lucide="layout-grid" class="w-4 h-4 text-fire-500"></i>Каталог товарів</a>
+        <span class="foot-depts flex flex-wrap gap-x-3 gap-y-1 pl-6 -mt-0.5 mb-1 text-[13px]"><a href="/#cat=heaters" class="hover:text-fire-500">Обігрівачі</a><a href="/#cat=personal" class="hover:text-fire-500">Тепло для вас</a><a href="/#cat=water" class="hover:text-fire-500">Гаряча вода</a><a href="/#cat=kitchen" class="hover:text-fire-500">Для кухні</a></span>
         <button type="button" class="hover:text-white js-open-modal" data-modal="privacyModal">Політика конфіденційності</button>
         <button type="button" class="hover:text-white text-left js-open-modal" data-modal="returnModal">Умови повернення та обміну (14 днів згідно із ЗУ «Про захист прав споживачів»)</button>
       </div>
@@ -245,32 +262,97 @@
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
-  // Каталог
-  const CATS = [['', 'Усі', 'layout-grid'], ['floor', 'Підлогові', 'heater'], ['wall', 'Настінні', 'home'], ['socket', 'У розетку', 'plug'], ['mini', 'Міні', 'minimize-2'], ['humid', 'Зі зволоженням', 'droplets'], ['car', 'Автомобільні', 'car'], ['scarf', 'Шарфи', 'shirt'], ['shoes', 'Для взуття', 'footprints'], ['water', 'Гаряча вода', 'shower-head'], ['kitchen', 'Для кухні', 'coffee'], ['ending', 'Закінчується', 'timer']];
+  // Каталог: групи товарів (window.DEPARTMENTS) → підкатегорії (window.SUBCATS)
+  const ALL = window.PRODUCTS || [], DEPTS = (window.DEPARTMENTS || []), SUBS = window.SUBCATS || {};
   const word = (k) => (k % 10 === 1 && k % 100 !== 11) ? 'товар' : (k % 10 >= 2 && k % 10 <= 4 && (k % 100 < 10 || k % 100 >= 20)) ? 'товари' : 'товарів';
-  const ALL = window.PRODUCTS || [];
-  const inCat = (c) => ALL.filter(p => !c || (c === 'ending' ? p.ending && p.inStock !== false : (p.cat || []).includes(c)));
+  const live = (c) => ALL.filter(p => p.inStock !== false && window.matchCat(p, c));      // лише в наявності
+  const inCat = (c) => ALL.filter(p => window.matchCat(p, c));
+  const deptById = (id) => DEPTS.find(d => d.id === id);
+  const shown = DEPTS.filter(d => live(d.id).length);
+  const coverOf = (d) => (ALL.find(p => p.slug === d.cover && p.inStock !== false) || live(d.id)[0] || {}).image || '';
+  const escA = (t) => String(t).replace(/"/g, '&quot;');
+
+  // Плитки «Що шукаєте?»: перша група велика, решта — менші
+  $('#deptGrid').innerHTML = shown.map((d, i) => {
+    const n = live(d.id).length, big = i === 0, wide = i === 1 && shown.length > 3;
+    const subs = d.cats.filter(c => live(c).length);
+    const size = big ? 'col-span-2 lg:row-span-2 min-h-[250px] sm:min-h-[300px] lg:min-h-[440px] p-5 sm:p-8'
+      : wide ? 'col-span-2 min-h-[170px] sm:min-h-[210px] p-5 sm:p-6' : 'min-h-[200px] sm:min-h-[210px] p-4 sm:p-6';
+    const img = big ? 'w-[52%] sm:w-[50%] lg:w-[66%] -right-4 -bottom-5 lg:-right-12 lg:-bottom-12'
+      : wide ? 'w-[46%] sm:w-[38%] -right-3 -bottom-5' : 'w-[58%] sm:w-[62%] -right-5 -bottom-6 lg:-right-8 lg:-bottom-8';
+    return `<a href="#cat=${d.id}" data-cat="${d.id}" class="dept-card group relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-orange-50 to-white hover:border-fire-500 hover:shadow-xl transition ${size}">
+      <img src="${escA(coverOf(d))}" alt="" aria-hidden="true" loading="lazy" class="img-fade pointer-events-none absolute aspect-square object-cover rounded-full ${img} transition duration-500 group-hover:scale-105">
+      <div class="relative z-[1] ${big ? 'max-w-[56%] sm:max-w-[50%] lg:max-w-[52%]' : wide ? 'max-w-[58%]' : 'max-w-full sm:max-w-[60%]'}">
+        <span class="inline-grid place-items-center ${big ? 'w-12 h-12' : 'w-10 h-10'} rounded-2xl bg-fire-600 text-white shadow-lg shadow-fire-600/30"><i data-lucide="${d.icon}" class="${big ? 'w-6 h-6' : 'w-5 h-5'}"></i></span>
+        <p class="mt-3 font-display font-extrabold ${big ? 'text-2xl sm:text-4xl' : 'text-lg sm:text-xl lg:text-2xl'} text-graphite leading-tight">${d.name}</p>
+        <p class="mt-1 text-sm text-slate-600 ${big || wide ? '' : 'hidden sm:block'}">${d.text}</p>
+        ${big && subs.length > 1 ? `<div class="mt-4 hidden sm:flex flex-wrap gap-1.5">${subs.map(c => `<span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-white border border-slate-200 text-slate-700">${SUBS[c] ? SUBS[c][0] : c}</span>`).join('')}</div>` : ''}
+        <p class="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-fire-600">${n} ${word(n)}<i data-lucide="arrow-right" class="w-4 h-4 transition group-hover:translate-x-1"></i></p>
+      </div>
+    </a>`;
+  }).join('');
+
+  // Меню: групи в «Каталог» (ПК) і в мобільному меню
+  $('#navDepts').innerHTML = shown.map(d => `<a href="#cat=${d.id}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-orange-50 text-graphite">
+      <span class="w-9 h-9 rounded-xl bg-orange-100 text-fire-600 grid place-items-center shrink-0"><i data-lucide="${d.icon}" class="w-5 h-5"></i></span>
+      <span class="min-w-0"><span class="block font-semibold">${d.name}</span><span class="block text-xs text-slate-500 truncate">${d.text}</span></span></a>`).join('')
+    + `<a href="#catalog" data-all class="mt-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold text-fire-600 hover:bg-orange-50">Увесь каталог<i data-lucide="arrow-right" class="w-4 h-4"></i></a>`;
+  $('#mobDepts').innerHTML = shown.map(d => `<a href="#cat=${d.id}" class="inline-flex items-center gap-2 text-slate-700"><i data-lucide="${d.icon}" class="w-4 h-4 text-fire-600"></i>${d.name}</a>`).join('');
+
+  // Фільтр
   const chip = 'shrink-0 inline-flex items-center gap-2 px-4 min-h-[44px] rounded-full border text-sm font-semibold transition whitespace-nowrap';
   const chipOn = 'bg-fire-600 border-fire-600 text-white', chipOff = 'bg-white border-slate-200 text-graphite hover:border-fire-500 hover:text-fire-600';
-  $('#catFilter').innerHTML = CATS.filter(([c]) => inCat(c).length).map(([c, label, icon]) =>
-    `<button type="button" role="tab" data-cat="${c}" class="${chip} ${chipOff}"><i data-lucide="${icon}" class="w-4 h-4"></i>${label}<span class="opacity-70 font-normal">${inCat(c).length}</span></button>`).join('');
+  const sub = 'shrink-0 inline-flex items-center gap-1.5 px-3 min-h-[36px] rounded-full border text-[13px] font-semibold transition whitespace-nowrap';
+  const subOn = 'bg-graphite border-graphite text-white', subOff = 'bg-transparent border-slate-200 text-slate-600 hover:border-fire-500 hover:text-fire-600';
+  const TOP = [['', 'Усі', 'layout-grid'], ...shown.map(d => [d.id, d.name, d.icon]), ['ending', 'Закінчується', 'timer']];
+  $('#catFilter').innerHTML = TOP.filter(([c]) => inCat(c).length).map(([c, label, icon]) =>
+    `<button type="button" role="tab" data-cat="${c}" class="${chip} ${chipOff}"><i data-lucide="${icon}" class="w-4 h-4"></i>${label}<span class="opacity-70 font-normal">${c ? live(c).length : ALL.filter(p => p.inStock !== false).length}</span></button>`).join('');
+  const isSub = (c) => !!SUBS[c] && !deptById(c);
+  const parentOf = (c) => DEPTS.find(d => d.cats.includes(c));
+  const gridCls = 'grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6';
+
   function showCat(c, scroll) {
-    if (!CATS.some(x => x[0] === c)) c = '';
-    const n = window.renderProducts ? renderProducts($('#catalogGrid'), { cat: c }) : 0;
+    if (c && !TOP.some(x => x[0] === c) && !isSub(c)) c = '';
+    const top = isSub(c) ? (parentOf(c) || {}).id : c;
+    const box = $('#catalogGrid');
+    let n = 0;
+    if (!c) {
+      // «Усі»: товари розкладені по групах, у кожній — свій заголовок
+      const groups = DEPTS.filter(d => inCat(d.id).length);
+      box.innerHTML = groups.map(d => `<div class="dept-block mt-12 first:mt-0" data-dept="${d.id}">
+          <div class="flex items-end justify-between gap-3 border-b border-slate-200 pb-3">
+            <h3 class="flex items-center gap-3 font-display font-extrabold text-xl sm:text-2xl text-graphite"><span class="w-10 h-10 rounded-xl bg-orange-100 text-fire-600 grid place-items-center shrink-0"><i data-lucide="${d.icon}" class="w-5 h-5"></i></span>${d.name}<span class="text-base font-semibold text-slate-500">${live(d.id).length}</span></h3>
+            ${groups.length > 1 ? `<a href="#cat=${d.id}" class="shrink-0 inline-flex items-center gap-1 text-sm font-semibold text-fire-600 hover:underline">Лише ця група<i data-lucide="arrow-right" class="w-4 h-4"></i></a>` : ''}
+          </div>
+          <div class="js-grid mt-6 ${gridCls}"></div></div>`).join('');
+      $$('.dept-block', box).forEach(el => { n += window.renderProducts ? renderProducts($('.js-grid', el), { cat: el.dataset.dept }) : 0; });
+    } else {
+      box.innerHTML = `<div class="js-grid ${gridCls}"></div>`;
+      n = window.renderProducts ? renderProducts($('.js-grid', box), { cat: c }) : 0;
+    }
     $('#catalogEmpty').classList.toggle('hidden', !!n);
-    $$('#catFilter [data-cat]').forEach(b => {
-      const on = b.dataset.cat === c;
-      b.className = `${chip} ${on ? chipOn : chipOff}`; b.setAttribute('aria-selected', on);
-    });
+    $$('#catFilter [data-cat]').forEach(b => { const on = b.dataset.cat === (top || ''); b.className = `${chip} ${on ? chipOn : chipOff}`; b.setAttribute('aria-selected', on); });
+    // Підкатегорії обраної групи (якщо їх більше однієї)
+    const d = deptById(top), subs = d ? d.cats.filter(x => inCat(x).length) : [];
+    const sf = $('#subFilter');
+    sf.classList.toggle('hidden', subs.length < 2);
+    sf.innerHTML = subs.length < 2 ? '' : [[top, 'Усі ' + d.name.toLowerCase()], ...subs.map(x => [x, SUBS[x] ? SUBS[x][0] : x])].map(([x, label]) => {
+      const on = x === c;
+      return `<button type="button" data-cat="${x}" class="${sub} ${on ? subOn : subOff}">${label}<span class="opacity-70 font-normal">${live(x).length}</span></button>`;
+    }).join('');
+    if (window.lucide) lucide.createIcons();
     if (scroll) $('#catalog').scrollIntoView({ behavior: 'smooth' });
   }
   const catFromHash = () => (location.hash.match(/^#cat=([a-z]+)/) || [])[1] || '';
-  $('#catFilter').addEventListener('click', e => {
+  const pick = (e) => {
     const b = e.target.closest('[data-cat]'); if (!b) return;
+    e.preventDefault();
     const c = b.dataset.cat;
     history.replaceState(null, '', c ? '#cat=' + c : '#catalog');
-    showCat(c, false);
-  });
+    showCat(c, !!b.closest('#deptGrid, #navDepts, #mobDepts'));
+  };
+  ['#catFilter', '#subFilter', '#deptGrid', '#navDepts', '#mobDepts'].forEach(s => $(s).addEventListener('click', pick));
+  $('#navDepts').addEventListener('click', e => { if (e.target.closest('[data-all]')) { history.replaceState(null, '', '#catalog'); showCat('', true); e.preventDefault(); } if (document.activeElement) document.activeElement.blur(); });
   window.addEventListener('hashchange', () => { if (location.hash.startsWith('#cat=')) showCat(catFromHash(), true); });
   showCat(catFromHash(), location.hash.startsWith('#cat='));
 

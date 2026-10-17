@@ -53,13 +53,16 @@
 
   // Вивести картки в контейнер; повертає кількість показаних товарів.
   // Каталог (без exclude): усі товари, спершу ті, що є в наявності.
-  // «Дивіться також» (з exclude): лише товари в наявності, у випадковому порядку.
+  // «Дивіться також» (з exclude): лише товари в наявності — спершу з тієї ж групи, у випадковому порядку.
   window.renderProducts = function (container, { exclude = null, limit = 0, cat = '' } = {}) {
     if (!container) return 0;
-    let list = (window.PRODUCTS || []).filter(p => p.slug !== exclude && (!cat || (cat === 'ending' ? p.ending && p.inStock !== false : (p.cat || []).includes(cat))));
+    let list = (window.PRODUCTS || []).filter(p => p.slug !== exclude && window.matchCat(p, cat));
     if (exclude) {
       list = list.filter(inStock);
       for (let i = list.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [list[i], list[j]] = [list[j], list[i]]; }
+      // спершу товари з тієї ж групи, що й поточний
+      const cur = (window.PRODUCTS || []).find(p => p.slug === exclude), d = cur && window.deptOf(cur);
+      if (d) list = list.filter(p => window.deptOf(p) === d).concat(list.filter(p => window.deptOf(p) !== d));
     } else {
       list = list.filter(inStock).concat(list.filter(p => !inStock(p)));
     }

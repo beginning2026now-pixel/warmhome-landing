@@ -76,12 +76,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Стилі: зібраний Tailwind CSS (assets/tw.css). Після зміни класів у HTML перезберіть його (див. README.md). -->
-  <link rel="stylesheet" href="/assets/tw.css?v=1d6a6f9b">
+  <link rel="stylesheet" href="/assets/tw.css?v=5f78b3d8">
 
   <!-- Іконки Lucide -->
-  <script src="/assets/products.js?v=01f83be6"></script>
-  <script src="/assets/shop.js?v=54a5e113"></script>
-  <script src="/assets/icons.js?v=f8fad21f" defer></script>
+  <script src="/assets/products.js?v=b393c87c"></script>
+  <script src="/assets/shop.js?v=7b0796dd"></script>
+  <script src="/assets/icons.js?v=235108c3" defer></script>
   <script src="/assets/cart.js?v=8f6e3be4" defer></script>
 
   <link rel="stylesheet" href="/assets/site.css?v=25deebd9">
@@ -137,6 +137,7 @@
 
     <!-- ===================== БЛОК 2: HERO ===================== -->
     <section class="bg-gradient-to-b from-orange-50 to-white">
+      <nav aria-label="Ви тут" class="max-w-6xl mx-auto px-4 pt-4 -mb-3 md:pt-6 md:-mb-8 relative z-10 text-sm text-slate-500 flex flex-wrap items-center gap-x-1.5 gap-y-1"><a href="/" class="hover:text-fire-600">Головна</a><i data-lucide="chevron-right" class="w-3.5 h-3.5 opacity-60 shrink-0"></i><a href="/#cat=heaters" class="hover:text-fire-600">Обігрівачі</a><i data-lucide="chevron-right" class="w-3.5 h-3.5 opacity-60 shrink-0"></i><a href="/#cat=floor" class="hover:text-fire-600">Підлогові</a></nav>
       <div class="max-w-6xl mx-auto px-4 pt-6 pb-12 md:py-14 grid md:grid-cols-2 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] gap-8 md:gap-10 items-center">
 
         <div class="relative fire-glow order-1 md:order-2">
@@ -483,6 +484,7 @@
       </div>
       <div class="flex flex-col gap-1 items-start [&>button]:py-1.5 [&>button]:text-left">
         <a href="/" class="py-1.5 font-semibold text-white hover:text-fire-500 inline-flex items-center gap-2"><i data-lucide="layout-grid" class="w-4 h-4 text-fire-500"></i>Каталог товарів</a>
+        <span class="foot-depts flex flex-wrap gap-x-3 gap-y-1 pl-6 -mt-0.5 mb-1 text-[13px]"><a href="/#cat=heaters" class="hover:text-fire-500">Обігрівачі</a><a href="/#cat=personal" class="hover:text-fire-500">Тепло для вас</a><a href="/#cat=water" class="hover:text-fire-500">Гаряча вода</a><a href="/#cat=kitchen" class="hover:text-fire-500">Для кухні</a></span>
         <button type="button" class="hover:text-white js-open-modal" data-modal="privacyModal">Політика конфіденційності</button>
         <button type="button" class="hover:text-white text-left js-open-modal" data-modal="returnModal">Умови повернення та обміну (14 днів згідно із ЗУ «Про захист прав споживачів»)</button>
       </div>

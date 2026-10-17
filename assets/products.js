@@ -462,3 +462,31 @@ window.PRODUCTS = [
     cat: ['wall'],
   },
 ];
+
+/* ==========================================================
+   ГРУПИ ТОВАРІВ (розділи магазину) і підкатегорії.
+   Товар потрапляє в групу за полем cat. Нова група — новий рядок тут
+   (id, назва, іконка Lucide, короткий опис, підкатегорії, товар для обкладинки).
+   Посилання на групу чи підкатегорію: warmhome.in.ua/#cat=heaters, /#cat=floor
+   ========================================================== */
+window.DEPARTMENTS = [
+  { id: 'heaters', name: 'Обігрівачі', icon: 'heater', text: 'Для квартири, офісу, дачі й авто', cats: ['floor', 'wall', 'socket', 'mini', 'humid', 'car'], cover: 'obigrivach-kamin-900' },
+  { id: 'personal', name: 'Тепло для вас', icon: 'shirt', text: 'Шарфи з підігрівом і сушарка для взуття', cats: ['scarf', 'shoes'], cover: 'sharf-z-pidigrivom-fioletovyi' },
+  { id: 'water', name: 'Гаряча вода', icon: 'shower-head', text: 'Проточні водонагрівачі-крани', cats: ['water'], cover: 'vodonagrivach-kran-rx002' },
+  { id: 'kitchen', name: 'Для кухні', icon: 'coffee', text: 'Кавоварки та корисне для кухні', cats: ['kitchen'], cover: 'heyzerna-kavovarka-un-1913' },
+];
+window.SUBCATS = {
+  floor: ['Підлогові', 'heater'], wall: ['Настінні', 'home'], socket: ['У розетку', 'plug'], mini: ['Міні', 'minimize-2'],
+  humid: ['Зі зволоженням', 'droplets'], car: ['Автомобільні', 'car'], scarf: ['Шарфи', 'shirt'], shoes: ['Для взуття', 'footprints'],
+  water: ['Водонагрівачі', 'shower-head'], kitchen: ['Кавоварки', 'coffee'],
+};
+// Група товару (перша, до якої належить хоча б одна його підкатегорія)
+window.deptOf = function (p) { return window.DEPARTMENTS.find(function (d) { return (p.cat || []).some(function (c) { return d.cats.indexOf(c) >= 0; }); }) || null; };
+// Чи належить товар до групи / підкатегорії / «Закінчується» ('' — усі товари)
+window.matchCat = function (p, c) {
+  if (!c) return true;
+  if (c === 'ending') return !!p.ending && p.inStock !== false;
+  var d = window.DEPARTMENTS.find(function (x) { return x.id === c; });
+  return d ? (p.cat || []).some(function (x) { return d.cats.indexOf(x) >= 0; }) : (p.cat || []).indexOf(c) >= 0;
+};
+
