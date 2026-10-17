@@ -2,7 +2,7 @@
 """Каталог товарів для Meta (Facebook та Instagram): feed/facebook.csv + JPG-фото в assets/feed/.
 Запуск з кореня репозиторію після будь-якої зміни товарів або цін:  python3 tools/make_feed.py
 Meta забирає файл за адресою https://warmhome.in.ua/feed/facebook.csv за розкладом."""
-import csv, html, json, os, re, subprocess
+import csv, hashlib, html, json, os, re, subprocess
 from PIL import Image
 
 SITE = 'https://warmhome.in.ua'
@@ -26,7 +26,8 @@ def photo(p):
         src = 'assets/img/kamin-900-light.webp'       # обігрівач з ефектом каміна: локально є лише світла версія
     out = 'assets/feed/%s.jpg' % p['slug']
     Image.open(src).convert('RGB').resize((1024, 1024), Image.LANCZOS).save(out, 'JPEG', quality=86, optimize=True)
-    return '%s/%s?v=%d' % (SITE, out, int(os.path.getmtime(src)))
+    # версія = хеш вмісту фото: змінилося фото → змінилася адреса → Meta завантажує нове
+    return '%s/%s?v=%s' % (SITE, out, hashlib.md5(open(out, 'rb').read()).hexdigest()[:10])
 
 rows = []
 for p in P:
