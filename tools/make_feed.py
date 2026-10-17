@@ -14,6 +14,7 @@ KITCHEN = 'Home & Garden > Kitchen & Dining > Kitchen Appliances > Coffee Makers
 THERMOS = 'Home & Garden > Kitchen & Dining > Food & Beverage Carriers > Thermoses'
 MUGS = 'Home & Garden > Kitchen & Dining > Tableware > Drinkware > Mugs'
 SCRAPER = 'Vehicles & Parts > Vehicle Parts & Accessories > Vehicle Maintenance, Care & Decor'
+ESPRESSO = 'Home & Garden > Kitchen & Dining > Kitchen Appliances > Coffee Makers & Espresso Machines > Espresso Machines'
 SLEEPING = 'Sporting Goods > Outdoor Recreation > Camping & Hiking > Sleeping Bags'
 
 P = json.loads(subprocess.run(['node', '-e', "global.window={};require('./assets/products.js');console.log(JSON.stringify(window.PRODUCTS))"],
@@ -55,7 +56,7 @@ for p in P:
         'link': SITE + p['url'],
         'image_link': photo(p),
         'brand': 'WarmHome UA',
-        'google_product_category': SCARF if 'scarf' in (p.get('cat') or []) else SHOES if 'shoes' in (p.get('cat') or []) else WATER if 'water' in (p.get('cat') or []) else KITCHEN if 'coffee' in (p.get('cat') or []) else THERMOS if 'thermos' in (p.get('cat') or []) else SLEEPING if 'sleeping' in (p.get('cat') or []) else MUGS if 'cups' in (p.get('cat') or []) else SCRAPER if p.get('slug') == 'skrebok-z-pidihrivom-12v' else HEATERS,
+        'google_product_category': SCARF if 'scarf' in (p.get('cat') or []) else SHOES if 'shoes' in (p.get('cat') or []) else WATER if 'water' in (p.get('cat') or []) else ESPRESSO if p.get('slug', '').startswith('kavomashyna') else KITCHEN if 'coffee' in (p.get('cat') or []) else THERMOS if 'thermos' in (p.get('cat') or []) else SLEEPING if 'sleeping' in (p.get('cat') or []) else MUGS if 'cups' in (p.get('cat') or []) else SCRAPER if p.get('slug') == 'skrebok-z-pidihrivom-12v' else HEATERS,
         'product_type': ', '.join(p.get('cat') or []),
         'custom_label_0': 'Закінчується' if p.get('ending') else '',
     })

@@ -20,7 +20,7 @@
     (function () {
       var R = /(\/assets\/img\/[a-z0-9-]+-main(?:-600)?)(-light)?\.webp/, H = document.documentElement;
       // Фото з сайту постачальника → своя світла версія
-      var X = { 'https://dropt.in.ua/image/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3.webp': '/assets/img/kamin-900-light.webp?v=03276eac' };
+      var X = { 'https://dropt.in.ua/image/catalog/elektrychnyy-obihrivach-z-efektom-kamina-900-vt-bilyy-kerami-19184_3.webp': '/assets/img/kamin-900-light.webp?v=cfe88c8d' };
       function fix(img) { var s = img.getAttribute('src'); if (!s || img.hasAttribute('data-keep-dark')) return; var l = !H.classList.contains('dark');
         for (var k in X) { if (l && s === k) return img.setAttribute('src', X[k]); if (!l && s === X[k]) return img.setAttribute('src', k); }
         var m = s.match(R); if (m && l !== !!m[2]) img.setAttribute('src', s.replace(R, m[1] + (l ? '-light' : '') + '.webp')); }
@@ -35,7 +35,7 @@
   <!-- Open Graph (превʼю при поширенні посилання) — замініть og:image на реальне фото товару -->
   <meta property="og:title" content="Обігрівач у розетку Heater For Home 600 Вт — 390 грн">
   <meta property="og:description" content="Тепло прямо з розетки. Оплата при отриманні.">
-  <meta property="og:image" content="https://warmhome.in.ua/assets/img/obigrivach-v-rozetku-600-main.webp?v=03276eac">
+  <meta property="og:image" content="https://warmhome.in.ua/assets/img/obigrivach-v-rozetku-600-main.webp?v=cfe88c8d">
   <meta property="og:type" content="product">
 
   <!-- Meta Pixel Code (ID 1115491024548018 + 972029978660664) -->
@@ -79,7 +79,7 @@
   <link rel="stylesheet" href="/assets/tw.css?v=a326d5d8">
 
   <!-- Іконки Lucide -->
-  <script src="/assets/products.js?v=2ce4d9f2"></script>
+  <script src="/assets/products.js?v=f2d80430"></script>
   <script src="/assets/shop.js?v=1eac34a9"></script>
   <script src="/assets/icons.js?v=17a42a86" defer></script>
   <script src="/assets/cart.js?v=8f6e3be4" defer></script>
@@ -147,7 +147,7 @@
           </div>
           <!-- ФОТО ТОВАРУ (головне): фото постачальника. Для продакшену завантажте на свій хостинг. -->
           <div class="relative z-[1] w-full max-w-xl md:max-w-none xl:w-[calc(100%+3rem)] xl:-mr-12 mx-auto rounded-3xl aspect-square overflow-hidden">
-            <img src="/assets/img/obigrivach-v-rozetku-600-main.webp?v=03276eac"
+            <img src="/assets/img/obigrivach-v-rozetku-600-main.webp?v=cfe88c8d"
                  alt="Обігрівач у розетку Heater For Home 600 Вт з дисплеєм" width="1024" height="1024"
                  fetchpriority="high"
                  class="img-fade w-full h-full object-cover">
@@ -359,7 +359,7 @@
             <!-- ФОТО ТОВАРУ біля форми -->
             <div class="relative fire-glow shrink-0">
               <div class="relative z-[1] w-32 h-32 sm:w-40 sm:h-40 md:w-full md:h-auto md:max-w-md md:aspect-square rounded-2xl md:rounded-3xl overflow-hidden">
-                <img data-keep-dark src="/assets/img/obigrivach-v-rozetku-600-main.webp?v=03276eac" alt="Обігрівач у розетку Heater For Home 600 Вт" width="1000" height="1000" loading="lazy" class="img-fade w-full h-full object-cover">
+                <img data-keep-dark src="/assets/img/obigrivach-v-rozetku-600-main.webp?v=cfe88c8d" alt="Обігрівач у розетку Heater For Home 600 Вт" width="1000" height="1000" loading="lazy" class="img-fade w-full h-full object-cover">
               </div>
             </div>
             <div class="md:mt-7 flex items-end gap-x-3 gap-y-1 flex-wrap">
