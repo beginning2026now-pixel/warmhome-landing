@@ -73,7 +73,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Стилі: зібраний Tailwind CSS (assets/tw.css). Після зміни класів у HTML перезберіть його (див. README.md). -->
-  <link rel="stylesheet" href="/assets/tw.css?v=63c94724">
+  <link rel="stylesheet" href="/assets/tw.css?v=a326d5d8">
 
   <!-- Іконки Lucide -->
   <script src="/assets/products.js?v=a831a43c"></script>
@@ -81,7 +81,7 @@
   <script src="/assets/icons.js?v=9d6e1680" defer></script>
   <script src="/assets/cart.js?v=8f6e3be4" defer></script>
 
-  <link rel="stylesheet" href="/assets/site.css?v=25deebd9">
+  <link rel="stylesheet" href="/assets/site.css?v=bae096a8">
 </head>
 
 <body class="bg-white text-slate-800 font-sans antialiased">
@@ -342,12 +342,28 @@
       // «Усі»: товари розкладені по групах, у кожній — свій заголовок
       const groups = DEPTS.filter(d => inCat(d.id).length);
       box.innerHTML = groups.map(d => `<div class="dept-block mt-12 first:mt-0" data-dept="${d.id}">
-          <div class="flex items-end justify-between gap-3 border-b border-slate-200 pb-3">
-            <h3 class="flex items-center gap-3 font-display font-extrabold text-xl sm:text-2xl text-graphite"><span class="w-10 h-10 rounded-xl bg-orange-100 text-fire-600 grid place-items-center shrink-0"><i data-lucide="${d.icon}" class="w-5 h-5"></i></span>${d.name}<span class="text-base font-semibold text-slate-500">${live(d.id).length}</span></h3>
-            ${groups.length > 1 ? `<a href="#cat=${d.id}" class="shrink-0 inline-flex items-center gap-1 text-sm font-semibold text-fire-600 hover:underline">Лише ця група<i data-lucide="arrow-right" class="w-4 h-4"></i></a>` : ''}
+          <div class="flex items-center justify-between gap-2 sm:gap-3 border-b border-slate-200 pb-3">
+            <h3 class="min-w-0 flex items-center gap-2 sm:gap-3 font-display font-extrabold text-lg sm:text-2xl text-graphite whitespace-nowrap"><span class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-orange-100 text-fire-600 grid place-items-center shrink-0"><i data-lucide="${d.icon}" class="w-5 h-5"></i></span><span class="truncate">${d.name}</span><span class="text-sm sm:text-base font-semibold text-slate-500">${live(d.id).length}</span></h3>
+            <div class="shrink-0 flex items-center gap-2">
+              ${groups.length > 1 ? `<a href="#cat=${d.id}" class="inline-flex items-center gap-1 text-sm font-semibold text-fire-600 hover:underline mr-1"><span class="hidden sm:inline">Усі ${d.name.toLowerCase()}</span><span class="sm:hidden">Усі</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>` : ''}
+              <button type="button" class="row-prev grid place-items-center w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200 bg-white text-graphite hover:border-fire-500 hover:text-fire-600 transition disabled:opacity-30 disabled:pointer-events-none" aria-label="Попередні товари"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+              <button type="button" class="row-next grid place-items-center w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200 bg-white text-graphite hover:border-fire-500 hover:text-fire-600 transition disabled:opacity-30 disabled:pointer-events-none" aria-label="Наступні товари"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+            </div>
           </div>
-          <div class="js-grid mt-6 ${gridCls}"></div></div>`).join('');
-      $$('.dept-block', box).forEach(el => { n += window.renderProducts ? renderProducts($('.js-grid', el), { cat: el.dataset.dept, sort: SORT }) : 0; });
+          <div class="relative">
+            <div class="js-grid row-scroll mt-4 -mx-4 px-4 sm:mx-0 sm:px-0 py-2 flex gap-3 sm:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth [scrollbar-width:none]"></div>
+          </div></div>`).join('');
+      $$('.dept-block', box).forEach(el => {
+        const row = $('.js-grid', el);
+        n += window.renderProducts ? renderProducts(row, { cat: el.dataset.dept, sort: SORT }) : 0;
+        // Один рядок товарів на групу: гортається стрілками (і свайпом на телефоні)
+        const prev = $$('.row-prev', el), next = $$('.row-next', el);
+        const step = () => { const c = row.children[0]; return c ? (c.getBoundingClientRect().width + parseFloat(getComputedStyle(row).columnGap || 0)) * Math.max(1, Math.floor(row.clientWidth / c.getBoundingClientRect().width)) : row.clientWidth; };
+        const upd = () => { const max = row.scrollWidth - row.clientWidth - 2; prev.forEach(b => b.disabled = row.scrollLeft <= 2); next.forEach(b => b.disabled = row.scrollLeft >= max); };
+        prev.forEach(b => b.addEventListener('click', () => row.scrollBy({ left: -step(), behavior: 'smooth' })));
+        next.forEach(b => b.addEventListener('click', () => row.scrollBy({ left: step(), behavior: 'smooth' })));
+        row.addEventListener('scroll', upd, { passive: true }); window.addEventListener('resize', upd); upd();
+      });
     } else {
       box.innerHTML = `<div class="js-grid ${gridCls}"></div>`;
       n = window.renderProducts ? renderProducts($('.js-grid', box), { cat: c, sort: SORT }) : 0;

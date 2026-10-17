@@ -79,3 +79,10 @@ html.dark #slider figcaption { background-color: #131D2E; }
   mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 8%, #000 92%, transparent 100%);
   mask-composite: intersect;
 }
+
+/* Головний каталог «Усі»: один рядок товарів на групу, гортається стрілками */
+.row-scroll::-webkit-scrollbar { display: none; }
+.row-scroll > * { flex: 0 0 calc((100% - .75rem) / 2); scroll-snap-align: start; scroll-margin-left: 1rem; }
+@media (min-width: 640px) { .row-scroll > * { flex-basis: calc((100% - 1.5rem) / 2); scroll-margin-left: 0; } }
+@media (min-width: 1024px) { .row-scroll > * { flex-basis: calc((100% - 3rem) / 3); } }
+@media (min-width: 1280px) { .row-scroll > * { flex-basis: calc((100% - 4.5rem) / 4); } }
