@@ -361,7 +361,15 @@
   // Нові товари з products.js потрапляють сюди автоматично.
   (function heroCarousel() {
     const box = $('#heroPreview');
-    const list = (window.PRODUCTS || []).filter(p => p.image && p.inStock !== false);
+    // Товари всіх груп упереміш: групи чергуються (обігрівач → шарф → водонагрівач → кавоварка → …),
+    // а порядок усередині кожної групи щоразу випадковий
+    const mix = (a) => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+    const pool = (window.PRODUCTS || []).filter(p => p.image && p.inStock !== false);
+    const buckets = mix((window.DEPARTMENTS || []).map(d => mix(pool.filter(p => window.deptOf(p) === d))).filter(b => b.length));
+    const rest = mix(pool.filter(p => !window.deptOf || !window.deptOf(p)));
+    if (rest.length) buckets.push(rest);
+    const list = [];
+    while (buckets.some(b => b.length)) buckets.forEach(b => { if (b.length) list.push(b.shift()); });
     if (!box || !list.length) return;
     const H = document.documentElement, AUTO = 3000, OUT = 450;
     // велике фото (1024 px) і версія під поточну тему
