@@ -73,12 +73,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Стилі: зібраний Tailwind CSS (assets/tw.css). Після зміни класів у HTML перезберіть його (див. README.md). -->
-  <link rel="stylesheet" href="/assets/tw.css?v=5f78b3d8">
+  <link rel="stylesheet" href="/assets/tw.css?v=63c94724">
 
   <!-- Іконки Lucide -->
-  <script src="/assets/products.js?v=f9ccbbbb"></script>
-  <script src="/assets/shop.js?v=7b0796dd"></script>
-  <script src="/assets/icons.js?v=235108c3" defer></script>
+  <script src="/assets/products.js?v=a831a43c"></script>
+  <script src="/assets/shop.js?v=1eac34a9"></script>
+  <script src="/assets/icons.js?v=9d6e1680" defer></script>
   <script src="/assets/cart.js?v=8f6e3be4" defer></script>
 
   <link rel="stylesheet" href="/assets/site.css?v=25deebd9">
@@ -164,6 +164,16 @@
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex items-end justify-between gap-4 flex-wrap">
           <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-graphite">Каталог товарів</h2>
+          <label class="relative inline-flex items-center gap-2 text-sm font-semibold text-slate-600">
+            <i data-lucide="arrow-down-up" class="w-4 h-4 text-fire-600"></i><span class="hidden sm:inline">Сортувати:</span>
+            <select id="catSort" class="appearance-none bg-white border border-slate-200 rounded-xl min-h-[44px] pl-3 pr-9 font-semibold text-graphite hover:border-fire-500 focus:outline-none focus:ring-2 focus:ring-fire-500 cursor-pointer" aria-label="Сортування товарів">
+              <option value="popular">Популярні</option>
+              <option value="new">Новинки</option>
+              <option value="cheap">Від дешевих</option>
+              <option value="expensive">Від дорогих</option>
+            </select>
+            <i data-lucide="chevron-down" class="pointer-events-none absolute right-3 w-4 h-4 text-slate-500"></i>
+          </label>
         </div>
         <!-- Фільтр: групи (heaters, personal, water, kitchen, ending) і підкатегорії обраної групи.
              Посилання: warmhome.in.ua/#cat=heaters або /#cat=floor -->
@@ -311,9 +321,21 @@
   const parentOf = (c) => DEPTS.find(d => d.cats.includes(c));
   const gridCls = 'grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6';
 
+  // Сортування: запамʼятовується у браузері відвідувача
+  let SORT = 'popular', curCat = '';
+  try { SORT = localStorage.getItem('wh_sort') || 'popular'; } catch (e) {}
+  const sortSel = $('#catSort');
+  if (![...sortSel.options].some(o => o.value === SORT)) SORT = 'popular';
+  sortSel.value = SORT;
+  sortSel.addEventListener('change', () => {
+    SORT = sortSel.value; try { localStorage.setItem('wh_sort', SORT); } catch (e) {}
+    showCat(curCat, false);
+  });
+
   function showCat(c, scroll) {
     if (c && !TOP.some(x => x[0] === c) && !isSub(c)) c = '';
     const top = isSub(c) ? (parentOf(c) || {}).id : c;
+    curCat = c;
     const box = $('#catalogGrid');
     let n = 0;
     if (!c) {
@@ -325,10 +347,10 @@
             ${groups.length > 1 ? `<a href="#cat=${d.id}" class="shrink-0 inline-flex items-center gap-1 text-sm font-semibold text-fire-600 hover:underline">Лише ця група<i data-lucide="arrow-right" class="w-4 h-4"></i></a>` : ''}
           </div>
           <div class="js-grid mt-6 ${gridCls}"></div></div>`).join('');
-      $$('.dept-block', box).forEach(el => { n += window.renderProducts ? renderProducts($('.js-grid', el), { cat: el.dataset.dept }) : 0; });
+      $$('.dept-block', box).forEach(el => { n += window.renderProducts ? renderProducts($('.js-grid', el), { cat: el.dataset.dept, sort: SORT }) : 0; });
     } else {
       box.innerHTML = `<div class="js-grid ${gridCls}"></div>`;
-      n = window.renderProducts ? renderProducts($('.js-grid', box), { cat: c }) : 0;
+      n = window.renderProducts ? renderProducts($('.js-grid', box), { cat: c, sort: SORT }) : 0;
     }
     $('#catalogEmpty').classList.toggle('hidden', !!n);
     $$('#catFilter [data-cat]').forEach(b => { const on = b.dataset.cat === (top || ''); b.className = `${chip} ${on ? chipOn : chipOff}`; b.setAttribute('aria-selected', on); });

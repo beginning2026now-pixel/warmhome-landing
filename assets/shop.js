@@ -54,7 +54,14 @@
   // Вивести картки в контейнер; повертає кількість показаних товарів.
   // Каталог (без exclude): усі товари, спершу ті, що є в наявності.
   // «Дивіться також» (з exclude): лише товари в наявності — спершу з тієї ж групи, у випадковому порядку.
-  window.renderProducts = function (container, { exclude = null, limit = 0, cat = '' } = {}) {
+  // Сортування каталогу: popular — порядок у products.js, new — новіші вгорі, cheap / expensive — за ціною
+  const SORTS = {
+    popular: () => 0,
+    new: (a, b) => String(b.added || '').localeCompare(String(a.added || '')),
+    cheap: (a, b) => a.price - b.price,
+    expensive: (a, b) => b.price - a.price,
+  };
+  window.renderProducts = function (container, { exclude = null, limit = 0, cat = '', sort = 'popular' } = {}) {
     if (!container) return 0;
     let list = (window.PRODUCTS || []).filter(p => p.slug !== exclude && window.matchCat(p, cat));
     if (exclude) {
@@ -64,6 +71,8 @@
       const cur = (window.PRODUCTS || []).find(p => p.slug === exclude), d = cur && window.deptOf(cur);
       if (d) list = list.filter(p => window.deptOf(p) === d).concat(list.filter(p => window.deptOf(p) !== d));
     } else {
+      const cmp = SORTS[sort] || SORTS.popular, all = window.PRODUCTS || [];
+      list = list.map(p => [p, all.indexOf(p)]).sort((x, y) => cmp(x[0], y[0]) || x[1] - y[1]).map(x => x[0]);
       list = list.filter(inStock).concat(list.filter(p => !inStock(p)));
     }
     if (limit) list = list.slice(0, limit);
