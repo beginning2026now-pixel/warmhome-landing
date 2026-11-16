@@ -11,6 +11,7 @@ CATEGORY = {                                          # підкатегорія
     'sheets': 'Home & Garden > Linens & Bedding > Bedding > Bed Sheets',
     'pillowcases': 'Home & Garden > Linens & Bedding > Bedding > Pillowcases & Shams',
     'plaids': 'Home & Garden > Linens & Bedding > Bedding > Blankets',
+    'toys': 'Toys & Games > Toys > Dolls, Playsets & Toy Figures > Stuffed Animals',
 }
 DEFAULT_CATEGORY = 'Home & Garden > Linens & Bedding > Bedding'
 FIELDS = ['id', 'item_group_id', 'title', 'description', 'availability', 'condition', 'price', 'sale_price', 'link', 'image_link',

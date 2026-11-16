@@ -165,13 +165,91 @@
     "e": "підковдра 200×210, простирадло 220×240 см",
     "s": "2 підковдри 145×210, простирадло 220×240 см"
    }
+  },
+  "toy": {
+   "title": "Іграшка-плед",
+   "lead": "Мʼякий плюшевий ведмедик, усередині якого захований теплий плед: удень — друг для обіймів, увечері — ковдрочка.",
+   "about": "Плед схований у спинці іграшки — достатньо розстебнути блискавку. Плюш ніжний і пухнастий, приємний навіть для найменших. Чудовий подарунок на день народження чи свято.",
+   "props": [
+    [
+     "Висота іграшки",
+     "70 см"
+    ],
+    [
+     "Плед усередині",
+     "100×150 см"
+    ],
+    [
+     "Матеріал",
+     "мʼякий плюш"
+    ]
+   ],
+   "dims": {
+    "t70": "іграшка 70 см, плед усередині 100×150 см"
+   }
+  },
+  "teddy": {
+   "title": "Плед «Тедді»",
+   "lead": "Щільний пухнастий плед-покривало з обʼємною хвилястою фактурою — тепло і затишок з першого дотику.",
+   "about": "Густий мʼякий ворс не линяє і не скочується, плед легко переться і швидко сохне. Підійде і як покривало на ліжко чи диван, і як теплий плед. Іде в подарунковій сумочці.",
+   "props": [
+    [
+     "Матеріал",
+     "мʼякий плюш (мікрофібра)"
+    ],
+    [
+     "Пакування",
+     "подарункова сумочка"
+    ]
+   ],
+   "dims": {
+    "15": "150×200 см",
+    "e": "200×230 см"
+   }
+  },
+  "sharpei": {
+   "title": "Плед «Королівський шарпей»",
+   "lead": "Мʼякий плед-покривало з обʼємною смужкою 4 см — виглядає дорого і дуже приємний на дотик.",
+   "about": "Зносостійка тканина з шовковистим ворсом, яку можна прати в пральній машині. Швидко сохне й довго зберігає гарний вигляд. Підійде на ліжко чи диван.",
+   "props": [
+    [
+     "Матеріал",
+     "мікрофібра «шарпей»"
+    ],
+    [
+     "Смужка",
+     "4 см"
+    ]
+   ],
+   "dims": {
+    "e": "200×220 см"
+   }
+  },
+  "ovchyna": {
+   "title": "Плед з еко-овчини",
+   "lead": "Двосторонній теплий плед-покривало: з одного боку мʼякий «шарпей», з іншого — пухнасте еко-хутро.",
+   "about": "Подвійний і дуже теплий — для холодних вечорів, ліжка чи дивана. Легко переться, швидко сохне.",
+   "props": [
+    [
+     "Матеріал",
+     "еко-хутро (овчина) + «шарпей»"
+    ],
+    [
+     "Сторони",
+     "двосторонній"
+    ]
+   ],
+   "dims": {
+    "e": "200×230 см"
+   }
   }
  },
  "sizes": {
   "15": "Півтораспальний",
   "2": "Двоспальний",
   "e": "Євро",
-  "s": "Сімейний"
+  "s": "Сімейний",
+  "t70": "70 см"
  },
  "prices": {
   "varena": {
@@ -213,6 +291,19 @@
    "2": 740,
    "e": 790,
    "s": 950
+  },
+  "toy": {
+   "t70": 645
+  },
+  "teddy": {
+   "15": 535,
+   "e": 630
+  },
+  "sharpei": {
+   "e": 625
+  },
+  "ovchyna": {
+   "e": 840
   }
  },
  "products": [
@@ -893,6 +984,288 @@
     ]
    ],
    "added": "2026-11-16T20:00"
+  },
+  {
+   "slug": "igrashka-pled-vedmedyk-korychnevyi",
+   "fabric": "toy",
+   "color": "Коричневий",
+   "img": "bear-br",
+   "supplier": "sova",
+   "added": "2026-11-16T20:30",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "t70": "257931"
+    }
+   },
+   "variants": [
+    [
+     "SV-B01",
+     "toy",
+     "t70"
+    ]
+   ]
+  },
+  {
+   "slug": "igrashka-pled-vedmedyk-svitlyi-bezh",
+   "fabric": "toy",
+   "color": "Світлий беж",
+   "img": "bear-bg",
+   "supplier": "sova",
+   "added": "2026-11-16T20:30",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "t70": "257930"
+    }
+   },
+   "variants": [
+    [
+     "SV-B02",
+     "toy",
+     "t70"
+    ]
+   ]
+  },
+  {
+   "slug": "pled-teddi-molochnyi",
+   "fabric": "teddy",
+   "color": "Молочний",
+   "img": "td-ml",
+   "supplier": "sova",
+   "added": "2026-11-16T20:30",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "259387",
+     "e": "259394"
+    }
+   },
+   "variants": [
+    [
+     "SV-T01",
+     "teddy",
+     "15"
+    ],
+    [
+     "SV-T01",
+     "teddy",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pled-teddi-bezhevyi",
+   "fabric": "teddy",
+   "color": "Бежевий",
+   "img": "td-bg",
+   "supplier": "sova",
+   "added": "2026-11-16T20:30",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "259381",
+     "e": "259392"
+    }
+   },
+   "variants": [
+    [
+     "SV-T02",
+     "teddy",
+     "15"
+    ],
+    [
+     "SV-T02",
+     "teddy",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pled-teddi-siryi",
+   "fabric": "teddy",
+   "color": "Сірий",
+   "img": "td-gr",
+   "supplier": "sova",
+   "added": "2026-11-16T20:30",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "259386",
+     "e": "259393"
+    }
+   },
+   "variants": [
+    [
+     "SV-T03",
+     "teddy",
+     "15"
+    ],
+    [
+     "SV-T03",
+     "teddy",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pled-teddi-pudrovyi",
+   "fabric": "teddy",
+   "color": "Пудровий",
+   "img": "td-pd",
+   "supplier": "sova",
+   "added": "2026-11-16T20:30",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "259384",
+     "e": "259391"
+    }
+   },
+   "variants": [
+    [
+     "SV-T04",
+     "teddy",
+     "15"
+    ],
+    [
+     "SV-T04",
+     "teddy",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pled-teddi-shokoladnyi",
+   "fabric": "teddy",
+   "color": "Шоколадний",
+   "img": "td-sh",
+   "supplier": "sova",
+   "added": "2026-11-16T20:30",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "259383",
+     "e": "259390"
+    }
+   },
+   "variants": [
+    [
+     "SV-T05",
+     "teddy",
+     "15"
+    ],
+    [
+     "SV-T05",
+     "teddy",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pled-sharpei-molochnyi",
+   "fabric": "sharpei",
+   "color": "Молочний",
+   "img": "sh-ml",
+   "supplier": "sova",
+   "added": "2026-11-16T20:30",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "149216"
+    }
+   },
+   "variants": [
+    [
+     "SV-S01",
+     "sharpei",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pled-sharpei-kapuchino",
+   "fabric": "sharpei",
+   "color": "Капучино",
+   "img": "sh-kp",
+   "supplier": "sova",
+   "added": "2026-11-16T20:30",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "130572"
+    }
+   },
+   "variants": [
+    [
+     "SV-S02",
+     "sharpei",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pled-sharpei-siryi",
+   "fabric": "sharpei",
+   "color": "Сірий",
+   "img": "sh-gr",
+   "supplier": "sova",
+   "added": "2026-11-16T20:30",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "149221"
+    }
+   },
+   "variants": [
+    [
+     "SV-S03",
+     "sharpei",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pled-ovchyna-molochnyi",
+   "fabric": "ovchyna",
+   "color": "Молочний",
+   "img": "ov-w",
+   "supplier": "sova",
+   "added": "2026-11-16T20:30",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "128244"
+    }
+   },
+   "variants": [
+    [
+     "SV-O01",
+     "ovchyna",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pled-ovchyna-bezhevyi",
+   "fabric": "ovchyna",
+   "color": "Бежевий",
+   "img": "ov-b",
+   "supplier": "sova",
+   "added": "2026-11-16T20:30",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "128232"
+    }
+   },
+   "variants": [
+    [
+     "SV-O02",
+     "ovchyna",
+     "e"
+    ]
+   ]
   }
  ],
  "suppliers": {
@@ -909,6 +1282,13 @@
    "channel": "https://t.me/arzy_shop",
    "manager": "@arzy_admin",
    "sheet": "https://docs.google.com/spreadsheets/d/138kGrGBaQEtqbHwxIPPLM82mKcGFApsXpJGrea2tTp8/htmlview"
+  },
+  "sova": {
+   "name": "DropSOVA (SOVA hometex)",
+   "code": "SV",
+   "channel": "https://t.me/DropSOVA",
+   "manager": "@sova_hometex",
+   "sheet": "https://easydrop.one/supplier-catalog/08756247473706/0/"
   }
  }
 }

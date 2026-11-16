@@ -26,9 +26,15 @@ NAME = {
     'plaid': 'Флісовий плед · {c}',
     'gold': 'Комплект з бязі Gold · {c}',
     'stripe_a': 'Комплект зі страйп-сатину · {c}',
+    'toy': 'Іграшка-плед «Ведмедик» · {c}',
+    'teddy': 'Плед-покривало «Тедді» · {c}',
+    'sharpei': 'Плед-покривало «Королівський шарпей» · {c}',
+    'ovchyna': 'Плед з еко-овчини · {c}',
 }
-CAT = {'varena': 'sets', 'stripe': 'sets', 'satin': 'sets', 'plaid': 'plaids', 'gold': 'sets', 'stripe_a': 'sets'}
-SIZE_ORDER = ['15', '2', 'e', 's']
+CAT = {'varena': 'sets', 'stripe': 'sets', 'satin': 'sets', 'plaid': 'plaids', 'gold': 'sets', 'stripe_a': 'sets',
+       'teddy': 'plaids', 'sharpei': 'plaids', 'ovchyna': 'plaids', 'toy': 'toys'}
+DEPT = {'sets': ('Постільна білизна', 'bedding'), 'plaids': ('Пледи', 'plaids'), 'toys': ('Іграшки з пледом', 'toys')}
+SIZE_ORDER = ['15', '2', 'e', 's', 't70']
 
 
 def sell(drop):
@@ -91,9 +97,10 @@ def page(p, prod, imgs, related):
     name = prod['name']
     vs = prod['variants']
     minp = min(v['price'] for v in (live(vs) or vs))
-    bedding = p['fabric'] != 'plaid'
-    dept = ('Постільна білизна', 'bedding') if bedding else ('Пледи', 'plaids')
-    dname = ('Флісовий плед «%s»' % p['color']) if not bedding else name.replace(' · ', ', колір: ').replace(p['color'], p['color'].lower())
+    bedding = CAT[p['fabric']] == 'sets'
+    toy = CAT[p['fabric']] == 'toys'
+    dept = DEPT[CAT[p['fabric']]]
+    dname = ('Флісовий плед «%s»' % p['color']) if p['fabric'] == 'plaid' else name.replace(' · ', ', колір: ').replace(p['color'], p['color'].lower())
     desc = '%s. %s Ціна від %d грн. Доставка Новою Поштою.' % (dname, f['lead'], minp)
     specs = list(f['props']) + [['Колір', p['color']], ['Артикул', ', '.join(sorted(set(v['sku'] for v in vs)))]]
     dims = []
@@ -113,7 +120,7 @@ def page(p, prod, imgs, related):
         dims=''.join('<tr><td>%s</td><td>%s</td></tr>' % (E(a), E(b)) for a, b in dims),
         lace=('<p>%s</p>' % E(lace)) if lace else '',
         related=rel, prepay=PREPAY,
-        returns=('Постільна білизна належної якості за законом обміну та поверненню не підлягає, тому уважно оглядайте комплект у відділенні до оплати. Якщо знайдете брак або невідповідність розміру чи кольору — обміняємо.' if bedding else 'Якщо плед має брак або не відповідає опису — обміняємо чи повернемо гроші. Плед належної якості можна повернути протягом 14 днів, якщо збережено товарний вигляд і упаковку.'),
+        returns=('Якщо іграшка має брак або не відповідає опису — обміняємо чи повернемо гроші. Іграшку належної якості можна повернути протягом 14 днів, якщо збережено товарний вигляд і упаковку.' if toy else 'Постільна білизна належної якості за законом обміну та поверненню не підлягає, тому уважно оглядайте комплект у відділенні до оплати. Якщо знайдете брак або невідповідність розміру чи кольору — обміняємо.' if bedding else 'Якщо плед має брак або не відповідає опису — обміняємо чи повернемо гроші. Плед належної якості можна повернути протягом 14 днів, якщо збережено товарний вигляд і упаковку.'),
         head=HEADER, foot=FOOTER, icons=SPRITE,
         i_truck=ico('truck'), i_wallet=ico('wallet'), i_eye=ico('eye'),
         content_id='%s-%s' % ((live(vs) or vs)[0]['sku'], (live(vs) or vs)[0]['id']),

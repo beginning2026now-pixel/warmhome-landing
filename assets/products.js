@@ -1214,15 +1214,409 @@ window.PRODUCTS = [
    }
   ],
   "sup": "AZ"
+ },
+ {
+  "slug": "igrashka-pled-vedmedyk-korychnevyi",
+  "sku": "SV-B01",
+  "name": "Іграшка-плед «Ведмедик» · Коричневий",
+  "short": "Іграшка-плед",
+  "fabric": "toy",
+  "price": 1200,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/igrashka-pled-vedmedyk-korychnevyi-1.jpg",
+  "images": [
+   "/assets/img/p/igrashka-pled-vedmedyk-korychnevyi-1.jpg",
+   "/assets/img/p/igrashka-pled-vedmedyk-korychnevyi-2.jpg",
+   "/assets/img/p/igrashka-pled-vedmedyk-korychnevyi-3.jpg",
+   "/assets/img/p/igrashka-pled-vedmedyk-korychnevyi-4.jpg"
+  ],
+  "url": "/products/igrashka-pled-vedmedyk-korychnevyi/",
+  "cat": [
+   "toys"
+  ],
+  "added": "2026-11-16T20:30",
+  "variants": [
+   {
+    "id": "t70",
+    "size": "t70",
+    "label": "70 см",
+    "sku": "SV-B01",
+    "price": 1200
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "igrashka-pled-vedmedyk-svitlyi-bezh",
+  "sku": "SV-B02",
+  "name": "Іграшка-плед «Ведмедик» · Світлий беж",
+  "short": "Іграшка-плед",
+  "fabric": "toy",
+  "price": 1200,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/igrashka-pled-vedmedyk-svitlyi-bezh-1.jpg",
+  "images": [
+   "/assets/img/p/igrashka-pled-vedmedyk-svitlyi-bezh-1.jpg",
+   "/assets/img/p/igrashka-pled-vedmedyk-svitlyi-bezh-2.jpg",
+   "/assets/img/p/igrashka-pled-vedmedyk-svitlyi-bezh-3.jpg"
+  ],
+  "url": "/products/igrashka-pled-vedmedyk-svitlyi-bezh/",
+  "cat": [
+   "toys"
+  ],
+  "added": "2026-11-16T20:30",
+  "variants": [
+   {
+    "id": "t70",
+    "size": "t70",
+    "label": "70 см",
+    "sku": "SV-B02",
+    "price": 1200
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "pled-teddi-molochnyi",
+  "sku": "SV-T01",
+  "name": "Плед-покривало «Тедді» · Молочний",
+  "short": "Плед «Тедді»",
+  "fabric": "teddy",
+  "price": 1100,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/pled-teddi-molochnyi-1.jpg",
+  "images": [
+   "/assets/img/p/pled-teddi-molochnyi-1.jpg",
+   "/assets/img/p/pled-teddi-molochnyi-2.jpg"
+  ],
+  "url": "/products/pled-teddi-molochnyi/",
+  "cat": [
+   "plaids"
+  ],
+  "added": "2026-11-16T20:30",
+  "variants": [
+   {
+    "id": "15",
+    "size": "15",
+    "label": "Півтораспальний",
+    "sku": "SV-T01",
+    "price": 1100
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-T01",
+    "price": 1200
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "pled-teddi-bezhevyi",
+  "sku": "SV-T02",
+  "name": "Плед-покривало «Тедді» · Бежевий",
+  "short": "Плед «Тедді»",
+  "fabric": "teddy",
+  "price": 1100,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/pled-teddi-bezhevyi-1.jpg",
+  "images": [
+   "/assets/img/p/pled-teddi-bezhevyi-1.jpg",
+   "/assets/img/p/pled-teddi-bezhevyi-2.jpg"
+  ],
+  "url": "/products/pled-teddi-bezhevyi/",
+  "cat": [
+   "plaids"
+  ],
+  "added": "2026-11-16T20:30",
+  "variants": [
+   {
+    "id": "15",
+    "size": "15",
+    "label": "Півтораспальний",
+    "sku": "SV-T02",
+    "price": 1100
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-T02",
+    "price": 1200
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "pled-teddi-siryi",
+  "sku": "SV-T03",
+  "name": "Плед-покривало «Тедді» · Сірий",
+  "short": "Плед «Тедді»",
+  "fabric": "teddy",
+  "price": 1100,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/pled-teddi-siryi-1.jpg",
+  "images": [
+   "/assets/img/p/pled-teddi-siryi-1.jpg",
+   "/assets/img/p/pled-teddi-siryi-2.jpg",
+   "/assets/img/p/pled-teddi-siryi-3.jpg"
+  ],
+  "url": "/products/pled-teddi-siryi/",
+  "cat": [
+   "plaids"
+  ],
+  "added": "2026-11-16T20:30",
+  "variants": [
+   {
+    "id": "15",
+    "size": "15",
+    "label": "Півтораспальний",
+    "sku": "SV-T03",
+    "price": 1100
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-T03",
+    "price": 1200
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "pled-teddi-pudrovyi",
+  "sku": "SV-T04",
+  "name": "Плед-покривало «Тедді» · Пудровий",
+  "short": "Плед «Тедді»",
+  "fabric": "teddy",
+  "price": 1100,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/pled-teddi-pudrovyi-1.jpg",
+  "images": [
+   "/assets/img/p/pled-teddi-pudrovyi-1.jpg",
+   "/assets/img/p/pled-teddi-pudrovyi-2.jpg"
+  ],
+  "url": "/products/pled-teddi-pudrovyi/",
+  "cat": [
+   "plaids"
+  ],
+  "added": "2026-11-16T20:30",
+  "variants": [
+   {
+    "id": "15",
+    "size": "15",
+    "label": "Півтораспальний",
+    "sku": "SV-T04",
+    "price": 1100
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-T04",
+    "price": 1200
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "pled-teddi-shokoladnyi",
+  "sku": "SV-T05",
+  "name": "Плед-покривало «Тедді» · Шоколадний",
+  "short": "Плед «Тедді»",
+  "fabric": "teddy",
+  "price": 1100,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/pled-teddi-shokoladnyi-1.jpg",
+  "images": [
+   "/assets/img/p/pled-teddi-shokoladnyi-1.jpg"
+  ],
+  "url": "/products/pled-teddi-shokoladnyi/",
+  "cat": [
+   "plaids"
+  ],
+  "added": "2026-11-16T20:30",
+  "variants": [
+   {
+    "id": "15",
+    "size": "15",
+    "label": "Півтораспальний",
+    "sku": "SV-T05",
+    "price": 1100
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-T05",
+    "price": 1200
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "pled-sharpei-molochnyi",
+  "sku": "SV-S01",
+  "name": "Плед-покривало «Королівський шарпей» · Молочний",
+  "short": "Плед «Королівський шарпей»",
+  "fabric": "sharpei",
+  "price": 1200,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/pled-sharpei-molochnyi-1.jpg",
+  "images": [
+   "/assets/img/p/pled-sharpei-molochnyi-1.jpg"
+  ],
+  "url": "/products/pled-sharpei-molochnyi/",
+  "cat": [
+   "plaids"
+  ],
+  "added": "2026-11-16T20:30",
+  "variants": [
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-S01",
+    "price": 1200
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "pled-sharpei-kapuchino",
+  "sku": "SV-S02",
+  "name": "Плед-покривало «Королівський шарпей» · Капучино",
+  "short": "Плед «Королівський шарпей»",
+  "fabric": "sharpei",
+  "price": 1200,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/pled-sharpei-kapuchino-1.jpg",
+  "images": [
+   "/assets/img/p/pled-sharpei-kapuchino-1.jpg"
+  ],
+  "url": "/products/pled-sharpei-kapuchino/",
+  "cat": [
+   "plaids"
+  ],
+  "added": "2026-11-16T20:30",
+  "variants": [
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-S02",
+    "price": 1200
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "pled-sharpei-siryi",
+  "sku": "SV-S03",
+  "name": "Плед-покривало «Королівський шарпей» · Сірий",
+  "short": "Плед «Королівський шарпей»",
+  "fabric": "sharpei",
+  "price": 1200,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/pled-sharpei-siryi-1.jpg",
+  "images": [
+   "/assets/img/p/pled-sharpei-siryi-1.jpg"
+  ],
+  "url": "/products/pled-sharpei-siryi/",
+  "cat": [
+   "plaids"
+  ],
+  "added": "2026-11-16T20:30",
+  "variants": [
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-S03",
+    "price": 1200
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "pled-ovchyna-molochnyi",
+  "sku": "SV-O01",
+  "name": "Плед з еко-овчини · Молочний",
+  "short": "Плед з еко-овчини",
+  "fabric": "ovchyna",
+  "price": 1400,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/pled-ovchyna-molochnyi-1.jpg",
+  "images": [
+   "/assets/img/p/pled-ovchyna-molochnyi-1.jpg"
+  ],
+  "url": "/products/pled-ovchyna-molochnyi/",
+  "cat": [
+   "plaids"
+  ],
+  "added": "2026-11-16T20:30",
+  "variants": [
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-O01",
+    "price": 1400
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "pled-ovchyna-bezhevyi",
+  "sku": "SV-O02",
+  "name": "Плед з еко-овчини · Бежевий",
+  "short": "Плед з еко-овчини",
+  "fabric": "ovchyna",
+  "price": 1400,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/pled-ovchyna-bezhevyi-1.jpg",
+  "images": [
+   "/assets/img/p/pled-ovchyna-bezhevyi-1.jpg"
+  ],
+  "url": "/products/pled-ovchyna-bezhevyi/",
+  "cat": [
+   "plaids"
+  ],
+  "added": "2026-11-16T20:30",
+  "variants": [
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-O02",
+    "price": 1400
+   }
+  ],
+  "sup": "SV"
  }
 ];
 
 window.DEPARTMENTS = [
   { id: 'bedding', name: 'Постільна білизна', text: 'Комплекти, простирадла й наволочки — мʼякі, приємні до тіла', cats: ['sets', 'sheets', 'pillowcases'] },
   { id: 'plaids', name: 'Пледи', text: 'Теплі й легкі — для дивана, ліжка та вечорів із книжкою', cats: ['plaids'] },
+  { id: 'toys', name: 'Іграшки з пледом', text: 'Мʼякий ведмедик удень і теплий плед увечері — подарунок, що зігріває', cats: ['toys'] },
 ];
 window.SUBCATS = {
-  sets: ['Комплекти'], sheets: ['Простирадла'], pillowcases: ['Наволочки'], plaids: ['Пледи'],
+  sets: ['Комплекти'], sheets: ['Простирадла'], pillowcases: ['Наволочки'], plaids: ['Пледи'], toys: ['Іграшки з пледом'],
 };
 // Група товару (перша, до якої належить хоча б одна його підкатегорія)
 window.deptOf = function (p) { return window.DEPARTMENTS.find(function (d) { return (p.cat || []).some(function (c) { return d.cats.indexOf(c) >= 0; }); }) || null; };

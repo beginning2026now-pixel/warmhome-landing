@@ -4,6 +4,7 @@
 Таблиця: https://docs.google.com/spreadsheets/d/1_McBnpFGO-onnVIqCCfoHM0M6DDMZn9N04jWY959XoQ (аркуш gid=1910900110)
 Запуск із кореня репозиторію:
    python3 tools/stock_check.py --vanilla vanilla_rows.json --arzy arzy_rows.json
+   python3 tools/stock_check.py ... --sova sova_rows.json      (DropSOVA: каталог EasyDrop, tools/stock_export_sova.js)
    (можна передати лише один файл — товари іншого постачальника не зміняться)
    Vanilla: аркуш «НАЯВНІСТЬ» (tools/stock_export.js); Arzy Shop: аркуші «ГОЛД», «САТИНИ/СТРАЙП» (tools/stock_export_arzy.js)
 Пише tools/stock.json ({"sku|variantId": кількість}) і друкує, що змінилося.
@@ -125,6 +126,20 @@ def check_arzy(path, new, old, warn):
                 new[vk] = found[k].get(size, 0)
 
 
+def check_sova(path, new, old, warn):
+    """Файл зі stock_export_sova.js: [["#ok", N], [id EasyDrop, 1|0], ...]"""
+    rows = json.load(open(path, encoding='utf-8'))
+    if not rows or rows[0][0] != '#ok' or rows[0][1] < 20:
+        warn.append('DropSOVA: каталог EasyDrop порожній або не завантажився — товари не змінено')
+        return
+    st = {str(r[0]): r[1] for r in rows[1:]}
+    for p in products('sova'):
+        for sku, table, size in p['variants']:
+            k = vkey(sku, table, size)
+            eid = str(p['src']['ed'][size])
+            new[k] = st.get(eid, 0)
+
+
 def arg(name):
     return sys.argv[sys.argv.index(name) + 1] if name in sys.argv else None
 
@@ -133,6 +148,9 @@ def main():
     if '--skus' in sys.argv:          # артикули Vanilla для stock_export.js
         print(','.join(sorted({s for p in products('vanilla') for s, _, _ in p['variants']})))
         return
+    if '--sova-ids' in sys.argv:      # id товарів EasyDrop для stock_export_sova.js
+        print(','.join(sorted({str(i) for p in products('sova') for i in p['src']['ed'].values()})))
+        return
     if '--names' in sys.argv:         # назви Arzy для stock_export_arzy.js
         print(json.dumps(sorted({(p['src']['sheet'], p['src']['name']) for p in products('arzy')}), ensure_ascii=False))
         return
@@ -140,6 +158,7 @@ def main():
     if not van and len(sys.argv) > 1 and not sys.argv[1].startswith('--'):
         van = sys.argv[1]
     arz = arg('--arzy')
+    sov = arg('--sova')
     old = {}
     if os.path.exists('tools/stock.json'):
         old = json.load(open('tools/stock.json', encoding='utf-8')).get('variants', {})
@@ -151,6 +170,8 @@ def main():
     found = check_vanilla(van, new, old, warn) if van else {}
     if arz:
         check_arzy(arz, new, old, warn)
+    if sov:
+        check_sova(sov, new, old, warn)
     name = {}
     for p in C['products']:
         sup = C['suppliers'][p.get('supplier', 'vanilla')]['name']
@@ -162,7 +183,7 @@ def main():
     now = datetime.now(timezone(timedelta(hours=2))).strftime('%Y-%m-%d %H:%M')
     json.dump({'checked': now, 'variants': new}, open('tools/stock.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     inst = sum(1 for q in new.values() if q >= 1)
-    print('Перевірено %s (%s): у наявності %d з %d варіантів' % (now, ', '.join(x for x, f in [('Vanilla', van), ('Arzy', arz)] if f), inst, len(new)))
+    print('Перевірено %s (%s): у наявності %d з %d варіантів' % (now, ', '.join(x for x, f in [('Vanilla', van), ('Arzy', arz), ('DropSOVA', sov)] if f), inst, len(new)))
     for w in warn: print('УВАГА:', w)
     if gone: print('Закінчилися:\n  ' + '\n  '.join(gone))
     if back: print('Знову в наявності:\n  ' + '\n  '.join(back))

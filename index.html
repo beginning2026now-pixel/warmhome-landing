@@ -36,8 +36,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/home.css?v=5">
-  <script src="/assets/products.js?v=5"></script>
+  <link rel="stylesheet" href="/assets/home.css?v=6">
+  <script src="/assets/products.js?v=6"></script>
 </head>
 <body>
 
@@ -227,7 +227,7 @@
     <form method="dialog"><button class="btn btn-main">Закрити</button></form>
   </dialog>
 
-  <script src="/assets/cart.js?v=5"></script>
+  <script src="/assets/cart.js?v=6"></script>
   <script>
   (function () {
     var $ = function (s) { return document.querySelector(s); };
@@ -238,7 +238,8 @@
     // Малюнки для плиток категорій
     var DECO = {
       bedding: '<svg class="deco" viewBox="0 0 200 160" aria-hidden="true"><rect x="20" y="70" width="170" height="70" rx="22" fill="#FFFBF6"/><path d="M40 92h130M40 106h130M40 120h130" stroke="#EADBC9" stroke-width="3" stroke-linecap="round"/><rect x="34" y="34" width="96" height="48" rx="20" fill="#E3D3BF"/><path d="M52 58h60" stroke="#D5C1A9" stroke-width="3" stroke-linecap="round" stroke-dasharray="3 8"/></svg>',
-      plaids: '<svg class="deco" viewBox="0 0 200 160" aria-hidden="true"><rect x="22" y="56" width="168" height="84" rx="24" fill="#FFFBF6"/><path d="M48 56v84M76 56v84M104 56v84M132 56v84M160 56v84M22 84h168M22 112h168" stroke="#F0DFD5" stroke-width="5"/><path d="M34 140v10M48 140v10M62 140v10M76 140v10M90 140v10M104 140v10M118 140v10M132 140v10M146 140v10M160 140v10M174 140v10" stroke="#D8B3A0" stroke-width="3" stroke-linecap="round"/></svg>'
+      plaids: '<svg class="deco" viewBox="0 0 200 160" aria-hidden="true"><rect x="22" y="56" width="168" height="84" rx="24" fill="#FFFBF6"/><path d="M48 56v84M76 56v84M104 56v84M132 56v84M160 56v84M22 84h168M22 112h168" stroke="#F0DFD5" stroke-width="5"/><path d="M34 140v10M48 140v10M62 140v10M76 140v10M90 140v10M104 140v10M118 140v10M132 140v10M146 140v10M160 140v10M174 140v10" stroke="#D8B3A0" stroke-width="3" stroke-linecap="round"/></svg>',
+      toys: '<svg class="deco" viewBox="0 0 200 160" aria-hidden="true"><circle cx="72" cy="58" r="16" fill="#E3D3BF"/><circle cx="148" cy="58" r="16" fill="#E3D3BF"/><circle cx="110" cy="84" r="44" fill="#FFFBF6"/><circle cx="96" cy="78" r="4" fill="#8B6B55"/><circle cx="124" cy="78" r="4" fill="#8B6B55"/><ellipse cx="110" cy="96" rx="14" ry="10" fill="#EADBC9"/><path d="M104 94h12" stroke="#8B6B55" stroke-width="3" stroke-linecap="round"/><rect x="40" y="122" width="140" height="34" rx="14" fill="#F0DFD5"/><path d="M58 122v34M80 122v34M102 122v34M124 122v34M146 122v34M168 122v34" stroke="#FFFBF6" stroke-width="4"/></svg>'
     };
     var inDept = function (d) { return P.filter(function (p) { return window.matchCat(p, d.id); }); };
     $('#cats').innerHTML = D.map(function (d) {

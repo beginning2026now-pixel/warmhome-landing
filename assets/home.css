@@ -305,3 +305,4 @@ dialog .btn { margin-top: 22px; width: 100%; }
 .cart-btn .n[hidden] { display: none; }
 .opts button:disabled { opacity: .5; cursor: not-allowed; background: transparent; border-style: dashed; }
 .buy .btn:disabled { opacity: .55; cursor: not-allowed; box-shadow: none; }
+@media (min-width: 1000px) { .cats { grid-template-columns: repeat(3, 1fr); } }
