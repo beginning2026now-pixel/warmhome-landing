@@ -12,6 +12,10 @@ CATEGORY = {                                          # підкатегорія
     'pillowcases': 'Home & Garden > Linens & Bedding > Bedding > Pillowcases & Shams',
     'plaids': 'Home & Garden > Linens & Bedding > Bedding > Blankets',
     'toys': 'Toys & Games > Toys > Dolls, Playsets & Toy Figures > Stuffed Animals',
+    'blankets': 'Home & Garden > Linens & Bedding > Bedding > Quilts & Comforters',
+    'divan': 'Home & Garden > Decor > Slipcovers',
+    'rugs': 'Home & Garden > Decor > Rugs',
+    'towels': 'Home & Garden > Linens & Bedding > Towels',
 }
 DEFAULT_CATEGORY = 'Home & Garden > Linens & Bedding > Bedding'
 FIELDS = ['id', 'item_group_id', 'title', 'description', 'availability', 'condition', 'price', 'sale_price', 'link', 'image_link',

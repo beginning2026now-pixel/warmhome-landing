@@ -55,8 +55,8 @@
       <nav class="nav" aria-label="Розділи">
         <a href="/catalog/bedding/">Постільна білизна</a>
         <a href="/catalog/plaids/">Пледи</a>
-        <a href="/catalog/toys/">Іграшки</a>
-        <a href="/#how">Доставка</a>
+        <a href="/catalog/blankets/">Ковдри</a>
+        <a href="/#catalog">Усі категорії</a>
       </nav>
       <div class="head-r">
         <a class="phone" href="tel:+380990227684"><svg class="ico"><use href="#i-phone"/></svg>+38 (099) 022-76-84</a>
@@ -66,8 +66,13 @@
     </div>
     <nav class="mnav" id="mnav" aria-label="Меню">
       <a href="/catalog/bedding/">Постільна білизна</a>
-      <a href="/catalog/plaids/">Пледи</a>
-      <a href="/catalog/toys/">Іграшки з пледом</a>
+      <a href="/catalog/sheets/">Простирадла й наматрацники</a>
+      <a href="/catalog/plaids/">Пледи й покривала</a>
+      <a href="/catalog/blankets/">Ковдри й подушки</a>
+      <a href="/catalog/divan/">Дивандеки</a>
+      <a href="/catalog/toys/">Мʼякі іграшки</a>
+      <a href="/catalog/rugs/">Килимки</a>
+      <a href="/catalog/towels/">Рушники</a>
       <a href="/#how">Доставка та оплата</a>
       <a href="/#faq">Часті питання</a>
       <a href="tel:+380990227684">+38 (099) 022-76-84</a>
@@ -133,7 +138,7 @@
 
     <section class="sec" style="padding-bottom:64px">
       <h2 style="font-size:30px">Вам також сподобається</h2>
-      <div class="grid"><a class="card" href="/products/varena-bavovna-bilyi/"><img src="/assets/img/t/varena-bavovna-bilyi-1.webp" alt="Комплект із вареної бавовни · Білий" width="480" height="480" loading="lazy"><span class="b"><span class="n">Комплект із вареної бавовни · Білий</span><span class="pr">від 2 600 грн</span></span></a><a class="card" href="/products/varena-bavovna-nizhno-rozhevyi/"><img src="/assets/img/t/varena-bavovna-nizhno-rozhevyi-1.webp" alt="Комплект із вареної бавовни · Ніжно-рожевий" width="480" height="480" loading="lazy"><span class="b"><span class="n">Комплект із вареної бавовни · Ніжно-рожевий</span><span class="pr">від 2 800 грн</span></span></a><a class="card" href="/products/varena-bavovna-rozhevyi/"><img src="/assets/img/t/varena-bavovna-rozhevyi-1.webp" alt="Комплект із вареної бавовни · Рожевий" width="480" height="480" loading="lazy"><span class="b"><span class="n">Комплект із вареної бавовни · Рожевий</span><span class="pr">від 2 600 грн</span></span></a><a class="card" href="/products/varena-bavovna-pisochnyi/"><img src="/assets/img/t/varena-bavovna-pisochnyi-1.webp" alt="Комплект із вареної бавовни · Пісочний" width="480" height="480" loading="lazy"><span class="b"><span class="n">Комплект із вареної бавовни · Пісочний</span><span class="pr">від 3 200 грн</span></span></a></div>
+      <div class="grid"><a class="card" href="/products/veliur-monika-mokko/"><img src="/assets/img/t/veliur-monika-mokko-1.webp" alt="Велюровий комплект «Моніка» · Мокко" width="480" height="480" loading="lazy"><span class="b"><span class="n">Велюровий комплект «Моніка» · Мокко</span><span class="pr">від 2 100 грн</span></span></a><a class="card" href="/products/veliur-monika-smarahdovyi/"><img src="/assets/img/t/veliur-monika-smarahdovyi-1.webp" alt="Велюровий комплект «Моніка» · Смарагдовий" width="480" height="480" loading="lazy"><span class="b"><span class="n">Велюровий комплект «Моніка» · Смарагдовий</span><span class="pr">від 2 100 грн</span></span></a><a class="card" href="/products/veliur-monika-korychnevyi/"><img src="/assets/img/t/veliur-monika-korychnevyi-1.webp" alt="Велюровий комплект «Моніка» · Коричневий" width="480" height="480" loading="lazy"><span class="b"><span class="n">Велюровий комплект «Моніка» · Коричневий</span><span class="pr">від 2 100 грн</span></span></a><a class="card" href="/products/veliur-monika-slyvovyi/"><img src="/assets/img/t/veliur-monika-slyvovyi-1.webp" alt="Велюровий комплект «Моніка» · Сливовий" width="480" height="480" loading="lazy"><span class="b"><span class="n">Велюровий комплект «Моніка» · Сливовий</span><span class="pr">від 2 100 грн</span></span></a></div>
     </section>
   </main>
 
@@ -186,7 +191,7 @@
       $('#price').textContent = fmt(cur.price);
       $('#bbPrice').textContent = fmt(cur.price); $('#bbOpt').textContent = cur.label;
       [].forEach.call(document.querySelectorAll('#sizes button'), function (b) { b.setAttribute('aria-pressed', b.dataset.id === cur.id ? 'true' : 'false'); });
-      var d = DIMS[sizeName(cur)]; $('#dim').textContent = d ? sizeName(cur) + ': ' + d : '';
+      var d = DIMS[sizeName(cur)], nm = sizeName(cur); $('#dim').textContent = d && d.replace(/ см$/, '') !== nm.replace(/ см$/, '') ? nm + ': ' + d : '';
     }
     $('#sizes').innerHTML = P.variants.map(function (v) {
       return '<button type="button" data-id="' + v.id + '"' + (v.out ? ' disabled' : '') + '>' + v.label + '<small>' + (v.out ? 'немає в наявності' : fmt(v.price) + ' грн') + '</small></button>';

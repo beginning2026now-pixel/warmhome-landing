@@ -63,8 +63,8 @@
       <nav class="nav" aria-label="Розділи">
         <a href="/catalog/bedding/">Постільна білизна</a>
         <a href="/catalog/plaids/">Пледи</a>
-        <a href="/catalog/toys/">Іграшки</a>
-        <a href="#how">Доставка</a>
+        <a href="/catalog/blankets/">Ковдри</a>
+        <a href="#catalog">Усі категорії</a>
       </nav>
       <div class="head-r">
         <a class="phone" href="tel:+380990227684"><svg class="ico"><use href="#i-phone"/></svg>+38 (099) 022-76-84</a>
@@ -74,8 +74,13 @@
     </div>
     <nav class="mnav" id="mnav" aria-label="Меню">
       <a href="/catalog/bedding/">Постільна білизна</a>
-      <a href="/catalog/plaids/">Пледи</a>
-      <a href="/catalog/toys/">Іграшки з пледом</a>
+      <a href="/catalog/sheets/">Простирадла й наматрацники</a>
+      <a href="/catalog/plaids/">Пледи й покривала</a>
+      <a href="/catalog/blankets/">Ковдри й подушки</a>
+      <a href="/catalog/divan/">Дивандеки</a>
+      <a href="/catalog/toys/">Мʼякі іграшки</a>
+      <a href="/catalog/rugs/">Килимки</a>
+      <a href="/catalog/towels/">Рушники</a>
       <a href="#how">Доставка та оплата</a>
       <a href="#faq">Часті питання</a>
       <a href="tel:+380990227684">+38 (099) 022-76-84</a>
@@ -88,7 +93,7 @@
       <div class="wrap">
         <div>
           <h1>Тепло, в яке хочеться <span>загорнутися</span></h1>
-          <p class="lead">Постільна білизна, пледи та іграшки з пледом.</p>
+          <p class="lead">Постільна білизна, пледи, ковдри й текстиль для дому.</p>
           <div class="cta">
             <a href="#catalog" class="btn btn-main">Каталог <svg class="ico"><use href="#i-arrow"/></svg></a>
           </div>
@@ -245,7 +250,7 @@
       var n = inDept(d).length;
       return '<a class="cat rise" href="/catalog/' + d.id + '/"><div><h3>' + esc(d.name) + '</h3><p>' + esc(d.text) + '</p></div>'
         + (n ? '<span class="count">' + n + ' ' + word(n) + ' <svg class="ico"><use href="#i-arrow"/></svg></span>' : '<span class="soon">Скоро в наявності</span>')
-        + (DECO[d.id] || '') + '</a>';
+        + (DECO[d.id] || (window.CAT_ART || {})[d.id] || '') + '</a>';
     }).join('');
     // Картки товарів: по групах. Поки товарів немає — показуємо лагідну заглушку.
     var card = function (p) {

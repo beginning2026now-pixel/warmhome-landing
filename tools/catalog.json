@@ -222,7 +222,8 @@
     ]
    ],
    "dims": {
-    "e": "200×220 см"
+    "e": "200×220 см",
+    "15": "150×200 см"
    }
   },
   "ovchyna": {
@@ -240,7 +241,8 @@
     ]
    ],
    "dims": {
-    "e": "200×230 см"
+    "e": "200×230 см",
+    "15": "150×200 см"
    }
   },
   "luxe": {
@@ -355,6 +357,405 @@
    "pillows": [
     "50×70"
    ]
+  },
+  "sheet_b": {
+   "title": "Простирадло на резинці",
+   "lead": "Простирадло на гумці по периметру — тримається на матраці й не збирається складками.",
+   "about": "Легко надягається на матрац, швидко сохне і не потребує прасування.",
+   "props": [
+    [
+     "Кріплення",
+     "гумка по периметру"
+    ]
+   ],
+   "dims": {
+    "s160": "на матрац 160×200 см"
+   }
+  },
+  "sheet_s": {
+   "title": "Простирадло на резинці, страйп-сатин",
+   "lead": "Гладке страйп-сатинове простирадло на гумці — рівно лежить і не сповзає.",
+   "about": "Страйп-сатин приємний до тіла, добре переться й довго зберігає колір.",
+   "props": [
+    [
+     "Тканина",
+     "страйп-сатин"
+    ],
+    [
+     "Кріплення",
+     "гумка по периметру"
+    ]
+   ],
+   "dims": {
+    "s160": "на матрац 160×200 см"
+   }
+  },
+  "sheet_v": {
+   "title": "Велюрове простирадло на резинці",
+   "lead": "Мʼяке тепле велюрове простирадло на гумці — фіксується на матраці без складок.",
+   "about": "Не линяє, не скочується і швидко висихає після прання. Борт 25 см.",
+   "props": [
+    [
+     "Тканина",
+     "велюр"
+    ],
+    [
+     "Кріплення",
+     "гумка, борт 25 см"
+    ]
+   ],
+   "dims": {
+    "s160": "на матрац 160×200 см",
+    "s180": "на матрац 180×200 см"
+   }
+  },
+  "aqua": {
+   "title": "Наматрацник «Аква-Стоп»",
+   "lead": "Водонепроникний наматрацник-чохол: зверху мʼяка махра, знизу мембрана.",
+   "about": "Мембрана не пропускає вологу до матраца і захищає від пилових кліщів. Натягується як простирадло на резинці.",
+   "props": [
+    [
+     "Верх",
+     "махра (бавовна)"
+    ],
+    [
+     "Низ",
+     "поліуретанова мембрана"
+    ]
+   ],
+   "dims": {
+    "m90": "90×200 см",
+    "m140": "140×200 см",
+    "m160": "160×200 см",
+    "m180": "180×200 см"
+   }
+  },
+  "mattress": {
+   "title": "Наматрацник з мікрофібри",
+   "lead": "Стьобаний наматрацник з резинками по кутах — мʼякший сон і довше життя матраца.",
+   "about": "Тканина мікрофібра, наповнювач — поліефірне волокно. Можна прати в машинці.",
+   "props": [
+    [
+     "Тканина",
+     "мікрофібра"
+    ],
+    [
+     "Кріплення",
+     "резинки по кутах"
+    ]
+   ],
+   "dims": {
+    "m90": "90×200 см",
+    "m140": "140×200 см",
+    "m160": "160×200 см",
+    "m180": "180×200 см"
+   }
+  },
+  "set_muslin": {
+   "title": "Постіль з літньою ковдрою",
+   "lead": "Комплект постілі разом з легкою літньою ковдрою з мусліну-жатки.",
+   "about": "Жатка не парить і не потребує прасування — зручно влітку і в теплі ночі.",
+   "props": [
+    [
+     "Тканина",
+     "муслін-жатка"
+    ],
+    [
+     "Комплектація",
+     "постіль + літня ковдра"
+    ]
+   ],
+   "dims": {
+    "e": "точні розміри підтвердить менеджер"
+   },
+   "pillows": []
+  },
+  "waffle": {
+   "title": "Постіль з покривалом «Вафелька»",
+   "lead": "Комплект постілі разом з вафельним покривалом — спальня одразу виглядає охайно.",
+   "about": "Мʼяке фактурне покривало і постільна білизна в одному тоні.",
+   "props": [
+    [
+     "Комплектація",
+     "постіль + покривало"
+    ]
+   ],
+   "dims": {
+    "e": "точні розміри підтвердить менеджер"
+   },
+   "pillows": []
+  },
+  "divan": {
+   "title": "Дивандек 3 в 1",
+   "lead": "Велюрові накидки на кутовий диван: одна 210×90 і дві 160×90 см.",
+   "about": "Захищають оббивку від бруду і шерсті, знизу — прогумовані вставки, щоб не сповзали.",
+   "props": [
+    [
+     "Тканина",
+     "велюр"
+    ],
+    [
+     "Комплектація",
+     "1 шт 210×90 + 2 шт 160×90 см"
+    ]
+   ],
+   "dims": {
+    "d3": "210×90 см + 2 × 160×90 см"
+   }
+  },
+  "corona": {
+   "title": "Велюрове покривало «Корона»",
+   "lead": "Мʼяке велюрове покривало з обʼємним візерунком для ліжка чи дивана.",
+   "about": "Приємне на дотик і тепле, легко переться.",
+   "props": [
+    [
+     "Тканина",
+     "велюр"
+    ]
+   ],
+   "dims": {
+    "e": "210×230 см"
+   }
+  },
+  "cotton_cover": {
+   "title": "Бавовняне покривало з наволочками",
+   "lead": "Бавовняне покривало євророзміру з двома наволочками в комплекті.",
+   "about": "Натуральна тканина дихає і не електризується, покривало легко переться.",
+   "props": [
+    [
+     "Тканина",
+     "100% бавовна"
+    ],
+    [
+     "Комплектація",
+     "покривало + 2 наволочки"
+    ]
+   ],
+   "dims": {
+    "e": "євро, точні розміри підтвердить менеджер"
+   }
+  },
+  "fleece2": {
+   "title": "Флісовий плед",
+   "lead": "Легкий мʼякий фліс — тепло без ваги.",
+   "about": "Не линяє, швидко сохне і не втрачає кольору.",
+   "props": [
+    [
+     "Тканина",
+     "фліс"
+    ]
+   ],
+   "dims": {
+    "15": "150×200 см",
+    "e": "200×220 см"
+   }
+  },
+  "rabbit": {
+   "title": "Покривало «Кролик-соболь»",
+   "lead": "Пишне покривало з густим ворсом, що імітує хутро.",
+   "about": "Гіпоалергенне, легко переться, не дає усадку і не линяє.",
+   "props": [
+    [
+     "Тканина",
+     "штучне хутро"
+    ]
+   ],
+   "dims": {
+    "e": "200×230 см"
+   }
+  },
+  "cover_ny": {
+   "title": "Новорічне покривало",
+   "lead": "Святкове покривало для затишних зимових вечорів і новорічного настрою.",
+   "about": "Мʼяке, тепле й легке в догляді.",
+   "props": [
+    [
+     "Тканина",
+     "мікрофібра"
+    ]
+   ],
+   "dims": {
+    "15": "160×215 см",
+    "e": "200×220–230 см"
+   }
+  },
+  "blanket": {
+   "title": "Ковдра з холофайбером",
+   "lead": "Тепла ковдра з мікрофібри з наповнювачем холофайбер.",
+   "about": "Холофайбер не збивається, добре тримає тепло і швидко сохне після прання.",
+   "props": [
+    [
+     "Тканина",
+     "мікрофібра"
+    ],
+    [
+     "Наповнювач",
+     "холофайбер"
+    ]
+   ],
+   "dims": {
+    "15": "150×215 см",
+    "2": "180×215 см",
+    "e": "200×215 см"
+   }
+  },
+  "blanket_s": {
+   "title": "Літня ковдра",
+   "lead": "Легка літня ковдра — не жарко навіть у спеку.",
+   "about": "Тонкий наповнювач, мʼяка тканина, можна прати в машинці.",
+   "props": [
+    [
+     "Сезон",
+     "літо"
+    ]
+   ],
+   "dims": {
+    "15": "150×215 см",
+    "2": "180×215 см",
+    "e": "200×215 см"
+   }
+  },
+  "wool": {
+   "title": "Ковдра «Pure Wool»",
+   "lead": "Тепла ковдра з наповнювачем холофайбер і штучною вовною підвищеної щільності.",
+   "about": "Одна з найтепліших ковдр: не збивається, легко переться.",
+   "props": [
+    [
+     "Тканина",
+     "мікрофібра"
+    ],
+    [
+     "Наповнювач",
+     "холофайбер + штучна вовна"
+    ]
+   ],
+   "dims": {
+    "15": "150×215 см",
+    "2": "180×215 см",
+    "e": "200×215 см"
+   }
+  },
+  "pillow_o": {
+   "title": "Ортопедична подушка",
+   "lead": "Подушка, що повторює форму голови та шиї і знімає напругу з мʼязів.",
+   "about": "Знімний чохол, підходить для сну на боці й на спині.",
+   "props": [
+    [
+     "Розмір",
+     "50×70 см"
+    ]
+   ],
+   "dims": {
+    "p50": "50×70 см"
+   }
+  },
+  "dough": {
+   "title": "Анатомічна подушка «Тісто»",
+   "lead": "Мʼяка подушка з ефектом «тіста», що ніжно огортає шию та голову.",
+   "about": "Повітряна структура підлаштовується під положення тіла і швидко відновлює форму.",
+   "props": [
+    [
+     "Ефект",
+     "«тісто», мʼяка"
+    ]
+   ],
+   "dims": {
+    "p50": "50×70 см",
+    "p70": "70×70 см"
+   }
+  },
+  "toy120": {
+   "title": "Плюшевий ведмідь 120 см",
+   "lead": "Величезний мʼякий ведмедик — подарунок з ефектом «вау».",
+   "about": "Гіпоалергенні матеріали, дуже мʼякий плюш. Без пледу.",
+   "props": [
+    [
+     "Висота",
+     "120 см"
+    ],
+    [
+     "Плед",
+     "немає"
+    ]
+   ],
+   "dims": {
+    "t120": "120 см"
+   }
+  },
+  "rug": {
+   "title": "Набір килимків для ванної",
+   "lead": "Мʼякий набір із двох килимків для ванної та туалету.",
+   "about": "Щільна протиковзна основа, легко переться.",
+   "props": [
+    [
+     "Комплектація",
+     "80×50 + 50×40 см"
+    ]
+   ],
+   "dims": {
+    "kit": "80×50 + 50×40 см"
+   }
+  },
+  "towel": {
+   "title": "Набір рушників",
+   "lead": "Пухнасті бавовняні рушники набором по 4 шт.",
+   "about": "Добре вбирають вологу і лишаються мʼякими після прання.",
+   "props": [
+    [
+     "Тканина",
+     "махра"
+    ],
+    [
+     "У наборі",
+     "4 шт"
+    ]
+   ],
+   "dims": {
+    "r50": "4 × 50×100 см",
+    "r70": "4 × 70×140 см"
+   }
+  },
+  "towel_gift": {
+   "title": "Подарунковий набір рушників",
+   "lead": "Мʼякі рушники у святковому подарунковому пакуванні.",
+   "about": "Готовий подарунок — нічого не треба загортати.",
+   "props": [
+    [
+     "Пакування",
+     "подарункове"
+    ]
+   ],
+   "dims": {
+    "one": "набір"
+   }
+  },
+  "towel_ny": {
+   "title": "Новорічні рушники",
+   "lead": "Святкові рушники з новорічним дизайном.",
+   "about": "Чудовий маленький подарунок або прикраса кухні на свята.",
+   "props": [
+    [
+     "Дизайн",
+     "новорічний"
+    ]
+   ],
+   "dims": {
+    "one": "набір"
+   }
+  },
+  "kitchen": {
+   "title": "Кухонні рушники",
+   "lead": "Набір кухонних рушників на кожен день.",
+   "about": "Добре вбирають вологу, легко перуться.",
+   "props": [
+    [
+     "Призначення",
+     "кухня"
+    ]
+   ],
+   "dims": {
+    "one": "набір"
+   }
   }
  },
  "sizes": {
@@ -362,7 +763,21 @@
   "2": "Двоспальний",
   "e": "Євро",
   "s": "Сімейний",
-  "t70": "70 см"
+  "t70": "70 см",
+  "s160": "160×200 см",
+  "s180": "180×200 см",
+  "m90": "90×200 см",
+  "m140": "140×200 см",
+  "m160": "160×200 см",
+  "m180": "180×200 см",
+  "d3": "3 накидки",
+  "p50": "50×70 см",
+  "p70": "70×70 см",
+  "t120": "120 см",
+  "kit": "Набір 2 шт",
+  "r50": "4 шт, 50×100 см",
+  "r70": "4 шт, 70×140 см",
+  "one": "Набір"
  },
  "prices": {
   "varena": {
@@ -413,10 +828,12 @@
    "e": 630
   },
   "sharpei": {
-   "e": 625
+   "e": 625,
+   "15": 500
   },
   "ovchyna": {
-   "e": 840
+   "e": 840,
+   "15": 670
   },
   "luxe": {
    "15": 675,
@@ -444,6 +861,139 @@
   },
   "velour_m": {
    "e": 1560
+  },
+  "sheet_b": {
+   "s160": 285
+  },
+  "sheet_s": {
+   "s160": 430
+  },
+  "sheet_v": {
+   "s160": 560,
+   "s180": 590
+  },
+  "aqua": {
+   "m90": 445,
+   "m140": 590,
+   "m160": 640,
+   "m180": 695
+  },
+  "mattress": {
+   "m90": 365,
+   "m140": 450,
+   "m160": 470,
+   "m180": 490
+  },
+  "velour_w": {
+   "e": 1440
+  },
+  "set_muslin": {
+   "e": 1095
+  },
+  "waffle": {
+   "e": 1360
+  },
+  "divan_r": {
+   "d3": 1135
+  },
+  "divan": {
+   "d3": 1110
+  },
+  "divan_b": {
+   "d3": 1100
+  },
+  "corona": {
+   "e": 935
+  },
+  "cotton_cover": {
+   "e": 630
+  },
+  "cotton_cover_b": {
+   "e": 610
+  },
+  "fleece2": {
+   "15": 285,
+   "e": 375
+  },
+  "sharpei_a": {
+   "15": 470
+  },
+  "rabbit": {
+   "e": 1450
+  },
+  "cover_ny_hard": {
+   "e": 650
+  },
+  "cover_ny": {
+   "e": 485
+  },
+  "cover_ny2": {
+   "e": 550
+  },
+  "cover_ny_b": {
+   "15": 600
+  },
+  "luxe_c": {
+   "15": 615
+  },
+  "blanket": {
+   "15": 640,
+   "2": 695,
+   "e": 740
+  },
+  "blanket_s": {
+   "15": 450,
+   "2": 490,
+   "e": 520
+  },
+  "wool": {
+   "15": 700,
+   "2": 760,
+   "e": 810
+  },
+  "pillow_o": {
+   "p50": 555
+  },
+  "dough": {
+   "p50": 640,
+   "p70": 680
+  },
+  "dough_w": {
+   "p50": 590
+  },
+  "dough_a": {
+   "p70": 630
+  },
+  "toy120": {
+   "t120": 930
+  },
+  "rug": {
+   "kit": 340
+  },
+  "towel": {
+   "r50": 590,
+   "r70": 970
+  },
+  "towel_gift": {
+   "one": 340
+  },
+  "towel_ny4": {
+   "one": 200
+  },
+  "towel_ny3": {
+   "one": 240
+  },
+  "kitchen20": {
+   "one": 380
+  },
+  "kitchen20b": {
+   "one": 370
+  },
+  "kitchen10": {
+   "one": 415
+  },
+  "kitchen5": {
+   "one": 320
   }
  },
  "products": [
@@ -1333,10 +1883,16 @@
    "maxphotos": 4,
    "src": {
     "ed": {
-     "e": "130572"
+     "e": "130572",
+     "15": "146287"
     }
    },
    "variants": [
+    [
+     "SV-S02",
+     "sharpei",
+     "15"
+    ],
     [
      "SV-S02",
      "sharpei",
@@ -1396,10 +1952,16 @@
    "maxphotos": 4,
    "src": {
     "ed": {
-     "e": "128232"
+     "e": "128232",
+     "15": "128237"
     }
    },
    "variants": [
+    [
+     "SV-O02",
+     "ovchyna",
+     "15"
+    ],
     [
      "SV-O02",
      "ovchyna",
@@ -1971,6 +2533,2544 @@
      "SV-V04",
      "velour_m",
      "e"
+    ]
+   ]
+  },
+  {
+   "slug": "prostyradlo-rezynka-buzkove",
+   "fabric": "sheet_b",
+   "color": "Бузкове",
+   "img": "prostyradlo-rezynka-buzkove",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "s160": "164182"
+    }
+   },
+   "variants": [
+    [
+     "SV-P51",
+     "sheet_b",
+     "s160"
+    ]
+   ]
+  },
+  {
+   "slug": "prostyradlo-straip-bile",
+   "fabric": "sheet_s",
+   "color": "Біле",
+   "img": "prostyradlo-straip-bile",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "s160": "148792"
+    }
+   },
+   "variants": [
+    [
+     "SV-P52",
+     "sheet_s",
+     "s160"
+    ]
+   ]
+  },
+  {
+   "slug": "prostyradlo-straip-perlynne",
+   "fabric": "sheet_s",
+   "color": "Перлинне",
+   "img": "prostyradlo-straip-perlynne",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "s160": "148786"
+    }
+   },
+   "variants": [
+    [
+     "SV-P53",
+     "sheet_s",
+     "s160"
+    ]
+   ]
+  },
+  {
+   "slug": "prostyradlo-straip-buzkove",
+   "fabric": "sheet_s",
+   "color": "Бузкове",
+   "img": "prostyradlo-straip-buzkove",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "s160": "148787"
+    }
+   },
+   "variants": [
+    [
+     "SV-P54",
+     "sheet_s",
+     "s160"
+    ]
+   ]
+  },
+  {
+   "slug": "prostyradlo-veliur-temno-sire",
+   "fabric": "sheet_v",
+   "color": "Темно-сіре",
+   "img": "prostyradlo-veliur-temno-sire",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "s160": "124598",
+     "s180": "198645"
+    }
+   },
+   "variants": [
+    [
+     "SV-P55",
+     "sheet_v",
+     "s160"
+    ],
+    [
+     "SV-P55",
+     "sheet_v",
+     "s180"
+    ]
+   ]
+  },
+  {
+   "slug": "prostyradlo-veliur-korychneve",
+   "fabric": "sheet_v",
+   "color": "Коричневе",
+   "img": "prostyradlo-veliur-korychneve",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "s160": "124596",
+     "s180": "198648"
+    }
+   },
+   "variants": [
+    [
+     "SV-P56",
+     "sheet_v",
+     "s160"
+    ],
+    [
+     "SV-P56",
+     "sheet_v",
+     "s180"
+    ]
+   ]
+  },
+  {
+   "slug": "prostyradlo-veliur-bezheve",
+   "fabric": "sheet_v",
+   "color": "Бежеве",
+   "img": "prostyradlo-veliur-bezheve",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "s160": "124594",
+     "s180": "198649"
+    }
+   },
+   "variants": [
+    [
+     "SV-P57",
+     "sheet_v",
+     "s160"
+    ],
+    [
+     "SV-P57",
+     "sheet_v",
+     "s180"
+    ]
+   ]
+  },
+  {
+   "slug": "prostyradlo-veliur-sire",
+   "fabric": "sheet_v",
+   "color": "Сіре",
+   "img": "prostyradlo-veliur-sire",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "s160": "124593",
+     "s180": "198651"
+    }
+   },
+   "variants": [
+    [
+     "SV-P58",
+     "sheet_v",
+     "s160"
+    ],
+    [
+     "SV-P58",
+     "sheet_v",
+     "s180"
+    ]
+   ]
+  },
+  {
+   "slug": "prostyradlo-veliur-mokko",
+   "fabric": "sheet_v",
+   "color": "Мокко",
+   "img": "prostyradlo-veliur-mokko",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "s160": "124597"
+    }
+   },
+   "variants": [
+    [
+     "SV-P59",
+     "sheet_v",
+     "s160"
+    ]
+   ]
+  },
+  {
+   "slug": "prostyradlo-veliur-kapuchino",
+   "fabric": "sheet_v",
+   "color": "Капучино",
+   "img": "prostyradlo-veliur-kapuchino",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "s160": "124592"
+    }
+   },
+   "variants": [
+    [
+     "SV-P60",
+     "sheet_v",
+     "s160"
+    ]
+   ]
+  },
+  {
+   "slug": "prostyradlo-veliur-pudrove",
+   "fabric": "sheet_v",
+   "color": "Пудрове",
+   "img": "prostyradlo-veliur-pudrove",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "s180": "198652"
+    }
+   },
+   "variants": [
+    [
+     "SV-P61",
+     "sheet_v",
+     "s180"
+    ]
+   ]
+  },
+  {
+   "slug": "prostyradlo-veliur-molochne",
+   "fabric": "sheet_v",
+   "color": "Молочне",
+   "img": "prostyradlo-veliur-molochne",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "s180": "198646"
+    }
+   },
+   "variants": [
+    [
+     "SV-P62",
+     "sheet_v",
+     "s180"
+    ]
+   ]
+  },
+  {
+   "slug": "namatratsnyk-akva-stop",
+   "fabric": "aqua",
+   "color": "Білий",
+   "img": "namatratsnyk-akva-stop",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "m90": "124584",
+     "m140": "124585",
+     "m160": "124586",
+     "m180": "124587"
+    }
+   },
+   "variants": [
+    [
+     "SV-N51",
+     "aqua",
+     "m90"
+    ],
+    [
+     "SV-N51",
+     "aqua",
+     "m140"
+    ],
+    [
+     "SV-N51",
+     "aqua",
+     "m160"
+    ],
+    [
+     "SV-N51",
+     "aqua",
+     "m180"
+    ]
+   ]
+  },
+  {
+   "slug": "namatratsnyk-mikrofibra",
+   "fabric": "mattress",
+   "color": "Білий",
+   "img": "namatratsnyk-mikrofibra",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "m90": "124580",
+     "m140": "124581",
+     "m160": "124582",
+     "m180": "124583"
+    }
+   },
+   "variants": [
+    [
+     "SV-N52",
+     "mattress",
+     "m90"
+    ],
+    [
+     "SV-N52",
+     "mattress",
+     "m140"
+    ],
+    [
+     "SV-N52",
+     "mattress",
+     "m160"
+    ],
+    [
+     "SV-N52",
+     "mattress",
+     "m180"
+    ]
+   ]
+  },
+  {
+   "slug": "veliur-sharpei-shokoladnyi",
+   "fabric": "velour",
+   "color": "Шоколадний",
+   "img": "veliur-sharpei-shokoladnyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "186553"
+    }
+   },
+   "variants": [
+    [
+     "SV-V51",
+     "velour",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "veliur-monika-mokko",
+   "fabric": "velour_m",
+   "color": "Мокко",
+   "img": "veliur-monika-mokko",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "197066"
+    }
+   },
+   "variants": [
+    [
+     "SV-V52",
+     "velour_m",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "veliur-monika-smarahdovyi",
+   "fabric": "velour_m",
+   "color": "Смарагдовий",
+   "img": "veliur-monika-smarahdovyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "124323"
+    }
+   },
+   "variants": [
+    [
+     "SV-V53",
+     "velour_m",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "veliur-monika-korychnevyi",
+   "fabric": "velour_m",
+   "color": "Коричневий",
+   "img": "veliur-monika-korychnevyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "124321"
+    }
+   },
+   "variants": [
+    [
+     "SV-V54",
+     "velour_m",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "veliur-monika-slyvovyi",
+   "fabric": "velour_m",
+   "color": "Сливовий",
+   "img": "veliur-monika-slyvovyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "124320"
+    }
+   },
+   "variants": [
+    [
+     "SV-V55",
+     "velour_m",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "veliur-monika-molochnyi",
+   "fabric": "velour_m",
+   "color": "Молочний",
+   "img": "veliur-monika-molochnyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "250480"
+    }
+   },
+   "variants": [
+    [
+     "SV-V56",
+     "velour_w",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "postil-z-kovdroiu-zhatka-sira",
+   "fabric": "set_muslin",
+   "color": "Сіра квіткова",
+   "img": "postil-z-kovdroiu-zhatka-sira",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "216229"
+    }
+   },
+   "variants": [
+    [
+     "SV-K51",
+     "set_muslin",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "postil-z-kovdroiu-zhatka-blakytna",
+   "fabric": "set_muslin",
+   "color": "Блакитна",
+   "img": "postil-z-kovdroiu-zhatka-blakytna",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "216230"
+    }
+   },
+   "variants": [
+    [
+     "SV-K52",
+     "set_muslin",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "postil-z-pokryvalom-vafelka-bezheva",
+   "fabric": "waffle",
+   "color": "Бежева",
+   "img": "postil-z-pokryvalom-vafelka-bezheva",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "149405"
+    }
+   },
+   "variants": [
+    [
+     "SV-K53",
+     "waffle",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "postil-z-pokryvalom-vafelka-miatna",
+   "fabric": "waffle",
+   "color": "Мʼятна",
+   "img": "postil-z-pokryvalom-vafelka-miatna",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "159429"
+    }
+   },
+   "variants": [
+    [
+     "SV-K54",
+     "waffle",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "biaz-lux-smarahdovyi",
+   "fabric": "luxe",
+   "color": "Смарагдовий",
+   "img": "biaz-lux-smarahdovyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "149897"
+    }
+   },
+   "variants": [
+    [
+     "SV-L51",
+     "luxe",
+     "2"
+    ]
+   ]
+  },
+  {
+   "slug": "biaz-lux-palmove-lystia",
+   "fabric": "luxe",
+   "color": "Пальмове листя",
+   "img": "biaz-lux-palmove-lystia",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "149893",
+     "e": "149894"
+    }
+   },
+   "variants": [
+    [
+     "SV-L52",
+     "luxe",
+     "2"
+    ],
+    [
+     "SV-L52",
+     "luxe",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "biaz-lux-gilka-na-siromu",
+   "fabric": "luxe",
+   "color": "Гілка на сірому",
+   "img": "biaz-lux-gilka-na-siromu",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "148321"
+    }
+   },
+   "variants": [
+    [
+     "SV-L53",
+     "luxe",
+     "2"
+    ]
+   ]
+  },
+  {
+   "slug": "biaz-lux-kulbaby",
+   "fabric": "luxe",
+   "color": "Кульбаби на графіті",
+   "img": "biaz-lux-kulbaby",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "148224"
+    }
+   },
+   "variants": [
+    [
+     "SV-L54",
+     "luxe",
+     "2"
+    ]
+   ]
+  },
+  {
+   "slug": "biaz-lux-bezheva-geometriia",
+   "fabric": "luxe",
+   "color": "Бежева геометрія",
+   "img": "biaz-lux-bezheva-geometriia",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "148270",
+     "2": "148247",
+     "e": "148248"
+    }
+   },
+   "variants": [
+    [
+     "SV-L55",
+     "luxe",
+     "15"
+    ],
+    [
+     "SV-L55",
+     "luxe",
+     "2"
+    ],
+    [
+     "SV-L55",
+     "luxe",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "biaz-lux-biriuzovyi-labirynt",
+   "fabric": "luxe",
+   "color": "Бірюзовий лабіринт",
+   "img": "biaz-lux-biriuzovyi-labirynt",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "148252"
+    }
+   },
+   "variants": [
+    [
+     "SV-L56",
+     "luxe",
+     "2"
+    ]
+   ]
+  },
+  {
+   "slug": "biaz-lux-futbol",
+   "fabric": "luxe",
+   "color": "Футбол (дитячий)",
+   "img": "biaz-lux-futbol",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "194732"
+    }
+   },
+   "variants": [
+    [
+     "SV-L57",
+     "luxe",
+     "15"
+    ]
+   ]
+  },
+  {
+   "slug": "biaz-lux-buzkova-smuzhka",
+   "fabric": "luxe",
+   "color": "Бузкова смужка",
+   "img": "biaz-lux-buzkova-smuzhka",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "124156"
+    }
+   },
+   "variants": [
+    [
+     "SV-L58",
+     "luxe_c",
+     "15"
+    ]
+   ]
+  },
+  {
+   "slug": "baika-novorichni-gnomy",
+   "fabric": "flannel",
+   "color": "Новорічні гноми",
+   "img": "baika-novorichni-gnomy",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "196553",
+     "2": "196567",
+     "e": "196588"
+    }
+   },
+   "variants": [
+    [
+     "SV-F51",
+     "flannel_p",
+     "15"
+    ],
+    [
+     "SV-F51",
+     "flannel_p",
+     "2"
+    ],
+    [
+     "SV-F51",
+     "flannel_p",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "baika-novorichni-kuli",
+   "fabric": "flannel",
+   "color": "Новорічні кулі",
+   "img": "baika-novorichni-kuli",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "196549"
+    }
+   },
+   "variants": [
+    [
+     "SV-F52",
+     "flannel_p",
+     "15"
+    ]
+   ]
+  },
+  {
+   "slug": "baika-yalynky",
+   "fabric": "flannel",
+   "color": "Ялинки",
+   "img": "baika-yalynky",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "196542",
+     "2": "196557",
+     "e": "196579"
+    }
+   },
+   "variants": [
+    [
+     "SV-F53",
+     "flannel_p",
+     "15"
+    ],
+    [
+     "SV-F53",
+     "flannel_p",
+     "2"
+    ],
+    [
+     "SV-F53",
+     "flannel_p",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "baika-zymovyi-ornament",
+   "fabric": "flannel",
+   "color": "Зимовий орнамент",
+   "img": "baika-zymovyi-ornament",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "196561",
+     "e": "196577"
+    }
+   },
+   "variants": [
+    [
+     "SV-F54",
+     "flannel_p",
+     "2"
+    ],
+    [
+     "SV-F54",
+     "flannel_p",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "baika-novorichnyi-hodynnyk",
+   "fabric": "flannel",
+   "color": "Новорічний годинник",
+   "img": "baika-novorichnyi-hodynnyk",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "196563",
+     "e": "196583"
+    }
+   },
+   "variants": [
+    [
+     "SV-F55",
+     "flannel",
+     "2"
+    ],
+    [
+     "SV-F55",
+     "flannel",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "straip-rezynka-bilyi",
+   "fabric": "stripe_r",
+   "color": "Білий",
+   "img": "straip-rezynka-bilyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "245005",
+     "e": "245010"
+    }
+   },
+   "variants": [
+    [
+     "SV-R51",
+     "stripe_r",
+     "2"
+    ],
+    [
+     "SV-R51",
+     "stripe_r",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "straip-rezynka-kremovyi",
+   "fabric": "stripe_r",
+   "color": "Кремовий",
+   "img": "straip-rezynka-kremovyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "147164"
+    }
+   },
+   "variants": [
+    [
+     "SV-R52",
+     "stripe_r",
+     "2"
+    ]
+   ]
+  },
+  {
+   "slug": "dyvandek-bezh-romb",
+   "fabric": "divan",
+   "color": "Беж, ромб",
+   "img": "dyvandek-bezh-romb",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "d3": "146993"
+    }
+   },
+   "variants": [
+    [
+     "SV-D51",
+     "divan_r",
+     "d3"
+    ]
+   ]
+  },
+  {
+   "slug": "dyvandek-siryi-romb",
+   "fabric": "divan",
+   "color": "Сірий, ромб",
+   "img": "dyvandek-siryi-romb",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "d3": "153801"
+    }
+   },
+   "variants": [
+    [
+     "SV-D52",
+     "divan_r",
+     "d3"
+    ]
+   ]
+  },
+  {
+   "slug": "dyvandek-terakota-romb",
+   "fabric": "divan",
+   "color": "Теракотовий, ромб",
+   "img": "dyvandek-terakota-romb",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "d3": "125606"
+    }
+   },
+   "variants": [
+    [
+     "SV-D53",
+     "divan_r",
+     "d3"
+    ]
+   ]
+  },
+  {
+   "slug": "dyvandek-siryi",
+   "fabric": "divan",
+   "color": "Сірий",
+   "img": "dyvandek-siryi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "d3": "147000"
+    }
+   },
+   "variants": [
+    [
+     "SV-D54",
+     "divan",
+     "d3"
+    ]
+   ]
+  },
+  {
+   "slug": "dyvandek-kapuchino",
+   "fabric": "divan",
+   "color": "Капучино",
+   "img": "dyvandek-kapuchino",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "d3": "87528"
+    }
+   },
+   "variants": [
+    [
+     "SV-D55",
+     "divan",
+     "d3"
+    ]
+   ]
+  },
+  {
+   "slug": "dyvandek-bezhevyi",
+   "fabric": "divan",
+   "color": "Бежевий",
+   "img": "dyvandek-bezhevyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "d3": "185388"
+    }
+   },
+   "variants": [
+    [
+     "SV-D56",
+     "divan",
+     "d3"
+    ]
+   ]
+  },
+  {
+   "slug": "dyvandek-korychnevyi",
+   "fabric": "divan",
+   "color": "Коричневий",
+   "img": "dyvandek-korychnevyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "d3": "87527"
+    }
+   },
+   "variants": [
+    [
+     "SV-D57",
+     "divan_b",
+     "d3"
+    ]
+   ]
+  },
+  {
+   "slug": "pled-teddi-lavandovyi",
+   "fabric": "teddy",
+   "color": "Лавандовий",
+   "img": "pled-teddi-lavandovyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "259382",
+     "e": "259389"
+    }
+   },
+   "variants": [
+    [
+     "SV-T51",
+     "teddy",
+     "15"
+    ],
+    [
+     "SV-T51",
+     "teddy",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pled-teddi-temno-synii",
+   "fabric": "teddy",
+   "color": "Темно-синій",
+   "img": "pled-teddi-temno-synii",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "259385",
+     "e": "259388"
+    }
+   },
+   "variants": [
+    [
+     "SV-T52",
+     "teddy",
+     "15"
+    ],
+    [
+     "SV-T52",
+     "teddy",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pokryvalo-korona-bezheve",
+   "fabric": "corona",
+   "color": "Бежеве",
+   "img": "pokryvalo-korona-bezheve",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "143623"
+    }
+   },
+   "variants": [
+    [
+     "SV-C51",
+     "corona",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pokryvalo-bavovna-temno-sire",
+   "fabric": "cotton_cover",
+   "color": "Темно-сіре",
+   "img": "pokryvalo-bavovna-temno-sire",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "176356"
+    }
+   },
+   "variants": [
+    [
+     "SV-C52",
+     "cotton_cover_b",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pokryvalo-bavovna-svitlyi-bezh",
+   "fabric": "cotton_cover",
+   "color": "Світлий беж",
+   "img": "pokryvalo-bavovna-svitlyi-bezh",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "176354"
+    }
+   },
+   "variants": [
+    [
+     "SV-C53",
+     "cotton_cover",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pokryvalo-bavovna-sire",
+   "fabric": "cotton_cover",
+   "color": "Сіре",
+   "img": "pokryvalo-bavovna-sire",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "176352"
+    }
+   },
+   "variants": [
+    [
+     "SV-C54",
+     "cotton_cover",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "flis-lystok",
+   "fabric": "fleece2",
+   "color": "Листок",
+   "img": "flis-lystok",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "237193",
+     "e": "254560"
+    }
+   },
+   "variants": [
+    [
+     "SV-FL51",
+     "fleece2",
+     "15"
+    ],
+    [
+     "SV-FL51",
+     "fleece2",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "flis-koty",
+   "fabric": "fleece2",
+   "color": "Коти",
+   "img": "flis-koty",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "237192",
+     "e": "254564"
+    }
+   },
+   "variants": [
+    [
+     "SV-FL52",
+     "fleece2",
+     "15"
+    ],
+    [
+     "SV-FL52",
+     "fleece2",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "flis-khvylia",
+   "fabric": "fleece2",
+   "color": "Хвиля",
+   "img": "flis-khvylia",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "237190",
+     "e": "254561"
+    }
+   },
+   "variants": [
+    [
+     "SV-FL53",
+     "fleece2",
+     "15"
+    ],
+    [
+     "SV-FL53",
+     "fleece2",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "flis-zirky",
+   "fabric": "fleece2",
+   "color": "Зірки",
+   "img": "flis-zirky",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "236200"
+    }
+   },
+   "variants": [
+    [
+     "SV-FL54",
+     "fleece2",
+     "15"
+    ]
+   ]
+  },
+  {
+   "slug": "flis-romashky",
+   "fabric": "fleece2",
+   "color": "Сірі квіти",
+   "img": "flis-romashky",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "237194"
+    }
+   },
+   "variants": [
+    [
+     "SV-FL55",
+     "fleece2",
+     "15"
+    ]
+   ]
+  },
+  {
+   "slug": "flis-siryi-vizerunok",
+   "fabric": "fleece2",
+   "color": "Сірий візерунок",
+   "img": "flis-siryi-vizerunok",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "254565"
+    }
+   },
+   "variants": [
+    [
+     "SV-FL56",
+     "fleece2",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pled-sharpei-svitlo-siryi",
+   "fabric": "sharpei",
+   "color": "Світло-сірий",
+   "img": "pled-sharpei-svitlo-siryi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "146285",
+     "e": "149218"
+    }
+   },
+   "variants": [
+    [
+     "SV-S51",
+     "sharpei_a",
+     "15"
+    ],
+    [
+     "SV-S51",
+     "sharpei",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pled-sharpei-siro-blakytnyi",
+   "fabric": "sharpei",
+   "color": "Сіро-блакитний",
+   "img": "pled-sharpei-siro-blakytnyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "225225"
+    }
+   },
+   "variants": [
+    [
+     "SV-S52",
+     "sharpei",
+     "15"
+    ]
+   ]
+  },
+  {
+   "slug": "pled-sharpei-hrafitovyi",
+   "fabric": "sharpei",
+   "color": "Графітовий",
+   "img": "pled-sharpei-hrafitovyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "149215"
+    }
+   },
+   "variants": [
+    [
+     "SV-S53",
+     "sharpei",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pled-sharpei-siro-bezhevyi",
+   "fabric": "sharpei",
+   "color": "Сіро-бежевий",
+   "img": "pled-sharpei-siro-bezhevyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "171114"
+    }
+   },
+   "variants": [
+    [
+     "SV-S54",
+     "sharpei",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pokryvalo-krolyk-sobol-bezhevyi",
+   "fabric": "rabbit",
+   "color": "Бежевий",
+   "img": "pokryvalo-krolyk-sobol-bezhevyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "172620"
+    }
+   },
+   "variants": [
+    [
+     "SV-RB51",
+     "rabbit",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pokryvalo-krolyk-sobol-siryi",
+   "fabric": "rabbit",
+   "color": "Сірий",
+   "img": "pokryvalo-krolyk-sobol-siryi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "172622"
+    }
+   },
+   "variants": [
+    [
+     "SV-RB52",
+     "rabbit",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pokryvalo-krolyk-sobol-karamelnyi",
+   "fabric": "rabbit",
+   "color": "Карамельний",
+   "img": "pokryvalo-krolyk-sobol-karamelnyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "172617"
+    }
+   },
+   "variants": [
+    [
+     "SV-RB53",
+     "rabbit",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pokryvalo-krolyk-sobol-temno-synii",
+   "fabric": "rabbit",
+   "color": "Темно-синій",
+   "img": "pokryvalo-krolyk-sobol-temno-synii",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "172619"
+    }
+   },
+   "variants": [
+    [
+     "SV-RB54",
+     "rabbit",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pled-ovchyna-hrafitovyi",
+   "fabric": "ovchyna",
+   "color": "Графітовий",
+   "img": "pled-ovchyna-hrafitovyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "128233"
+    }
+   },
+   "variants": [
+    [
+     "SV-O51",
+     "ovchyna",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pled-ovchyna-pudrovyi",
+   "fabric": "ovchyna",
+   "color": "Пудровий",
+   "img": "pled-ovchyna-pudrovyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "192618"
+    }
+   },
+   "variants": [
+    [
+     "SV-O52",
+     "ovchyna",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pled-ovchyna-kapuchino",
+   "fabric": "ovchyna",
+   "color": "Капучино",
+   "img": "pled-ovchyna-kapuchino",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "259371",
+     "e": "239269"
+    }
+   },
+   "variants": [
+    [
+     "SV-O53",
+     "ovchyna",
+     "15"
+    ],
+    [
+     "SV-O53",
+     "ovchyna",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "pled-ovchyna-siryi",
+   "fabric": "ovchyna",
+   "color": "Сірий",
+   "img": "pled-ovchyna-siryi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "128235"
+    }
+   },
+   "variants": [
+    [
+     "SV-O54",
+     "ovchyna",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "novorichne-pokryvalo-okantovka-1",
+   "fabric": "cover_ny",
+   "color": "Червоне з оленями, з окантовкою",
+   "img": "novorichne-pokryvalo-okantovka-1",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "142776"
+    }
+   },
+   "variants": [
+    [
+     "SV-NY51",
+     "cover_ny_hard",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "novorichne-pokryvalo-okantovka-2",
+   "fabric": "cover_ny",
+   "color": "Чорне святкове, з окантовкою",
+   "img": "novorichne-pokryvalo-okantovka-2",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "142779"
+    }
+   },
+   "variants": [
+    [
+     "SV-NY52",
+     "cover_ny_hard",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "novorichne-pokryvalo-okantovka-3",
+   "fabric": "cover_ny",
+   "color": "Червоно-золоте, з окантовкою",
+   "img": "novorichne-pokryvalo-okantovka-3",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "142778"
+    }
+   },
+   "variants": [
+    [
+     "SV-NY53",
+     "cover_ny_hard",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "novorichne-pokryvalo-1",
+   "fabric": "cover_ny",
+   "color": "Олені на синьому",
+   "img": "novorichne-pokryvalo-1",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "142771"
+    }
+   },
+   "variants": [
+    [
+     "SV-NY54",
+     "cover_ny",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "novorichne-pokryvalo-2",
+   "fabric": "cover_ny",
+   "color": "Святкове світле",
+   "img": "novorichne-pokryvalo-2",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "142773"
+    }
+   },
+   "variants": [
+    [
+     "SV-NY55",
+     "cover_ny",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "novorichne-pokryvalo-3",
+   "fabric": "cover_ny",
+   "color": "Червоне святкове",
+   "img": "novorichne-pokryvalo-3",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "142774"
+    }
+   },
+   "variants": [
+    [
+     "SV-NY56",
+     "cover_ny",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "novorichne-pokryvalo-4",
+   "fabric": "cover_ny",
+   "color": "Ведмедик",
+   "img": "novorichne-pokryvalo-4",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "182798"
+    }
+   },
+   "variants": [
+    [
+     "SV-NY57",
+     "cover_ny2",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "novorichne-pokryvalo-5",
+   "fabric": "cover_ny",
+   "color": "Зимова ніч",
+   "img": "novorichne-pokryvalo-5",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "201256"
+    }
+   },
+   "variants": [
+    [
+     "SV-NY58",
+     "cover_ny2",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "novorichne-pokryvalo-6",
+   "fabric": "cover_ny",
+   "color": "Коти",
+   "img": "novorichne-pokryvalo-6",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "182794"
+    }
+   },
+   "variants": [
+    [
+     "SV-NY59",
+     "cover_ny2",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "novorichne-pokryvalo-7",
+   "fabric": "cover_ny",
+   "color": "Фіолетові кулі",
+   "img": "novorichne-pokryvalo-7",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "182799"
+    }
+   },
+   "variants": [
+    [
+     "SV-NY60",
+     "cover_ny2",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "novorichne-pokryvalo-8",
+   "fabric": "cover_ny",
+   "color": "Олені",
+   "img": "novorichne-pokryvalo-8",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "182795"
+    }
+   },
+   "variants": [
+    [
+     "SV-NY61",
+     "cover_ny2",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "novorichne-pokryvalo-9",
+   "fabric": "cover_ny",
+   "color": "Червоні кулі",
+   "img": "novorichne-pokryvalo-9",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "142772"
+    }
+   },
+   "variants": [
+    [
+     "SV-NY62",
+     "cover_ny2",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "novorichne-pokryvalo-10",
+   "fabric": "cover_ny",
+   "color": "Сніжинки",
+   "img": "novorichne-pokryvalo-10",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "201258"
+    }
+   },
+   "variants": [
+    [
+     "SV-NY63",
+     "cover_ny2",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "novorichne-pokryvalo-11",
+   "fabric": "cover_ny",
+   "color": "Олені на бежевому",
+   "img": "novorichne-pokryvalo-11",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "201261"
+    }
+   },
+   "variants": [
+    [
+     "SV-NY64",
+     "cover_ny2",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "novorichne-pokryvalo-12",
+   "fabric": "cover_ny",
+   "color": "Чобіток",
+   "img": "novorichne-pokryvalo-12",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "182793"
+    }
+   },
+   "variants": [
+    [
+     "SV-NY65",
+     "cover_ny2",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "novorichne-pokryvalo-baika",
+   "fabric": "cover_ny",
+   "color": "Байка, червоне",
+   "img": "novorichne-pokryvalo-baika",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "126842"
+    }
+   },
+   "variants": [
+    [
+     "SV-NY66",
+     "cover_ny_b",
+     "15"
+    ]
+   ]
+  },
+  {
+   "slug": "kovdra-holofaiber-sira",
+   "fabric": "blanket",
+   "color": "Сіра",
+   "img": "kovdra-holofaiber-sira",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "258973",
+     "2": "258976",
+     "e": "258979"
+    }
+   },
+   "variants": [
+    [
+     "SV-B51",
+     "blanket",
+     "15"
+    ],
+    [
+     "SV-B51",
+     "blanket",
+     "2"
+    ],
+    [
+     "SV-B51",
+     "blanket",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "kovdra-holofaiber-bila",
+   "fabric": "blanket",
+   "color": "Біла",
+   "img": "kovdra-holofaiber-bila",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "125094",
+     "2": "125095",
+     "e": "125096"
+    }
+   },
+   "variants": [
+    [
+     "SV-B52",
+     "blanket",
+     "15"
+    ],
+    [
+     "SV-B52",
+     "blanket",
+     "2"
+    ],
+    [
+     "SV-B52",
+     "blanket",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "kovdra-litnia-bila",
+   "fabric": "blanket_s",
+   "color": "Світла",
+   "img": "kovdra-litnia-bila",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "125092",
+     "e": "125093"
+    }
+   },
+   "variants": [
+    [
+     "SV-B53",
+     "blanket_s",
+     "2"
+    ],
+    [
+     "SV-B53",
+     "blanket_s",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "kovdra-litnia-sira",
+   "fabric": "blanket_s",
+   "color": "Сіра",
+   "img": "kovdra-litnia-sira",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "227923",
+     "2": "227925"
+    }
+   },
+   "variants": [
+    [
+     "SV-B54",
+     "blanket_s",
+     "15"
+    ],
+    [
+     "SV-B54",
+     "blanket_s",
+     "2"
+    ]
+   ]
+  },
+  {
+   "slug": "kovdra-pure-wool",
+   "fabric": "wool",
+   "color": "Бежева",
+   "img": "kovdra-pure-wool",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "125120",
+     "2": "125121",
+     "e": "125122"
+    }
+   },
+   "variants": [
+    [
+     "SV-B55",
+     "wool",
+     "15"
+    ],
+    [
+     "SV-B55",
+     "wool",
+     "2"
+    ],
+    [
+     "SV-B55",
+     "wool",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "podushka-ortopedychna-bezheva",
+   "fabric": "pillow_o",
+   "color": "Бежева",
+   "img": "podushka-ortopedychna-bezheva",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "p50": "197877"
+    }
+   },
+   "variants": [
+    [
+     "SV-PL51",
+     "pillow_o",
+     "p50"
+    ]
+   ]
+  },
+  {
+   "slug": "podushka-tisto-ananas",
+   "fabric": "dough",
+   "color": "Ананас, жовта",
+   "img": "podushka-tisto-ananas",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "p70": "232325"
+    }
+   },
+   "variants": [
+    [
+     "SV-PL52",
+     "dough_a",
+     "p70"
+    ]
+   ]
+  },
+  {
+   "slug": "podushka-tisto-kapuchino",
+   "fabric": "dough",
+   "color": "Капучино",
+   "img": "podushka-tisto-kapuchino",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "p50": "254500",
+     "p70": "254499"
+    }
+   },
+   "variants": [
+    [
+     "SV-PL53",
+     "dough",
+     "p50"
+    ],
+    [
+     "SV-PL53",
+     "dough",
+     "p70"
+    ]
+   ]
+  },
+  {
+   "slug": "podushka-tisto-bezheva",
+   "fabric": "dough",
+   "color": "Бежева",
+   "img": "podushka-tisto-bezheva",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "p50": "254501",
+     "p70": "254498"
+    }
+   },
+   "variants": [
+    [
+     "SV-PL54",
+     "dough",
+     "p50"
+    ],
+    [
+     "SV-PL54",
+     "dough",
+     "p70"
+    ]
+   ]
+  },
+  {
+   "slug": "podushka-tisto-sira",
+   "fabric": "dough",
+   "color": "Сіра",
+   "img": "podushka-tisto-sira",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "p70": "205093"
+    }
+   },
+   "variants": [
+    [
+     "SV-PL55",
+     "dough",
+     "p70"
+    ]
+   ]
+  },
+  {
+   "slug": "podushka-tisto-bila",
+   "fabric": "dough",
+   "color": "Біла",
+   "img": "podushka-tisto-bila",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "p50": "197874"
+    }
+   },
+   "variants": [
+    [
+     "SV-PL56",
+     "dough_w",
+     "p50"
+    ]
+   ]
+  },
+  {
+   "slug": "vedmid-120-molochnyi",
+   "fabric": "toy120",
+   "color": "Молочний",
+   "img": "vedmid-120-molochnyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "t120": "257933"
+    }
+   },
+   "variants": [
+    [
+     "SV-BR51",
+     "toy120",
+     "t120"
+    ]
+   ]
+  },
+  {
+   "slug": "vedmid-120-korychnevyi",
+   "fabric": "toy120",
+   "color": "Коричневий",
+   "img": "vedmid-120-korychnevyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "t120": "257932"
+    }
+   },
+   "variants": [
+    [
+     "SV-BR52",
+     "toy120",
+     "t120"
+    ]
+   ]
+  },
+  {
+   "slug": "kylymky-vanna-korychnevyi",
+   "fabric": "rug",
+   "color": "Коричневий",
+   "img": "kylymky-vanna-korychnevyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "kit": "162132"
+    }
+   },
+   "variants": [
+    [
+     "SV-KY51",
+     "rug",
+     "kit"
+    ]
+   ]
+  },
+  {
+   "slug": "kylymky-vanna-hrafitovyi",
+   "fabric": "rug",
+   "color": "Графітовий",
+   "img": "kylymky-vanna-hrafitovyi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "kit": "162131"
+    }
+   },
+   "variants": [
+    [
+     "SV-KY52",
+     "rug",
+     "kit"
+    ]
+   ]
+  },
+  {
+   "slug": "kylymky-vanna-svitlo-siryi",
+   "fabric": "rug",
+   "color": "Світло-сірий",
+   "img": "kylymky-vanna-svitlo-siryi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "kit": "254566"
+    }
+   },
+   "variants": [
+    [
+     "SV-KY53",
+     "rug",
+     "kit"
+    ]
+   ]
+  },
+  {
+   "slug": "rushnyky-siri",
+   "fabric": "towel",
+   "color": "Сірі",
+   "img": "rushnyky-siri",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "r50": "233562",
+     "r70": "233561"
+    }
+   },
+   "variants": [
+    [
+     "SV-RU51",
+     "towel",
+     "r50"
+    ],
+    [
+     "SV-RU51",
+     "towel",
+     "r70"
+    ]
+   ]
+  },
+  {
+   "slug": "rushnyky-podarunkovyi-teddi",
+   "fabric": "towel_gift",
+   "color": "Тедді",
+   "img": "rushnyky-podarunkovyi-teddi",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "one": "210387"
+    }
+   },
+   "variants": [
+    [
+     "SV-RU52",
+     "towel_gift",
+     "one"
+    ]
+   ]
+  },
+  {
+   "slug": "rushnyky-novorichni-4",
+   "fabric": "towel_ny",
+   "color": "4 рушники",
+   "img": "rushnyky-novorichni-4",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "one": "197847"
+    }
+   },
+   "variants": [
+    [
+     "SV-RU53",
+     "towel_ny4",
+     "one"
+    ]
+   ]
+  },
+  {
+   "slug": "rushnyky-novorichni-3",
+   "fabric": "towel_ny",
+   "color": "3 рушники в подарунковому пакеті",
+   "img": "rushnyky-novorichni-3",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "one": "197846"
+    }
+   },
+   "variants": [
+    [
+     "SV-RU54",
+     "towel_ny3",
+     "one"
+    ]
+   ]
+  },
+  {
+   "slug": "rushnyky-kukhonni-20-25x50",
+   "fabric": "kitchen",
+   "color": "20 шт, 25×50 см",
+   "img": "rushnyky-kukhonni-20-25x50",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "one": "87541"
+    }
+   },
+   "variants": [
+    [
+     "SV-RU55",
+     "kitchen20",
+     "one"
+    ]
+   ]
+  },
+  {
+   "slug": "rushnyky-kukhonni-20-25x50-svitli",
+   "fabric": "kitchen",
+   "color": "20 шт, 25×50 см, світлі",
+   "img": "rushnyky-kukhonni-20-25x50-svitli",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "one": "87538"
+    }
+   },
+   "variants": [
+    [
+     "SV-RU56",
+     "kitchen20b",
+     "one"
+    ]
+   ]
+  },
+  {
+   "slug": "rushnyky-kukhonni-10-35x70",
+   "fabric": "kitchen",
+   "color": "10 шт, 35×70 см",
+   "img": "rushnyky-kukhonni-10-35x70",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "one": "210386"
+    }
+   },
+   "variants": [
+    [
+     "SV-RU57",
+     "kitchen10",
+     "one"
+    ]
+   ]
+  },
+  {
+   "slug": "rushnyky-kukhonni-5-tiulpan",
+   "fabric": "kitchen",
+   "color": "5 шт, 35×70 см «Тюльпан»",
+   "img": "rushnyky-kukhonni-5-tiulpan",
+   "supplier": "sova",
+   "added": "2026-11-16T22:40",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "one": "217043"
+    }
+   },
+   "variants": [
+    [
+     "SV-RU58",
+     "kitchen5",
+     "one"
     ]
    ]
   }

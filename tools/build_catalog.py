@@ -35,12 +35,42 @@ NAME = {
     'stripe_r': 'Страйп-сатин з простирадлом на резинці · {c}',
     'velour': 'Велюровий комплект «Шарпей» · {c}',
     'velour_m': 'Велюровий комплект «Моніка» · {c}',
+    'sheet_b': 'Простирадло на резинці 160×200 · {c}',
+    'sheet_s': 'Простирадло на резинці зі страйп-сатину · {c}',
+    'sheet_v': 'Велюрове простирадло на резинці · {c}',
+    'aqua': 'Наматрацник «Аква-Стоп» з бортами',
+    'mattress': 'Наматрацник з мікрофібри',
+    'set_muslin': 'Постіль з літньою ковдрою · {c}',
+    'waffle': 'Постіль з покривалом «Вафелька» · {c}',
+    'divan': 'Дивандек 3 в 1 · {c}',
+    'corona': 'Велюрове покривало «Корона» · {c}',
+    'cotton_cover': 'Бавовняне покривало з наволочками · {c}',
+    'fleece2': 'Флісовий плед · {c}',
+    'rabbit': 'Покривало «Кролик-соболь» · {c}',
+    'cover_ny': 'Новорічне покривало · {c}',
+    'blanket': 'Ковдра з холофайбером · {c}',
+    'blanket_s': 'Літня ковдра · {c}',
+    'wool': 'Ковдра «Pure Wool»',
+    'pillow_o': 'Ортопедична подушка · {c}',
+    'dough': 'Анатомічна подушка «Тісто» · {c}',
+    'toy120': 'Плюшевий ведмідь 120 см · {c}',
+    'rug': 'Набір килимків для ванної · {c}',
+    'towel': 'Набір рушників · {c}',
+    'towel_gift': 'Подарунковий набір рушників · {c}',
+    'towel_ny': 'Новорічні рушники · {c}',
+    'kitchen': 'Кухонні рушники · {c}',
 }
 CAT = {'varena': 'sets', 'stripe': 'sets', 'satin': 'sets', 'plaid': 'plaids', 'gold': 'sets', 'stripe_a': 'sets',
        'teddy': 'plaids', 'sharpei': 'plaids', 'ovchyna': 'plaids', 'toy': 'toys',
-       'luxe': 'sets', 'flannel': 'sets', 'stripe_r': 'sets', 'velour': 'sets', 'velour_m': 'sets'}
-DEPT = {'sets': ('Постільна білизна', 'bedding'), 'plaids': ('Пледи', 'plaids'), 'toys': ('Іграшки з пледом', 'toys')}
-SIZE_ORDER = ['15', '2', 'e', 's', 't70']
+       'luxe': 'sets', 'flannel': 'sets', 'stripe_r': 'sets', 'velour': 'sets', 'velour_m': 'sets',
+       'set_muslin': 'sets', 'waffle': 'sets', 'sheet_b': 'sheets', 'sheet_s': 'sheets', 'sheet_v': 'sheets', 'aqua': 'sheets', 'mattress': 'sheets',
+       'divan': 'divan', 'corona': 'plaids', 'cotton_cover': 'plaids', 'fleece2': 'plaids', 'rabbit': 'plaids', 'cover_ny': 'plaids',
+       'blanket': 'blankets', 'blanket_s': 'blankets', 'wool': 'blankets', 'pillow_o': 'blankets', 'dough': 'blankets', 'toy120': 'toys',
+       'rug': 'rugs', 'towel': 'towels', 'towel_gift': 'towels', 'towel_ny': 'towels', 'kitchen': 'towels'}
+DEPT = {'sets': ('Постільна білизна', 'bedding'), 'plaids': ('Пледи й покривала', 'plaids'), 'toys': ('Мʼякі іграшки', 'toys'),
+        'sheets': ('Простирадла й наматрацники', 'sheets'), 'blankets': ('Ковдри й подушки', 'blankets'), 'divan': ('Дивандеки', 'divan'),
+        'rugs': ('Килимки', 'rugs'), 'towels': ('Рушники', 'towels')}
+SIZE_ORDER = ['15', '2', 'e', 's', 's160', 's180', 'm90', 'm140', 'm160', 'm180', 'd3', 'p50', 'p70', 't70', 't120', 'kit', 'r50', 'r70', 'one']
 
 
 def sell(drop):
@@ -142,11 +172,20 @@ def page(p, prod, imgs, related):
         dims=''.join('<tr><td>%s</td><td>%s</td></tr>' % (E(a), E(b)) for a, b in dims),
         lace=('<p>%s</p>' % E(lace)) if lace else '',
         related=rel, prepay=PREPAY,
-        returns=('Якщо іграшка має брак або не відповідає опису — обміняємо чи повернемо гроші. Іграшку належної якості можна повернути протягом 14 днів, якщо збережено товарний вигляд і упаковку.' if toy else 'Постільна білизна належної якості за законом обміну та поверненню не підлягає, тому уважно оглядайте комплект у відділенні до оплати. Якщо знайдете брак або невідповідність розміру чи кольору — обміняємо.' if bedding else 'Якщо плед має брак або не відповідає опису — обміняємо чи повернемо гроші. Плед належної якості можна повернути протягом 14 днів, якщо збережено товарний вигляд і упаковку.'),
+        returns=RETURNS.get(CAT[p['fabric']]) or ('Якщо іграшка має брак або не відповідає опису — обміняємо чи повернемо гроші. Іграшку належної якості можна повернути протягом 14 днів, якщо збережено товарний вигляд і упаковку.' if toy else 'Постільна білизна належної якості за законом обміну та поверненню не підлягає, тому уважно оглядайте комплект у відділенні до оплати. Якщо знайдете брак або невідповідність розміру чи кольору — обміняємо.' if bedding else 'Якщо плед має брак або не відповідає опису — обміняємо чи повернемо гроші. Плед належної якості можна повернути протягом 14 днів, якщо збережено товарний вигляд і упаковку.'),
         head=HEADER, foot=FOOTER, icons=SPRITE,
         i_truck=ico('truck'), i_wallet=ico('wallet'), i_eye=ico('eye'),
         content_id='%s-%s' % ((live(vs) or vs)[0]['sku'], (live(vs) or vs)[0]['id']),
     )
+
+
+RETURNS = {
+    'sheets': 'Простирадла й наматрацники належної якості, як і постільна білизна, обміну та поверненню не підлягають, тому уважно оглядайте товар у відділенні до оплати. Брак або невідповідність розміру — обміняємо.',
+    'blankets': 'Ковдри й подушки належної якості обміну та поверненню не підлягають (постільні речі). Оглядайте товар у відділенні до оплати — якщо є брак чи невідповідність, обміняємо.',
+    'towels': 'Рушники належної якості можна повернути протягом 14 днів, якщо вони не були у використанні й збережено упаковку. Брак — обміняємо або повернемо гроші.',
+    'rugs': 'Килимки належної якості можна повернути протягом 14 днів, якщо вони не були у використанні й збережено упаковку. Брак — обміняємо або повернемо гроші.',
+    'divan': 'Дивандек належної якості можна повернути протягом 14 днів, якщо збережено товарний вигляд і упаковку. Брак — обміняємо або повернемо гроші.',
+}
 
 
 def pillow_block(f):
@@ -179,8 +218,8 @@ HEADER = '''<div class="topbar">Відправка за 2–3 дні · Пере
       <nav class="nav" aria-label="Розділи">
         <a href="/catalog/bedding/">Постільна білизна</a>
         <a href="/catalog/plaids/">Пледи</a>
-        <a href="/catalog/toys/">Іграшки</a>
-        <a href="/#how">Доставка</a>
+        <a href="/catalog/blankets/">Ковдри</a>
+        <a href="/#catalog">Усі категорії</a>
       </nav>
       <div class="head-r">
         <a class="phone" href="tel:+380990227684"><svg class="ico"><use href="#i-phone"/></svg>+38 (099) 022-76-84</a>
@@ -190,8 +229,13 @@ HEADER = '''<div class="topbar">Відправка за 2–3 дні · Пере
     </div>
     <nav class="mnav" id="mnav" aria-label="Меню">
       <a href="/catalog/bedding/">Постільна білизна</a>
-      <a href="/catalog/plaids/">Пледи</a>
-      <a href="/catalog/toys/">Іграшки з пледом</a>
+      <a href="/catalog/sheets/">Простирадла й наматрацники</a>
+      <a href="/catalog/plaids/">Пледи й покривала</a>
+      <a href="/catalog/blankets/">Ковдри й подушки</a>
+      <a href="/catalog/divan/">Дивандеки</a>
+      <a href="/catalog/toys/">Мʼякі іграшки</a>
+      <a href="/catalog/rugs/">Килимки</a>
+      <a href="/catalog/towels/">Рушники</a>
       <a href="/#how">Доставка та оплата</a>
       <a href="/#faq">Часті питання</a>
       <a href="tel:+380990227684">+38 (099) 022-76-84</a>
@@ -238,14 +282,23 @@ CATEGORIES = [
             '<rect x="80" y="122" width="240" height="72" rx="22" fill="#FFFBF6"/><path d="M104 144h192M104 158h192M104 172h192" stroke="#EADBC9" stroke-width="3" stroke-linecap="round"/>'
             '<rect x="92" y="56" width="216" height="70" rx="22" fill="#EBCFC0"/><path d="M120 72c9 7 9 31 0 38M150 72c9 7 9 31 0 38M180 72c9 7 9 31 0 38M210 72c9 7 9 31 0 38M240 72c9 7 9 31 0 38" fill="none" stroke="#DDB9A7" stroke-width="3" stroke-linecap="round"/>'
             '<rect x="262" y="56" width="18" height="208" fill="#8B6B55" opacity=".85"/></svg>'},
-    {'id': 'plaids', 'cat': 'plaids', 'name': 'Пледи',
-     'text': 'Флісові, плюшеві та двосторонні пледи-покривала для ліжка й дивана.',
+    {'id': 'sheets', 'cat': 'sheets', 'name': 'Простирадла й наматрацники',
+     'text': 'Простирадла на резинці — бавовняні, страйп-сатинові й велюрові — та захисні наматрацники 90–180×200 см.',
+     'art': '<svg viewBox="0 0 400 300"><ellipse cx="200" cy="274" rx="160" ry="10" fill="#D9C7B1" opacity=".6"/><rect x="56" y="150" width="288" height="112" rx="22" fill="#C9A88A"/><rect x="56" y="118" width="288" height="56" rx="22" fill="#FFFBF6"/><path d="M78 146h244" stroke="#EADBC9" stroke-width="3" stroke-dasharray="3 9" stroke-linecap="round"/><path d="M56 168c30 14 258 14 288 0" fill="none" stroke="#B9977A" stroke-width="4"/><path d="M200 70c-20 0-34 12-34 26 0 10 8 16 18 16h32c10 0 18-6 18-16 0-14-14-26-34-26Z" fill="#EBCFC0"/><path d="M200 88v40" stroke="#D8B3A0" stroke-width="4" stroke-linecap="round"/></svg>'},
+    {'id': 'plaids', 'cat': 'plaids', 'name': 'Пледи й покривала',
+     'text': 'Флісові, плюшеві, хутряні й святкові пледи та покривала для ліжка й дивана.',
      'art': '<svg viewBox="0 0 400 300"><ellipse cx="200" cy="272" rx="160" ry="10" fill="#D9C7B1" opacity=".6"/>'
             '<rect x="60" y="150" width="280" height="104" rx="28" fill="#FFFBF6"/><path d="M92 150v104M124 150v104M156 150v104M188 150v104M220 150v104M252 150v104M284 150v104M316 150v104M60 186h280M60 220h280" stroke="#F0DFD5" stroke-width="6"/>'
             '<path d="M74 254v12M90 254v12M106 254v12M122 254v12M138 254v12M154 254v12M170 254v12M186 254v12M202 254v12M218 254v12M234 254v12M250 254v12M266 254v12M282 254v12M298 254v12M314 254v12M330 254v12" stroke="#D8B3A0" stroke-width="3" stroke-linecap="round"/>'
             '<rect x="96" y="70" width="208" height="86" rx="43" fill="#C9A88A"/><circle cx="139" cy="113" r="30" fill="#D8BCA2"/><circle cx="139" cy="113" r="16" fill="#C9A88A"/><circle cx="139" cy="113" r="5" fill="#B9977A"/></svg>'},
-    {'id': 'toys', 'cat': 'toys', 'name': 'Іграшки з пледом',
-     'text': 'Мʼякі ведмедики, усередині яких захований теплий плед 100×150 см.',
+    {'id': 'blankets', 'cat': 'blankets', 'name': 'Ковдри й подушки',
+     'text': 'Теплі та літні ковдри, вовняні «Pure Wool» і анатомічні подушки «Тісто».',
+     'art': '<svg viewBox="0 0 400 300"><ellipse cx="200" cy="274" rx="160" ry="10" fill="#D9C7B1" opacity=".6"/><rect x="70" y="150" width="260" height="112" rx="30" fill="#FFFBF6"/><path d="M70 196h260M70 232h260M128 150v112M200 150v112M272 150v112" stroke="#EADBC9" stroke-width="5"/><path d="M110 92c0-22 18-36 40-36h100c22 0 40 14 40 36v20c0 22-18 36-40 36H150c-22 0-40-14-40-36Z" fill="#C9A88A"/><path d="M150 76c10 6 10 50 0 56M200 76c10 6 10 50 0 56M250 76c10 6 10 50 0 56" fill="none" stroke="#B9977A" stroke-width="4" stroke-linecap="round"/></svg>'},
+    {'id': 'divan', 'cat': 'divan', 'name': 'Дивандеки',
+     'text': 'Велюрові накидки 3 в 1 на кутовий диван — захищають оббивку й додають затишку.',
+     'art': '<svg viewBox="0 0 400 300"><ellipse cx="200" cy="274" rx="160" ry="10" fill="#D9C7B1" opacity=".6"/><rect x="40" y="110" width="240" height="80" rx="20" fill="#D2B193"/><rect x="240" y="110" width="120" height="150" rx="20" fill="#D2B193"/><rect x="52" y="170" width="300" height="80" rx="18" fill="#C9A88A"/><rect x="64" y="158" width="190" height="40" rx="12" fill="#EBCFC0"/><rect x="262" y="158" width="80" height="84" rx="12" fill="#EBCFC0"/><path d="M80 178l14-12 14 12-14 12ZM120 178l14-12 14 12-14 12ZM160 178l14-12 14 12-14 12ZM200 178l14-12 14 12-14 12ZM288 196l14-12 14 12-14 12Z" fill="#D8B3A0"/></svg>'},
+    {'id': 'toys', 'cat': 'toys', 'name': 'Мʼякі іграшки',
+     'text': 'Ведмедики з теплим пледом усередині та великі плюшеві ведмеді 120 см.',
      'art': '<svg viewBox="0 0 400 300"><ellipse cx="200" cy="276" rx="150" ry="10" fill="#D9C7B1" opacity=".6"/>'
             '<circle cx="146" cy="70" r="28" fill="#C9A88A"/><circle cx="146" cy="70" r="14" fill="#E3D3BF"/><circle cx="254" cy="70" r="28" fill="#C9A88A"/><circle cx="254" cy="70" r="14" fill="#E3D3BF"/>'
             '<ellipse cx="200" cy="208" rx="92" ry="72" fill="#C9A88A"/><circle cx="200" cy="112" r="66" fill="#D2B193"/>'
@@ -253,10 +306,18 @@ CATEGORIES = [
             '<circle cx="176" cy="100" r="6" fill="#6F5241"/><circle cx="224" cy="100" r="6" fill="#6F5241"/>'
             '<path d="M128 196h144v70a14 14 0 0 1-14 14H142a14 14 0 0 1-14-14Z" fill="#FFFBF6"/><path d="M152 196v84M176 196v84M200 196v84M224 196v84M248 196v84M128 224h144M128 252h144" stroke="#F0DFD5" stroke-width="5"/>'
             '<ellipse cx="116" cy="214" rx="22" ry="30" fill="#D2B193"/><ellipse cx="284" cy="214" rx="22" ry="30" fill="#D2B193"/></svg>'},
+    {'id': 'rugs', 'cat': 'rugs', 'name': 'Килимки',
+     'text': 'Мʼякі набори килимків для ванної та туалету на щільній основі.',
+     'art': '<svg viewBox="0 0 400 300"><ellipse cx="200" cy="274" rx="160" ry="10" fill="#D9C7B1" opacity=".6"/><rect x="60" y="140" width="190" height="122" rx="26" fill="#C9A88A"/><path d="M84 164h142v74H84Z" fill="none" stroke="#B9977A" stroke-width="4" stroke-dasharray="6 8"/><path d="M270 150h80v112h-80a40 40 0 0 1 0-80Z" fill="#EBCFC0"/><path d="M286 232a24 24 0 0 1 0-48h48" fill="none" stroke="#D8B3A0" stroke-width="4"/></svg>'},
+    {'id': 'towels', 'cat': 'towels', 'name': 'Рушники',
+     'text': 'Банні, кухонні й подарункові набори рушників.',
+     'art': '<svg viewBox="0 0 400 300"><ellipse cx="200" cy="274" rx="160" ry="10" fill="#D9C7B1" opacity=".6"/><rect x="90" y="208" width="220" height="56" rx="18" fill="#C9A88A"/><rect x="100" y="156" width="200" height="56" rx="18" fill="#FFFBF6"/><rect x="110" y="104" width="180" height="56" rx="18" fill="#EBCFC0"/><path d="M110 126h180M100 178h200M90 230h220" stroke-width="4" stroke="#fff" opacity=".7"/><path d="M200 60c8-16 34-12 30 8-3 14-30 26-30 26s-27-12-30-26c-4-20 22-24 30-8Z" fill="#D8B3A0"/></svg>'},
 ]
 
 
-SHORT = {'15': '1,5-сп', '2': '2-сп', 'e': 'Євро', 's': 'Сімейний', 't70': '70 см'}
+SHORT = {'15': '1,5-сп', '2': '2-сп', 'e': 'Євро', 's': 'Сімейний', 't70': '70 см', 's160': '160×200', 's180': '180×200', 'm90': '90', 'm140': '140',
+         'm160': '160', 'm180': '180×200', 'd3': '3 накидки', 'p50': '50×70', 'p70': '70×70', 't120': '120 см', 'kit': '2 килимки',
+         'r50': '50×100', 'r70': '70×140', 'one': 'набір'}
 
 
 def sizes_line(vs):
@@ -372,6 +433,12 @@ def main():
     js = open('assets/products.js', encoding='utf-8').read()
     body = json.dumps(prods, ensure_ascii=False, indent=1)
     js = re.sub(r'window\.PRODUCTS = \[.*?\n\];', lambda m: 'window.PRODUCTS = ' + body + ';', js, count=1, flags=re.S)
+    art = {c['id']: c['art'].replace('<svg ', '<svg class="deco" aria-hidden="true" ', 1) for c in CATEGORIES}
+    block = 'window.CAT_ART = ' + json.dumps(art, ensure_ascii=False) + ';'
+    if 'window.CAT_ART = ' in js:
+        js = re.sub(r'window\.CAT_ART = \{.*?\};', lambda m: block, js, count=1, flags=re.S)
+    else:
+        js += '\n' + block + '\n'
     open('assets/products.js', 'w', encoding='utf-8').write(js)
     print('товарів:', len(prods))
     for r in prods:

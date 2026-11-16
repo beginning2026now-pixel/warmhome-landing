@@ -127,7 +127,7 @@
       $('#price').textContent = fmt(cur.price);
       $('#bbPrice').textContent = fmt(cur.price); $('#bbOpt').textContent = cur.label;
       [].forEach.call(document.querySelectorAll('#sizes button'), function (b) {{ b.setAttribute('aria-pressed', b.dataset.id === cur.id ? 'true' : 'false'); }});
-      var d = DIMS[sizeName(cur)]; $('#dim').textContent = d ? sizeName(cur) + ': ' + d : '';
+      var d = DIMS[sizeName(cur)], nm = sizeName(cur); $('#dim').textContent = d && d.replace(/ см$/, '') !== nm.replace(/ см$/, '') ? nm + ': ' + d : '';
     }}
     $('#sizes').innerHTML = P.variants.map(function (v) {{
       return '<button type="button" data-id="' + v.id + '"' + (v.out ? ' disabled' : '') + '>' + v.label + '<small>' + (v.out ? 'немає в наявності' : fmt(v.price) + ' грн') + '</small></button>';
