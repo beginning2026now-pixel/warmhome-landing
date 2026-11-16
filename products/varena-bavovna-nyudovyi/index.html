@@ -34,8 +34,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/home.css?v=4">
-  <script src="/assets/products.js?v=4"></script>
+  <link rel="stylesheet" href="/assets/home.css?v=5">
+  <script src="/assets/products.js?v=5"></script>
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -161,7 +161,7 @@
     </div>
   </footer>
 
-  <script src="/assets/cart.js?v=4"></script>
+  <script src="/assets/cart.js?v=5"></script>
   <script>
   (function () {
     var P = (window.PRODUCTS || []).find(function (x) { return x.slug === 'varena-bavovna-nyudovyi'; });
@@ -170,7 +170,8 @@
     var fmt = function (n) { return Number(n).toLocaleString('uk-UA').replace(/\s/g, ' '); };
     var DIMS = {};
     [].forEach.call(document.querySelectorAll('.specs tr'), function (tr) { DIMS[tr.cells[0].textContent] = tr.cells[1].textContent; });
-    var cur = P.variants[0], pil = '70×70';
+    var avail = P.variants.filter(function (v) { return !v.out; });
+    var cur = avail[0] || P.variants[0], pil = '70×70';
     function sizeName(v) { return v.label.replace(' з мереживом', ''); }
     function paint() {
       $('#price').textContent = fmt(cur.price);
@@ -178,10 +179,10 @@
       var d = DIMS[sizeName(cur)]; $('#dim').textContent = d ? sizeName(cur) + ': ' + d : '';
     }
     $('#sizes').innerHTML = P.variants.map(function (v) {
-      return '<button type="button" data-id="' + v.id + '">' + v.label + '<small>' + fmt(v.price) + ' грн</small></button>';
+      return '<button type="button" data-id="' + v.id + '"' + (v.out ? ' disabled' : '') + '>' + v.label + '<small>' + (v.out ? 'немає в наявності' : fmt(v.price) + ' грн') + '</small></button>';
     }).join('');
     $('#sizes').addEventListener('click', function (e) {
-      var b = e.target.closest('button'); if (!b) return;
+      var b = e.target.closest('button'); if (!b || b.disabled) return;
       cur = P.variants.find(function (v) { return v.id === b.dataset.id; }); paint();
     });
     var pb = $('#pillow');
@@ -191,6 +192,11 @@
     });
     if (!pb) $('#priceNote').textContent = '';
     var key = function () { return P.slug + '|' + cur.id + '|' + (pb ? pil : ''); };
+    if (!avail.length) {
+      $('#buyNow').disabled = $('#toCart').disabled = true;
+      $('#buyNow').textContent = 'Немає в наявності';
+      $('#toCart').hidden = true;
+    }
     $('#toCart').addEventListener('click', function () { window.Cart.add(key()); });
     $('#buyNow').addEventListener('click', function () { window.Cart.add(key()); window.Cart.open('items'); });
     var th = $('#thumbs');

@@ -81,7 +81,7 @@ window.WHGuard = (function () {
   function resolve(key) {
     const [slug, vid, pil] = String(key).split('|');
     const p = (window.PRODUCTS || []).find(x => x.slug === slug); if (!p) return null;
-    const v = (p.variants || []).find(x => x.id === vid); if (!v) return null;
+    const v = (p.variants || []).find(x => x.id === vid); if (!v || v.out) return null;
     return { key, p, v, pil: pil || '', name: p.name, opt: v.label + (pil ? ', наволочки ' + pil : ''), price: v.price, sku: v.sku, cid: v.sku + '-' + v.id, image: p.image, url: p.url };
   }
 

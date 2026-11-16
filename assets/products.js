@@ -24,6 +24,7 @@ window.PRODUCTS = [
   "fabric": "varena",
   "price": 2600,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/varena-bavovna-bilyi-1.jpg",
   "images": [
    "/assets/img/p/varena-bavovna-bilyi-1.jpg"
@@ -72,6 +73,7 @@ window.PRODUCTS = [
   "fabric": "varena",
   "price": 2800,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/varena-bavovna-nizhno-rozhevyi-1.jpg",
   "images": [
    "/assets/img/p/varena-bavovna-nizhno-rozhevyi-1.jpg",
@@ -114,6 +116,7 @@ window.PRODUCTS = [
   "fabric": "varena",
   "price": 2600,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/varena-bavovna-rozhevyi-1.jpg",
   "images": [
    "/assets/img/p/varena-bavovna-rozhevyi-1.jpg",
@@ -156,6 +159,7 @@ window.PRODUCTS = [
   "fabric": "varena",
   "price": 3200,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/varena-bavovna-pisochnyi-1.jpg",
   "images": [
    "/assets/img/p/varena-bavovna-pisochnyi-1.jpg",
@@ -184,6 +188,7 @@ window.PRODUCTS = [
   "fabric": "varena",
   "price": 3500,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/varena-bavovna-nyudovyi-1.jpg",
   "images": [
    "/assets/img/p/varena-bavovna-nyudovyi-1.jpg",
@@ -213,6 +218,7 @@ window.PRODUCTS = [
   "fabric": "varena",
   "price": 2600,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/varena-bavovna-metalik-1.jpg",
   "images": [
    "/assets/img/p/varena-bavovna-metalik-1.jpg",
@@ -255,6 +261,7 @@ window.PRODUCTS = [
   "fabric": "varena",
   "price": 2600,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/varena-bavovna-siryi-1.jpg",
   "images": [
    "/assets/img/p/varena-bavovna-siryi-1.jpg",
@@ -304,6 +311,7 @@ window.PRODUCTS = [
   "fabric": "varena",
   "price": 3500,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/varena-bavovna-svitlo-siryi-1.jpg",
   "images": [
    "/assets/img/p/varena-bavovna-svitlo-siryi-1.jpg",
@@ -332,6 +340,7 @@ window.PRODUCTS = [
   "fabric": "varena",
   "price": 2600,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/varena-bavovna-temno-siryi-1.jpg",
   "images": [
    "/assets/img/p/varena-bavovna-temno-siryi-1.jpg",
@@ -381,6 +390,7 @@ window.PRODUCTS = [
   "fabric": "varena",
   "price": 3200,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/varena-bavovna-slyvovyi-1.jpg",
   "images": [
    "/assets/img/p/varena-bavovna-slyvovyi-1.jpg",
@@ -409,6 +419,7 @@ window.PRODUCTS = [
   "fabric": "varena",
   "price": 3200,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/varena-bavovna-blakytnyi-1.jpg",
   "images": [
    "/assets/img/p/varena-bavovna-blakytnyi-1.jpg",
@@ -444,6 +455,7 @@ window.PRODUCTS = [
   "fabric": "stripe",
   "price": 2300,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/straip-satyn-bezhevyi-1.jpg",
   "images": [
    "/assets/img/p/straip-satyn-bezhevyi-1.jpg",
@@ -487,6 +499,7 @@ window.PRODUCTS = [
   "fabric": "stripe",
   "price": 2100,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/straip-satyn-molochnyi-1.jpg",
   "images": [
    "/assets/img/p/straip-satyn-molochnyi-1.jpg"
@@ -528,6 +541,7 @@ window.PRODUCTS = [
   "fabric": "stripe",
   "price": 2300,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/straip-satyn-pudrovyi-1.jpg",
   "images": [
    "/assets/img/p/straip-satyn-pudrovyi-1.jpg"
@@ -555,6 +569,7 @@ window.PRODUCTS = [
   "fabric": "stripe",
   "price": 2300,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/straip-satyn-bilyi-1.jpg",
   "images": [
    "/assets/img/p/straip-satyn-bilyi-1.jpg",
@@ -590,6 +605,7 @@ window.PRODUCTS = [
   "fabric": "stripe",
   "price": 2300,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/straip-satyn-olyvkovyi-1.jpg",
   "images": [
    "/assets/img/p/straip-satyn-olyvkovyi-1.jpg"
@@ -624,6 +640,7 @@ window.PRODUCTS = [
   "fabric": "stripe",
   "price": 2300,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/straip-satyn-shokoladnyi-1.jpg",
   "images": [
    "/assets/img/p/straip-satyn-shokoladnyi-1.jpg"
@@ -651,6 +668,7 @@ window.PRODUCTS = [
   "fabric": "stripe",
   "price": 2300,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/straip-satyn-buzkovyi-1.jpg",
   "images": [
    "/assets/img/p/straip-satyn-buzkovyi-1.jpg"
@@ -678,6 +696,7 @@ window.PRODUCTS = [
   "fabric": "satin",
   "price": 2300,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/satyn-odnotonnyi-pudra-1.jpg",
   "images": [
    "/assets/img/p/satyn-odnotonnyi-pudra-1.jpg",
@@ -713,6 +732,7 @@ window.PRODUCTS = [
   "fabric": "plaid",
   "price": 1300,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/pled-flisovyi-zaichyky-1.jpg",
   "images": [
    "/assets/img/p/pled-flisovyi-zaichyky-1.jpg"
@@ -740,6 +760,7 @@ window.PRODUCTS = [
   "fabric": "plaid",
   "price": 1300,
   "oldPrice": null,
+  "inStock": true,
   "image": "/assets/img/p/pled-flisovyi-sertsia-1.jpg",
   "images": [
    "/assets/img/p/pled-flisovyi-sertsia-1.jpg",

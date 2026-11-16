@@ -35,7 +35,7 @@ def photo(p):
 
 rows = []
 for p in P:
-    if p.get('inStock') is False or not p.get('url'):
+    if not p.get('url'):
         continue                                      # без сторінки товару Meta не прийме позицію
     page = open('.' + p['url'] + 'index.html', encoding='utf-8').read()
     meta = re.search(r'<meta name="description" content="([^"]*)"', page)
@@ -48,7 +48,7 @@ for p in P:
             'item_group_id': p['slug'],
             'title': ('%s, %s' % (p['name'], v['label'].lower()) if v['label'] else p['name'])[:150],
             'description': desc[:5000],
-            'availability': 'in stock',
+            'availability': 'out of stock' if v.get('out') or p.get('inStock') is False else 'in stock',
             'condition': 'new',
             'price': '%d UAH' % v['price'],
             'sale_price': '',

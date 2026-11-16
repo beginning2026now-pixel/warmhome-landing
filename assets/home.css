@@ -303,3 +303,5 @@ dialog .btn { margin-top: 22px; width: 100%; }
   .price { font-size: 32px; }
 }
 .cart-btn .n[hidden] { display: none; }
+.opts button:disabled { opacity: .5; cursor: not-allowed; background: transparent; border-style: dashed; }
+.buy .btn:disabled { opacity: .55; cursor: not-allowed; box-shadow: none; }

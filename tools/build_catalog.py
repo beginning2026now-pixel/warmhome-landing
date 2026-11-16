@@ -12,6 +12,8 @@ import json, math, os, sys, html, re, glob
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 C = json.load(open('tools/catalog.json', encoding='utf-8'))
+# наявність із tools/stock.json (оновлює tools/stock_check.py); немає файлу — усе в наявності
+STOCK = json.load(open('tools/stock.json', encoding='utf-8'))['variants'] if os.path.exists('tools/stock.json') else {}
 E = html.escape
 SITE = 'https://warmhome.in.ua'
 PREPAY = 200
@@ -52,13 +54,21 @@ def photos(p, src):
     return out
 
 
+def live(vs):
+    return [v for v in vs if not v.get('out')]
+
+
 def variants(p):
     vs = []
     for sku, table, size in p['variants']:
         drop = C['prices'][table][size]
         lace = table.endswith('_lace')
         label = C['sizes'][size] + (' з мереживом' if lace else '')
-        vs.append({'id': size + ('l' if lace else ''), 'size': size, 'label': label, 'sku': sku, 'price': sell(drop)})
+        vid = size + ('l' if lace else '')
+        v = {'id': vid, 'size': size, 'label': label, 'sku': sku, 'price': sell(drop)}
+        if STOCK.get('%s|%s' % (sku, vid), 1) < 1:
+            v['out'] = True
+        vs.append(v)
     vs.sort(key=lambda v: (SIZE_ORDER.index(v['size']), v['id'].endswith('l')))
     return vs
 
@@ -78,7 +88,7 @@ def page(p, prod, imgs, related):
     f = C['fabrics'][p['fabric']]
     name = prod['name']
     vs = prod['variants']
-    minp = min(v['price'] for v in vs)
+    minp = min(v['price'] for v in (live(vs) or vs))
     bedding = p['fabric'] != 'plaid'
     dept = ('Постільна білизна', 'bedding') if bedding else ('Пледи', 'plaids')
     dname = ('Флісовий плед «%s»' % p['color']) if not bedding else name.replace(' · ', ', колір: ').replace(p['color'], p['color'].lower())
@@ -90,7 +100,7 @@ def page(p, prod, imgs, related):
             dims.append([C['sizes'][s], f['dims'][s]])
     lace = f.get('lace_note') if any(v['id'].endswith('l') for v in vs) else None
     gal_th = ''.join('<button type="button" data-src="%s" aria-current="%s"><img src="%s" alt="" loading="lazy"></button>' % (E(u), 'true' if i == 0 else 'false', E(u)) for i, u in enumerate(imgs)) if len(imgs) > 1 else ''
-    rel = ''.join('<a class="card" href="%s"><img src="%s" alt="%s" loading="lazy"><span class="b"><span class="n">%s</span><span class="pr">від %d грн</span></span></a>' % (E(r['url']), E(r['image']), E(r['name']), E(r['name']), min(v['price'] for v in r['variants'])) for r in related)
+    rel = ''.join('<a class="card" href="%s"><img src="%s" alt="%s" loading="lazy"><span class="b"><span class="n">%s</span><span class="pr">від %d грн</span></span></a>' % (E(r['url']), E(r['image']), E(r['name']), E(r['name']), r['price']) for r in related)
     return TPL.format(
         title=E(name), desc=E(desc), url=SITE + prod['url'], og=SITE + imgs[0],
         dept=dept[0], deptid=dept[1], fabric=E(f['title']), name=E(name), lead=E(f['lead']), about=E(f['about']),
@@ -104,7 +114,7 @@ def page(p, prod, imgs, related):
         returns=('Постільна білизна належної якості за законом обміну та поверненню не підлягає, тому уважно оглядайте комплект у відділенні до оплати. Якщо знайдете брак або невідповідність розміру чи кольору — обміняємо.' if bedding else 'Якщо плед має брак або не відповідає опису — обміняємо чи повернемо гроші. Плед належної якості можна повернути протягом 14 днів, якщо збережено товарний вигляд і упаковку.'),
         head=HEADER, foot=FOOTER, icons=SPRITE,
         i_truck=ico('truck'), i_wallet=ico('wallet'), i_eye=ico('eye'),
-        content_id='%s-%s' % (vs[0]['sku'], vs[0]['id']),
+        content_id='%s-%s' % ((live(vs) or vs)[0]['sku'], (live(vs) or vs)[0]['id']),
     )
 
 
@@ -187,13 +197,13 @@ def main():
         prods.append({
             'slug': p['slug'], 'sku': vs[0]['sku'], 'name': NAME[p['fabric']].format(c=p['color']),
             'short': C['fabrics'][p['fabric']]['title'], 'fabric': p['fabric'],
-            'price': min(v['price'] for v in vs), 'oldPrice': None,
+            'price': min(v['price'] for v in (live(vs) or vs)), 'oldPrice': None, 'inStock': bool(live(vs)),
             'image': imgs[0], 'images': imgs, 'url': '/products/%s/' % p['slug'],
             'cat': [CAT[p['fabric']]], 'added': ADDED, 'variants': vs,
         })
     for p, prod in zip(C['products'], prods):
-        same = [r for r in prods if r['fabric'] == prod['fabric'] and r is not prod]
-        other = [r for r in prods if r['fabric'] != prod['fabric']]
+        same = [r for r in prods if r['fabric'] == prod['fabric'] and r is not prod and r['inStock']]
+        other = [r for r in prods if r['fabric'] != prod['fabric'] and r['inStock']]
         related = (same + other)[:4]
         os.makedirs('products/' + p['slug'], exist_ok=True)
         open('products/%s/index.html' % p['slug'], 'w', encoding='utf-8').write(page(p, prod, prod['images'], related))
@@ -204,7 +214,7 @@ def main():
     open('assets/products.js', 'w', encoding='utf-8').write(js)
     print('товарів:', len(prods))
     for r in prods:
-        print(' ', r['slug'], ', '.join('%s %d' % (v['label'], v['price']) for v in r['variants']))
+        print(' ', r['slug'], ', '.join('%s %d%s' % (v['label'], v['price'], ' (немає)' if v.get('out') else '') for v in r['variants']))
 
 
 if __name__ == '__main__':
