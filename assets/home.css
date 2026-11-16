@@ -88,6 +88,7 @@ section { scroll-margin-top: 72px; }
 .cat p { margin-top: 8px; color: var(--cocoa-d); max-width: 17em; }
 .cat .soon { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; margin-top: 22px; padding: 7px 14px; border-radius: 999px; background: rgba(255, 251, 246, .75); font-size: 13px; font-weight: 800; color: var(--cocoa); }
 .cat .count { align-self: flex-start; margin-top: 22px; font-weight: 800; color: var(--cocoa-d); display: inline-flex; gap: 6px; align-items: center; }
+.cat > div, .cat .soon, .cat .count { position: relative; z-index: 1; }
 .cat svg.deco { position: absolute; right: -14px; bottom: -14px; width: 54%; max-width: 250px; pointer-events: none; }
 
 /* Товари (коли зʼявляться) */
@@ -152,6 +153,7 @@ dialog .btn { margin-top: 22px; width: 100%; }
 @media (max-width: 960px) {
   .perks { grid-template-columns: 1fr 1fr; }
   .grid { grid-template-columns: repeat(3, 1fr); }
+  .cat svg.deco { width: 40%; }
 }
 @media (max-width: 820px) {
   .nav, .phone { display: none; }
