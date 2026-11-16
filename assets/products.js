@@ -63,7 +63,8 @@ window.PRODUCTS = [
     "sku": "8834",
     "price": 3500
    }
-  ]
+  ],
+  "sup": "VT"
  },
  {
   "slug": "varena-bavovna-nizhno-rozhevyi",
@@ -106,7 +107,8 @@ window.PRODUCTS = [
     "sku": "88111",
     "price": 3500
    }
-  ]
+  ],
+  "sup": "VT"
  },
  {
   "slug": "varena-bavovna-rozhevyi",
@@ -149,7 +151,8 @@ window.PRODUCTS = [
     "sku": "88113",
     "price": 3500
    }
-  ]
+  ],
+  "sup": "VT"
  },
  {
   "slug": "varena-bavovna-pisochnyi",
@@ -178,7 +181,8 @@ window.PRODUCTS = [
     "sku": "88123",
     "price": 3200
    }
-  ]
+  ],
+  "sup": "VT"
  },
  {
   "slug": "varena-bavovna-nyudovyi",
@@ -208,7 +212,8 @@ window.PRODUCTS = [
     "sku": "8812",
     "price": 3500
    }
-  ]
+  ],
+  "sup": "VT"
  },
  {
   "slug": "varena-bavovna-metalik",
@@ -251,7 +256,8 @@ window.PRODUCTS = [
     "sku": "8822",
     "price": 3500
    }
-  ]
+  ],
+  "sup": "VT"
  },
  {
   "slug": "varena-bavovna-siryi",
@@ -301,7 +307,8 @@ window.PRODUCTS = [
     "sku": "8821",
     "price": 3500
    }
-  ]
+  ],
+  "sup": "VT"
  },
  {
   "slug": "varena-bavovna-svitlo-siryi",
@@ -330,7 +337,8 @@ window.PRODUCTS = [
     "sku": "88119",
     "price": 3500
    }
-  ]
+  ],
+  "sup": "VT"
  },
  {
   "slug": "varena-bavovna-temno-siryi",
@@ -380,7 +388,8 @@ window.PRODUCTS = [
     "sku": "8814",
     "price": 3500
    }
-  ]
+  ],
+  "sup": "VT"
  },
  {
   "slug": "varena-bavovna-slyvovyi",
@@ -409,7 +418,8 @@ window.PRODUCTS = [
     "sku": "88118",
     "price": 3200
    }
-  ]
+  ],
+  "sup": "VT"
  },
  {
   "slug": "varena-bavovna-blakytnyi",
@@ -445,7 +455,8 @@ window.PRODUCTS = [
     "sku": "88121",
     "price": 3500
    }
-  ]
+  ],
+  "sup": "VT"
  },
  {
   "slug": "straip-satyn-bezhevyi",
@@ -489,7 +500,8 @@ window.PRODUCTS = [
     "sku": "541209",
     "price": 2900
    }
-  ]
+  ],
+  "sup": "VT"
  },
  {
   "slug": "straip-satyn-molochnyi",
@@ -531,7 +543,8 @@ window.PRODUCTS = [
     "sku": "54001",
     "price": 2500
    }
-  ]
+  ],
+  "sup": "VT"
  },
  {
   "slug": "straip-satyn-pudrovyi",
@@ -559,7 +572,8 @@ window.PRODUCTS = [
     "sku": "54005",
     "price": 2300
    }
-  ]
+  ],
+  "sup": "VT"
  },
  {
   "slug": "straip-satyn-bilyi",
@@ -595,7 +609,8 @@ window.PRODUCTS = [
     "sku": "54321",
     "price": 2500
    }
-  ]
+  ],
+  "sup": "VT"
  },
  {
   "slug": "straip-satyn-olyvkovyi",
@@ -630,7 +645,8 @@ window.PRODUCTS = [
     "sku": "54020",
     "price": 2900
    }
-  ]
+  ],
+  "sup": "VT"
  },
  {
   "slug": "straip-satyn-shokoladnyi",
@@ -658,7 +674,8 @@ window.PRODUCTS = [
     "sku": "54024",
     "price": 2300
    }
-  ]
+  ],
+  "sup": "VT"
  },
  {
   "slug": "straip-satyn-buzkovyi",
@@ -686,7 +703,8 @@ window.PRODUCTS = [
     "sku": "54021",
     "price": 2300
    }
-  ]
+  ],
+  "sup": "VT"
  },
  {
   "slug": "satyn-odnotonnyi-pudra",
@@ -722,7 +740,8 @@ window.PRODUCTS = [
     "sku": "191605",
     "price": 2500
    }
-  ]
+  ],
+  "sup": "VT"
  },
  {
   "slug": "pled-flisovyi-zaichyky",
@@ -750,7 +769,8 @@ window.PRODUCTS = [
     "sku": "1151",
     "price": 1300
    }
-  ]
+  ],
+  "sup": "VT"
  },
  {
   "slug": "pled-flisovyi-sertsia",
@@ -779,7 +799,421 @@ window.PRODUCTS = [
     "sku": "11100",
     "price": 1300
    }
-  ]
+  ],
+  "sup": "VT"
+ },
+ {
+  "slug": "biaz-gold-smuzhka-sira",
+  "sku": "AZ-G01",
+  "name": "Комплект з бязі Gold · Смужка сіра",
+  "short": "Бязь Gold",
+  "fabric": "gold",
+  "price": 1300,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/biaz-gold-smuzhka-sira-1.jpg",
+  "images": [
+   "/assets/img/p/biaz-gold-smuzhka-sira-1.jpg",
+   "/assets/img/p/biaz-gold-smuzhka-sira-2.jpg",
+   "/assets/img/p/biaz-gold-smuzhka-sira-3.jpg",
+   "/assets/img/p/biaz-gold-smuzhka-sira-4.jpg"
+  ],
+  "url": "/products/biaz-gold-smuzhka-sira/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T20:00",
+  "variants": [
+   {
+    "id": "15",
+    "size": "15",
+    "label": "Півтораспальний",
+    "sku": "AZ-G01",
+    "price": 1300
+   },
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "AZ-G01",
+    "price": 1400
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "AZ-G01",
+    "price": 1400
+   },
+   {
+    "id": "s",
+    "size": "s",
+    "label": "Сімейний",
+    "sku": "AZ-G01",
+    "price": 1600
+   }
+  ],
+  "sup": "AZ"
+ },
+ {
+  "slug": "biaz-gold-smuzhka-chorno-sira",
+  "sku": "AZ-G02",
+  "name": "Комплект з бязі Gold · Смужка чорно-сіра",
+  "short": "Бязь Gold",
+  "fabric": "gold",
+  "price": 1300,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/biaz-gold-smuzhka-chorno-sira-1.jpg",
+  "images": [
+   "/assets/img/p/biaz-gold-smuzhka-chorno-sira-1.jpg",
+   "/assets/img/p/biaz-gold-smuzhka-chorno-sira-2.jpg",
+   "/assets/img/p/biaz-gold-smuzhka-chorno-sira-3.jpg",
+   "/assets/img/p/biaz-gold-smuzhka-chorno-sira-4.jpg"
+  ],
+  "url": "/products/biaz-gold-smuzhka-chorno-sira/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T20:00",
+  "variants": [
+   {
+    "id": "15",
+    "size": "15",
+    "label": "Півтораспальний",
+    "sku": "AZ-G02",
+    "price": 1300
+   },
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "AZ-G02",
+    "price": 1400
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "AZ-G02",
+    "price": 1400
+   },
+   {
+    "id": "s",
+    "size": "s",
+    "label": "Сімейний",
+    "sku": "AZ-G02",
+    "price": 1600
+   }
+  ],
+  "sup": "AZ"
+ },
+ {
+  "slug": "biaz-gold-smuzhka-bezh",
+  "sku": "AZ-G03",
+  "name": "Комплект з бязі Gold · Смужка бежева",
+  "short": "Бязь Gold",
+  "fabric": "gold",
+  "price": 1300,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/biaz-gold-smuzhka-bezh-1.jpg",
+  "images": [
+   "/assets/img/p/biaz-gold-smuzhka-bezh-1.jpg",
+   "/assets/img/p/biaz-gold-smuzhka-bezh-2.jpg",
+   "/assets/img/p/biaz-gold-smuzhka-bezh-3.jpg",
+   "/assets/img/p/biaz-gold-smuzhka-bezh-4.jpg"
+  ],
+  "url": "/products/biaz-gold-smuzhka-bezh/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T20:00",
+  "variants": [
+   {
+    "id": "15",
+    "size": "15",
+    "label": "Півтораспальний",
+    "sku": "AZ-G03",
+    "price": 1300
+   },
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "AZ-G03",
+    "price": 1400
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "AZ-G03",
+    "price": 1400
+   },
+   {
+    "id": "s",
+    "size": "s",
+    "label": "Сімейний",
+    "sku": "AZ-G03",
+    "price": 1600
+   }
+  ],
+  "sup": "AZ"
+ },
+ {
+  "slug": "biaz-gold-smuzhka-temno-zelena",
+  "sku": "AZ-G04",
+  "name": "Комплект з бязі Gold · Смужка темно-зелена",
+  "short": "Бязь Gold",
+  "fabric": "gold",
+  "price": 1300,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/biaz-gold-smuzhka-temno-zelena-1.jpg",
+  "images": [
+   "/assets/img/p/biaz-gold-smuzhka-temno-zelena-1.jpg",
+   "/assets/img/p/biaz-gold-smuzhka-temno-zelena-2.jpg",
+   "/assets/img/p/biaz-gold-smuzhka-temno-zelena-3.jpg",
+   "/assets/img/p/biaz-gold-smuzhka-temno-zelena-4.jpg"
+  ],
+  "url": "/products/biaz-gold-smuzhka-temno-zelena/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T20:00",
+  "variants": [
+   {
+    "id": "15",
+    "size": "15",
+    "label": "Півтораспальний",
+    "sku": "AZ-G04",
+    "price": 1300
+   },
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "AZ-G04",
+    "price": 1400
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "AZ-G04",
+    "price": 1400
+   },
+   {
+    "id": "s",
+    "size": "s",
+    "label": "Сімейний",
+    "sku": "AZ-G04",
+    "price": 1600
+   }
+  ],
+  "sup": "AZ"
+ },
+ {
+  "slug": "biaz-gold-karat-siryi",
+  "sku": "AZ-G05",
+  "name": "Комплект з бязі Gold · Карат сірий",
+  "short": "Бязь Gold",
+  "fabric": "gold",
+  "price": 1300,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/biaz-gold-karat-siryi-1.jpg",
+  "images": [
+   "/assets/img/p/biaz-gold-karat-siryi-1.jpg",
+   "/assets/img/p/biaz-gold-karat-siryi-2.jpg",
+   "/assets/img/p/biaz-gold-karat-siryi-3.jpg",
+   "/assets/img/p/biaz-gold-karat-siryi-4.jpg"
+  ],
+  "url": "/products/biaz-gold-karat-siryi/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T20:00",
+  "variants": [
+   {
+    "id": "15",
+    "size": "15",
+    "label": "Півтораспальний",
+    "sku": "AZ-G05",
+    "price": 1300
+   },
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "AZ-G05",
+    "price": 1400
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "AZ-G05",
+    "price": 1400
+   },
+   {
+    "id": "s",
+    "size": "s",
+    "label": "Сімейний",
+    "sku": "AZ-G05",
+    "price": 1600
+   }
+  ],
+  "sup": "AZ"
+ },
+ {
+  "slug": "biaz-gold-karat-zelenyi",
+  "sku": "AZ-G06",
+  "name": "Комплект з бязі Gold · Карат зелений",
+  "short": "Бязь Gold",
+  "fabric": "gold",
+  "price": 1300,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/biaz-gold-karat-zelenyi-1.jpg",
+  "images": [
+   "/assets/img/p/biaz-gold-karat-zelenyi-1.jpg",
+   "/assets/img/p/biaz-gold-karat-zelenyi-2.jpg",
+   "/assets/img/p/biaz-gold-karat-zelenyi-3.jpg",
+   "/assets/img/p/biaz-gold-karat-zelenyi-4.jpg"
+  ],
+  "url": "/products/biaz-gold-karat-zelenyi/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T20:00",
+  "variants": [
+   {
+    "id": "15",
+    "size": "15",
+    "label": "Півтораспальний",
+    "sku": "AZ-G06",
+    "price": 1300
+   },
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "AZ-G06",
+    "price": 1400
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "AZ-G06",
+    "price": 1400
+   },
+   {
+    "id": "s",
+    "size": "s",
+    "label": "Сімейний",
+    "sku": "AZ-G06",
+    "price": 1600
+   }
+  ],
+  "sup": "AZ"
+ },
+ {
+  "slug": "straip-satyn-siryi",
+  "sku": "AZ-S01",
+  "name": "Комплект зі страйп-сатину · Сірий",
+  "short": "Страйп-сатин",
+  "fabric": "stripe_a",
+  "price": 1200,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/straip-satyn-siryi-1.jpg",
+  "images": [
+   "/assets/img/p/straip-satyn-siryi-1.jpg",
+   "/assets/img/p/straip-satyn-siryi-2.jpg"
+  ],
+  "url": "/products/straip-satyn-siryi/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T20:00",
+  "variants": [
+   {
+    "id": "15",
+    "size": "15",
+    "label": "Півтораспальний",
+    "sku": "AZ-S01",
+    "price": 1200
+   },
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "AZ-S01",
+    "price": 1300
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "AZ-S01",
+    "price": 1300
+   },
+   {
+    "id": "s",
+    "size": "s",
+    "label": "Сімейний",
+    "sku": "AZ-S01",
+    "price": 1500
+   }
+  ],
+  "sup": "AZ"
+ },
+ {
+  "slug": "straip-satyn-svitlo-siryi",
+  "sku": "AZ-S02",
+  "name": "Комплект зі страйп-сатину · Світло-сірий",
+  "short": "Страйп-сатин",
+  "fabric": "stripe_a",
+  "price": 1300,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/straip-satyn-svitlo-siryi-1.jpg",
+  "images": [
+   "/assets/img/p/straip-satyn-svitlo-siryi-1.jpg",
+   "/assets/img/p/straip-satyn-svitlo-siryi-2.jpg"
+  ],
+  "url": "/products/straip-satyn-svitlo-siryi/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T20:00",
+  "variants": [
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "AZ-S02",
+    "price": 1300
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "AZ-S02",
+    "price": 1300
+   },
+   {
+    "id": "s",
+    "size": "s",
+    "label": "Сімейний",
+    "sku": "AZ-S02",
+    "price": 1500
+   }
+  ],
+  "sup": "AZ"
  }
 ];
 

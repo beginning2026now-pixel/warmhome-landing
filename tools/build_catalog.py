@@ -24,8 +24,10 @@ NAME = {
     'stripe': 'Комплект зі страйп-сатину · {c}',
     'satin': 'Комплект з однотонного сатину · {c}',
     'plaid': 'Флісовий плед · {c}',
+    'gold': 'Комплект з бязі Gold · {c}',
+    'stripe_a': 'Комплект зі страйп-сатину · {c}',
 }
-CAT = {'varena': 'sets', 'stripe': 'sets', 'satin': 'sets', 'plaid': 'plaids'}
+CAT = {'varena': 'sets', 'stripe': 'sets', 'satin': 'sets', 'plaid': 'plaids', 'gold': 'sets', 'stripe_a': 'sets'}
 SIZE_ORDER = ['15', '2', 'e', 's']
 
 
@@ -106,7 +108,7 @@ def page(p, prod, imgs, related):
         dept=dept[0], deptid=dept[1], fabric=E(f['title']), name=E(name), lead=E(f['lead']), about=E(f['about']),
         main=E(imgs[0]), thumbs=gal_th, slug=p['slug'], minp=minp,
         opt_label='Розмір комплекту' if bedding else 'Розмір',
-        pillow_block=PILLOW if bedding else '',
+        pillow_block=pillow_block(f) if bedding else '',
         specs=''.join('<tr><td>%s</td><td>%s</td></tr>' % (E(a), E(b)) for a, b in specs),
         dims=''.join('<tr><td>%s</td><td>%s</td></tr>' % (E(a), E(b)) for a, b in dims),
         lace=('<p>%s</p>' % E(lace)) if lace else '',
@@ -116,6 +118,12 @@ def page(p, prod, imgs, related):
         i_truck=ico('truck'), i_wallet=ico('wallet'), i_eye=ico('eye'),
         content_id='%s-%s' % ((live(vs) or vs)[0]['sku'], (live(vs) or vs)[0]['id']),
     )
+
+
+def pillow_block(f):
+    opts = f.get('pillows', ['70×70', '50×70'])
+    btns = ''.join('<button type="button" data-p="%s" aria-pressed="%s">%s см</button>' % (o, 'true' if i == 0 else 'false', o) for i, o in enumerate(opts))
+    return '<div class="opt-l">Наволочки</div>\n          <div class="opts" id="pillow">%s</div>' % btns
 
 
 PILLOW = '''<div class="opt-l">Наволочки</div>
@@ -199,7 +207,8 @@ def main():
             'short': C['fabrics'][p['fabric']]['title'], 'fabric': p['fabric'],
             'price': min(v['price'] for v in (live(vs) or vs)), 'oldPrice': None, 'inStock': bool(live(vs)),
             'image': imgs[0], 'images': imgs, 'url': '/products/%s/' % p['slug'],
-            'cat': [CAT[p['fabric']]], 'added': ADDED, 'variants': vs,
+            'cat': [CAT[p['fabric']]], 'added': p.get('added', ADDED), 'variants': vs,
+            'sup': C['suppliers'][p['supplier']]['code'],
         })
     for p, prod in zip(C['products'], prods):
         same = [r for r in prods if r['fabric'] == prod['fabric'] and r is not prod and r['inStock']]

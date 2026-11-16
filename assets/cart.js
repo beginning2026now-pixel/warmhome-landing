@@ -82,7 +82,7 @@ window.WHGuard = (function () {
     const [slug, vid, pil] = String(key).split('|');
     const p = (window.PRODUCTS || []).find(x => x.slug === slug); if (!p) return null;
     const v = (p.variants || []).find(x => x.id === vid); if (!v || v.out) return null;
-    return { key, p, v, pil: pil || '', name: p.name, opt: v.label + (pil ? ', наволочки ' + pil : ''), price: v.price, sku: v.sku, cid: v.sku + '-' + v.id, image: p.image, url: p.url };
+    return { key, p, v, pil: pil || '', name: p.name, opt: v.label + (pil ? ', наволочки ' + pil : ''), price: v.price, sku: v.sku, sup: p.sup || '', cid: v.sku + '-' + v.id, image: p.image, url: p.url };
   }
 
   /* ---------- UTM на весь візит ---------- */
@@ -245,7 +245,7 @@ window.WHGuard = (function () {
     if (!ok.firstName) return form.firstName.focus(); if (!ok.lastName) return form.lastName.focus(); if (!ok.phone) return form.phone.focus(); if (!ok.np) return (cityRef ? form.warehouse : form.city).focus();
     const ls = lines(); if (!ls.length) return show('items');
     const sum = total();
-    const list = ls.map(i => `• ${i.name} — ${i.opt} (арт. ${i.sku}) × ${i.qty} = ${i.qty * i.price} грн`).join('\n');
+    const list = ls.map(i => `• ${i.name} — ${i.opt} (арт. ${i.sku}${i.sup ? ', ' + i.sup : ''}) × ${i.qty} = ${i.qty * i.price} грн`).join('\n');
     const utm = getUTM();
     const flags = WHGuard.check({ firstName, lastName, phone, warehouse: `${city}, ${wh}`, product: ls.map(i => i.key).join(',') });
     const text = ['🛒 <b>Нове замовлення</b>', '', ...WHGuard.html(flags, esc), esc(list), '', `💰 <b>Разом:</b> ${sum} грн (передоплата ${PREPAY} грн, післяплата ${sum - PREPAY} грн)`, '', `👤 <b>Імʼя:</b> ${esc(name)}`, `📞 <b>Телефон:</b> ${esc(phone)}`, `🚚 <b>НП:</b> ${esc(city)}, ${esc(wh)}`,

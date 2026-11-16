@@ -104,6 +104,67 @@
     "e": "200×220 см",
     "15": "150×220 см"
    }
+  },
+  "gold": {
+   "title": "Бязь Gold",
+   "lead": "Щільна натуральна бавовна, яка мʼякшає з кожним пранням і довго тримає охайний вигляд.",
+   "about": "Бязь Gold — бавовняна тканина полотняного переплетення підвищеної щільності. Вона дихає, добре вбирає вологу, не електризується і спокійно витримує часте прання. Комплект пошитий в Україні.",
+   "props": [
+    [
+     "Склад",
+     "100% бавовна (бязь Gold)"
+    ],
+    [
+     "Виробництво",
+     "Україна"
+    ],
+    [
+     "Комплектація",
+     "підковдра, простирадло, 2 наволочки"
+    ],
+    [
+     "Наволочки",
+     "70×70 см"
+    ]
+   ],
+   "dims": {
+    "15": "підковдра 150×220, простирадло 150×220 см",
+    "2": "підковдра 180×220, простирадло 200×220 см",
+    "e": "підковдра 200×220, простирадло 200×220 см",
+    "s": "2 підковдри 150×220, простирадло 200×220 см"
+   },
+   "pillows": [
+    "70×70"
+   ]
+  },
+  "stripe_a": {
+   "title": "Страйп-сатин",
+   "lead": "Гладенька тканина з ледь помітною смужкою: мʼяка, приємна до тіла й легко переться.",
+   "about": "Склад — 85% бавовни і 15% поліестеру, щільність 135 г/м². Завдяки цьому тканина добре тримає форму, менше мнеться і довго зберігає колір.",
+   "props": [
+    [
+     "Склад",
+     "85% бавовна, 15% поліестер"
+    ],
+    [
+     "Щільність",
+     "135 г/м²"
+    ],
+    [
+     "Комплектація",
+     "підковдра, простирадло, 2 наволочки"
+    ],
+    [
+     "Наволочки",
+     "70×70 або 50×70 см на вибір"
+    ]
+   ],
+   "dims": {
+    "15": "підковдра 145×210, простирадло 150×220 см",
+    "2": "підковдра 175×210, простирадло 200×220 см",
+    "e": "підковдра 200×210, простирадло 220×240 см",
+    "s": "2 підковдри 145×210, простирадло 220×240 см"
+   }
   }
  },
  "sizes": {
@@ -140,6 +201,18 @@
    "15": 636,
    "2": 752,
    "e": 809
+  },
+  "gold": {
+   "15": 730,
+   "2": 820,
+   "e": 900,
+   "s": 1060
+  },
+  "stripe_a": {
+   "15": 690,
+   "2": 740,
+   "e": 790,
+   "s": 950
   }
  },
  "products": [
@@ -169,7 +242,8 @@
      "varena_lace",
      "e"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
   },
   {
    "slug": "varena-bavovna-nizhno-rozhevyi",
@@ -192,7 +266,8 @@
      "varena_lace",
      "e"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
   },
   {
    "slug": "varena-bavovna-rozhevyi",
@@ -215,7 +290,8 @@
      "varena_lace",
      "e"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
   },
   {
    "slug": "varena-bavovna-pisochnyi",
@@ -228,7 +304,8 @@
      "varena_lace",
      "2"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
   },
   {
    "slug": "varena-bavovna-nyudovyi",
@@ -241,7 +318,8 @@
      "varena_lace",
      "e"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
   },
   {
    "slug": "varena-bavovna-metalik",
@@ -264,7 +342,8 @@
      "varena_lace",
      "e"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
   },
   {
    "slug": "varena-bavovna-siryi",
@@ -292,7 +371,8 @@
      "varena_lace",
      "e"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
   },
   {
    "slug": "varena-bavovna-svitlo-siryi",
@@ -305,7 +385,8 @@
      "varena_lace",
      "e"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
   },
   {
    "slug": "varena-bavovna-temno-siryi",
@@ -333,7 +414,8 @@
      "varena_lace",
      "e"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
   },
   {
    "slug": "varena-bavovna-slyvovyi",
@@ -346,7 +428,8 @@
      "varena_lace",
      "2"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
   },
   {
    "slug": "varena-bavovna-blakytnyi",
@@ -364,7 +447,8 @@
      "varena_lace",
      "e"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
   },
   {
    "slug": "straip-satyn-bezhevyi",
@@ -387,7 +471,8 @@
      "stripe",
      "s"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
   },
   {
    "slug": "straip-satyn-molochnyi",
@@ -410,7 +495,8 @@
      "stripe",
      "e"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
   },
   {
    "slug": "straip-satyn-pudrovyi",
@@ -423,7 +509,8 @@
      "stripe",
      "2"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
   },
   {
    "slug": "straip-satyn-bilyi",
@@ -441,7 +528,8 @@
      "stripe",
      "e"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
   },
   {
    "slug": "straip-satyn-olyvkovyi",
@@ -459,7 +547,8 @@
      "stripe",
      "s"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
   },
   {
    "slug": "straip-satyn-shokoladnyi",
@@ -472,7 +561,8 @@
      "stripe",
      "2"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
   },
   {
    "slug": "straip-satyn-buzkovyi",
@@ -485,7 +575,8 @@
      "stripe",
      "2"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
   },
   {
    "slug": "satyn-odnotonnyi-pudra",
@@ -504,7 +595,8 @@
      "satin",
      "e"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
   },
   {
    "slug": "pled-flisovyi-zaichyky",
@@ -518,7 +610,8 @@
      "plaid",
      "2"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
   },
   {
    "slug": "pled-flisovyi-sertsia",
@@ -531,7 +624,291 @@
      "plaid",
      "2"
     ]
-   ]
+   ],
+   "supplier": "vanilla"
+  },
+  {
+   "slug": "biaz-gold-smuzhka-sira",
+   "fabric": "gold",
+   "color": "Смужка сіра",
+   "img": "az-g-sira",
+   "supplier": "arzy",
+   "src": {
+    "sheet": "ГОЛД",
+    "name": "смужка сіра"
+   },
+   "variants": [
+    [
+     "AZ-G01",
+     "gold",
+     "15"
+    ],
+    [
+     "AZ-G01",
+     "gold",
+     "2"
+    ],
+    [
+     "AZ-G01",
+     "gold",
+     "e"
+    ],
+    [
+     "AZ-G01",
+     "gold",
+     "s"
+    ]
+   ],
+   "added": "2026-11-16T20:00"
+  },
+  {
+   "slug": "biaz-gold-smuzhka-chorno-sira",
+   "fabric": "gold",
+   "color": "Смужка чорно-сіра",
+   "img": "az-g-chs",
+   "supplier": "arzy",
+   "src": {
+    "sheet": "ГОЛД",
+    "name": "смужка чорно-сіра"
+   },
+   "variants": [
+    [
+     "AZ-G02",
+     "gold",
+     "15"
+    ],
+    [
+     "AZ-G02",
+     "gold",
+     "2"
+    ],
+    [
+     "AZ-G02",
+     "gold",
+     "e"
+    ],
+    [
+     "AZ-G02",
+     "gold",
+     "s"
+    ]
+   ],
+   "added": "2026-11-16T20:00"
+  },
+  {
+   "slug": "biaz-gold-smuzhka-bezh",
+   "fabric": "gold",
+   "color": "Смужка бежева",
+   "img": "az-g-bezh",
+   "supplier": "arzy",
+   "src": {
+    "sheet": "ГОЛД",
+    "name": "смужка беж голд"
+   },
+   "variants": [
+    [
+     "AZ-G03",
+     "gold",
+     "15"
+    ],
+    [
+     "AZ-G03",
+     "gold",
+     "2"
+    ],
+    [
+     "AZ-G03",
+     "gold",
+     "e"
+    ],
+    [
+     "AZ-G03",
+     "gold",
+     "s"
+    ]
+   ],
+   "added": "2026-11-16T20:00"
+  },
+  {
+   "slug": "biaz-gold-smuzhka-temno-zelena",
+   "fabric": "gold",
+   "color": "Смужка темно-зелена",
+   "img": "az-g-tz",
+   "supplier": "arzy",
+   "src": {
+    "sheet": "ГОЛД",
+    "name": "смужка темно-зелена"
+   },
+   "variants": [
+    [
+     "AZ-G04",
+     "gold",
+     "15"
+    ],
+    [
+     "AZ-G04",
+     "gold",
+     "2"
+    ],
+    [
+     "AZ-G04",
+     "gold",
+     "e"
+    ],
+    [
+     "AZ-G04",
+     "gold",
+     "s"
+    ]
+   ],
+   "added": "2026-11-16T20:00"
+  },
+  {
+   "slug": "biaz-gold-karat-siryi",
+   "fabric": "gold",
+   "color": "Карат сірий",
+   "img": "az-k-sira",
+   "supplier": "arzy",
+   "src": {
+    "sheet": "ГОЛД",
+    "name": "карат сірий"
+   },
+   "variants": [
+    [
+     "AZ-G05",
+     "gold",
+     "15"
+    ],
+    [
+     "AZ-G05",
+     "gold",
+     "2"
+    ],
+    [
+     "AZ-G05",
+     "gold",
+     "e"
+    ],
+    [
+     "AZ-G05",
+     "gold",
+     "s"
+    ]
+   ],
+   "added": "2026-11-16T20:00"
+  },
+  {
+   "slug": "biaz-gold-karat-zelenyi",
+   "fabric": "gold",
+   "color": "Карат зелений",
+   "img": "az-k-zel",
+   "supplier": "arzy",
+   "src": {
+    "sheet": "ГОЛД",
+    "name": "карат зелений"
+   },
+   "variants": [
+    [
+     "AZ-G06",
+     "gold",
+     "15"
+    ],
+    [
+     "AZ-G06",
+     "gold",
+     "2"
+    ],
+    [
+     "AZ-G06",
+     "gold",
+     "e"
+    ],
+    [
+     "AZ-G06",
+     "gold",
+     "s"
+    ]
+   ],
+   "added": "2026-11-16T20:00"
+  },
+  {
+   "slug": "straip-satyn-siryi",
+   "fabric": "stripe_a",
+   "color": "Сірий",
+   "img": "az-s-sira",
+   "supplier": "arzy",
+   "src": {
+    "sheet": "САТИНИ/СТРАЙП",
+    "name": "страйп сірий"
+   },
+   "variants": [
+    [
+     "AZ-S01",
+     "stripe_a",
+     "15"
+    ],
+    [
+     "AZ-S01",
+     "stripe_a",
+     "2"
+    ],
+    [
+     "AZ-S01",
+     "stripe_a",
+     "e"
+    ],
+    [
+     "AZ-S01",
+     "stripe_a",
+     "s"
+    ]
+   ],
+   "added": "2026-11-16T20:00"
+  },
+  {
+   "slug": "straip-satyn-svitlo-siryi",
+   "fabric": "stripe_a",
+   "color": "Світло-сірий",
+   "img": "az-s-ssira",
+   "supplier": "arzy",
+   "src": {
+    "sheet": "САТИНИ/СТРАЙП",
+    "name": "страйп світло-сірий"
+   },
+   "variants": [
+    [
+     "AZ-S02",
+     "stripe_a",
+     "2"
+    ],
+    [
+     "AZ-S02",
+     "stripe_a",
+     "e"
+    ],
+    [
+     "AZ-S02",
+     "stripe_a",
+     "s"
+    ]
+   ],
+   "added": "2026-11-16T20:00"
   }
- ]
+ ],
+ "suppliers": {
+  "vanilla": {
+   "name": "Vanilla Textile",
+   "code": "VT",
+   "channel": "https://t.me/vanilla_textile_drop",
+   "manager": "@Yulia_mng",
+   "sheet": "https://docs.google.com/spreadsheets/d/1_McBnpFGO-onnVIqCCfoHM0M6DDMZn9N04jWY959XoQ/edit?gid=1910900110"
+  },
+  "arzy": {
+   "name": "Arzy Shop",
+   "code": "AZ",
+   "channel": "https://t.me/arzy_shop",
+   "manager": "@arzy_admin",
+   "sheet": "https://docs.google.com/spreadsheets/d/138kGrGBaQEtqbHwxIPPLM82mKcGFApsXpJGrea2tTp8/htmlview"
+  }
+ }
 }
