@@ -153,9 +153,10 @@ HEADER = '''<div class="topbar">Відправка за 2–3 дні · Пере
         <span>WarmHome <em>UA</em></span>
       </a>
       <nav class="nav" aria-label="Розділи">
-        <a href="/#catalog">Каталог</a>
+        <a href="/catalog/bedding/">Постільна білизна</a>
+        <a href="/catalog/plaids/">Пледи</a>
+        <a href="/catalog/toys/">Іграшки</a>
         <a href="/#how">Доставка</a>
-        <a href="/#faq">Питання</a>
       </nav>
       <div class="head-r">
         <a class="phone" href="tel:+380990227684"><svg class="ico"><use href="#i-phone"/></svg>+38 (099) 022-76-84</a>
@@ -164,7 +165,9 @@ HEADER = '''<div class="topbar">Відправка за 2–3 дні · Пере
       </div>
     </div>
     <nav class="mnav" id="mnav" aria-label="Меню">
-      <a href="/#catalog">Каталог</a>
+      <a href="/catalog/bedding/">Постільна білизна</a>
+      <a href="/catalog/plaids/">Пледи</a>
+      <a href="/catalog/toys/">Іграшки з пледом</a>
       <a href="/#how">Доставка та оплата</a>
       <a href="/#faq">Часті питання</a>
       <a href="tel:+380990227684">+38 (099) 022-76-84</a>
@@ -200,6 +203,72 @@ FOOTER = '''<footer class="foot">
   </footer>''' % LOGO.format(bg='#FFFBF6')
 
 TPL = open(os.path.join(ROOT, 'tools', 'product_template.html'), encoding='utf-8').read()
+CTPL = open(os.path.join(ROOT, 'tools', 'category_template.html'), encoding='utf-8').read()
+
+# Сторінки категорій: /catalog/<id>/
+CATEGORIES = [
+    {'id': 'bedding', 'cat': 'sets', 'name': 'Постільна білизна',
+     'text': 'Варена бавовна, сатин, страйп-сатин і бязь Gold — від півтораспальних до сімейних комплектів.',
+     'art': '<svg viewBox="0 0 400 300"><ellipse cx="200" cy="272" rx="160" ry="10" fill="#D9C7B1" opacity=".6"/>'
+            '<rect x="70" y="190" width="260" height="74" rx="22" fill="#C9A88A"/><path d="M92 228h216" stroke="#B9977A" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>'
+            '<rect x="80" y="122" width="240" height="72" rx="22" fill="#FFFBF6"/><path d="M104 144h192M104 158h192M104 172h192" stroke="#EADBC9" stroke-width="3" stroke-linecap="round"/>'
+            '<rect x="92" y="56" width="216" height="70" rx="22" fill="#EBCFC0"/><path d="M120 72c9 7 9 31 0 38M150 72c9 7 9 31 0 38M180 72c9 7 9 31 0 38M210 72c9 7 9 31 0 38M240 72c9 7 9 31 0 38" fill="none" stroke="#DDB9A7" stroke-width="3" stroke-linecap="round"/>'
+            '<rect x="262" y="56" width="18" height="208" fill="#8B6B55" opacity=".85"/></svg>'},
+    {'id': 'plaids', 'cat': 'plaids', 'name': 'Пледи',
+     'text': 'Флісові, плюшеві та двосторонні пледи-покривала для ліжка й дивана.',
+     'art': '<svg viewBox="0 0 400 300"><ellipse cx="200" cy="272" rx="160" ry="10" fill="#D9C7B1" opacity=".6"/>'
+            '<rect x="60" y="150" width="280" height="104" rx="28" fill="#FFFBF6"/><path d="M92 150v104M124 150v104M156 150v104M188 150v104M220 150v104M252 150v104M284 150v104M316 150v104M60 186h280M60 220h280" stroke="#F0DFD5" stroke-width="6"/>'
+            '<path d="M74 254v12M90 254v12M106 254v12M122 254v12M138 254v12M154 254v12M170 254v12M186 254v12M202 254v12M218 254v12M234 254v12M250 254v12M266 254v12M282 254v12M298 254v12M314 254v12M330 254v12" stroke="#D8B3A0" stroke-width="3" stroke-linecap="round"/>'
+            '<rect x="96" y="70" width="208" height="86" rx="43" fill="#C9A88A"/><circle cx="139" cy="113" r="30" fill="#D8BCA2"/><circle cx="139" cy="113" r="16" fill="#C9A88A"/><circle cx="139" cy="113" r="5" fill="#B9977A"/></svg>'},
+    {'id': 'toys', 'cat': 'toys', 'name': 'Іграшки з пледом',
+     'text': 'Мʼякі ведмедики, усередині яких захований теплий плед 100×150 см.',
+     'art': '<svg viewBox="0 0 400 300"><ellipse cx="200" cy="276" rx="150" ry="10" fill="#D9C7B1" opacity=".6"/>'
+            '<circle cx="146" cy="70" r="28" fill="#C9A88A"/><circle cx="146" cy="70" r="14" fill="#E3D3BF"/><circle cx="254" cy="70" r="28" fill="#C9A88A"/><circle cx="254" cy="70" r="14" fill="#E3D3BF"/>'
+            '<ellipse cx="200" cy="208" rx="92" ry="72" fill="#C9A88A"/><circle cx="200" cy="112" r="66" fill="#D2B193"/>'
+            '<ellipse cx="200" cy="132" rx="28" ry="21" fill="#EADBC9"/><ellipse cx="200" cy="124" rx="9" ry="7" fill="#6F5241"/><path d="M200 131v8M191 141c5 4 13 4 18 0" fill="none" stroke="#6F5241" stroke-width="3" stroke-linecap="round"/>'
+            '<circle cx="176" cy="100" r="6" fill="#6F5241"/><circle cx="224" cy="100" r="6" fill="#6F5241"/>'
+            '<path d="M128 196h144v70a14 14 0 0 1-14 14H142a14 14 0 0 1-14-14Z" fill="#FFFBF6"/><path d="M152 196v84M176 196v84M200 196v84M224 196v84M248 196v84M128 224h144M128 252h144" stroke="#F0DFD5" stroke-width="5"/>'
+            '<ellipse cx="116" cy="214" rx="22" ry="30" fill="#D2B193"/><ellipse cx="284" cy="214" rx="22" ry="30" fill="#D2B193"/></svg>'},
+]
+
+
+def word(n):
+    return 'товар' if n % 10 == 1 and n % 100 != 11 else 'товари' if 2 <= n % 10 <= 4 and not 12 <= n % 100 <= 14 else 'товарів'
+
+
+def card(r):
+    labels = []
+    for v in r['variants']:
+        if not v.get('out') and v['label'] not in labels:
+            labels.append(v['label'])
+    many = len([v for v in r['variants'] if not v.get('out')]) > 1
+    return ('<a class="card" href="%s" data-f="%s"><img src="%s" alt="%s" loading="lazy"><span class="b"><span class="n">%s</span>'
+            '<span style="font-size:13px;color:var(--muted)">%s</span><span class="pr">%s%s грн</span></span></a>') % (
+        E(r['url']), E(r['short']), E(r['image']), E(r['name']), E(r['name']), E(' · '.join(labels)),
+        'від ' if many else '', '{:,}'.format(r['price']).replace(',', '\u00a0'))
+
+
+def category_pages(prods):
+    for c in CATEGORIES:
+        items = [r for r in prods if c['cat'] in r['cat'] and r['inStock']]
+        fabs = []                                   # фільтр за назвою тканини (страйп-сатин двох постачальників — одна кнопка)
+        for r in items:
+            if r['short'] not in fabs:
+                fabs.append(r['short'])
+        chips = ''
+        if len(fabs) > 1:
+            chips = '<div class="chips" id="chips"><button type="button" data-f="" aria-pressed="true">Усі</button>%s</div>' % ''.join(
+                '<button type="button" data-f="%s" aria-pressed="false">%s</button>' % (E(f), E(f)) for f in fabs)
+        cnav = ''.join('<a href="/catalog/%s/"%s>%s</a>' % (x['id'], ' aria-current="page"' if x is c else '', E(x['name'])) for x in CATEGORIES)
+        html_ = CTPL.format(
+            id=c['id'], name=E(c['name']), text=E(c['text']), desc=E(c['name'] + ' — ' + c['text'] + ' Доставка Новою Поштою, передоплата 200 грн.'),
+            url='%s/catalog/%s/' % (SITE, c['id']), og=SITE + (items[0]['image'] if items else '/assets/logo/og.png'),
+            count=('%d %s' % (len(items), word(len(items)))) if items else 'Скоро в наявності',
+            art=c['art'], cnav=cnav, chips=chips,
+            cards=''.join(card(r) for r in items) or '<div class="empty"><b>Скоро тут зʼявляться товари</b>Зазирніть трохи пізніше.</div>',
+            icons=SPRITE, head=HEADER, foot=FOOTER)
+        os.makedirs('catalog/' + c['id'], exist_ok=True)
+        open('catalog/%s/index.html' % c['id'], 'w', encoding='utf-8').write(html_)
 
 
 def main():
@@ -223,6 +292,7 @@ def main():
         related = (same + other)[:4]
         os.makedirs('products/' + p['slug'], exist_ok=True)
         open('products/%s/index.html' % p['slug'], 'w', encoding='utf-8').write(page(p, prod, prod['images'], related))
+    category_pages(prods)
     # assets/products.js — лише блок PRODUCTS, решта файлу без змін
     js = open('assets/products.js', encoding='utf-8').read()
     body = json.dumps(prods, ensure_ascii=False, indent=1)

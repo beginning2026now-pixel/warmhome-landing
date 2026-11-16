@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>{name} — WarmHome UA</title>
+  <meta name="description" content="{desc}">
+  <meta name="theme-color" content="#F7F0E8">
+  <link rel="canonical" href="{url}">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:title" content="{name} — WarmHome UA">
+  <meta property="og:description" content="{desc}">
+  <meta property="og:image" content="{og}">
+  <meta property="og:type" content="website">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){{if(f.fbq)return;n=f.fbq=function(){{n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)}};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1115491024548018');
+    fbq('init', '972029978660664');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/home.css?v=6">
+  <script src="/assets/products.js?v=6"></script>
+</head>
+<body>
+  {icons}
+  {head}
+
+  <main>
+    <section class="chero chero-{id}">
+      <div class="wrap">
+        <div class="chero-t">
+          <nav class="crumbs" aria-label="Ви тут"><a href="/">Головна</a><span>›</span><span>{name}</span></nav>
+          <h1>{name}</h1>
+          <p>{text}</p>
+          <span class="chero-n">{count}</span>
+        </div>
+        <div class="chero-art" aria-hidden="true">{art}</div>
+      </div>
+      <div class="wrap">
+        <nav class="cnav" aria-label="Категорії">{cnav}</nav>
+      </div>
+    </section>
+
+    <section class="sec" style="padding-top:28px">
+      <div class="wrap">
+        {chips}
+        <div class="grid" id="grid">{cards}</div>
+      </div>
+    </section>
+  </main>
+
+  {foot}
+
+  <script src="/assets/cart.js?v=6"></script>
+  <script>
+  (function () {{
+    var chips = document.getElementById('chips'), cards = [].slice.call(document.querySelectorAll('#grid .card'));
+    if (chips) chips.addEventListener('click', function (e) {{
+      var b = e.target.closest('button'); if (!b) return;
+      [].forEach.call(chips.querySelectorAll('button'), function (x) {{ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); }});
+      cards.forEach(function (c) {{ c.hidden = !!b.dataset.f && c.dataset.f !== b.dataset.f; }});
+    }});
+    var bu = document.getElementById('burger'), m = document.getElementById('mnav');
+    bu.addEventListener('click', function () {{ bu.setAttribute('aria-expanded', m.classList.toggle('open')); }});
+  }})();
+  </script>
+</body>
+</html>

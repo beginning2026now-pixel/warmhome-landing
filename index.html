@@ -61,9 +61,10 @@
         <span>WarmHome <em>UA</em></span>
       </a>
       <nav class="nav" aria-label="Розділи">
-        <a href="#catalog">Каталог</a>
+        <a href="/catalog/bedding/">Постільна білизна</a>
+        <a href="/catalog/plaids/">Пледи</a>
+        <a href="/catalog/toys/">Іграшки</a>
         <a href="#how">Доставка</a>
-        <a href="#faq">Питання</a>
       </nav>
       <div class="head-r">
         <a class="phone" href="tel:+380990227684"><svg class="ico"><use href="#i-phone"/></svg>+38 (099) 022-76-84</a>
@@ -72,7 +73,9 @@
       </div>
     </div>
     <nav class="mnav" id="mnav" aria-label="Меню">
-      <a href="#catalog">Каталог</a>
+      <a href="/catalog/bedding/">Постільна білизна</a>
+      <a href="/catalog/plaids/">Пледи</a>
+      <a href="/catalog/toys/">Іграшки з пледом</a>
       <a href="#how">Доставка та оплата</a>
       <a href="#faq">Часті питання</a>
       <a href="tel:+380990227684">+38 (099) 022-76-84</a>
@@ -84,12 +87,10 @@
     <section class="hero">
       <div class="wrap">
         <div>
-          <span class="tag"><i></i>Постільна білизна · Пледи</span>
           <h1>Тепло, в яке хочеться <span>загорнутися</span></h1>
-          <p class="lead">Мʼяка постільна білизна й затишні пледи для вашого дому. Варена бавовна, страйп-сатин і мʼякі пледи у спокійних відтінках — для сну, після якого хочеться посміхатися.</p>
+          <p class="lead">Постільна білизна, пледи та іграшки з пледом.</p>
           <div class="cta">
-            <a href="#catalog" class="btn btn-main">Перейти до каталогу <svg class="ico"><use href="#i-arrow"/></svg></a>
-            <a href="tel:+380990227684" class="btn btn-soft">Допомогти з вибором</a>
+            <a href="#catalog" class="btn btn-main">Каталог <svg class="ico"><use href="#i-arrow"/></svg></a>
           </div>
         </div>
         <div class="art" aria-hidden="true">
@@ -128,9 +129,7 @@
     <section id="catalog" class="sec sec-paper">
       <div class="wrap">
         <div class="sec-head rise">
-          <span class="eyebrow">Каталог</span>
-          <h2>Що зробить ваш дім затишнішим</h2>
-          <p>Спокійні відтінки, приємні до тіла тканини й затишні пледи.</p>
+          <h2>Каталог</h2>
         </div>
         <div class="cats" id="cats"></div>
         <div id="items"></div>
@@ -244,7 +243,7 @@
     var inDept = function (d) { return P.filter(function (p) { return window.matchCat(p, d.id); }); };
     $('#cats').innerHTML = D.map(function (d) {
       var n = inDept(d).length;
-      return '<a class="cat rise" href="#items" data-dept="' + d.id + '"><div><h3>' + esc(d.name) + '</h3><p>' + esc(d.text) + '</p></div>'
+      return '<a class="cat rise" href="/catalog/' + d.id + '/"><div><h3>' + esc(d.name) + '</h3><p>' + esc(d.text) + '</p></div>'
         + (n ? '<span class="count">' + n + ' ' + word(n) + ' <svg class="ico"><use href="#i-arrow"/></svg></span>' : '<span class="soon">Скоро в наявності</span>')
         + (DECO[d.id] || '') + '</a>';
     }).join('');
@@ -256,14 +255,10 @@
     };
     $('#items').innerHTML = P.length
       ? D.filter(function (d) { return inDept(d).length; }).map(function (d) {
-          return '<h3 id="dept-' + d.id + '" style="margin-top:48px;font-size:26px">' + esc(d.name) + '</h3><div class="grid">' + inDept(d).map(card).join('') + '</div>';
+          var all = inDept(d);
+          return '<div class="dept-h" id="dept-' + d.id + '"><h3>' + esc(d.name) + '</h3><a class="more" href="/catalog/' + d.id + '/">Усі ' + all.length + ' <svg class="ico"><use href="#i-arrow"/></svg></a></div><div class="grid">' + all.slice(0, 4).map(card).join('') + '</div>';
         }).join('')
       : '<div class="empty rise"><b>Перші товари вже в дорозі</b>Зовсім скоро тут зʼявляться комплекти постільної білизни та мʼякі пледи. Хочете дізнатися першими? Зателефонуйте нам — розповімо, що вже готуємо.</div>';
-    $('#cats').addEventListener('click', function (e) {
-      var a = e.target.closest('[data-dept]'); if (!a) return;
-      var t = document.getElementById('dept-' + a.dataset.dept) || $('#items');
-      e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
     // Меню на телефоні
     var b = $('#burger'), m = $('#mnav');
     b.addEventListener('click', function () { b.setAttribute('aria-expanded', m.classList.toggle('open')); });
