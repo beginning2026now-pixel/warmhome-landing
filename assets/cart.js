@@ -82,7 +82,7 @@ window.WHGuard = (function () {
     const [slug, vid, pil] = String(key).split('|');
     const p = (window.PRODUCTS || []).find(x => x.slug === slug); if (!p) return null;
     const v = (p.variants || []).find(x => x.id === vid); if (!v || v.out) return null;
-    return { key, p, v, pil: pil || '', name: p.name, opt: v.label + (pil ? ', наволочки ' + pil : ''), price: v.price, sku: v.sku, sup: p.sup || '', cid: v.sku + '-' + v.id, image: p.image, url: p.url };
+    return { key, p, v, pil: pil || '', name: p.name, opt: v.label + (pil ? ', наволочки ' + pil : ''), price: v.price, sku: v.sku, sup: p.sup || '', cid: v.sku + '-' + v.id, image: p.thumb || p.image, url: p.url };
   }
 
   /* ---------- UTM на весь візит ---------- */

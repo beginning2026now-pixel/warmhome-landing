@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /feed/
+
+Sitemap: https://warmhome.in.ua/sitemap.xml

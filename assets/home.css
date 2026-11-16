@@ -341,3 +341,33 @@ dialog .btn { margin-top: 22px; width: 100%; }
   .chero { padding-top: 20px; }
   .art { max-width: 230px; justify-self: center; }
 }
+/* Фільтри категорій */
+.filters { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 14px 24px; }
+.filters > .chips { flex: 1 1 100%; }
+.ctl { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; flex: 1 1 auto; }
+.ctl > span, .sort > span { font-size: 13px; font-weight: 800; color: var(--muted); }
+.sort { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+.sort select { font: inherit; font-size: 14px; font-weight: 700; color: var(--ink); padding: 8px 34px 8px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%238B6B55' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 14px center; appearance: none; cursor: pointer; }
+.filters + .nores, .filters ~ .grid { margin-top: 22px; }
+.nores { padding: 28px; text-align: center; color: var(--muted); background: var(--paper); border-radius: var(--r); border: 1px dashed var(--line); }
+.nores button { font: inherit; font-weight: 800; color: var(--cocoa); background: none; border: 0; text-decoration: underline; cursor: pointer; }
+/* Липка кнопка «Замовити» на телефоні */
+.buybar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: none; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: rgba(255, 251, 246, .96); backdrop-filter: blur(8px); border-top: 1px solid var(--line); transform: translateY(110%); transition: transform .25s; }
+.buybar b { display: block; font-size: 18px; color: var(--ink); }
+.buybar small { display: block; font-size: 12px; color: var(--muted); }
+.buybar .btn { padding: 12px 22px; }
+@media (max-width: 760px) {
+  .buybar { display: flex; }
+  .buybar.on { transform: none; }
+  .sort { margin-left: 0; }
+}
+@media (max-width: 760px) {
+  .filters { gap: 12px; }
+  .filters .chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 0 16px 2px; }
+  .filters .chips::-webkit-scrollbar { display: none; }
+  .filters .chips button { flex: none; white-space: nowrap; }
+  .ctl { flex: 1 1 100%; flex-wrap: nowrap; min-width: 0; }
+  .ctl .chips { flex: 1; margin-left: 0; }
+  body:has(.buybar) { padding-bottom: 76px; }
+}
+.card img { height: auto; }

@@ -36,8 +36,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/home.css?v=6">
-  <script src="/assets/products.js?v=6"></script>
+  <link rel="stylesheet" href="/assets/home.css?v=7">
+  <script src="/assets/products.js?v=7"></script>
 </head>
 <body>
 
@@ -226,7 +226,7 @@
     <form method="dialog"><button class="btn btn-main">Закрити</button></form>
   </dialog>
 
-  <script src="/assets/cart.js?v=6"></script>
+  <script src="/assets/cart.js?v=7"></script>
   <script>
   (function () {
     var $ = function (s) { return document.querySelector(s); };
@@ -249,8 +249,8 @@
     }).join('');
     // Картки товарів: по групах. Поки товарів немає — показуємо лагідну заглушку.
     var card = function (p) {
-      return '<a class="card" href="' + esc(p.url) + '"><img src="' + esc(p.image) + '" alt="' + esc(p.name) + '" loading="lazy">'
-        + '<span class="b"><span class="n">' + esc(p.name) + '</span>' + (p.variants ? '<span style="font-size:13px;color:var(--muted)">' + p.variants.map(function (v) { return v.label; }).filter(function (v, i, a) { return a.indexOf(v) === i; }).join(' · ') + '</span>' : '')
+      return '<a class="card" href="' + esc(p.url) + '"><img src="' + esc(p.thumb || p.image) + '" alt="' + esc(p.name) + '" width="480" height="480" loading="lazy">'
+        + '<span class="b"><span class="n">' + esc(p.name) + '</span>' + (p.sizes ? '<span style="font-size:13px;color:var(--muted)">' + esc(p.sizes) + '</span>' : '')
         + '<span class="pr">' + ((p.variants || []).length > 1 ? 'від ' : '') + p.price.toLocaleString('uk-UA') + ' грн</span></span></a>';
     };
     $('#items').innerHTML = P.length

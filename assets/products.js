@@ -26,6 +26,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/varena-bavovna-bilyi-1.jpg",
+  "thumb": "/assets/img/t/varena-bavovna-bilyi-1.webp",
   "images": [
    "/assets/img/p/varena-bavovna-bilyi-1.jpg"
   ],
@@ -64,7 +65,8 @@ window.PRODUCTS = [
     "price": 3500
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "2-сп · Євро · є з мереживом"
  },
  {
   "slug": "varena-bavovna-nizhno-rozhevyi",
@@ -76,6 +78,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/varena-bavovna-nizhno-rozhevyi-1.jpg",
+  "thumb": "/assets/img/t/varena-bavovna-nizhno-rozhevyi-1.webp",
   "images": [
    "/assets/img/p/varena-bavovna-nizhno-rozhevyi-1.jpg",
    "/assets/img/p/varena-bavovna-nizhno-rozhevyi-2.jpg"
@@ -108,7 +111,8 @@ window.PRODUCTS = [
     "price": 3500
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "2-сп · Євро · є з мереживом"
  },
  {
   "slug": "varena-bavovna-rozhevyi",
@@ -120,6 +124,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/varena-bavovna-rozhevyi-1.jpg",
+  "thumb": "/assets/img/t/varena-bavovna-rozhevyi-1.webp",
   "images": [
    "/assets/img/p/varena-bavovna-rozhevyi-1.jpg",
    "/assets/img/p/varena-bavovna-rozhevyi-2.jpg"
@@ -152,7 +157,8 @@ window.PRODUCTS = [
     "price": 3500
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "2-сп · Євро · є з мереживом"
  },
  {
   "slug": "varena-bavovna-pisochnyi",
@@ -164,6 +170,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/varena-bavovna-pisochnyi-1.jpg",
+  "thumb": "/assets/img/t/varena-bavovna-pisochnyi-1.webp",
   "images": [
    "/assets/img/p/varena-bavovna-pisochnyi-1.jpg",
    "/assets/img/p/varena-bavovna-pisochnyi-2.jpg"
@@ -182,7 +189,8 @@ window.PRODUCTS = [
     "price": 3200
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "2-сп · є з мереживом"
  },
  {
   "slug": "varena-bavovna-nyudovyi",
@@ -194,6 +202,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/varena-bavovna-nyudovyi-1.jpg",
+  "thumb": "/assets/img/t/varena-bavovna-nyudovyi-1.webp",
   "images": [
    "/assets/img/p/varena-bavovna-nyudovyi-1.jpg",
    "/assets/img/p/varena-bavovna-nyudovyi-2.jpg",
@@ -213,7 +222,8 @@ window.PRODUCTS = [
     "price": 3500
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "Євро · є з мереживом"
  },
  {
   "slug": "varena-bavovna-metalik",
@@ -225,6 +235,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/varena-bavovna-metalik-1.jpg",
+  "thumb": "/assets/img/t/varena-bavovna-metalik-1.webp",
   "images": [
    "/assets/img/p/varena-bavovna-metalik-1.jpg",
    "/assets/img/p/varena-bavovna-metalik-2.jpg"
@@ -257,7 +268,8 @@ window.PRODUCTS = [
     "price": 3500
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "2-сп · Євро · є з мереживом"
  },
  {
   "slug": "varena-bavovna-siryi",
@@ -269,6 +281,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/varena-bavovna-siryi-1.jpg",
+  "thumb": "/assets/img/t/varena-bavovna-siryi-1.webp",
   "images": [
    "/assets/img/p/varena-bavovna-siryi-1.jpg",
    "/assets/img/p/varena-bavovna-siryi-2.jpg"
@@ -308,7 +321,8 @@ window.PRODUCTS = [
     "price": 3500
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "2-сп · Євро · є з мереживом"
  },
  {
   "slug": "varena-bavovna-svitlo-siryi",
@@ -320,6 +334,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/varena-bavovna-svitlo-siryi-1.jpg",
+  "thumb": "/assets/img/t/varena-bavovna-svitlo-siryi-1.webp",
   "images": [
    "/assets/img/p/varena-bavovna-svitlo-siryi-1.jpg",
    "/assets/img/p/varena-bavovna-svitlo-siryi-2.jpg"
@@ -338,7 +353,8 @@ window.PRODUCTS = [
     "price": 3500
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "Євро · є з мереживом"
  },
  {
   "slug": "varena-bavovna-temno-siryi",
@@ -350,6 +366,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/varena-bavovna-temno-siryi-1.jpg",
+  "thumb": "/assets/img/t/varena-bavovna-temno-siryi-1.webp",
   "images": [
    "/assets/img/p/varena-bavovna-temno-siryi-1.jpg",
    "/assets/img/p/varena-bavovna-temno-siryi-2.jpg"
@@ -389,7 +406,8 @@ window.PRODUCTS = [
     "price": 3500
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "2-сп · Євро · є з мереживом"
  },
  {
   "slug": "varena-bavovna-slyvovyi",
@@ -401,6 +419,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/varena-bavovna-slyvovyi-1.jpg",
+  "thumb": "/assets/img/t/varena-bavovna-slyvovyi-1.webp",
   "images": [
    "/assets/img/p/varena-bavovna-slyvovyi-1.jpg",
    "/assets/img/p/varena-bavovna-slyvovyi-2.jpg"
@@ -419,7 +438,8 @@ window.PRODUCTS = [
     "price": 3200
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "2-сп · є з мереживом"
  },
  {
   "slug": "varena-bavovna-blakytnyi",
@@ -431,6 +451,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/varena-bavovna-blakytnyi-1.jpg",
+  "thumb": "/assets/img/t/varena-bavovna-blakytnyi-1.webp",
   "images": [
    "/assets/img/p/varena-bavovna-blakytnyi-1.jpg",
    "/assets/img/p/varena-bavovna-blakytnyi-2.jpg"
@@ -456,7 +477,8 @@ window.PRODUCTS = [
     "price": 3500
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "2-сп · Євро · є з мереживом"
  },
  {
   "slug": "straip-satyn-bezhevyi",
@@ -468,6 +490,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/straip-satyn-bezhevyi-1.jpg",
+  "thumb": "/assets/img/t/straip-satyn-bezhevyi-1.webp",
   "images": [
    "/assets/img/p/straip-satyn-bezhevyi-1.jpg",
    "/assets/img/p/straip-satyn-bezhevyi-2.jpg",
@@ -501,7 +524,8 @@ window.PRODUCTS = [
     "price": 2900
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "2-сп · Євро · Сімейний"
  },
  {
   "slug": "straip-satyn-molochnyi",
@@ -513,6 +537,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/straip-satyn-molochnyi-1.jpg",
+  "thumb": "/assets/img/t/straip-satyn-molochnyi-1.webp",
   "images": [
    "/assets/img/p/straip-satyn-molochnyi-1.jpg"
   ],
@@ -544,7 +569,8 @@ window.PRODUCTS = [
     "price": 2500
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "1,5-сп · 2-сп · Євро"
  },
  {
   "slug": "straip-satyn-pudrovyi",
@@ -556,6 +582,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/straip-satyn-pudrovyi-1.jpg",
+  "thumb": "/assets/img/t/straip-satyn-pudrovyi-1.webp",
   "images": [
    "/assets/img/p/straip-satyn-pudrovyi-1.jpg"
   ],
@@ -573,7 +600,8 @@ window.PRODUCTS = [
     "price": 2300
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "2-сп"
  },
  {
   "slug": "straip-satyn-bilyi",
@@ -585,6 +613,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/straip-satyn-bilyi-1.jpg",
+  "thumb": "/assets/img/t/straip-satyn-bilyi-1.webp",
   "images": [
    "/assets/img/p/straip-satyn-bilyi-1.jpg",
    "/assets/img/p/straip-satyn-bilyi-2.jpg"
@@ -610,7 +639,8 @@ window.PRODUCTS = [
     "price": 2500
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "2-сп · Євро"
  },
  {
   "slug": "straip-satyn-olyvkovyi",
@@ -622,6 +652,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/straip-satyn-olyvkovyi-1.jpg",
+  "thumb": "/assets/img/t/straip-satyn-olyvkovyi-1.webp",
   "images": [
    "/assets/img/p/straip-satyn-olyvkovyi-1.jpg"
   ],
@@ -646,7 +677,8 @@ window.PRODUCTS = [
     "price": 2900
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "2-сп · Сімейний"
  },
  {
   "slug": "straip-satyn-shokoladnyi",
@@ -658,6 +690,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/straip-satyn-shokoladnyi-1.jpg",
+  "thumb": "/assets/img/t/straip-satyn-shokoladnyi-1.webp",
   "images": [
    "/assets/img/p/straip-satyn-shokoladnyi-1.jpg"
   ],
@@ -675,7 +708,8 @@ window.PRODUCTS = [
     "price": 2300
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "2-сп"
  },
  {
   "slug": "straip-satyn-buzkovyi",
@@ -687,6 +721,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/straip-satyn-buzkovyi-1.jpg",
+  "thumb": "/assets/img/t/straip-satyn-buzkovyi-1.webp",
   "images": [
    "/assets/img/p/straip-satyn-buzkovyi-1.jpg"
   ],
@@ -704,7 +739,8 @@ window.PRODUCTS = [
     "price": 2300
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "2-сп"
  },
  {
   "slug": "satyn-odnotonnyi-pudra",
@@ -716,6 +752,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/satyn-odnotonnyi-pudra-1.jpg",
+  "thumb": "/assets/img/t/satyn-odnotonnyi-pudra-1.webp",
   "images": [
    "/assets/img/p/satyn-odnotonnyi-pudra-1.jpg",
    "/assets/img/p/satyn-odnotonnyi-pudra-2.jpg"
@@ -741,7 +778,8 @@ window.PRODUCTS = [
     "price": 2500
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "2-сп · Євро"
  },
  {
   "slug": "pled-flisovyi-zaichyky",
@@ -753,6 +791,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/pled-flisovyi-zaichyky-1.jpg",
+  "thumb": "/assets/img/t/pled-flisovyi-zaichyky-1.webp",
   "images": [
    "/assets/img/p/pled-flisovyi-zaichyky-1.jpg"
   ],
@@ -770,7 +809,8 @@ window.PRODUCTS = [
     "price": 1300
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "2-сп"
  },
  {
   "slug": "pled-flisovyi-sertsia",
@@ -782,6 +822,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/pled-flisovyi-sertsia-1.jpg",
+  "thumb": "/assets/img/t/pled-flisovyi-sertsia-1.webp",
   "images": [
    "/assets/img/p/pled-flisovyi-sertsia-1.jpg",
    "/assets/img/p/pled-flisovyi-sertsia-2.jpg"
@@ -800,7 +841,8 @@ window.PRODUCTS = [
     "price": 1300
    }
   ],
-  "sup": "VT"
+  "sup": "VT",
+  "sizes": "2-сп"
  },
  {
   "slug": "biaz-gold-smuzhka-sira",
@@ -812,6 +854,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/biaz-gold-smuzhka-sira-1.jpg",
+  "thumb": "/assets/img/t/biaz-gold-smuzhka-sira-1.webp",
   "images": [
    "/assets/img/p/biaz-gold-smuzhka-sira-1.jpg",
    "/assets/img/p/biaz-gold-smuzhka-sira-2.jpg",
@@ -853,7 +896,8 @@ window.PRODUCTS = [
     "price": 1600
    }
   ],
-  "sup": "AZ"
+  "sup": "AZ",
+  "sizes": "1,5-сп · 2-сп · Євро · Сімейний"
  },
  {
   "slug": "biaz-gold-smuzhka-chorno-sira",
@@ -865,6 +909,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/biaz-gold-smuzhka-chorno-sira-1.jpg",
+  "thumb": "/assets/img/t/biaz-gold-smuzhka-chorno-sira-1.webp",
   "images": [
    "/assets/img/p/biaz-gold-smuzhka-chorno-sira-1.jpg",
    "/assets/img/p/biaz-gold-smuzhka-chorno-sira-2.jpg",
@@ -906,7 +951,8 @@ window.PRODUCTS = [
     "price": 1600
    }
   ],
-  "sup": "AZ"
+  "sup": "AZ",
+  "sizes": "1,5-сп · 2-сп · Євро · Сімейний"
  },
  {
   "slug": "biaz-gold-smuzhka-bezh",
@@ -918,6 +964,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/biaz-gold-smuzhka-bezh-1.jpg",
+  "thumb": "/assets/img/t/biaz-gold-smuzhka-bezh-1.webp",
   "images": [
    "/assets/img/p/biaz-gold-smuzhka-bezh-1.jpg",
    "/assets/img/p/biaz-gold-smuzhka-bezh-2.jpg",
@@ -959,7 +1006,8 @@ window.PRODUCTS = [
     "price": 1600
    }
   ],
-  "sup": "AZ"
+  "sup": "AZ",
+  "sizes": "1,5-сп · 2-сп · Євро · Сімейний"
  },
  {
   "slug": "biaz-gold-smuzhka-temno-zelena",
@@ -971,6 +1019,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/biaz-gold-smuzhka-temno-zelena-1.jpg",
+  "thumb": "/assets/img/t/biaz-gold-smuzhka-temno-zelena-1.webp",
   "images": [
    "/assets/img/p/biaz-gold-smuzhka-temno-zelena-1.jpg",
    "/assets/img/p/biaz-gold-smuzhka-temno-zelena-2.jpg",
@@ -1012,7 +1061,8 @@ window.PRODUCTS = [
     "price": 1600
    }
   ],
-  "sup": "AZ"
+  "sup": "AZ",
+  "sizes": "1,5-сп · 2-сп · Євро · Сімейний"
  },
  {
   "slug": "biaz-gold-karat-siryi",
@@ -1024,6 +1074,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/biaz-gold-karat-siryi-1.jpg",
+  "thumb": "/assets/img/t/biaz-gold-karat-siryi-1.webp",
   "images": [
    "/assets/img/p/biaz-gold-karat-siryi-1.jpg",
    "/assets/img/p/biaz-gold-karat-siryi-2.jpg",
@@ -1065,7 +1116,8 @@ window.PRODUCTS = [
     "price": 1600
    }
   ],
-  "sup": "AZ"
+  "sup": "AZ",
+  "sizes": "1,5-сп · 2-сп · Євро · Сімейний"
  },
  {
   "slug": "biaz-gold-karat-zelenyi",
@@ -1077,6 +1129,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/biaz-gold-karat-zelenyi-1.jpg",
+  "thumb": "/assets/img/t/biaz-gold-karat-zelenyi-1.webp",
   "images": [
    "/assets/img/p/biaz-gold-karat-zelenyi-1.jpg",
    "/assets/img/p/biaz-gold-karat-zelenyi-2.jpg",
@@ -1118,7 +1171,8 @@ window.PRODUCTS = [
     "price": 1600
    }
   ],
-  "sup": "AZ"
+  "sup": "AZ",
+  "sizes": "1,5-сп · 2-сп · Євро · Сімейний"
  },
  {
   "slug": "straip-satyn-siryi",
@@ -1130,6 +1184,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/straip-satyn-siryi-1.jpg",
+  "thumb": "/assets/img/t/straip-satyn-siryi-1.webp",
   "images": [
    "/assets/img/p/straip-satyn-siryi-1.jpg",
    "/assets/img/p/straip-satyn-siryi-2.jpg"
@@ -1169,7 +1224,8 @@ window.PRODUCTS = [
     "price": 1500
    }
   ],
-  "sup": "AZ"
+  "sup": "AZ",
+  "sizes": "1,5-сп · 2-сп · Євро · Сімейний"
  },
  {
   "slug": "straip-satyn-svitlo-siryi",
@@ -1181,6 +1237,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/straip-satyn-svitlo-siryi-1.jpg",
+  "thumb": "/assets/img/t/straip-satyn-svitlo-siryi-1.webp",
   "images": [
    "/assets/img/p/straip-satyn-svitlo-siryi-1.jpg",
    "/assets/img/p/straip-satyn-svitlo-siryi-2.jpg"
@@ -1213,7 +1270,8 @@ window.PRODUCTS = [
     "price": 1500
    }
   ],
-  "sup": "AZ"
+  "sup": "AZ",
+  "sizes": "2-сп · Євро · Сімейний"
  },
  {
   "slug": "igrashka-pled-vedmedyk-korychnevyi",
@@ -1225,6 +1283,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/igrashka-pled-vedmedyk-korychnevyi-1.jpg",
+  "thumb": "/assets/img/t/igrashka-pled-vedmedyk-korychnevyi-1.webp",
   "images": [
    "/assets/img/p/igrashka-pled-vedmedyk-korychnevyi-1.jpg",
    "/assets/img/p/igrashka-pled-vedmedyk-korychnevyi-2.jpg",
@@ -1245,7 +1304,8 @@ window.PRODUCTS = [
     "price": 1200
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "70 см"
  },
  {
   "slug": "igrashka-pled-vedmedyk-svitlyi-bezh",
@@ -1257,6 +1317,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/igrashka-pled-vedmedyk-svitlyi-bezh-1.jpg",
+  "thumb": "/assets/img/t/igrashka-pled-vedmedyk-svitlyi-bezh-1.webp",
   "images": [
    "/assets/img/p/igrashka-pled-vedmedyk-svitlyi-bezh-1.jpg",
    "/assets/img/p/igrashka-pled-vedmedyk-svitlyi-bezh-2.jpg",
@@ -1276,7 +1337,8 @@ window.PRODUCTS = [
     "price": 1200
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "70 см"
  },
  {
   "slug": "pled-teddi-molochnyi",
@@ -1288,6 +1350,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/pled-teddi-molochnyi-1.jpg",
+  "thumb": "/assets/img/t/pled-teddi-molochnyi-1.webp",
   "images": [
    "/assets/img/p/pled-teddi-molochnyi-1.jpg",
    "/assets/img/p/pled-teddi-molochnyi-2.jpg"
@@ -1313,7 +1376,8 @@ window.PRODUCTS = [
     "price": 1200
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "1,5-сп · Євро"
  },
  {
   "slug": "pled-teddi-bezhevyi",
@@ -1325,6 +1389,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/pled-teddi-bezhevyi-1.jpg",
+  "thumb": "/assets/img/t/pled-teddi-bezhevyi-1.webp",
   "images": [
    "/assets/img/p/pled-teddi-bezhevyi-1.jpg",
    "/assets/img/p/pled-teddi-bezhevyi-2.jpg"
@@ -1350,7 +1415,8 @@ window.PRODUCTS = [
     "price": 1200
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "1,5-сп · Євро"
  },
  {
   "slug": "pled-teddi-siryi",
@@ -1362,6 +1428,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/pled-teddi-siryi-1.jpg",
+  "thumb": "/assets/img/t/pled-teddi-siryi-1.webp",
   "images": [
    "/assets/img/p/pled-teddi-siryi-1.jpg",
    "/assets/img/p/pled-teddi-siryi-2.jpg",
@@ -1388,7 +1455,8 @@ window.PRODUCTS = [
     "price": 1200
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "1,5-сп · Євро"
  },
  {
   "slug": "pled-teddi-pudrovyi",
@@ -1400,6 +1468,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/pled-teddi-pudrovyi-1.jpg",
+  "thumb": "/assets/img/t/pled-teddi-pudrovyi-1.webp",
   "images": [
    "/assets/img/p/pled-teddi-pudrovyi-1.jpg",
    "/assets/img/p/pled-teddi-pudrovyi-2.jpg"
@@ -1425,7 +1494,8 @@ window.PRODUCTS = [
     "price": 1200
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "1,5-сп · Євро"
  },
  {
   "slug": "pled-teddi-shokoladnyi",
@@ -1437,6 +1507,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/pled-teddi-shokoladnyi-1.jpg",
+  "thumb": "/assets/img/t/pled-teddi-shokoladnyi-1.webp",
   "images": [
    "/assets/img/p/pled-teddi-shokoladnyi-1.jpg"
   ],
@@ -1461,7 +1532,8 @@ window.PRODUCTS = [
     "price": 1200
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "1,5-сп · Євро"
  },
  {
   "slug": "pled-sharpei-molochnyi",
@@ -1473,6 +1545,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/pled-sharpei-molochnyi-1.jpg",
+  "thumb": "/assets/img/t/pled-sharpei-molochnyi-1.webp",
   "images": [
    "/assets/img/p/pled-sharpei-molochnyi-1.jpg"
   ],
@@ -1490,7 +1563,8 @@ window.PRODUCTS = [
     "price": 1200
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "Євро"
  },
  {
   "slug": "pled-sharpei-kapuchino",
@@ -1502,6 +1576,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/pled-sharpei-kapuchino-1.jpg",
+  "thumb": "/assets/img/t/pled-sharpei-kapuchino-1.webp",
   "images": [
    "/assets/img/p/pled-sharpei-kapuchino-1.jpg"
   ],
@@ -1519,7 +1594,8 @@ window.PRODUCTS = [
     "price": 1200
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "Євро"
  },
  {
   "slug": "pled-sharpei-siryi",
@@ -1531,6 +1607,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/pled-sharpei-siryi-1.jpg",
+  "thumb": "/assets/img/t/pled-sharpei-siryi-1.webp",
   "images": [
    "/assets/img/p/pled-sharpei-siryi-1.jpg"
   ],
@@ -1548,7 +1625,8 @@ window.PRODUCTS = [
     "price": 1200
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "Євро"
  },
  {
   "slug": "pled-ovchyna-molochnyi",
@@ -1560,6 +1638,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/pled-ovchyna-molochnyi-1.jpg",
+  "thumb": "/assets/img/t/pled-ovchyna-molochnyi-1.webp",
   "images": [
    "/assets/img/p/pled-ovchyna-molochnyi-1.jpg"
   ],
@@ -1577,7 +1656,8 @@ window.PRODUCTS = [
     "price": 1400
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "Євро"
  },
  {
   "slug": "pled-ovchyna-bezhevyi",
@@ -1589,6 +1669,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/pled-ovchyna-bezhevyi-1.jpg",
+  "thumb": "/assets/img/t/pled-ovchyna-bezhevyi-1.webp",
   "images": [
    "/assets/img/p/pled-ovchyna-bezhevyi-1.jpg"
   ],
@@ -1606,7 +1687,8 @@ window.PRODUCTS = [
     "price": 1400
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "Євро"
  },
  {
   "slug": "biaz-lux-lystia-siro-synii",
@@ -1618,6 +1700,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/biaz-lux-lystia-siro-synii-1.jpg",
+  "thumb": "/assets/img/t/biaz-lux-lystia-siro-synii-1.webp",
   "images": [
    "/assets/img/p/biaz-lux-lystia-siro-synii-1.jpg",
    "/assets/img/p/biaz-lux-lystia-siro-synii-2.jpg",
@@ -1651,7 +1734,8 @@ window.PRODUCTS = [
     "price": 1400
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "1,5-сп · 2-сп · Євро"
  },
  {
   "slug": "biaz-lux-gilochky",
@@ -1663,6 +1747,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/biaz-lux-gilochky-1.jpg",
+  "thumb": "/assets/img/t/biaz-lux-gilochky-1.webp",
   "images": [
    "/assets/img/p/biaz-lux-gilochky-1.jpg",
    "/assets/img/p/biaz-lux-gilochky-2.jpg",
@@ -1689,7 +1774,8 @@ window.PRODUCTS = [
     "price": 1300
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "1,5-сп · 2-сп"
  },
  {
   "slug": "biaz-lux-lavandovyi",
@@ -1701,6 +1787,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/biaz-lux-lavandovyi-1.jpg",
+  "thumb": "/assets/img/t/biaz-lux-lavandovyi-1.webp",
   "images": [
    "/assets/img/p/biaz-lux-lavandovyi-1.jpg",
    "/assets/img/p/biaz-lux-lavandovyi-2.jpg",
@@ -1727,7 +1814,8 @@ window.PRODUCTS = [
     "price": 1400
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "2-сп · Євро"
  },
  {
   "slug": "biaz-lux-grafitovyi",
@@ -1739,6 +1827,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/biaz-lux-grafitovyi-1.jpg",
+  "thumb": "/assets/img/t/biaz-lux-grafitovyi-1.webp",
   "images": [
    "/assets/img/p/biaz-lux-grafitovyi-1.jpg"
   ],
@@ -1763,7 +1852,8 @@ window.PRODUCTS = [
     "price": 1400
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "2-сп · Євро"
  },
  {
   "slug": "biaz-lux-karamelnyi",
@@ -1775,6 +1865,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/biaz-lux-karamelnyi-1.jpg",
+  "thumb": "/assets/img/t/biaz-lux-karamelnyi-1.webp",
   "images": [
    "/assets/img/p/biaz-lux-karamelnyi-1.jpg",
    "/assets/img/p/biaz-lux-karamelnyi-2.jpg",
@@ -1794,7 +1885,8 @@ window.PRODUCTS = [
     "price": 1200
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "2-сп"
  },
  {
   "slug": "biaz-lux-geometriia-grafit",
@@ -1806,6 +1898,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/biaz-lux-geometriia-grafit-1.jpg",
+  "thumb": "/assets/img/t/biaz-lux-geometriia-grafit-1.webp",
   "images": [
    "/assets/img/p/biaz-lux-geometriia-grafit-1.jpg"
   ],
@@ -1823,7 +1916,8 @@ window.PRODUCTS = [
     "price": 1400
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "Євро"
  },
  {
   "slug": "biaz-lux-siryi-z-rozhevym",
@@ -1835,6 +1929,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/biaz-lux-siryi-z-rozhevym-1.jpg",
+  "thumb": "/assets/img/t/biaz-lux-siryi-z-rozhevym-1.webp",
   "images": [
    "/assets/img/p/biaz-lux-siryi-z-rozhevym-1.jpg",
    "/assets/img/p/biaz-lux-siryi-z-rozhevym-2.jpg",
@@ -1854,7 +1949,8 @@ window.PRODUCTS = [
     "price": 1200
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "2-сп"
  },
  {
   "slug": "baika-karamelnyi-vizerunok",
@@ -1866,6 +1962,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/baika-karamelnyi-vizerunok-1.jpg",
+  "thumb": "/assets/img/t/baika-karamelnyi-vizerunok-1.webp",
   "images": [
    "/assets/img/p/baika-karamelnyi-vizerunok-1.jpg"
   ],
@@ -1890,7 +1987,8 @@ window.PRODUCTS = [
     "price": 2000
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "2-сп · Євро"
  },
  {
   "slug": "baika-sertsia",
@@ -1902,6 +2000,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/baika-sertsia-1.jpg",
+  "thumb": "/assets/img/t/baika-sertsia-1.webp",
   "images": [
    "/assets/img/p/baika-sertsia-1.jpg"
   ],
@@ -1926,7 +2025,8 @@ window.PRODUCTS = [
     "price": 2000
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "2-сп · Євро"
  },
  {
   "slug": "baika-piria",
@@ -1938,6 +2038,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/baika-piria-1.jpg",
+  "thumb": "/assets/img/t/baika-piria-1.webp",
   "images": [
    "/assets/img/p/baika-piria-1.jpg"
   ],
@@ -1962,7 +2063,8 @@ window.PRODUCTS = [
     "price": 2000
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "2-сп · Євро"
  },
  {
   "slug": "baika-siryi-vizerunok",
@@ -1974,6 +2076,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/baika-siryi-vizerunok-1.jpg",
+  "thumb": "/assets/img/t/baika-siryi-vizerunok-1.webp",
   "images": [
    "/assets/img/p/baika-siryi-vizerunok-1.jpg",
    "/assets/img/p/baika-siryi-vizerunok-2.jpg",
@@ -1993,7 +2096,8 @@ window.PRODUCTS = [
     "price": 1900
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "2-сп"
  },
  {
   "slug": "baika-bezhevi-lystky",
@@ -2005,6 +2109,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/baika-bezhevi-lystky-1.jpg",
+  "thumb": "/assets/img/t/baika-bezhevi-lystky-1.webp",
   "images": [
    "/assets/img/p/baika-bezhevi-lystky-1.jpg"
   ],
@@ -2036,7 +2141,8 @@ window.PRODUCTS = [
     "price": 2200
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "1,5-сп · 2-сп · Євро"
  },
  {
   "slug": "straip-rezynka-grafitovyi",
@@ -2048,6 +2154,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/straip-rezynka-grafitovyi-1.jpg",
+  "thumb": "/assets/img/t/straip-rezynka-grafitovyi-1.webp",
   "images": [
    "/assets/img/p/straip-rezynka-grafitovyi-1.jpg"
   ],
@@ -2072,7 +2179,8 @@ window.PRODUCTS = [
     "price": 1500
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "2-сп · Євро"
  },
  {
   "slug": "straip-rezynka-lavandovyi",
@@ -2084,6 +2192,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/straip-rezynka-lavandovyi-1.jpg",
+  "thumb": "/assets/img/t/straip-rezynka-lavandovyi-1.webp",
   "images": [
    "/assets/img/p/straip-rezynka-lavandovyi-1.jpg"
   ],
@@ -2108,7 +2217,8 @@ window.PRODUCTS = [
     "price": 1500
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "2-сп · Євро"
  },
  {
   "slug": "straip-rezynka-svitlo-siryi",
@@ -2120,6 +2230,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/straip-rezynka-svitlo-siryi-1.jpg",
+  "thumb": "/assets/img/t/straip-rezynka-svitlo-siryi-1.webp",
   "images": [
    "/assets/img/p/straip-rezynka-svitlo-siryi-1.jpg"
   ],
@@ -2144,7 +2255,8 @@ window.PRODUCTS = [
     "price": 1500
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "2-сп · Євро"
  },
  {
   "slug": "straip-rezynka-pudrovyi",
@@ -2156,6 +2268,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/straip-rezynka-pudrovyi-1.jpg",
+  "thumb": "/assets/img/t/straip-rezynka-pudrovyi-1.webp",
   "images": [
    "/assets/img/p/straip-rezynka-pudrovyi-1.jpg"
   ],
@@ -2180,7 +2293,8 @@ window.PRODUCTS = [
     "price": 1500
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "2-сп · Євро"
  },
  {
   "slug": "straip-rezynka-smarahdovyi",
@@ -2192,6 +2306,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/straip-rezynka-smarahdovyi-1.jpg",
+  "thumb": "/assets/img/t/straip-rezynka-smarahdovyi-1.webp",
   "images": [
    "/assets/img/p/straip-rezynka-smarahdovyi-1.jpg"
   ],
@@ -2209,7 +2324,8 @@ window.PRODUCTS = [
     "price": 1500
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "Євро"
  },
  {
   "slug": "straip-rezynka-synii",
@@ -2221,6 +2337,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/straip-rezynka-synii-1.jpg",
+  "thumb": "/assets/img/t/straip-rezynka-synii-1.webp",
   "images": [
    "/assets/img/p/straip-rezynka-synii-1.jpg"
   ],
@@ -2238,7 +2355,8 @@ window.PRODUCTS = [
     "price": 1400
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "2-сп"
  },
  {
   "slug": "straip-rezynka-kavovyi",
@@ -2250,6 +2368,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/straip-rezynka-kavovyi-1.jpg",
+  "thumb": "/assets/img/t/straip-rezynka-kavovyi-1.webp",
   "images": [
    "/assets/img/p/straip-rezynka-kavovyi-1.jpg"
   ],
@@ -2267,7 +2386,8 @@ window.PRODUCTS = [
     "price": 1400
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "2-сп"
  },
  {
   "slug": "veliur-sharpei-kapuchino",
@@ -2279,6 +2399,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/veliur-sharpei-kapuchino-1.jpg",
+  "thumb": "/assets/img/t/veliur-sharpei-kapuchino-1.webp",
   "images": [
    "/assets/img/p/veliur-sharpei-kapuchino-1.jpg"
   ],
@@ -2296,7 +2417,8 @@ window.PRODUCTS = [
     "price": 2100
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "Євро"
  },
  {
   "slug": "veliur-sharpei-siryi",
@@ -2308,6 +2430,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/veliur-sharpei-siryi-1.jpg",
+  "thumb": "/assets/img/t/veliur-sharpei-siryi-1.webp",
   "images": [
    "/assets/img/p/veliur-sharpei-siryi-1.jpg"
   ],
@@ -2325,7 +2448,8 @@ window.PRODUCTS = [
     "price": 2100
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "Євро"
  },
  {
   "slug": "veliur-sharpei-molochnyi",
@@ -2337,6 +2461,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/veliur-sharpei-molochnyi-1.jpg",
+  "thumb": "/assets/img/t/veliur-sharpei-molochnyi-1.webp",
   "images": [
    "/assets/img/p/veliur-sharpei-molochnyi-1.jpg"
   ],
@@ -2354,7 +2479,8 @@ window.PRODUCTS = [
     "price": 2100
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "Євро"
  },
  {
   "slug": "veliur-monika-siryi",
@@ -2366,6 +2492,7 @@ window.PRODUCTS = [
   "oldPrice": null,
   "inStock": true,
   "image": "/assets/img/p/veliur-monika-siryi-1.jpg",
+  "thumb": "/assets/img/t/veliur-monika-siryi-1.webp",
   "images": [
    "/assets/img/p/veliur-monika-siryi-1.jpg",
    "/assets/img/p/veliur-monika-siryi-2.jpg"
@@ -2384,7 +2511,8 @@ window.PRODUCTS = [
     "price": 2100
    }
   ],
-  "sup": "SV"
+  "sup": "SV",
+  "sizes": "Євро"
  }
 ];
 

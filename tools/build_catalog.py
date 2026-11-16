@@ -68,6 +68,21 @@ def photos(p, src):
     return out
 
 
+def thumb(img):
+    """Мініатюра 480px WebP для карток (у ~4 рази легша за основне фото)."""
+    from PIL import Image
+    src = img.lstrip('/')
+    dst = 'assets/img/t/' + os.path.basename(src).rsplit('.', 1)[0] + '.webp'
+    os.makedirs('assets/img/t', exist_ok=True)
+    if not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(src):
+        im = Image.open(src).convert('RGB')
+        w, h = im.size
+        k = min(w, h)
+        im = im.crop(((w - k) // 2, (h - k) // 2, (w + k) // 2, (h + k) // 2)).resize((480, 480), Image.LANCZOS)
+        im.save(dst, 'WEBP', quality=78, method=6)
+    return '/' + dst
+
+
 def live(vs):
     return [v for v in vs if not v.get('out')]
 
@@ -115,9 +130,10 @@ def page(p, prod, imgs, related):
             dims.append([C['sizes'][s], f['dims'][s]])
     lace = f.get('lace_note') if any(v['id'].endswith('l') for v in vs) else None
     gal_th = ''.join('<button type="button" data-src="%s" aria-current="%s"><img src="%s" alt="" loading="lazy"></button>' % (E(u), 'true' if i == 0 else 'false', E(u)) for i, u in enumerate(imgs)) if len(imgs) > 1 else ''
-    rel = ''.join('<a class="card" href="%s"><img src="%s" alt="%s" loading="lazy"><span class="b"><span class="n">%s</span><span class="pr">від %d грн</span></span></a>' % (E(r['url']), E(r['image']), E(r['name']), E(r['name']), r['price']) for r in related)
+    rel = ''.join('<a class="card" href="%s"><img src="%s" alt="%s" width="480" height="480" loading="lazy"><span class="b"><span class="n">%s</span><span class="pr">від %s грн</span></span></a>' % (E(r['url']), E(r['thumb']), E(r['name']), E(r['name']), money(r['price'])) for r in related)
     return TPL.format(
         title=E(name), desc=E(desc), url=SITE + prod['url'], og=SITE + imgs[0],
+        ld=ld_product(prod, desc) + ld_crumbs([('Головна', '/'), (dept[0], '/catalog/%s/' % dept[1]), (name, prod['url'])]),
         dept=dept[0], deptid=dept[1], fabric=E(f['title']), name=E(name), lead=E(f['lead']), about=E(f['about']),
         main=E(imgs[0]), thumbs=gal_th, slug=p['slug'], minp=minp,
         opt_label='Розмір комплекту' if bedding else 'Розмір',
@@ -216,7 +232,7 @@ CTPL = open(os.path.join(ROOT, 'tools', 'category_template.html'), encoding='utf
 # Сторінки категорій: /catalog/<id>/
 CATEGORIES = [
     {'id': 'bedding', 'cat': 'sets', 'name': 'Постільна білизна',
-     'text': 'Варена бавовна, сатин, страйп-сатин і бязь Gold — від півтораспальних до сімейних комплектів.',
+     'text': 'Бавовна, сатин, теплі байка й велюр — від півтораспальних до сімейних комплектів.',
      'art': '<svg viewBox="0 0 400 300"><ellipse cx="200" cy="272" rx="160" ry="10" fill="#D9C7B1" opacity=".6"/>'
             '<rect x="70" y="190" width="260" height="74" rx="22" fill="#C9A88A"/><path d="M92 228h216" stroke="#B9977A" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>'
             '<rect x="80" y="122" width="240" height="72" rx="22" fill="#FFFBF6"/><path d="M104 144h192M104 158h192M104 172h192" stroke="#EADBC9" stroke-width="3" stroke-linecap="round"/>'
@@ -240,20 +256,62 @@ CATEGORIES = [
 ]
 
 
+SHORT = {'15': '1,5-сп', '2': '2-сп', 'e': 'Євро', 's': 'Сімейний', 't70': '70 см'}
+
+
+def sizes_line(vs):
+    lv = live(vs) or vs
+    out = []
+    for z in SIZE_ORDER:
+        if any(v['size'] == z for v in lv):
+            out.append(SHORT[z])
+    if any(v['id'].endswith('l') for v in lv):
+        out.append('є з мереживом')
+    return ' · '.join(out)
+
+
+def money(n):
+    return '{:,}'.format(n).replace(',', '\u00a0')
+
+
 def word(n):
     return 'товар' if n % 10 == 1 and n % 100 != 11 else 'товари' if 2 <= n % 10 <= 4 and not 12 <= n % 100 <= 14 else 'товарів'
 
 
 def card(r):
-    labels = []
-    for v in r['variants']:
-        if not v.get('out') and v['label'] not in labels:
-            labels.append(v['label'])
     many = len([v for v in r['variants'] if not v.get('out')]) > 1
-    return ('<a class="card" href="%s" data-f="%s"><img src="%s" alt="%s" loading="lazy"><span class="b"><span class="n">%s</span>'
+    sizes = ' '.join(sorted({v['size'] for v in r['variants'] if not v.get('out')}))
+    return ('<a class="card" href="%s" data-f="%s" data-s="' + sizes + '" data-p="' + str(r['price']) + '" data-n="' + r['added'] + '"><img src="%s" alt="%s" width="480" height="480" loading="lazy"><span class="b"><span class="n">%s</span>'
             '<span style="font-size:13px;color:var(--muted)">%s</span><span class="pr">%s%s грн</span></span></a>') % (
-        E(r['url']), E(r['short']), E(r['image']), E(r['name']), E(r['name']), E(' · '.join(labels)),
+        E(r['url']), E(r['short']), E(r['thumb']), E(r['name']), E(r['name']), E(r['sizes']),
         'від ' if many else '', '{:,}'.format(r['price']).replace(',', '\u00a0'))
+
+
+def ld(obj):
+    return '<script type="application/ld+json">%s</script>' % json.dumps(obj, ensure_ascii=False).replace('</', '<\\/')
+
+
+def ld_crumbs(items):
+    return ld({'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
+        {'@type': 'ListItem', 'position': i, 'name': n, 'item': SITE + u} for i, (n, u) in enumerate(items, 1)]})
+
+
+def ld_product(prod, desc):
+    lv = live(prod['variants'])
+    prices = [v['price'] for v in (lv or prod['variants'])]
+    return ld({'@context': 'https://schema.org', '@type': 'Product', 'name': prod['name'], 'sku': prod['sku'],
+               'image': [SITE + i for i in prod['images']], 'description': desc, 'brand': {'@type': 'Brand', 'name': 'WarmHome UA'},
+               'offers': {'@type': 'AggregateOffer', 'priceCurrency': 'UAH', 'lowPrice': min(prices), 'highPrice': max(prices),
+                          'offerCount': len(lv or prod['variants']), 'url': SITE + prod['url'],
+                          'availability': 'https://schema.org/' + ('InStock' if lv else 'OutOfStock')}})
+
+
+def sitemap(prods):
+    urls = ['/'] + ['/catalog/%s/' % c['id'] for c in CATEGORIES] + [r['url'] for r in prods if r['inStock']]
+    xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    xml += ''.join('  <url><loc>%s%s</loc></url>\n' % (SITE, u) for u in urls) + '</urlset>\n'
+    open('sitemap.xml', 'w', encoding='utf-8').write(xml)
+    open('robots.txt', 'w', encoding='utf-8').write('User-agent: *\nAllow: /\nDisallow: /feed/\n\nSitemap: %s/sitemap.xml\n' % SITE)
 
 
 def category_pages(prods):
@@ -267,12 +325,20 @@ def category_pages(prods):
         if len(fabs) > 1:
             chips = '<div class="chips" id="chips"><button type="button" data-f="" aria-pressed="true">Усі</button>%s</div>' % ''.join(
                 '<button type="button" data-f="%s" aria-pressed="false">%s</button>' % (E(f), E(f)) for f in fabs)
+        sz = [z for z in SIZE_ORDER if any(v['size'] == z and not v.get('out') for r in items for v in r['variants'])]
+        tools_ = ''
+        if len(sz) > 1:
+            tools_ += '<div class="ctl"><span>Розмір</span><div class="chips" id="szs"><button type="button" data-s="" aria-pressed="true">Будь-який</button>%s</div></div>' % ''.join(
+                '<button type="button" data-s="%s" aria-pressed="false">%s</button>' % (z, E(C['sizes'][z])) for z in sz)
+        if len(items) > 3:
+            tools_ += ('<label class="sort"><span>Сортувати</span><select id="sort"><option value="">Спочатку популярні</option>'
+                       '<option value="new">Спочатку нові</option><option value="asc">Дешевші</option><option value="desc">Дорожчі</option></select></label>')
         cnav = ''.join('<a href="/catalog/%s/"%s>%s</a>' % (x['id'], ' aria-current="page"' if x is c else '', E(x['name'])) for x in CATEGORIES)
         html_ = CTPL.format(
             id=c['id'], name=E(c['name']), text=E(c['text']), desc=E(c['name'] + ' — ' + c['text'] + ' Доставка Новою Поштою, передоплата 200 грн.'),
             url='%s/catalog/%s/' % (SITE, c['id']), og=SITE + (items[0]['image'] if items else '/assets/logo/og.png'),
             count=('%d %s' % (len(items), word(len(items)))) if items else 'Скоро в наявності',
-            art=c['art'], cnav=cnav, chips=chips,
+            art=c['art'], cnav=cnav, chips=chips, tools=tools_, ld=ld_crumbs([('Головна', '/'), (c['name'], '/catalog/%s/' % c['id'])]),
             cards=''.join(card(r) for r in items) or '<div class="empty"><b>Скоро тут зʼявляться товари</b>Зазирніть трохи пізніше.</div>',
             icons=SPRITE, head=HEADER, foot=FOOTER)
         os.makedirs('catalog/' + c['id'], exist_ok=True)
@@ -290,9 +356,9 @@ def main():
             'slug': p['slug'], 'sku': vs[0]['sku'], 'name': NAME[p['fabric']].format(c=p['color']),
             'short': C['fabrics'][p['fabric']]['title'], 'fabric': p['fabric'],
             'price': min(v['price'] for v in (live(vs) or vs)), 'oldPrice': None, 'inStock': bool(live(vs)),
-            'image': imgs[0], 'images': imgs, 'url': '/products/%s/' % p['slug'],
+            'image': imgs[0], 'thumb': thumb(imgs[0]), 'images': imgs, 'url': '/products/%s/' % p['slug'],
             'cat': [CAT[p['fabric']]], 'added': p.get('added', ADDED), 'variants': vs,
-            'sup': C['suppliers'][p['supplier']]['code'],
+            'sup': C['suppliers'][p['supplier']]['code'], 'sizes': sizes_line(vs),
         })
     for p, prod in zip(C['products'], prods):
         same = [r for r in prods if r['fabric'] == prod['fabric'] and r is not prod and r['inStock']]
@@ -301,6 +367,7 @@ def main():
         os.makedirs('products/' + p['slug'], exist_ok=True)
         open('products/%s/index.html' % p['slug'], 'w', encoding='utf-8').write(page(p, prod, prod['images'], related))
     category_pages(prods)
+    sitemap(prods)
     # assets/products.js — лише блок PRODUCTS, решта файлу без змін
     js = open('assets/products.js', encoding='utf-8').read()
     body = json.dumps(prods, ensure_ascii=False, indent=1)
