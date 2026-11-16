@@ -2,7 +2,7 @@
 """Звіряє наявність товарів Vanilla Textile з аркушем «НАЯВНІСТЬ» таблиці постачальника.
 
 Таблиця: https://docs.google.com/spreadsheets/d/1_McBnpFGO-onnVIqCCfoHM0M6DDMZn9N04jWY959XoQ (аркуш gid=1910900110)
-Запуск із кореня репозиторію:  python3 tools/stock_check.py <НАЯВНІСТЬ.csv> [--extra]
+Запуск із кореня репозиторію:  python3 tools/stock_check.py <НАЯВНІСТЬ.csv | stock_rows.json> [--extra]
 Пише tools/stock.json ({"sku|variantId": кількість}) і друкує, що змінилося.
 Після цього: python3 tools/build_catalog.py && python3 tools/make_feed.py
 """
@@ -41,8 +41,15 @@ def is_item(c):
     return bool(re.match(r'^\s*\d', c or ''))
 
 
+def load_rows(path):
+    if path.endswith('.json'):
+        # компактний формат зі щоденної перевірки: [[колонка A, кількість C, D, E, F], ...]
+        return [[str(r[0]), ''] + [str(x) for x in r[1:5]] + [''] * 8 for r in json.load(open(path, encoding='utf-8'))]
+    return [r + [''] * 8 for r in csv.reader(open(path, encoding='utf-8'))]
+
+
 def parse(path):
-    rows = [r + [''] * 8 for r in csv.reader(open(path, encoding='utf-8'))]
+    rows = load_rows(path)
     found = {}   # (table, sku) -> {size: qty}
     seen = set()
     for i, r in enumerate(rows):
@@ -64,6 +71,9 @@ def parse(path):
 
 
 def main():
+    if '--skus' in sys.argv:
+        print(','.join(sorted({s for p in C['products'] for s, _, _ in p['variants']})))
+        return
     found, seen = parse(sys.argv[1])
     missing_sec = [t for _, t, _ in SECTIONS if t not in seen]
     old = {}
