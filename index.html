@@ -36,8 +36,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/home.css?v=3">
-  <script src="/assets/products.js?v=1"></script>
+  <link rel="stylesheet" href="/assets/home.css?v=4">
+  <script src="/assets/products.js?v=4"></script>
 </head>
 <body>
 
@@ -49,11 +49,11 @@
     <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18v3"/><path d="M4 7.5V17a2 2 0 0 0 2 2h14V9H6.5A2.5 2.5 0 0 1 4 7.5Z"/><circle cx="16" cy="14" r="1"/></symbol>
     <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></symbol>
     <symbol id="i-chat" viewBox="0 0 24 24"><path d="M5 18.5V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H8.5Z"/><path d="M9 9h6M9 12h4"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7Z"/><path d="M9 8a3 3 0 0 1 6 0"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   </svg>
 
-  <div class="topbar">Доставка Новою Поштою 1–3 дні · Оплата при отриманні</div>
-
+  <div class="topbar">Відправка за 2–3 дні · Передоплата 200 грн, решта при отриманні</div>
   <header class="head">
     <div class="wrap">
       <a href="/" class="brand" aria-label="WarmHome UA — на головну">
@@ -65,8 +65,11 @@
         <a href="#how">Доставка</a>
         <a href="#faq">Питання</a>
       </nav>
-      <a class="phone" href="tel:+380990227684"><svg class="ico"><use href="#i-phone"/></svg>+38 (099) 022-76-84</a>
-      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="mnav"><svg class="ico" style="width:24px;height:24px"><use href="#i-menu"/></svg></button>
+      <div class="head-r">
+        <a class="phone" href="tel:+380990227684"><svg class="ico"><use href="#i-phone"/></svg>+38 (099) 022-76-84</a>
+        <button type="button" class="cart-btn js-cart-open" aria-label="Кошик"><svg class="ico"><use href="#i-bag"/></svg><span class="n js-cart-count" hidden>0</span></button>
+        <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="mnav"><svg class="ico" style="width:24px;height:24px"><use href="#i-menu"/></svg></button>
+      </div>
     </div>
     <nav class="mnav" id="mnav" aria-label="Меню">
       <a href="#catalog">Каталог</a>
@@ -83,7 +86,7 @@
         <div>
           <span class="tag"><i></i>Постільна білизна · Пледи</span>
           <h1>Тепло, в яке хочеться <span>загорнутися</span></h1>
-          <p class="lead">Мʼяка постільна білизна й затишні пледи для вашого дому. Обирайте спокійно, оглядайте у відділенні й платіть лише тоді, коли все подобається.</p>
+          <p class="lead">Мʼяка постільна білизна й затишні пледи для вашого дому. Варена бавовна, страйп-сатин і мʼякі пледи у спокійних відтінках — для сну, після якого хочеться посміхатися.</p>
           <div class="cta">
             <a href="#catalog" class="btn btn-main">Перейти до каталогу <svg class="ico"><use href="#i-arrow"/></svg></a>
             <a href="tel:+380990227684" class="btn btn-soft">Допомогти з вибором</a>
@@ -127,7 +130,7 @@
         <div class="sec-head rise">
           <span class="eyebrow">Каталог</span>
           <h2>Що зробить ваш дім затишнішим</h2>
-          <p>Ми ретельно добираємо асортимент. Перші моделі зовсім скоро зʼявляться тут.</p>
+          <p>Спокійні відтінки, приємні до тіла тканини й затишні пледи.</p>
         </div>
         <div class="cats" id="cats"></div>
         <div id="items"></div>
@@ -138,8 +141,8 @@
     <section class="sec">
       <div class="wrap">
         <div class="perks">
-          <div class="perk rise"><div class="i"><svg class="ico"><use href="#i-wallet"/></svg></div><h3>Оплата при отриманні</h3><p>Без передоплати: спершу оглядаєте у відділенні, потім платите.</p></div>
-          <div class="perk rise"><div class="i"><svg class="ico"><use href="#i-truck"/></svg></div><h3>Доставка 1–3 дні</h3><p>Новою Поштою по всій Україні.</p></div>
+          <div class="perk rise"><div class="i"><svg class="ico"><use href="#i-wallet"/></svg></div><h3>Передоплата лише 200 грн</h3><p>Решту суми сплачуєте у відділенні Нової Пошти після огляду.</p></div>
+          <div class="perk rise"><div class="i"><svg class="ico"><use href="#i-truck"/></svg></div><h3>Відправка за 2–3 дні</h3><p>Новою Поштою по всій Україні, доставка — 1–3 дні.</p></div>
           <div class="perk rise"><div class="i"><svg class="ico"><use href="#i-chat"/></svg></div><h3>Допомога з вибором</h3><p>Підкажемо розмір, колір і тканину — просто зателефонуйте.</p></div>
           <div class="perk rise"><div class="i"><svg class="ico"><use href="#i-heart"/></svg></div><h3>З турботою</h3><p>Акуратно пакуємо кожне замовлення — приємно й для подарунка.</p></div>
         </div>
@@ -154,9 +157,9 @@
           <h2>Як замовити</h2>
         </div>
         <div class="steps">
-          <div class="step rise"><h3>Залишаєте заявку</h3><p>Обираєте товар на сайті або телефонуєте нам — допоможемо визначитися.</p></div>
-          <div class="step rise"><h3>Відправляємо</h3><p>Надсилаємо Новою Поштою в день замовлення або наступного дня. Доставка — 1–3 дні.</p></div>
-          <div class="step rise"><h3>Оглядаєте й платите</h3><p>Перевіряєте замовлення у відділенні та сплачуєте післяплатою.</p></div>
+          <div class="step rise"><h3>Залишаєте заявку</h3><p>Обираєте товар і розмір на сайті або телефонуєте нам — допоможемо визначитися.</p></div>
+          <div class="step rise"><h3>Передоплата й відправка</h3><p>Менеджер підтверджує наявність і надсилає реквізити для передоплати 200 грн. Відправляємо протягом 2–3 днів.</p></div>
+          <div class="step rise"><h3>Оглядаєте й забираєте</h3><p>Перевіряєте замовлення у відділенні та сплачуєте решту суми.</p></div>
         </div>
       </div>
     </section>
@@ -169,10 +172,10 @@
           <h2>Часті запитання</h2>
         </div>
         <div class="faq">
-          <details class="rise"><summary>Чи потрібна передоплата?</summary><p>Ні. Відправляємо післяплатою Новою Поштою: ви оглядаєте замовлення у відділенні й лише потім оплачуєте.</p></details>
-          <details class="rise"><summary>Скільки йде доставка?</summary><p>Відправляємо в день замовлення або наступного дня. Доставка Новою Поштою займає 1–3 дні.</p></details>
-          <details class="rise"><summary>Як обрати розмір постільної білизни?</summary><p>Орієнтуйтеся на розмір ковдри й матраца. Якщо сумніваєтеся — зателефонуйте, і ми підкажемо, який комплект підійде саме вам.</p></details>
-          <details class="rise"><summary>Чи можна повернути або обміняти товар?</summary><p>Якщо товар має брак або не відповідає опису — обміняємо його чи повернемо гроші. Постільну білизну належної якості за законом обміняти чи повернути не можна, тому радимо уважно оглядати її у відділенні перед оплатою. Пледи можна повернути або обміняти протягом 14 днів, якщо збережено товарний вигляд і упаковку.</p></details>
+          <details class="rise"><summary>Чи потрібна передоплата?</summary><p>Так, 200 грн — це гарантія, що замовлення справді потрібне. Решту суми ви сплачуєте у відділенні Нової Пошти після огляду.</p></details>
+          <details class="rise"><summary>Скільки йде доставка?</summary><p>Відправляємо протягом 2–3 днів після передоплати. Доставка Новою Поштою займає 1–3 дні.</p></details>
+          <details class="rise"><summary>Як обрати розмір постільної білизни?</summary><p>Орієнтуйтеся на розмір ковдри: двоспальна підковдра — 180×220 см, євро — 200×220 см, у сімейному комплекті дві підковдри 150×220 см. Точні розміри кожного комплекту вказані на його сторінці. Наволочки можна обрати 70×70 або 50×70 см.</p></details>
+          <details class="rise"><summary>Чи можна повернути або обміняти товар?</summary><p>Якщо товар має брак, інший розмір чи колір — обміняємо його чи повернемо гроші. Постільну білизну належної якості за законом обміняти чи повернути не можна, тому уважно оглядайте її у відділенні перед оплатою. Пледи можна повернути протягом 14 днів, якщо збережено товарний вигляд і упаковку.</p></details>
         </div>
       </div>
     </section>
@@ -218,12 +221,13 @@
   </dialog>
   <dialog id="returns">
     <h3>Умови повернення та обміну</h3>
-    <p>Товар із браком або такий, що не відповідає опису, ми обміняємо чи повернемо за нього гроші — звʼяжіться з нами, і ми підкажемо всі кроки.</p>
+    <p>Товар із браком або такий, що не відповідає замовленню (розмір, колір), ми обміняємо чи повернемо за нього гроші — звʼяжіться з нами, і ми підкажемо всі кроки. Комплект має бути неушкодженим, у цілісній упаковці, не праний і не використаний. Не вважаються браком відхилення в розмірах до 5 см і незначна різниця у відтінку.</p>
     <p>Постільна білизна належної якості не підлягає обміну та поверненню згідно з Переліком, затвердженим постановою Кабінету Міністрів України № 172. Тому радимо уважно оглядати її у відділенні Нової Пошти до оплати.</p>
     <p>Пледи належної якості можна повернути або обміняти протягом 14 днів з моменту отримання відповідно до Закону України «Про захист прав споживачів», якщо збережено товарний вигляд, ярлики та упаковку.</p>
     <form method="dialog"><button class="btn btn-main">Закрити</button></form>
   </dialog>
 
+  <script src="/assets/cart.js?v=4"></script>
   <script>
   (function () {
     var $ = function (s) { return document.querySelector(s); };
@@ -246,8 +250,8 @@
     // Картки товарів: по групах. Поки товарів немає — показуємо лагідну заглушку.
     var card = function (p) {
       return '<a class="card" href="' + esc(p.url) + '"><img src="' + esc(p.image) + '" alt="' + esc(p.name) + '" loading="lazy">'
-        + '<span class="b"><span class="n">' + esc(p.name) + '</span>' + (p.short ? '<span style="font-size:14px;color:var(--muted)">' + esc(p.short) + '</span>' : '')
-        + '<span class="pr">' + p.price + ' грн' + (p.oldPrice ? '<s>' + p.oldPrice + ' грн</s>' : '') + '</span></span></a>';
+        + '<span class="b"><span class="n">' + esc(p.name) + '</span>' + (p.variants ? '<span style="font-size:13px;color:var(--muted)">' + p.variants.map(function (v) { return v.label; }).filter(function (v, i, a) { return a.indexOf(v) === i; }).join(' · ') + '</span>' : '')
+        + '<span class="pr">' + ((p.variants || []).length > 1 ? 'від ' : '') + p.price.toLocaleString('uk-UA') + ' грн</span></span></a>';
     };
     $('#items').innerHTML = P.length
       ? D.filter(function (d) { return inDept(d).length; }).map(function (d) {
@@ -268,6 +272,7 @@
       var o = e.target.closest('[data-open]'); if (o) { var d = document.getElementById(o.dataset.open); if (d && d.showModal) d.showModal(); }
       if (e.target.tagName === 'DIALOG') e.target.close();
     });
+    if (location.hash === '#privacy' || location.hash === '#returns') { var dd = document.getElementById(location.hash.slice(1)); if (dd && dd.showModal) dd.showModal(); }
     // Плавна поява блоків
     var els = document.querySelectorAll('.rise');
     if ('IntersectionObserver' in window) {

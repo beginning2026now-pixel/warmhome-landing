@@ -13,7 +13,7 @@ CATEGORY = {                                          # підкатегорія
     'plaids': 'Home & Garden > Linens & Bedding > Bedding > Blankets',
 }
 DEFAULT_CATEGORY = 'Home & Garden > Linens & Bedding > Bedding'
-FIELDS = ['id', 'title', 'description', 'availability', 'condition', 'price', 'sale_price', 'link', 'image_link',
+FIELDS = ['id', 'item_group_id', 'title', 'description', 'availability', 'condition', 'price', 'sale_price', 'link', 'image_link',
           'brand', 'google_product_category', 'product_type', 'custom_label_0']
 
 P = json.loads(subprocess.run(['node', '-e', "global.window={};require('./assets/products.js');console.log(JSON.stringify(window.PRODUCTS))"],
@@ -29,7 +29,7 @@ def photo(p):
     if not img.startswith('/assets/') or not os.path.exists(src):
         src = img.lstrip('/')
     out = 'assets/feed/%s.jpg' % p['slug']
-    Image.open(src).convert('RGB').resize((1024, 1024), Image.LANCZOS).save(out, 'JPEG', quality=86, optimize=True)
+    im = Image.open(src).convert('RGB'); im.thumbnail((1024, 1024), Image.LANCZOS); im.save(out, 'JPEG', quality=86, optimize=True)
     # версія = хеш вмісту фото: змінилося фото → змінилася адреса → Meta завантажує нове
     return '%s/%s?v=%s' % (SITE, out, hashlib.md5(open(out, 'rb').read()).hexdigest()[:10])
 
@@ -40,23 +40,25 @@ for p in P:
     page = open('.' + p['url'] + 'index.html', encoding='utf-8').read()
     meta = re.search(r'<meta name="description" content="([^"]*)"', page)
     desc = text(meta.group(1)) if meta else p.get('short', '')
-    desc += ' Доставка Новою Поштою 1–3 дні, оплата при отриманні.'
-    old = p.get('oldPrice')
-    rows.append({
-        'id': p['sku'],                               # той самий артикул, що й у подіях пікселя (content_ids)
-        'title': p['name'][:150],
-        'description': desc[:5000],
-        'availability': 'in stock',
-        'condition': 'new',
-        'price': '%d UAH' % (old if old and old > p['price'] else p['price']),
-        'sale_price': '%d UAH' % p['price'] if old and old > p['price'] else '',
-        'link': SITE + p['url'],
-        'image_link': photo(p),
-        'brand': 'WarmHome UA',
-        'google_product_category': next((CATEGORY[c] for c in (p.get('cat') or []) if c in CATEGORY), DEFAULT_CATEGORY),
-        'product_type': ', '.join(p.get('cat') or []),
-        'custom_label_0': 'Закінчується' if p.get('ending') else '',
-    })
+    desc += ' Відправка за 2–3 дні, доставка Новою Поштою, передоплата 200 грн, решта при отриманні.'
+    img = photo(p)
+    for v in p.get('variants') or [{'id': '', 'label': '', 'sku': p['sku'], 'price': p['price']}]:
+        rows.append({
+            'id': '%s-%s' % (v['sku'], v['id']) if v['id'] else p['sku'],   # той самий id, що в подіях пікселя
+            'item_group_id': p['slug'],
+            'title': ('%s, %s' % (p['name'], v['label'].lower()) if v['label'] else p['name'])[:150],
+            'description': desc[:5000],
+            'availability': 'in stock',
+            'condition': 'new',
+            'price': '%d UAH' % v['price'],
+            'sale_price': '',
+            'link': SITE + p['url'],
+            'image_link': img,
+            'brand': 'WarmHome UA',
+            'google_product_category': next((CATEGORY[c] for c in (p.get('cat') or []) if c in CATEGORY), DEFAULT_CATEGORY),
+            'product_type': ', '.join(p.get('cat') or []),
+            'custom_label_0': '',
+        })
 
 with open('feed/facebook.csv', 'w', encoding='utf-8', newline='') as f:
     w = csv.DictWriter(f, fieldnames=FIELDS); w.writeheader(); w.writerows(rows)
