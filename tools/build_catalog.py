@@ -30,9 +30,15 @@ NAME = {
     'teddy': 'Плед-покривало «Тедді» · {c}',
     'sharpei': 'Плед-покривало «Королівський шарпей» · {c}',
     'ovchyna': 'Плед з еко-овчини · {c}',
+    'luxe': 'Комплект з бязі Gold Lux · {c}',
+    'flannel': 'Комплект з байки · {c}',
+    'stripe_r': 'Страйп-сатин з простирадлом на резинці · {c}',
+    'velour': 'Велюровий комплект «Шарпей» · {c}',
+    'velour_m': 'Велюровий комплект «Моніка» · {c}',
 }
 CAT = {'varena': 'sets', 'stripe': 'sets', 'satin': 'sets', 'plaid': 'plaids', 'gold': 'sets', 'stripe_a': 'sets',
-       'teddy': 'plaids', 'sharpei': 'plaids', 'ovchyna': 'plaids', 'toy': 'toys'}
+       'teddy': 'plaids', 'sharpei': 'plaids', 'ovchyna': 'plaids', 'toy': 'toys',
+       'luxe': 'sets', 'flannel': 'sets', 'stripe_r': 'sets', 'velour': 'sets', 'velour_m': 'sets'}
 DEPT = {'sets': ('Постільна білизна', 'bedding'), 'plaids': ('Пледи', 'plaids'), 'toys': ('Іграшки з пледом', 'toys')}
 SIZE_ORDER = ['15', '2', 'e', 's', 't70']
 
@@ -129,6 +135,8 @@ def page(p, prod, imgs, related):
 
 def pillow_block(f):
     opts = f.get('pillows', ['70×70', '50×70'])
+    if not opts:
+        return ''
     btns = ''.join('<button type="button" data-p="%s" aria-pressed="%s">%s см</button>' % (o, 'true' if i == 0 else 'false', o) for i, o in enumerate(opts))
     return '<div class="opt-l">Наволочки</div>\n          <div class="opts" id="pillow">%s</div>' % btns
 

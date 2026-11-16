@@ -242,6 +242,119 @@
    "dims": {
     "e": "200×230 см"
    }
+  },
+  "luxe": {
+   "title": "Бязь Gold Lux",
+   "lead": "Натуральна бавовняна бязь підвищеної щільності: не скочується і не линяє після прання.",
+   "about": "Бязь Gold Lux — щільна гладка тканина полотняного переплетення. Вона дихає, добре вбирає вологу і зберігає колір після багатьох прань.",
+   "props": [
+    [
+     "Тканина",
+     "бязь Gold Lux"
+    ],
+    [
+     "Наволочки",
+     "70×70 або 50×70 см на вибір"
+    ]
+   ],
+   "dims": {
+    "15": "підковдра 150×220, простирадло 150×220 см, 1 наволочка",
+    "2": "точні розміри підтвердить менеджер",
+    "e": "точні розміри підтвердить менеджер"
+   }
+  },
+  "flannel": {
+   "title": "Байка (фланель)",
+   "lead": "Тепла мʼяка байка зі 100% бавовни — швидко зігріває навіть у сиру погоду.",
+   "about": "Фланель приємна на дотик, міцна і добре пропускає повітря, тож тілу комфортно всю ніч. Ідеальний вибір на осінь і зиму.",
+   "props": [
+    [
+     "Склад",
+     "100% бавовна (байка)"
+    ],
+    [
+     "Сезон",
+     "осінь — зима"
+    ]
+   ],
+   "dims": {
+    "15": "точні розміри підтвердить менеджер",
+    "2": "точні розміри підтвердить менеджер",
+    "e": "точні розміри підтвердить менеджер"
+   },
+   "pillows": []
+  },
+  "stripe_r": {
+   "title": "Страйп-сатин на резинці",
+   "lead": "Комплект зі страйп-сатину з простирадлом на резинці — не сповзає і завжди рівно лежить на матраці.",
+   "about": "Простирадло на гумці по всьому периметру з бортом 25 см щільно тримається на матраці. Страйп-сатин гладкий, приємний до тіла і легко переться.",
+   "props": [
+    [
+     "Тканина",
+     "страйп-сатин"
+    ],
+    [
+     "Простирадло",
+     "на резинці, борт 25 см"
+    ],
+    [
+     "Наволочки",
+     "50×70 см, 2 шт"
+    ]
+   ],
+   "dims": {
+    "2": "підковдра 180×220, простирадло на резинці 160×200 см + борт 25 см",
+    "e": "підковдра 200×230, простирадло на резинці 180×200 см + борт 25 см"
+   },
+   "pillows": [
+    "50×70"
+   ]
+  },
+  "velour": {
+   "title": "Велюр «Шарпей»",
+   "lead": "Мʼяка тепла велюрова постіль з обʼємною смужкою — для прохолодних ночей.",
+   "about": "Велюр добре утримує тепло, ніжний до тіла і довго служить. Чудова ідея і для подарунка.",
+   "props": [
+    [
+     "Тканина",
+     "велюр «шарпей»"
+    ],
+    [
+     "Наволочки",
+     "50×70 см, 2 шт"
+    ]
+   ],
+   "dims": {
+    "e": "підковдра 200×230, простирадло 220×240 см"
+   },
+   "pillows": [
+    "50×70"
+   ]
+  },
+  "velour_m": {
+   "title": "Велюр «Моніка»",
+   "lead": "Тепла велюрова постіль з легким переливом — мʼяка, не парить і не електризується.",
+   "about": "Велюр не втрачає колір, швидко сохне і дарує тепло в холодну пору. Підковдра й наволочки на замочку.",
+   "props": [
+    [
+     "Тканина",
+     "велюр"
+    ],
+    [
+     "Застібка",
+     "на замочку"
+    ],
+    [
+     "Наволочки",
+     "50×70 см, 2 шт"
+    ]
+   ],
+   "dims": {
+    "e": "підковдра 200×230, простирадло 240×250 см"
+   },
+   "pillows": [
+    "50×70"
+   ]
   }
  },
  "sizes": {
@@ -304,6 +417,33 @@
   },
   "ovchyna": {
    "e": 840
+  },
+  "luxe": {
+   "15": 675,
+   "2": 765,
+   "e": 850
+  },
+  "luxe_b": {
+   "2": 655
+  },
+  "flannel": {
+   "2": 1400,
+   "e": 1450
+  },
+  "flannel_p": {
+   "15": 1370,
+   "2": 1535,
+   "e": 1630
+  },
+  "stripe_r": {
+   "2": 885,
+   "e": 935
+  },
+  "velour": {
+   "e": 1550
+  },
+  "velour_m": {
+   "e": 1560
   }
  },
  "products": [
@@ -1263,6 +1403,573 @@
     [
      "SV-O02",
      "ovchyna",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "biaz-lux-lystia-siro-synii",
+   "fabric": "luxe",
+   "color": "Листя на сіро-синьому",
+   "img": "L1",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "202165",
+     "2": "202167",
+     "e": "202168"
+    }
+   },
+   "variants": [
+    [
+     "SV-L01",
+     "luxe",
+     "15"
+    ],
+    [
+     "SV-L01",
+     "luxe",
+     "2"
+    ],
+    [
+     "SV-L01",
+     "luxe",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "biaz-lux-gilochky",
+   "fabric": "luxe",
+   "color": "Гілочки на світлому",
+   "img": "L2",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "148323",
+     "2": "148326"
+    }
+   },
+   "variants": [
+    [
+     "SV-L02",
+     "luxe",
+     "15"
+    ],
+    [
+     "SV-L02",
+     "luxe",
+     "2"
+    ]
+   ]
+  },
+  {
+   "slug": "biaz-lux-lavandovyi",
+   "fabric": "luxe",
+   "color": "Лавандовий",
+   "img": "L3",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "148316",
+     "e": "148317"
+    }
+   },
+   "variants": [
+    [
+     "SV-L03",
+     "luxe",
+     "2"
+    ],
+    [
+     "SV-L03",
+     "luxe",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "biaz-lux-grafitovyi",
+   "fabric": "luxe",
+   "color": "Графітовий",
+   "img": "L4",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "126566",
+     "e": "126565"
+    }
+   },
+   "variants": [
+    [
+     "SV-L04",
+     "luxe",
+     "2"
+    ],
+    [
+     "SV-L04",
+     "luxe",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "biaz-lux-karamelnyi",
+   "fabric": "luxe",
+   "color": "Карамельний",
+   "img": "L5",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "124283"
+    }
+   },
+   "variants": [
+    [
+     "SV-L05",
+     "luxe_b",
+     "2"
+    ]
+   ]
+  },
+  {
+   "slug": "biaz-lux-geometriia-grafit",
+   "fabric": "luxe",
+   "color": "Геометрія графіт",
+   "img": "L6",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "126024"
+    }
+   },
+   "variants": [
+    [
+     "SV-L06",
+     "luxe",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "biaz-lux-siryi-z-rozhevym",
+   "fabric": "luxe",
+   "color": "Сірий з рожевим",
+   "img": "L7",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "124291"
+    }
+   },
+   "variants": [
+    [
+     "SV-L07",
+     "luxe_b",
+     "2"
+    ]
+   ]
+  },
+  {
+   "slug": "baika-karamelnyi-vizerunok",
+   "fabric": "flannel",
+   "color": "Карамельний візерунок",
+   "img": "F1",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "196566",
+     "e": "196587"
+    }
+   },
+   "variants": [
+    [
+     "SV-F01",
+     "flannel",
+     "2"
+    ],
+    [
+     "SV-F01",
+     "flannel",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "baika-sertsia",
+   "fabric": "flannel",
+   "color": "Серця",
+   "img": "F2",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "196555",
+     "e": "196581"
+    }
+   },
+   "variants": [
+    [
+     "SV-F02",
+     "flannel",
+     "2"
+    ],
+    [
+     "SV-F02",
+     "flannel",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "baika-piria",
+   "fabric": "flannel",
+   "color": "Пірʼя на сірому",
+   "img": "F3",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "196559",
+     "e": "196580"
+    }
+   },
+   "variants": [
+    [
+     "SV-F03",
+     "flannel",
+     "2"
+    ],
+    [
+     "SV-F03",
+     "flannel",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "baika-siryi-vizerunok",
+   "fabric": "flannel",
+   "color": "Сірий візерунок",
+   "img": "F4",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "196565"
+    }
+   },
+   "variants": [
+    [
+     "SV-F04",
+     "flannel",
+     "2"
+    ]
+   ]
+  },
+  {
+   "slug": "baika-bezhevi-lystky",
+   "fabric": "flannel",
+   "color": "Бежеві листочки",
+   "img": "F5",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "15": "196544",
+     "2": "196576",
+     "e": "196560"
+    }
+   },
+   "variants": [
+    [
+     "SV-F05",
+     "flannel_p",
+     "15"
+    ],
+    [
+     "SV-F05",
+     "flannel_p",
+     "2"
+    ],
+    [
+     "SV-F05",
+     "flannel_p",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "straip-rezynka-grafitovyi",
+   "fabric": "stripe_r",
+   "color": "Графітовий",
+   "img": "R1",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "147165",
+     "e": "147181"
+    }
+   },
+   "variants": [
+    [
+     "SV-R01",
+     "stripe_r",
+     "2"
+    ],
+    [
+     "SV-R01",
+     "stripe_r",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "straip-rezynka-lavandovyi",
+   "fabric": "stripe_r",
+   "color": "Лавандовий",
+   "img": "R2",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "245007",
+     "e": "245013"
+    }
+   },
+   "variants": [
+    [
+     "SV-R02",
+     "stripe_r",
+     "2"
+    ],
+    [
+     "SV-R02",
+     "stripe_r",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "straip-rezynka-svitlo-siryi",
+   "fabric": "stripe_r",
+   "color": "Світло-сірий",
+   "img": "R3",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "147171",
+     "e": "147304"
+    }
+   },
+   "variants": [
+    [
+     "SV-R03",
+     "stripe_r",
+     "2"
+    ],
+    [
+     "SV-R03",
+     "stripe_r",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "straip-rezynka-pudrovyi",
+   "fabric": "stripe_r",
+   "color": "Пудровий",
+   "img": "R4",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "245006",
+     "e": "245012"
+    }
+   },
+   "variants": [
+    [
+     "SV-R04",
+     "stripe_r",
+     "2"
+    ],
+    [
+     "SV-R04",
+     "stripe_r",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "straip-rezynka-smarahdovyi",
+   "fabric": "stripe_r",
+   "color": "Смарагдовий",
+   "img": "R5",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "147301"
+    }
+   },
+   "variants": [
+    [
+     "SV-R05",
+     "stripe_r",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "straip-rezynka-synii",
+   "fabric": "stripe_r",
+   "color": "Синій",
+   "img": "R6",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "147169"
+    }
+   },
+   "variants": [
+    [
+     "SV-R06",
+     "stripe_r",
+     "2"
+    ]
+   ]
+  },
+  {
+   "slug": "straip-rezynka-kavovyi",
+   "fabric": "stripe_r",
+   "color": "Кавовий",
+   "img": "R7",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "2": "147167"
+    }
+   },
+   "variants": [
+    [
+     "SV-R07",
+     "stripe_r",
+     "2"
+    ]
+   ]
+  },
+  {
+   "slug": "veliur-sharpei-kapuchino",
+   "fabric": "velour",
+   "color": "Капучино",
+   "img": "V1",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "250478"
+    }
+   },
+   "variants": [
+    [
+     "SV-V01",
+     "velour",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "veliur-sharpei-siryi",
+   "fabric": "velour",
+   "color": "Сірий",
+   "img": "V2",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "186555"
+    }
+   },
+   "variants": [
+    [
+     "SV-V02",
+     "velour",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "veliur-sharpei-molochnyi",
+   "fabric": "velour",
+   "color": "Молочний",
+   "img": "V4",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "250477"
+    }
+   },
+   "variants": [
+    [
+     "SV-V03",
+     "velour",
+     "e"
+    ]
+   ]
+  },
+  {
+   "slug": "veliur-monika-siryi",
+   "fabric": "velour_m",
+   "color": "Сірий",
+   "img": "V5",
+   "supplier": "sova",
+   "added": "2026-11-16T21:00",
+   "maxphotos": 4,
+   "src": {
+    "ed": {
+     "e": "124325"
+    }
+   },
+   "variants": [
+    [
+     "SV-V04",
+     "velour_m",
      "e"
     ]
    ]

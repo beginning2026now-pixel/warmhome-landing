@@ -1607,6 +1607,784 @@ window.PRODUCTS = [
    }
   ],
   "sup": "SV"
+ },
+ {
+  "slug": "biaz-lux-lystia-siro-synii",
+  "sku": "SV-L01",
+  "name": "Комплект з бязі Gold Lux · Листя на сіро-синьому",
+  "short": "Бязь Gold Lux",
+  "fabric": "luxe",
+  "price": 1200,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/biaz-lux-lystia-siro-synii-1.jpg",
+  "images": [
+   "/assets/img/p/biaz-lux-lystia-siro-synii-1.jpg",
+   "/assets/img/p/biaz-lux-lystia-siro-synii-2.jpg",
+   "/assets/img/p/biaz-lux-lystia-siro-synii-3.jpg"
+  ],
+  "url": "/products/biaz-lux-lystia-siro-synii/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "15",
+    "size": "15",
+    "label": "Півтораспальний",
+    "sku": "SV-L01",
+    "price": 1200
+   },
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "SV-L01",
+    "price": 1300
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-L01",
+    "price": 1400
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "biaz-lux-gilochky",
+  "sku": "SV-L02",
+  "name": "Комплект з бязі Gold Lux · Гілочки на світлому",
+  "short": "Бязь Gold Lux",
+  "fabric": "luxe",
+  "price": 1200,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/biaz-lux-gilochky-1.jpg",
+  "images": [
+   "/assets/img/p/biaz-lux-gilochky-1.jpg",
+   "/assets/img/p/biaz-lux-gilochky-2.jpg",
+   "/assets/img/p/biaz-lux-gilochky-3.jpg"
+  ],
+  "url": "/products/biaz-lux-gilochky/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "15",
+    "size": "15",
+    "label": "Півтораспальний",
+    "sku": "SV-L02",
+    "price": 1200
+   },
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "SV-L02",
+    "price": 1300
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "biaz-lux-lavandovyi",
+  "sku": "SV-L03",
+  "name": "Комплект з бязі Gold Lux · Лавандовий",
+  "short": "Бязь Gold Lux",
+  "fabric": "luxe",
+  "price": 1300,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/biaz-lux-lavandovyi-1.jpg",
+  "images": [
+   "/assets/img/p/biaz-lux-lavandovyi-1.jpg",
+   "/assets/img/p/biaz-lux-lavandovyi-2.jpg",
+   "/assets/img/p/biaz-lux-lavandovyi-3.jpg"
+  ],
+  "url": "/products/biaz-lux-lavandovyi/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "SV-L03",
+    "price": 1300
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-L03",
+    "price": 1400
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "biaz-lux-grafitovyi",
+  "sku": "SV-L04",
+  "name": "Комплект з бязі Gold Lux · Графітовий",
+  "short": "Бязь Gold Lux",
+  "fabric": "luxe",
+  "price": 1300,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/biaz-lux-grafitovyi-1.jpg",
+  "images": [
+   "/assets/img/p/biaz-lux-grafitovyi-1.jpg"
+  ],
+  "url": "/products/biaz-lux-grafitovyi/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "SV-L04",
+    "price": 1300
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-L04",
+    "price": 1400
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "biaz-lux-karamelnyi",
+  "sku": "SV-L05",
+  "name": "Комплект з бязі Gold Lux · Карамельний",
+  "short": "Бязь Gold Lux",
+  "fabric": "luxe",
+  "price": 1200,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/biaz-lux-karamelnyi-1.jpg",
+  "images": [
+   "/assets/img/p/biaz-lux-karamelnyi-1.jpg",
+   "/assets/img/p/biaz-lux-karamelnyi-2.jpg",
+   "/assets/img/p/biaz-lux-karamelnyi-3.jpg"
+  ],
+  "url": "/products/biaz-lux-karamelnyi/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "SV-L05",
+    "price": 1200
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "biaz-lux-geometriia-grafit",
+  "sku": "SV-L06",
+  "name": "Комплект з бязі Gold Lux · Геометрія графіт",
+  "short": "Бязь Gold Lux",
+  "fabric": "luxe",
+  "price": 1400,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/biaz-lux-geometriia-grafit-1.jpg",
+  "images": [
+   "/assets/img/p/biaz-lux-geometriia-grafit-1.jpg"
+  ],
+  "url": "/products/biaz-lux-geometriia-grafit/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-L06",
+    "price": 1400
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "biaz-lux-siryi-z-rozhevym",
+  "sku": "SV-L07",
+  "name": "Комплект з бязі Gold Lux · Сірий з рожевим",
+  "short": "Бязь Gold Lux",
+  "fabric": "luxe",
+  "price": 1200,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/biaz-lux-siryi-z-rozhevym-1.jpg",
+  "images": [
+   "/assets/img/p/biaz-lux-siryi-z-rozhevym-1.jpg",
+   "/assets/img/p/biaz-lux-siryi-z-rozhevym-2.jpg",
+   "/assets/img/p/biaz-lux-siryi-z-rozhevym-3.jpg"
+  ],
+  "url": "/products/biaz-lux-siryi-z-rozhevym/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "SV-L07",
+    "price": 1200
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "baika-karamelnyi-vizerunok",
+  "sku": "SV-F01",
+  "name": "Комплект з байки · Карамельний візерунок",
+  "short": "Байка (фланель)",
+  "fabric": "flannel",
+  "price": 1900,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/baika-karamelnyi-vizerunok-1.jpg",
+  "images": [
+   "/assets/img/p/baika-karamelnyi-vizerunok-1.jpg"
+  ],
+  "url": "/products/baika-karamelnyi-vizerunok/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "SV-F01",
+    "price": 1900
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-F01",
+    "price": 2000
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "baika-sertsia",
+  "sku": "SV-F02",
+  "name": "Комплект з байки · Серця",
+  "short": "Байка (фланель)",
+  "fabric": "flannel",
+  "price": 1900,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/baika-sertsia-1.jpg",
+  "images": [
+   "/assets/img/p/baika-sertsia-1.jpg"
+  ],
+  "url": "/products/baika-sertsia/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "SV-F02",
+    "price": 1900
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-F02",
+    "price": 2000
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "baika-piria",
+  "sku": "SV-F03",
+  "name": "Комплект з байки · Пірʼя на сірому",
+  "short": "Байка (фланель)",
+  "fabric": "flannel",
+  "price": 1900,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/baika-piria-1.jpg",
+  "images": [
+   "/assets/img/p/baika-piria-1.jpg"
+  ],
+  "url": "/products/baika-piria/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "SV-F03",
+    "price": 1900
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-F03",
+    "price": 2000
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "baika-siryi-vizerunok",
+  "sku": "SV-F04",
+  "name": "Комплект з байки · Сірий візерунок",
+  "short": "Байка (фланель)",
+  "fabric": "flannel",
+  "price": 1900,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/baika-siryi-vizerunok-1.jpg",
+  "images": [
+   "/assets/img/p/baika-siryi-vizerunok-1.jpg",
+   "/assets/img/p/baika-siryi-vizerunok-2.jpg",
+   "/assets/img/p/baika-siryi-vizerunok-3.jpg"
+  ],
+  "url": "/products/baika-siryi-vizerunok/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "SV-F04",
+    "price": 1900
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "baika-bezhevi-lystky",
+  "sku": "SV-F05",
+  "name": "Комплект з байки · Бежеві листочки",
+  "short": "Байка (фланель)",
+  "fabric": "flannel",
+  "price": 1900,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/baika-bezhevi-lystky-1.jpg",
+  "images": [
+   "/assets/img/p/baika-bezhevi-lystky-1.jpg"
+  ],
+  "url": "/products/baika-bezhevi-lystky/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "15",
+    "size": "15",
+    "label": "Півтораспальний",
+    "sku": "SV-F05",
+    "price": 1900
+   },
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "SV-F05",
+    "price": 2100
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-F05",
+    "price": 2200
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "straip-rezynka-grafitovyi",
+  "sku": "SV-R01",
+  "name": "Страйп-сатин з простирадлом на резинці · Графітовий",
+  "short": "Страйп-сатин на резинці",
+  "fabric": "stripe_r",
+  "price": 1400,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/straip-rezynka-grafitovyi-1.jpg",
+  "images": [
+   "/assets/img/p/straip-rezynka-grafitovyi-1.jpg"
+  ],
+  "url": "/products/straip-rezynka-grafitovyi/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "SV-R01",
+    "price": 1400
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-R01",
+    "price": 1500
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "straip-rezynka-lavandovyi",
+  "sku": "SV-R02",
+  "name": "Страйп-сатин з простирадлом на резинці · Лавандовий",
+  "short": "Страйп-сатин на резинці",
+  "fabric": "stripe_r",
+  "price": 1400,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/straip-rezynka-lavandovyi-1.jpg",
+  "images": [
+   "/assets/img/p/straip-rezynka-lavandovyi-1.jpg"
+  ],
+  "url": "/products/straip-rezynka-lavandovyi/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "SV-R02",
+    "price": 1400
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-R02",
+    "price": 1500
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "straip-rezynka-svitlo-siryi",
+  "sku": "SV-R03",
+  "name": "Страйп-сатин з простирадлом на резинці · Світло-сірий",
+  "short": "Страйп-сатин на резинці",
+  "fabric": "stripe_r",
+  "price": 1400,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/straip-rezynka-svitlo-siryi-1.jpg",
+  "images": [
+   "/assets/img/p/straip-rezynka-svitlo-siryi-1.jpg"
+  ],
+  "url": "/products/straip-rezynka-svitlo-siryi/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "SV-R03",
+    "price": 1400
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-R03",
+    "price": 1500
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "straip-rezynka-pudrovyi",
+  "sku": "SV-R04",
+  "name": "Страйп-сатин з простирадлом на резинці · Пудровий",
+  "short": "Страйп-сатин на резинці",
+  "fabric": "stripe_r",
+  "price": 1400,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/straip-rezynka-pudrovyi-1.jpg",
+  "images": [
+   "/assets/img/p/straip-rezynka-pudrovyi-1.jpg"
+  ],
+  "url": "/products/straip-rezynka-pudrovyi/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "SV-R04",
+    "price": 1400
+   },
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-R04",
+    "price": 1500
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "straip-rezynka-smarahdovyi",
+  "sku": "SV-R05",
+  "name": "Страйп-сатин з простирадлом на резинці · Смарагдовий",
+  "short": "Страйп-сатин на резинці",
+  "fabric": "stripe_r",
+  "price": 1500,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/straip-rezynka-smarahdovyi-1.jpg",
+  "images": [
+   "/assets/img/p/straip-rezynka-smarahdovyi-1.jpg"
+  ],
+  "url": "/products/straip-rezynka-smarahdovyi/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-R05",
+    "price": 1500
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "straip-rezynka-synii",
+  "sku": "SV-R06",
+  "name": "Страйп-сатин з простирадлом на резинці · Синій",
+  "short": "Страйп-сатин на резинці",
+  "fabric": "stripe_r",
+  "price": 1400,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/straip-rezynka-synii-1.jpg",
+  "images": [
+   "/assets/img/p/straip-rezynka-synii-1.jpg"
+  ],
+  "url": "/products/straip-rezynka-synii/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "SV-R06",
+    "price": 1400
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "straip-rezynka-kavovyi",
+  "sku": "SV-R07",
+  "name": "Страйп-сатин з простирадлом на резинці · Кавовий",
+  "short": "Страйп-сатин на резинці",
+  "fabric": "stripe_r",
+  "price": 1400,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/straip-rezynka-kavovyi-1.jpg",
+  "images": [
+   "/assets/img/p/straip-rezynka-kavovyi-1.jpg"
+  ],
+  "url": "/products/straip-rezynka-kavovyi/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "2",
+    "size": "2",
+    "label": "Двоспальний",
+    "sku": "SV-R07",
+    "price": 1400
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "veliur-sharpei-kapuchino",
+  "sku": "SV-V01",
+  "name": "Велюровий комплект «Шарпей» · Капучино",
+  "short": "Велюр «Шарпей»",
+  "fabric": "velour",
+  "price": 2100,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/veliur-sharpei-kapuchino-1.jpg",
+  "images": [
+   "/assets/img/p/veliur-sharpei-kapuchino-1.jpg"
+  ],
+  "url": "/products/veliur-sharpei-kapuchino/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-V01",
+    "price": 2100
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "veliur-sharpei-siryi",
+  "sku": "SV-V02",
+  "name": "Велюровий комплект «Шарпей» · Сірий",
+  "short": "Велюр «Шарпей»",
+  "fabric": "velour",
+  "price": 2100,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/veliur-sharpei-siryi-1.jpg",
+  "images": [
+   "/assets/img/p/veliur-sharpei-siryi-1.jpg"
+  ],
+  "url": "/products/veliur-sharpei-siryi/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-V02",
+    "price": 2100
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "veliur-sharpei-molochnyi",
+  "sku": "SV-V03",
+  "name": "Велюровий комплект «Шарпей» · Молочний",
+  "short": "Велюр «Шарпей»",
+  "fabric": "velour",
+  "price": 2100,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/veliur-sharpei-molochnyi-1.jpg",
+  "images": [
+   "/assets/img/p/veliur-sharpei-molochnyi-1.jpg"
+  ],
+  "url": "/products/veliur-sharpei-molochnyi/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-V03",
+    "price": 2100
+   }
+  ],
+  "sup": "SV"
+ },
+ {
+  "slug": "veliur-monika-siryi",
+  "sku": "SV-V04",
+  "name": "Велюровий комплект «Моніка» · Сірий",
+  "short": "Велюр «Моніка»",
+  "fabric": "velour_m",
+  "price": 2100,
+  "oldPrice": null,
+  "inStock": true,
+  "image": "/assets/img/p/veliur-monika-siryi-1.jpg",
+  "images": [
+   "/assets/img/p/veliur-monika-siryi-1.jpg",
+   "/assets/img/p/veliur-monika-siryi-2.jpg"
+  ],
+  "url": "/products/veliur-monika-siryi/",
+  "cat": [
+   "sets"
+  ],
+  "added": "2026-11-16T21:00",
+  "variants": [
+   {
+    "id": "e",
+    "size": "e",
+    "label": "Євро",
+    "sku": "SV-V04",
+    "price": 2100
+   }
+  ],
+  "sup": "SV"
  }
 ];
 
