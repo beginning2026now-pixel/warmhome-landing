@@ -2442,7 +2442,7 @@ window.PRODUCTS = [
   "fabric": "velour",
   "price": 2100,
   "oldPrice": null,
-  "inStock": true,
+  "inStock": false,
   "image": "/assets/img/p/veliur-sharpei-siryi-1.jpg",
   "thumb": "/assets/img/t/veliur-sharpei-siryi-1.webp",
   "images": [
@@ -2459,7 +2459,8 @@ window.PRODUCTS = [
     "size": "e",
     "label": "Євро",
     "sku": "SV-V02",
-    "price": 2100
+    "price": 2100,
+    "out": true
    }
   ],
   "sup": "SV",
@@ -5740,7 +5741,7 @@ window.PRODUCTS = [
   "fabric": "dough",
   "price": 1200,
   "oldPrice": null,
-  "inStock": true,
+  "inStock": false,
   "image": "/assets/img/p/podushka-tisto-sira-1.jpg",
   "thumb": "/assets/img/t/podushka-tisto-sira-1.webp",
   "images": [
@@ -5757,7 +5758,8 @@ window.PRODUCTS = [
     "size": "p70",
     "label": "70×70 см",
     "sku": "SV-PL55",
-    "price": 1200
+    "price": 1200,
+    "out": true
    }
   ],
   "sup": "SV",
